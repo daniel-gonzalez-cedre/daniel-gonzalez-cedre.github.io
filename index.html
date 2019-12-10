@@ -1,19 +1,87 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <meta charset='UTF-8'/>
+        <link href='https://fonts.googleapis.com/css?family=EB+Garamond:300,400' rel='stylesheet' type='text/css'>
+        <meta charset="UTF-8">
         <title>Daniel Gonzalez</title>
-        <link rel='stylesheet' href='style.css'/>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="viewport" content="width=700">
+        <script type="text/javascript">
+            function toggle(id) {
+                element = document.getElementById(id);
+                if (element.style.display != 'block') element.style.display = 'block';
+                else if (element.style.display == 'block') element.style.display = 'none';
+            }
+        </script>
+        <style type="text/css">
+            span.displaynone { display: none; }
+            body {
+                font-family: 'EB Garamond', serif;
+            }
+        </style>
     </head>
 
-    <body class="HolyGrail">
-        <header>header</header>
-        <div class="HolyGrail-body">
-            <main class="HolyGrail-content">content</main>
-            <nav class="HolyGrail-nav">nav</nav>
-            <aside class="HolyGrail-ads">ads</aside>
+    <body>
+        <div class="sidebar">
+            <div class="picture">
+                <img src="images/gonzalez-2019-small.png">
+            </div>
+            <div class="contact">
+                <dl>
+                    <dt>Office</dt>
+                        <dd>150F <a href="https://map.nd.edu/#/placemarks/1033/zoom/16/lat/41.700346/lon/-86.238899" target="_blank">Fitzpatrick-Cushing Hall</a></dd>
+                    <dt>Office Hours</dt>
+                        <dd>Mondays 2pm → 4pm in
+                            <br>217 <a href="https://map.nd.edu/#/placemarks/1033/zoom/16/lat/41.700346/lon/-86.238899" target="_blank">Fitzpatrick-Cushing Hall</a></dd>
+                    <dt>Email</dt>
+                        <dd><span class="bla">dg</span>on<span class="displaynone">bla</span>za26@<span class="displaynone">bla.</span>nd.edu</dd>
+                    <dt>GitHub</dt>
+                        <dd><a href="https://github.com/daniel-gonzalez-cedre" target="_blank">@daniel-gonzalez-cedre</a></dd>
+                    <!--<dt>LinkedIn</dt>
+                        <dd><a href="https://www.linkedin.com/in/daniel-gonzalez-cedre/" target="_blank">@daniel-gonzalez-cedre</a></dd>-->
+                </dl>
+            </div>
+            <hr>
+            <p><a href="cv.html">Curriculum Vitae</a></p>
+            <p><a href="publications.html">Publications</a></p>
+            <p><a href="projects.html">Projects</a></p>
         </div>
-        <footer>footer</footer>
-    </body>
 
-</html>
+        <div class="main">
+
+            <div class="name">
+                <h1>Daniel Gonzalez</h1>
+                <p>PhD Student, <a href="https://cse.nd.edu">Computer Science and Engineering </a> @ <a href='https://nd.edu'>the University of Notre Dame</a>
+                <br>Advisor: <a href="https://www3.nd.edu/~tweninge/">Dr. Tim Weninger</a>
+                <br>Artificial Intelligence Lab</p>
+            </div>
+
+            <p>
+                My research is currently focused on finding a formalism for modeling the evolution of graphs over time
+                and expressing that temporal behavior in an intelligible way.
+                More broadly, my interests also include graph grammars, graph summarization, and graph generators.
+                For fun, I like to study set theory, type theory, and foreign languages.
+                For advanced fun, I like to boulder and play the music.
+            </p>
+
+            <h2>Teaching Assistance</h2>
+            <ul>
+                <li>
+                    Spring 2020: 
+                    <div class="course">CSE XXXXX, <i>to be determined</i></div>
+                </li>
+                <li>
+                    Fall 2019: 
+                    <div class="course">CSE 20110, <i>Discrete Math</i></div>
+                </li>
+            </ul>
+
+            <h2>Recent Publications</h2>
+            <p><a href="publications.html">full list <span class="arrow-right"></span></a></p>
+
+        </div>
+
+    </body>

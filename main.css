@@ -1,0 +1,108 @@
+:root {
+    --bg-color:  #FFFFFF;
+    --hl-color:  #243853;
+    --txt-color: #000000;
+    --bullet-style: disc;
+}
+
+.course {
+    color: var(--hl-color);
+    display: inline-block;
+}
+
+.hl {
+    color: var(--hl-color);
+    font-style: italic;
+    display: inline-block;
+}
+
+body { 
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+	width: 100%; 
+	margin: 50px 0; 
+	font-family: 'EB Garamond', serif; 
+	font-size: 18px;
+	font-weight: 300;
+}
+
+h1 { font-weight: 300; font-size: 48px; margin: 0 0 10px 0; }
+h2 { font-weight: 300; font-size: 32px; margin: 0 0 6px 0; }
+h3 { font-weight: 300; font-size: 24px; margin: 0 0 6px 0; }
+h4 { font-weight: 300; font-size: 20px; margin: 0 0 6px 0; }
+
+div.superhead { font-size: 24px; margin-bottom: -5px; }
+
+li { list-style-type: var(--bullet-style); }
+
+a { text-decoration: none; color: var(--hl-color); }
+
+div.sidebar { width: 200px; float: left; vertical-align: top; margin-left: 50px; }
+div.main { vertical-align: top; margin-left: 300px; margin-right: 50px; }
+div.bigmain { margin-left: 50px; margin-right: 50px; }
+
+div.picture { margin: 15px 0; }
+div.contact { font-size: 16px; }
+div.name { }
+
+.contact dt { margin-top: 20px; }
+.contact dd { margin-left: 0; }
+
+.button {
+  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+  padding: 3px 10px;
+  margin: 4px;
+  text-decoration:none; 
+  display:inline-block;
+  color: #FFFFFF;
+  background-color: var(--hl-color);
+  cursor: pointer;
+}
+
+.smallbutton {
+  position: relative; top: -1px;
+  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+  padding: 1px 3px 0px 3px;
+  border: solid 1px var(--hl-color);
+  color: var(--hl-color);
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0px 2px;
+}
+
+.superhead .arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid var(--hl-color);
+	display: inline-block;
+	margin: 0px 8px;
+
+}
+
+h2 .arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid var(--hl-color);
+	display: inline-block;
+	margin: 0px 4px;
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 6px solid var(--hl-color);
+	display: inline-block;
+	margin: 0px 4px;
+}
+
+div.pub {
+	margin: 12px 0;
+}
+
+pre { overflow-x: scroll; }
