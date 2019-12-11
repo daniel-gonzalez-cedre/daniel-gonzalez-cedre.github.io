@@ -2,12 +2,17 @@
     --bg-color:  #FFFFFF;
     --hl-color:  #243853;
     --txt-color: #000000;
+    --border-color: #DDDDDD;
     --bullet-style: disc;
 }
 
 .course {
     color: var(--hl-color);
     display: inline-block;
+}
+
+hr {
+    color: #FFFFFF;
 }
 
 .hl {
@@ -105,4 +110,13 @@ div.pub {
 	margin: 12px 0;
 }
 
-pre { overflow-x: scroll; }
+pre {
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    overflow-x: scroll;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+}
