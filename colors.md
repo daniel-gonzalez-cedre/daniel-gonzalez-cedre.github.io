@@ -1,10 +1,3 @@
-#blue
-    -0C2340
-    -BBD3F2
-#red
-    -FF8080
-    -BE0F17
-
 #light mode
 :root {
     --bg-color:  #FFFFFF;
@@ -23,7 +16,7 @@
     --bullet-style: circle;
 }
 
-#dark mode
+#dark mode colors
 :root {
     --bg-color:  #121212;
     --hl-color:  #ff004d;
