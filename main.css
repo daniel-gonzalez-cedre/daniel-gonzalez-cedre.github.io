@@ -1,7 +1,7 @@
 :root {
     --bg-color:  #121212;
     --hl-color:  #a4bace;
-    --txt-color: #CCCCCC;
+    --txt-color: #DDDDDD;
     --border-color: #555555;
     --bullet-style: circle;
 }
@@ -36,7 +36,7 @@ h2 { font-weight: 300; font-size: 32px; margin: 0 0 6px 0; }
 h3 { font-weight: 300; font-size: 24px; margin: 0 0 6px 0; }
 h4 { font-weight: 300; font-size: 20px; margin: 0 0 6px 0; }
 
-div.superhead { font-size: 24px; margin-bottom: -5px; }
+div.superhead { font-size: 20px; margin-bottom: 0px; }
 
 li { list-style-type: var(--bullet-style); }
 
