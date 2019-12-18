@@ -1,18 +1,23 @@
 :root {
     --bg-color:  #121212;
     --hl-color:  #ff004d;
+    --hi-color:  #ffc045;
     --txt-color: #CCCCCC;
     --border-color: #555555;
     --bullet-style: circle;
 }
 
 .lambda {
-    color: #f6c90e;
+    color: var(--hi-color);
 }
 
 .course {
     color: var(--hl-color);
     display: inline-block;
+}
+
+.backlink {
+    color: var(--hi-color);
 }
 
 hr {
@@ -68,6 +73,10 @@ div.name { }
 
 .contact dt { margin-top: 20px; }
 .contact dd { margin-left: 0; }
+
+div.proj {
+	margin: 12px 0;
+}
 
 div.pub {
 	margin: 12px 0;
