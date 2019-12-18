@@ -69,59 +69,6 @@ div.name { }
 .contact dt { margin-top: 20px; }
 .contact dd { margin-left: 0; }
 
-.button {
-  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
-  padding: 3px 10px;
-  margin: 4px;
-  text-decoration:none; 
-  display:inline-block;
-  color: #FFFFFF;
-  background-color: var(--hl-color);
-  cursor: pointer;
-}
-
-.smallbutton {
-  position: relative; top: -1px;
-  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
-  padding: 1px 3px 0px 3px;
-  border: solid 1px var(--hl-color);
-  color: var(--hl-color);
-  font-size: 14px;
-  text-decoration: none;
-  margin: 0px 2px;
-}
-
-.superhead .arrow-left {
-	width: 0; 
-	height: 0; 
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent;
-	border-right: 8px solid var(--hl-color);
-	display: inline-block;
-	margin: 0px 8px;
-
-}
-
-h2 .arrow-right {
-	width: 0; 
-	height: 0; 
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	border-left: 10px solid var(--hl-color);
-	display: inline-block;
-	margin: 0px 4px;
-}
-
-.arrow-right {
-	width: 0; 
-	height: 0; 
-	border-top: 6px solid transparent;
-	border-bottom: 6px solid transparent;
-	border-left: 6px solid var(--hl-color);
-	display: inline-block;
-	margin: 0px 4px;
-}
-
 div.pub {
 	margin: 12px 0;
 }
