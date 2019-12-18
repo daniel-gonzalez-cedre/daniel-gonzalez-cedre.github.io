@@ -1,9 +1,9 @@
 :root {
-    --bg-color:  #FFFFFF;
-    --hl-color:  #243853;
-    --txt-color: #000000;
-    --border-color: #DDDDDD;
-    --bullet-style: disc;
+    --bg-color:  #121212;
+    --hl-color:  #a4bace;
+    --txt-color: #CCCCCC;
+    --border-color: #555555;
+    --bullet-style: circle;
 }
 
 .course {
@@ -26,7 +26,7 @@ body {
     color: var(--txt-color);
 	width: 100%; 
 	margin: 50px 0; 
-	font-family: 'EB Garamond', serif; 
+	font-family: 'Open Sans', sans-serif; 
 	font-size: 18px;
 	font-weight: 300;
 }
@@ -42,7 +42,14 @@ li { list-style-type: var(--bullet-style); }
 
 a { text-decoration: none; color: var(--hl-color); }
 
-div.sidebar { width: 200px; float: left; vertical-align: top; margin-left: 50px; }
+div.sidebar {
+    width: 200px;
+    float: left;
+    vertical-align: top;
+    margin-left: 50px;
+    margin-top: 0px;
+    border-radius: 3px;
+}
 div.main { vertical-align: top; margin-left: 300px; margin-right: 50px; }
 div.bigmain { margin-left: 50px; margin-right: 50px; }
 
