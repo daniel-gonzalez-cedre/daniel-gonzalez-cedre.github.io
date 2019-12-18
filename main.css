@@ -1,38 +1,27 @@
 :root {
-    --bg-color:  #121212;
-    --hl-color:  #ff004d;
-    --hi-color:  #ffc045;
+    --bg-color: #121212;
+    --primary-color: #ff004d;
+    --secondary-color: #ffc045;
     --txt-color: #CCCCCC;
     --border-color: #555555;
     --bullet-style: circle;
 }
 
 .lambda {
-    color: var(--hi-color);
+    color: var(--secondary-color);
 }
 
 .course {
-    color: var(--hl-color);
+    color: var(--primary-color);
     display: inline-block;
 }
 
 .backlink {
-    color: var(--hi-color);
+    color: var(--secondary-color);
 }
 
 hr {
-    color: #FFFFFF;
-}
-
-.hl {
-    color: var(--hl-color);
-    display: inline-block;
-}
-
-.emph {
-    color: var(--hl-color);
-    font-style: italic;
-    display: inline-block;
+    border-color: #000000;
 }
 
 body { 
@@ -54,7 +43,7 @@ div.superhead { font-size: 20px; margin-bottom: 10px; }
 
 li { list-style-type: var(--bullet-style); }
 
-a { text-decoration: none; color: var(--hl-color); }
+a { text-decoration: none; color: var(--primary-color); }
 
 div.sidebar {
     width: 220px;

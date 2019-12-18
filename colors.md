@@ -18,8 +18,9 @@
 
 #dark mode colors
 :root {
-    --bg-color:  #121212;
-    --hl-color:  #ff004d;
+    --bg-color: #121212;
+    --primary-color: #ff004d;
+    --secondary-color: #ffc045;
     --txt-color: #CCCCCC;
     --border-color: #555555;
     --bullet-style: circle;
