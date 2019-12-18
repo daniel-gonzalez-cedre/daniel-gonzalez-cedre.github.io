@@ -22,3 +22,12 @@
     --border-color: #555555;
     --bullet-style: circle;
 }
+
+#dark mode
+:root {
+    --bg-color:  #121212;
+    --hl-color:  #ff004d;
+    --txt-color: #CCCCCC;
+    --border-color: #555555;
+    --bullet-style: circle;
+}

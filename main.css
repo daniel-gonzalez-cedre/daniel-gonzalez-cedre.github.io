@@ -1,9 +1,13 @@
 :root {
     --bg-color:  #121212;
-    --hl-color:  #a4bace;
+    --hl-color:  #ff004d;
     --txt-color: #CCCCCC;
     --border-color: #555555;
     --bullet-style: circle;
+}
+
+.lambda {
+    color: #f6c90e;
 }
 
 .course {
@@ -16,6 +20,11 @@ hr {
 }
 
 .hl {
+    color: var(--hl-color);
+    display: inline-block;
+}
+
+.emph {
     color: var(--hl-color);
     font-style: italic;
     display: inline-block;
@@ -43,10 +52,10 @@ li { list-style-type: var(--bullet-style); }
 a { text-decoration: none; color: var(--hl-color); }
 
 div.sidebar {
-    width: 200px;
+    width: 220px;
     float: left;
     vertical-align: top;
-    margin-left: 50px;
+    margin-left: 40px;
     margin-top: 0px;
     border-radius: 3px;
 }
