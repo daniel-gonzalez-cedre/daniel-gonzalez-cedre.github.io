@@ -1,7 +1,7 @@
 :root {
     --bg-color:  #121212;
     --hl-color:  #a4bace;
-    --txt-color: #DDDDDD;
+    --txt-color: #CCCCCC;
     --border-color: #555555;
     --bullet-style: circle;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 h1 { font-weight: 300; font-size: 48px; margin: 0 0 10px 0; }
-h2 { font-weight: 300; font-size: 32px; margin: 0 0 6px 0; }
+h2 { font-weight: 300; font-size: 32px; margin: 0 0 12px 0; }
 h3 { font-weight: 300; font-size: 24px; margin: 0 0 6px 0; }
 h4 { font-weight: 300; font-size: 20px; margin: 0 0 6px 0; }
 
