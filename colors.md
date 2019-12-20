@@ -1,4 +1,22 @@
-#dark mode colors
+#dark mode -- vibrant
+:root {
+    --bg-color: #121212;
+    --primary-color: #ff004d;
+    --secondary-color: #f6c90e;
+    --txt-color: #CCCCCC;
+    --border-color: #555555;
+    --bullet-style: circle;
+}
+#dark mode -- neon
+:root {
+    --bg-color: #121212;
+    --primary-color: #ff1f5a;
+    --secondary-color: #ffd615;
+    --txt-color: #CCCCCC;
+    --border-color: #555555;
+    --bullet-style: circle;
+}
+#dark mode -- muted
 :root {
     --bg-color: #121212;
     --primary-color: #f65c78;
@@ -7,16 +25,6 @@
     --border-color: #555555;
     --bullet-style: circle;
 }
-
-#dark mode
-:root {
-    --bg-color:  #121212;
-    --hl-color:  #a4bace;
-    --txt-color: #DDDDDD;
-    --border-color: #555555;
-    --bullet-style: circle;
-}
-
 #light mode
 :root {
     --bg-color:  #FFFFFF;
