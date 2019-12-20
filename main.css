@@ -34,7 +34,7 @@ body {
 	width: 100%; 
 	margin: 20px 0; 
 	font-family: 'Open Sans', sans-serif; 
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 300;
 }
 
@@ -50,15 +50,15 @@ li { list-style-type: var(--bullet-style); }
 a { text-decoration: none; color: var(--primary-color); }
 
 div.sidebar {
-    width: 220px;
+    width: 210px;
     float: left;
     vertical-align: top;
     margin-left: 40px;
     margin-top: 0px;
     border-radius: 3px;
 }
-div.main { vertical-align: top; margin-left: 300px; margin-right: 50px; }
-div.bigmain { margin-left: 50px; margin-right: 50px; }
+div.main { vertical-align: top; margin-left: 290px; margin-right: 40px; }
+div.bigmain { margin-left: 40px; margin-right: 40px; }
 
 div.picture { margin: 15px 0; }
 div.contact { font-size: 16px; }
