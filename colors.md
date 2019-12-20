@@ -1,27 +1,9 @@
-#dark mode -- vibrant
+#dark mode
 :root {
     --bg-color: #121212;
-    --primary-color: #ff004d;
-    --secondary-color: #f6c90e;
-    --txt-color: #CCCCCC;
-    --border-color: #555555;
-    --bullet-style: circle;
-}
-#dark mode -- neon
-:root {
-    --bg-color: #121212;
-    --primary-color: #ff1f5a;
-    --secondary-color: #ffd615;
-    --txt-color: #CCCCCC;
-    --border-color: #555555;
-    --bullet-style: circle;
-}
-#dark mode -- muted
-:root {
-    --bg-color: #121212;
-    --primary-color: #f65c78;
-    --secondary-color: #ffd271;
-    --txt-color: #CCCCCC;
+    --primary-color: #c72c41;
+    --secondary-color: #6b85b6;
+    --txt-color: #DDDDDD;
     --border-color: #555555;
     --bullet-style: circle;
 }
