@@ -2,7 +2,7 @@
     --bg-color: #121212;
     --primary-color: #c72c41;
     --secondary-color: #6b85b6;
-    --txt-color: #DDDDDD;
+    --txt-color: #CCCCCC;
     --border-color: #555555;
     --bullet-style: circle;
 }
@@ -21,7 +21,15 @@
 }
 
 img {
+    margin-top: 25px;
+    margin-bottom: -10px;
     border-radius: 50%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 hr {
@@ -34,8 +42,8 @@ body {
 	width: 100%; 
 	margin: 20px 0; 
 	font-family: 'Open Sans', sans-serif; 
-	font-size: 16px;
 	font-weight: 300;
+	font-size: 16px;
 }
 
 h1 { font-weight: 300; font-size: 48px; margin: 0 0 10px 0; }
@@ -62,7 +70,13 @@ div.bigmain { margin-left: 40px; margin-right: 40px; }
 
 div.picture { margin: 15px 0; }
 div.contact { font-size: 16px; }
-div.name { }
+div.heading { }
+div.name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    margin: 0 0 10px 0;
+}
 
 .contact dt { margin-top: 20px; }
 .contact dd { margin-left: 0; }
@@ -83,5 +97,6 @@ pre {
 
 code {
     font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
     font-size: 14px;
 }
