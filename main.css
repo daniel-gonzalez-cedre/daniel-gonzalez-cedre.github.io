@@ -58,14 +58,13 @@ li { list-style-type: var(--bullet-style); }
 a { text-decoration: none; color: var(--primary-color); }
 
 div.sidebar {
-    width: 210px;
+    width: 215px;
     float: left;
     vertical-align: top;
     margin-left: 40px;
     margin-top: 0px;
-    border-radius: 3px;
 }
-div.main { vertical-align: top; margin-left: 290px; margin-right: 40px; }
+div.main { vertical-align: top; margin-left: 295px; margin-right: 40px; }
 div.bigmain { margin-left: 40px; margin-right: 40px; }
 
 div.picture { margin: 15px 0; }
