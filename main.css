@@ -41,7 +41,7 @@ body {
     color: var(--txt-color);
 	width: 100%; 
 	margin: 20px 0; 
-	font-family: 'Open Sans', sans-serif; 
+	font-family: 'Raleway', sans-serif; 
 	font-weight: 300;
 	font-size: 16px;
 }
@@ -71,7 +71,7 @@ div.picture { margin: 15px 0; }
 div.contact { font-size: 16px; }
 div.heading { }
 div.name {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
     font-size: 48px;
     margin: 0 0 10px 0;
