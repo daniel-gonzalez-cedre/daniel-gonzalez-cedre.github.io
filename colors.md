@@ -1,17 +1,18 @@
-#dark mode
+#dark
 :root {
     --bg-color: #121212;
-    --primary-color: #c72c41;
-    --secondary-color: #6b85b6;
-    --txt-color: #DDDDDD;
+    --primary-color: #6184a4;
+    --secondary-color: #84a461;
+    --txt-color: #CCCCCC;
     --border-color: #555555;
-    --bullet-style: circle;
+    --bullet-style: none;
 }
-#light mode
+#light
 :root {
-    --bg-color:  #FFFFFF;
-    --hl-color:  #243853;
-    --txt-color: #000000;
-    --border-color: #DDDDDD;
-    --bullet-style: disc;
+    --bg-color: #121212;
+    --primary-color: #567795;
+    --secondary-color: #779556;
+    --txt-color: #CCCCCC;
+    --border-color: #555555;
+    --bullet-style: none;
 }
