@@ -33,7 +33,13 @@ img {
 }
 
 hr {
-    border-color: #000000;
+    border: 1px solid #333333;
+}
+
+td.info {
+    width: 1px;
+    padding: 0 10px;
+    white-space: nowrap;
 }
 
 body { 
