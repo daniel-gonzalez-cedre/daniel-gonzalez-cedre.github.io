@@ -1,3 +1,12 @@
+#gruvbox
+:root {
+    --bg-color: #121212;
+    --primary-color: #fe8019;
+    --secondary-color: #fb4934;
+    --txt-color: #ebdbb2;
+    --border-color: #555555;
+    --bullet-style: none;
+}
 #dark
 :root {
     --bg-color: #121212;
