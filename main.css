@@ -21,8 +21,8 @@
 }
 
 img {
-    margin-top: 0px;
-    margin-bottom: -10px;
+    margin-top: 25px;
+    margin-bottom: 0px;
     border-radius: 50%;
 }
 
@@ -64,13 +64,13 @@ ul { list-style-type: var(--bullet-style); }
 a { text-decoration: none; color: var(--primary-color); }
 
 div.sidebar {
-    width: 200px;
+    width: 170px;
     float: left;
     vertical-align: top;
     margin-left: 40px;
     margin-top: 0px;
 }
-div.main { vertical-align: top; margin-left: 280px; margin-right: 40px; }
+div.main { vertical-align: top; margin-left: 250px; margin-right: 40px; }
 div.bigmain { margin-left: 40px; margin-right: 40px; }
 
 div.picture { margin: 15px 0; }
@@ -84,7 +84,7 @@ div.name {
 }
 
 .contact dt { margin-top: 20px; }
-.contact dd { margin-left: 0; }
+.contact dd { margin-left: 0; font-size:14px; }
 
 .proj {
 	margin: 16px 0;
