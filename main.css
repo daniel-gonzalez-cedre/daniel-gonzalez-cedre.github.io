@@ -1,8 +1,8 @@
 :root {
     --bg-color: #121212;
-    --primary-color: #6184a4;
-    --secondary-color: #84a461;
-    --txt-color: #EEEEEE;
+    --primary-color: #fe8019;
+    --secondary-color: #fb4934;
+    --txt-color: #ebdbb2;
     --border-color: #555555;
     --bullet-style: none;
 }
@@ -21,7 +21,7 @@
 }
 
 img {
-    margin-top: 25px;
+    margin-top: 0px;
     margin-bottom: -10px;
     border-radius: 50%;
 }
