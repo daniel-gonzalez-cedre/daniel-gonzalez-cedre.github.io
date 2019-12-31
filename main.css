@@ -59,7 +59,15 @@ h4 { font-weight: 300; font-size: 20px; margin: 0 0 6px 0; }
 
 div.superhead { font-size: 20px; margin-bottom: 10px; }
 
-ul { list-style-type: var(--bullet-style); }
+ul {
+    list-style-type: var(--bullet-style);
+}
+
+li {
+}
+
+li:before {
+}
 
 a { text-decoration: none; color: var(--primary-color); }
 
