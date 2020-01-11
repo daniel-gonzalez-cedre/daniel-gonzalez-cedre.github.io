@@ -57,7 +57,10 @@ li { }
 
 li:before { }
 
-a { text-decoration: none; color: var(--primary-color); }
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
 
 a.backlink {
     color: var(--secondary-color);
@@ -88,13 +91,9 @@ div.superhead { font-size: 20px; margin-bottom: 10px; }
 .contact dt { margin-top: 20px; }
 .contact dd { margin-left: 0; font-size:14px; }
 
-.proj {
-    margin: 16px 0;
-}
+.proj { margin: 16px 0; }
 
-.pub {
-    margin: 16px 0;
-}
+.pub { margin: 16px 0; }
 
 pre {
     border: 1px solid var(--border-color);
