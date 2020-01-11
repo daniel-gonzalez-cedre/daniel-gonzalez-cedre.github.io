@@ -11,14 +11,19 @@ GITHUBCHART=`which githubchart`
 
 # only proceed if we have a valid repo
 if [ ! -d ${REPO}/.git ]; then
-    echo "failed"
     exit 0
-else
-    echo "success"
 fi
 
 cd ${REPO}
-${GITHUBCHART} -u ${USERNAME} ${IMAGES}/contributions.svg
+${GITHUBCHART} -u ${USERNAME} ${IMAGES}/temp.svg
+
+if cmp -s ${IMAGES}/temp.svg ${IMAGES}/contributions.svg; then
+    rm ${IMAGES}/temp.svg
+    exit 0
+else
+    mv ${IMAGES}/temp.svg ${IMAGES}/contributions.svg
+fi
+
 ${GIT} add ${IMAGES}/contributions.svg
 ${GIT} commit -m "Automated githubchart commit on ${TIMESTAMP}"
 ${GIT} push -u origin master

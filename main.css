@@ -14,13 +14,16 @@
     display: inline-block;
 }
 
-img { max-width: 100%; }
+img { }
 
 img.profile {
+    width: 100%;
     margin-top: 6px;
     margin-bottom: -5px;
     border-radius: 50%;
 }
+
+img.calendar { }
 
 .center {
     display: block;
