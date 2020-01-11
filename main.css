@@ -21,8 +21,12 @@
 }
 
 img {
-    margin-top: 25px;
-    margin-bottom: 0px;
+    max-width: 100%;
+}
+
+img.profile {
+    margin-top: 6px;
+    margin-bottom: -5px;
     border-radius: 50%;
 }
 
