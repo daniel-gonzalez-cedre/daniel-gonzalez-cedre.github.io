@@ -1,16 +1,21 @@
 :root {
     --bg-color: #121212;
-    --primary-color: #fe8019;
-    --secondary-color: #fb4934;
+    --red: #fb4934;
+    --aqua: #8ec07c;
+    --blue: #83a598;
+    --green: #b8bb26;
+    --orange: #fe8019;
+    --purple: #d3869b;
+    --yellow: #fabd2f;
     --txt-color: #ebdbb2;
     --border-color: #555555;
     --bullet-style: none;
 }
 
-.lambda { color: var(--secondary-color); }
+.lambda { color: var(--red); }
 
 .course {
-    color: var(--primary-color);
+    color: var(--orange);
     display: inline-block;
 }
 
@@ -61,11 +66,11 @@ li:before { }
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--orange);
 }
 
 a.backlink {
-    color: var(--secondary-color);
+    color: var(--red);
 }
 
 div.main { vertical-align: top; margin-left: 250px; margin-right: 40px; }
@@ -116,11 +121,11 @@ blockquote {
 }
 
 label.collapse {
-    border: solid 1px var(--secondary-color);
+    border: solid 1px var(--orange);
     border-radius: 3px;
 }
 .collapse {
-    color: var(--secondary-color);
+    color: var(--orange);
     cursor: pointer;
     display: inline;
 }
@@ -138,6 +143,6 @@ label.collapse {
 }
 
 .smallbutton {
-    border: solid 1px var(--primary-color);
+    border: solid 1px var(--orange);
     border-radius: 3px;
 }
