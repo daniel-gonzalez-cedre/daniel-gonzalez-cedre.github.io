@@ -1,5 +1,8 @@
 :root {
-    --bg-color: #121212;
+    --black: #141414;
+    --off-black: #3c3836;
+    --white: #ebdbb2;
+    --off-white: #fbf1d7;
     --red: #fb4934;
     --aqua: #8ec07c;
     --blue: #83a598;
@@ -7,12 +10,21 @@
     --orange: #fe8019;
     --purple: #d3869b;
     --yellow: #fabd2f;
-    --txt-color: #ebdbb2;
     --border-color: #555555;
     --bullet-style: none;
 }
 
-.lambda { color: var(--red); }
+.lambda { color: var(--yellow); }
+
+body { 
+    background-color: var(--black);
+    color: var(--white);
+    width: 100%; 
+    margin: 20px 0; 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 300;
+    font-size: 18px;
+}
 
 .course {
     color: var(--orange);
@@ -41,16 +53,6 @@ td.info {
     width: 1px;
     padding: 0 10px;
     white-space: nowrap;
-}
-
-body { 
-    background-color: var(--bg-color);
-    color: var(--txt-color);
-    width: 100%; 
-    margin: 20px 0; 
-    font-family: 'Montserrat', sans-serif; 
-    font-weight: 300;
-    font-size: 18px;
 }
 
 h1 { font-weight: 300; font-size: 50px; margin: 0 0 10px 0; }
@@ -121,11 +123,11 @@ blockquote {
 }
 
 label.collapse {
-    border: solid 1px var(--orange);
+    border: solid 1px var(--red);
     border-radius: 3px;
 }
 .collapse {
-    color: var(--orange);
+    color: var(--red);
     cursor: pointer;
     display: inline;
 }
