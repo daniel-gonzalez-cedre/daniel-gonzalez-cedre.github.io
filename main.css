@@ -79,6 +79,7 @@ div.main { vertical-align: top; margin-left: 250px; margin-right: 40px; }
 div.bigmain { margin-left: 40px; margin-right: 40px; }
 div.sidebar {
     width: 170px;
+    padding 10px;
     float: left;
     vertical-align: top;
     margin-left: 40px;
