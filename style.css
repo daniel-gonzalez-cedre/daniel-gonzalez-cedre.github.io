@@ -21,7 +21,7 @@ body {
     color: var(--white);
     width: 100%; 
     margin: 20px 0; 
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Nunito', sans-serif; 
     font-weight: 300;
     font-size: 18px;
 }
@@ -90,7 +90,7 @@ div.picture { margin: 15px 0; }
 div.contact { font-size: 18px; }
 div.heading { }
 div.name {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 300;
     font-size: 60px;
     margin: 0 0 10px 0;
