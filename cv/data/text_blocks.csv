@@ -1,0 +1,10 @@
+Id used for finding text block,Contents of text block. Supports markdown formatting.
+loc,text
+intro,"I am a second year PhD student studying Computer Science at the University of Notre Dame. I'm advised by [Tim Weninger](https://www3.nd.edu/~tweninge/).
+
+My research is currently focused on modeling the temporal behaviour and evolution of graphs. In particular, I'm interested in interpretable and grammar-based approaches to modeling. More broadly, I'm interested in ecology and applications of linear algebra and stochastic analysis.
+
+For advanced fun, I like to boulder and play music."
+industy_experience_aside,"<br>"
+teaching_experience_aside,"<br>"
+data_science_writing_aside,"<br>"
