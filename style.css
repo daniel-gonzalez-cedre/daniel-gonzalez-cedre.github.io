@@ -57,7 +57,7 @@ div.links {
 }
 div.main {
     flex-grow: 1;
-    min-width: 512px;
+    min-width: 520px;
 }
 div.heading {
     font-size: 28px;
