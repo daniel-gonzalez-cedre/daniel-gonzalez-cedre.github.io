@@ -15,7 +15,7 @@
         color: var(--secondary);
     }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-device-width: 480px) {
     .container {
         width: 100%;
         flex-direction: column;
