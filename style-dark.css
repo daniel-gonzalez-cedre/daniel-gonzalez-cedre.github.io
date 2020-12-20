@@ -1,16 +1,63 @@
 :root {
-    --primary: #eaeaea;
-    --secondary: #121212;
+    /* --white: #f3f1e2; */
+    --white: #d1d1d1;
+    --black: #121212;
+    --red: #cc241d;
+    --aqua: #689d6a;
+    --blue: #458588;
+    --green: #98971a;
+    --orange: #d65d0e;
+    --yellow: #d79921;
 }
 
-@keyframes color-fade {
+@keyframes color-fade-link {
     from {
-        background-color: var(--secondary);
-        color: var(--primary);
+        background-color: var(--black);
+        color: var(--white);
     }
     to {
-        background-color: var(--primary);
-        color: var(--secondary);
+        background-color: var(--white);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-pdf {
+    from {
+        background-color: var(--black);
+        color: var(--red);
+    }
+    to {
+        background-color: var(--red);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-code {
+    from {
+        background-color: var(--black);
+        color: var(--blue);
+    }
+    to {
+        background-color: var(--blue);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-slides {
+    from {
+        background-color: var(--black);
+        color: var(--aqua);
+    }
+    to {
+        background-color: var(--aqua);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-poster {
+    from {
+        background-color: var(--black);
+        color: var(--yellow);
+    }
+    to {
+        background-color: var(--yellow);
+        color: var(--black);
     }
 }
 @media only screen and (max-width: 800px) {
@@ -58,22 +105,115 @@
 
 a {
     text-decoration: none;
-    color: var(--primary);
 }
-a:hover {
-    animation-name: color-fade;
+a.link {
+    color: var(--white);
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a.link:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-link;
     animation-duration: 0.5s;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--white);
+    color: var(--black);
     border-radius: 3px;
 }
+a.pdf {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: var(--red);
+    border: 1px solid var(--red);
+    border-radius: 3px;
+    font-size: 12px;
+}
+a.pdf:hover {
+    animation-name: color-fade-pdf;
+    animation-duration: 0.5s;
+    background-color: var(--red);
+    color: var(--black);
+    border-radius: 3px;
+}
+a.code {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    border-radius: 3px;
+    font-size: 12px;
+}
+a.code:hover {
+    animation-name: color-fade-code;
+    animation-duration: 0.5s;
+    background-color: var(--blue);
+    color: var(--black);
+    border-radius: 3px;
+}
+a.slides {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: var(--aqua);
+    border: 1px solid var(--aqua);
+    border-radius: 3px;
+    font-size: 12px;
+}
+a.slides:hover {
+    animation-name: color-fade-slides;
+    animation-duration: 0.5s;
+    background-color: var(--aqua);
+    color: var(--black);
+    border-radius: 3px;
+}
+a.poster {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+    border-radius: 3px;
+    font-size: 12px;
+}
+a.poster:hover {
+    animation-name: color-fade-poster;
+    animation-duration: 0.5s;
+    background-color: var(--yellow);
+    color: var(--black);
+    border-radius: 3px;
+}
+
+/*
+button.pdf {
+    display: inline-block;
+    padding: 1px;
+    color: var(--red);
+    background: var(--black);
+    border: 1px solid var(--red);
+    border-radius: 3px;
+}
+button.pdf:hover {
+    animation-name: color-fade-pdf;
+    animation-duration: 0.5s;
+    background-color: var(--red);
+    color: var(--black);
+}
+*/
 
 html {
 }
 
 body { 
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--black);
+    color: var(--white);
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -104,8 +244,8 @@ div.main {
 }
 div.heading {
     font-size: 28px;
-    color: var(--secondary);
-    background-color: var(--primary);
+    color: var(--black);
+    background-color: var(--white);
     border-radius: 3px;
     padding: 0px 10px;
     margin-top: 16px;
