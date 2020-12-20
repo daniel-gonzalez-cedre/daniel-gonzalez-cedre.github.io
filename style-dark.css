@@ -191,23 +191,6 @@ a.poster:hover {
     border-radius: 3px;
 }
 
-/*
-button.pdf {
-    display: inline-block;
-    padding: 1px;
-    color: var(--red);
-    background: var(--black);
-    border: 1px solid var(--red);
-    border-radius: 3px;
-}
-button.pdf:hover {
-    animation-name: color-fade-pdf;
-    animation-duration: 0.5s;
-    background-color: var(--red);
-    color: var(--black);
-}
-*/
-
 html {
 }
 
