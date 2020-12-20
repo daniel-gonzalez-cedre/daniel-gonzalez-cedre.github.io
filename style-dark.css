@@ -290,8 +290,8 @@ img.icon {
     height: 1em;
     position: relative;
     top: 2px;
-    filter: invert(.5);
-    -webkit-filter: invert(.5);
+    filter: invert(1);
+    -webkit-filter: invert(1);
 }
 
 .center {
