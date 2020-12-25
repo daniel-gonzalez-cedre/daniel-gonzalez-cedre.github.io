@@ -124,8 +124,10 @@ a.link:hover {
 a.pdf {
     margin-top: 1px;
     margin-bottom: 1px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     color: var(--red);
     border: 1px solid var(--red);
     border-radius: 3px;
@@ -141,8 +143,10 @@ a.pdf:hover {
 a.code {
     margin-top: 1px;
     margin-bottom: 1px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     color: var(--blue);
     border: 1px solid var(--blue);
     border-radius: 3px;
@@ -158,8 +162,10 @@ a.code:hover {
 a.slides {
     margin-top: 1px;
     margin-bottom: 1px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     color: var(--aqua);
     border: 1px solid var(--aqua);
     border-radius: 3px;
@@ -175,8 +181,10 @@ a.slides:hover {
 a.poster {
     margin-top: 1px;
     margin-bottom: 1px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     color: var(--orange);
     border: 1px solid var(--orange);
     border-radius: 3px;
