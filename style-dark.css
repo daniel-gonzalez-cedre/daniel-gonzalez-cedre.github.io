@@ -19,6 +19,16 @@
         background-color: var(--grey);
     }
 }
+@keyframes color-fade-cv {
+    from {
+        background-color: var(--black);
+        color: var(--white);
+    }
+    to {
+        background-color: var(--yellow);
+        color: var(--black);
+    }
+}
 @keyframes color-fade-twitter {
     from {
         background-color: var(--black);
@@ -158,6 +168,20 @@ a.link:hover {
     animation-name: color-fade-link;
     animation-duration: 0.5s;
     background-color: var(--grey);
+    border-radius: 3px;
+}
+a#cv {
+    color: var(--white);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#cv:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-cv;
+    animation-duration: 0.5s;
+    background-color: var(--yellow);
+    color: var(--black);
     border-radius: 3px;
 }
 a#twitter {
@@ -377,7 +401,7 @@ ul {
     list-style-type: none;
 }
 ul.education {
-    font-size: 14px;
+    font-size: 12px;
 }
 ol {
     margin: 0px;
