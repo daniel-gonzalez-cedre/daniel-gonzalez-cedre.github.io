@@ -1,7 +1,8 @@
 :root {
     /* --white: #f3f1e2; */
-    --white: #d1d1d1;
-    --black: #121212;
+    --white: #e1e1e1;
+    --black: #101010;
+    --grey: #313131;
     --red: #cc241d;
     --aqua: #689d6a;
     --blue: #458588;
@@ -13,10 +14,48 @@
 @keyframes color-fade-link {
     from {
         background-color: var(--black);
+    }
+    to {
+        background-color: var(--grey);
+    }
+}
+@keyframes color-fade-twitter {
+    from {
+        background-color: var(--black);
         color: var(--white);
     }
     to {
-        background-color: var(--white);
+        background-color: var(--blue);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-google {
+    from {
+        background-color: var(--black);
+        color: var(--white);
+    }
+    to {
+        background-color: var(--green);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-github {
+    from {
+        background-color: var(--black);
+        color: var(--white);
+    }
+    to {
+        background-color: var(--orange);
+        color: var(--black);
+    }
+}
+@keyframes color-fade-linkedin {
+    from {
+        background-color: var(--black);
+        color: var(--white);
+    }
+    to {
+        background-color: var(--aqua);
         color: var(--black);
     }
 }
@@ -118,7 +157,62 @@ a.link:hover {
     padding-right: 2px;
     animation-name: color-fade-link;
     animation-duration: 0.5s;
-    background-color: var(--white);
+    background-color: var(--grey);
+    border-radius: 3px;
+}
+a#twitter {
+    color: var(--white);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#twitter:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-twitter;
+    animation-duration: 0.5s;
+    background-color: var(--blue);
+    color: var(--black);
+    border-radius: 3px;
+}
+a#google {
+    color: var(--white);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#google:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-google;
+    animation-duration: 0.5s;
+    background-color: var(--green);
+    color: var(--black);
+    border-radius: 3px;
+}
+a#github {
+    color: var(--white);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#github:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-github;
+    animation-duration: 0.5s;
+    background-color: var(--orange);
+    color: var(--black);
+    border-radius: 3px;
+}
+a#linkedin {
+    color: var(--white);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#linkedin:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-linkedin;
+    animation-duration: 0.5s;
+    background-color: var(--aqua);
     color: var(--black);
     border-radius: 3px;
 }
@@ -235,8 +329,8 @@ div.main {
 }
 div.heading {
     font-size: 28px;
-    color: var(--black);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--grey);
     border-radius: 3px;
     padding: 0px 10px;
     margin-top: 16px;
@@ -250,14 +344,28 @@ div.content {
 h1 {
     display: inline;
     margin: 0px;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: normal;
+    padding-left: 5px;
+    padding-right: 4px;
 }
 h2 {
     display: inline;
     margin: 0px;
     font-size: 14px;
+    font-weight: normal;
     text-align: right;
     float: right;
+}
+h3 {
+    display: inline;
+    margin: 0px;
+    font-size: 11px;
+    font-weight: normal;
+    background: #212121;
+    border-radius: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 sup {
@@ -267,6 +375,9 @@ sup {
 ul {
     margin: 0px;
     list-style-type: none;
+}
+ul.education {
+    font-size: 14px;
 }
 ol {
     margin: 0px;
@@ -298,8 +409,6 @@ img.icon {
     height: 1em;
     position: relative;
     top: 2px;
-    filter: invert(1);
-    -webkit-filter: invert(1);
 }
 
 .center {
