@@ -124,10 +124,10 @@
         width: 400px;
     }
     .name {
-        margin-left: -65px;
+        margin-left: -136px;
     }
     .links {
-        width: 200px;
+        width: 300px;
     }
 }
 @media only screen and (max-device-width: 480px) {
