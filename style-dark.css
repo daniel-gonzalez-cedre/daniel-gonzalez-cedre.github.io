@@ -434,6 +434,14 @@ img.icon {
     position: relative;
     top: 2px;
 }
+img.keyboard {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#keyboards {
+    text-align: center;
+}
 
 .center {
     display: block;
