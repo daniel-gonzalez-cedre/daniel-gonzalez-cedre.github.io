@@ -125,6 +125,7 @@
     }
     .name {
         margin-left: -136px;
+        /* margin-left: -65px; */
     }
     .links {
         width: 300px;
@@ -145,10 +146,11 @@
         width: 512px;
     }
     .name {
-        margin-left: -65px;
+        margin-left: -136px;
+        /* margin-left: -65px; */
     }
     .links {
-        width: 200px;
+        width: 300px;
     }
 }
 
