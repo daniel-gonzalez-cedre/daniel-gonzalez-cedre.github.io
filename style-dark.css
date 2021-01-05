@@ -143,14 +143,14 @@
     .info {
         display: inline-flex;
         align-items: center;
-        width: 512px;
+        width: 400px;
     }
     .name {
         margin-left: -136px;
         /* margin-left: -65px; */
     }
     .links {
-        width: 200px;
+        width: 300px;
     }
 }
 
