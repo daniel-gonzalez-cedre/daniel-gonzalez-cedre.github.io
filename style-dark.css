@@ -144,6 +144,7 @@ a.link:hover {
 }
 a.nd {
     color: var(--blue);
+    font-size: 14px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -160,6 +161,7 @@ a.nd:hover {
 }
 a.fsu {
     color: var(--red);
+    font-size: 14px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -176,6 +178,7 @@ a.fsu:hover {
 }
 a.fiu {
     color: var(--yellow);
+    font-size: 14px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -192,6 +195,7 @@ a.fiu:hover {
 }
 a.mdc {
     color: var(--aqua);
+    font-size: 14px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
