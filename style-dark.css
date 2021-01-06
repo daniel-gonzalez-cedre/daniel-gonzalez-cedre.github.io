@@ -101,6 +101,7 @@
         width: 300px;
     }
 }
+/*
 @media only screen and (max-device-width: 480px) {
     .container {
         flex-direction: column;
@@ -117,12 +118,12 @@
     }
     .name {
         margin-left: -136px;
-        /* margin-left: -65px; */
     }
     .links {
         width: 300px;
     }
 }
+*/
 
 a {
     text-decoration: none;
