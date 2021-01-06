@@ -144,7 +144,7 @@ a.link:hover {
 }
 a.nd {
     color: var(--blue);
-    font-size: 12px;
+    font-size: 16px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -161,7 +161,7 @@ a.nd:hover {
 }
 a.fsu {
     color: var(--red);
-    font-size: 12px;
+    font-size: 16px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -178,7 +178,7 @@ a.fsu:hover {
 }
 a.fiu {
     color: var(--yellow);
-    font-size: 12px;
+    font-size: 16px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -195,7 +195,7 @@ a.fiu:hover {
 }
 a.mdc {
     color: var(--aqua);
-    font-size: 12px;
+    font-size: 16px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -408,8 +408,8 @@ div.content {
 h1 {
     display: inline;
     margin: 0px;
-    font-size: 18px;
-    font-weight: normal;
+    font-size: 16px;
+    font-weight: lighter;
     padding-left: 5px;
     padding-right: 4px;
 }
@@ -423,7 +423,7 @@ h2 {
 h3 {
     display: inline;
     margin: 0px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: lighter;
     background: #212121;
     border-radius: 3px;
