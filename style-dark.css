@@ -438,6 +438,7 @@ img.icon {
 }
 img.keyboard {
     display: inline-block;
+    image-rendering: crisp-edges;
     margin-left: auto;
     margin-right: auto;
 }
