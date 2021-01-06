@@ -19,27 +19,7 @@
         background-color: var(--grey);
     }
 }
-@keyframes color-fade-cv {
-    from {
-        background-color: var(--black);
-        color: var(--white);
-    }
-    to {
-        background-color: var(--yellow);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-twitter {
-    from {
-        background-color: var(--black);
-        color: var(--white);
-    }
-    to {
-        background-color: var(--blue);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-google {
+@keyframes color-fade-green {
     from {
         background-color: var(--black);
         color: var(--white);
@@ -49,7 +29,7 @@
         color: var(--black);
     }
 }
-@keyframes color-fade-github {
+@keyframes color-fade-orange {
     from {
         background-color: var(--black);
         color: var(--white);
@@ -59,17 +39,7 @@
         color: var(--black);
     }
 }
-@keyframes color-fade-linkedin {
-    from {
-        background-color: var(--black);
-        color: var(--white);
-    }
-    to {
-        background-color: var(--aqua);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-pdf {
+@keyframes color-fade-red {
     from {
         background-color: var(--black);
         color: var(--red);
@@ -79,7 +49,7 @@
         color: var(--black);
     }
 }
-@keyframes color-fade-code {
+@keyframes color-fade-blue {
     from {
         background-color: var(--black);
         color: var(--blue);
@@ -89,7 +59,7 @@
         color: var(--black);
     }
 }
-@keyframes color-fade-slides {
+@keyframes color-fade-aqua {
     from {
         background-color: var(--black);
         color: var(--aqua);
@@ -99,7 +69,7 @@
         color: var(--black);
     }
 }
-@keyframes color-fade-poster {
+@keyframes color-fade-yellow {
     from {
         background-color: var(--black);
         color: var(--yellow);
@@ -172,6 +142,70 @@ a.link:hover {
     background-color: var(--grey);
     border-radius: 3px;
 }
+a.nd {
+    color: var(--blue);
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a.nd:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-blue;
+    animation-duration: 0.5s;
+    background-color: var(--blue);
+    color: var(--black);
+    border-radius: 3px;
+}
+a.fsu {
+    color: var(--red);
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a.fsu:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-red;
+    animation-duration: 0.5s;
+    background-color: var(--red);
+    color: var(--black);
+    border-radius: 3px;
+}
+a.fiu {
+    color: var(--yellow);
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a.fiu:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-yellow;
+    animation-duration: 0.5s;
+    background-color: var(--yellow);
+    color: var(--black);
+    border-radius: 3px;
+}
+a.mdc {
+    color: var(--aqua);
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a.mdc:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-aqua;
+    animation-duration: 0.5s;
+    background-color: var(--aqua);
+    color: var(--black);
+    border-radius: 3px;
+}
 a#cv {
     color: var(--white);
     padding-left: 2px;
@@ -180,7 +214,7 @@ a#cv {
 a#cv:hover {
     padding-left: 2px;
     padding-right: 2px;
-    animation-name: color-fade-cv;
+    animation-name: color-fade-yellow;
     animation-duration: 0.5s;
     background-color: var(--yellow);
     color: var(--black);
@@ -194,7 +228,7 @@ a#twitter {
 a#twitter:hover {
     padding-left: 2px;
     padding-right: 2px;
-    animation-name: color-fade-twitter;
+    animation-name: color-fade-blue;
     animation-duration: 0.5s;
     background-color: var(--blue);
     color: var(--black);
@@ -208,7 +242,7 @@ a#google {
 a#google:hover {
     padding-left: 2px;
     padding-right: 2px;
-    animation-name: color-fade-google;
+    animation-name: color-fade-green;
     animation-duration: 0.5s;
     background-color: var(--green);
     color: var(--black);
@@ -222,7 +256,7 @@ a#github {
 a#github:hover {
     padding-left: 2px;
     padding-right: 2px;
-    animation-name: color-fade-github;
+    animation-name: color-fade-orange;
     animation-duration: 0.5s;
     background-color: var(--orange);
     color: var(--black);
@@ -236,7 +270,7 @@ a#linkedin {
 a#linkedin:hover {
     padding-left: 2px;
     padding-right: 2px;
-    animation-name: color-fade-linkedin;
+    animation-name: color-fade-aqua;
     animation-duration: 0.5s;
     background-color: var(--aqua);
     color: var(--black);
@@ -255,7 +289,7 @@ a.pdf {
     font-size: 12px;
 }
 a.pdf:hover {
-    animation-name: color-fade-pdf;
+    animation-name: color-fade-red;
     animation-duration: 0.5s;
     background-color: var(--red);
     color: var(--black);
@@ -274,7 +308,7 @@ a.code {
     font-size: 12px;
 }
 a.code:hover {
-    animation-name: color-fade-code;
+    animation-name: color-fade-blue;
     animation-duration: 0.5s;
     background-color: var(--blue);
     color: var(--black);
@@ -293,7 +327,7 @@ a.slides {
     font-size: 12px;
 }
 a.slides:hover {
-    animation-name: color-fade-slides;
+    animation-name: color-fade-aqua;
     animation-duration: 0.5s;
     background-color: var(--aqua);
     color: var(--black);
@@ -312,7 +346,7 @@ a.poster {
     font-size: 12px;
 }
 a.poster:hover {
-    animation-name: color-fade-poster;
+    animation-name: color-fade-yellow;
     animation-duration: 0.5s;
     background-color: var(--yellow);
     color: var(--black);
@@ -381,7 +415,6 @@ h2 {
     font-size: 14px;
     font-weight: normal;
     text-align: right;
-    float: right;
 }
 h3 {
     display: inline;
@@ -392,6 +425,7 @@ h3 {
     border-radius: 3px;
     padding-left: 4px;
     padding-right: 4px;
+    float: right;
 }
 
 sup {
