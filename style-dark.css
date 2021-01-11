@@ -121,6 +121,18 @@
     .links {
         width: 300px;
     }
+    a#nd {
+        font-size: 10px;
+    }
+    a#fsu {
+        font-size: 10px;
+    }
+    a#fiu {
+        font-size: 10px;
+    }
+    a#mdc {
+        font-size: 10px;
+    }
 }
 
 a {
