@@ -101,7 +101,6 @@
         width: 300px;
     }
 }
-/*
 @media only screen and (max-device-width: 480px) {
     .container {
         flex-direction: column;
@@ -123,7 +122,6 @@
         width: 300px;
     }
 }
-*/
 
 a {
     text-decoration: none;
