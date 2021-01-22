@@ -417,7 +417,7 @@ h2 {
 }
 h3 {
     display: inline;
-    margin: 0px;
+    margin: 2px;
     font-size: 12px;
     font-weight: lighter;
     background: #212121;
@@ -426,9 +426,7 @@ h3 {
     padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
-    /*
     float: right;
-    */
 }
 
 sup {
