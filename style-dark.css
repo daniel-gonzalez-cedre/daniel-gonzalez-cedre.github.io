@@ -140,6 +140,7 @@ a.nd {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
+    float: right;
 }
 a.nd:hover {
     padding-left: 2px;
@@ -157,6 +158,7 @@ a.fsu {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
+    float: right;
 }
 a.fsu:hover {
     padding-left: 2px;
@@ -174,6 +176,7 @@ a.fiu {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
+    float: right;
 }
 a.fiu:hover {
     padding-left: 2px;
@@ -191,6 +194,7 @@ a.mdc {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
+    float: right;
 }
 a.mdc:hover {
     padding-left: 2px;
@@ -422,7 +426,9 @@ h3 {
     padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
+    /*
     float: right;
+    */
 }
 
 sup {
