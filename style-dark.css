@@ -434,14 +434,14 @@ sup {
 }
 
 ul {
-    margin: 0px;
+    margin: 2px;
     list-style-type: none;
 }
 ul.education {
     font-size: 12px;
 }
 ol {
-    margin: 0px;
+    margin: 2px;
     list-style-type: cjk-ideographic;
 }
 li {
