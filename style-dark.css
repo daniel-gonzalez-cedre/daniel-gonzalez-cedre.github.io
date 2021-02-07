@@ -14,9 +14,11 @@
 @keyframes color-fade-link {
     from {
         background-color: var(--black);
+        color: var(--white);
     }
     to {
-        background-color: var(--grey);
+        background-color: var(--white);
+        color: var(--black);
     }
 }
 @keyframes color-fade-green {
@@ -126,11 +128,12 @@ a.link {
     padding-right: 2px;
 }
 a.link:hover {
+    color: var(--black);
     padding-left: 2px;
     padding-right: 2px;
     animation-name: color-fade-link;
     animation-duration: 0.5s;
-    background-color: var(--grey);
+    background-color: var(--white);
     border-radius: 3px;
 }
 a.nd {
