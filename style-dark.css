@@ -1,5 +1,6 @@
 :root {
-    /* --white: #f3f1e2; */
+    /* --off-white: #f3f1e2; */
+    --links: #83a598;
     --white: #e1e1e1;
     --black: #101010;
     --grey: #313131;
@@ -14,10 +15,10 @@
 @keyframes color-fade-link {
     from {
         background-color: var(--black);
-        color: var(--white);
+        color: var(--links);
     }
     to {
-        background-color: var(--white);
+        background-color: var(--links);
         color: var(--black);
     }
 }
@@ -121,7 +122,8 @@ a {
     text-decoration: none;
 }
 a.link {
-    color: var(--white);
+    color: var(--links);
+    /*border-radius: 3px;*/
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -133,7 +135,7 @@ a.link:hover {
     padding-right: 2px;
     animation-name: color-fade-link;
     animation-duration: 0.5s;
-    background-color: var(--white);
+    background-color: var(--links);
     border-radius: 3px;
 }
 a.nd {
