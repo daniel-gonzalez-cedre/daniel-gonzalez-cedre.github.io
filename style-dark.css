@@ -25,7 +25,7 @@
 @keyframes color-fade-green {
     from {
         background-color: var(--black);
-        color: var(--white);
+        color: var(--green);
     }
     to {
         background-color: var(--green);
@@ -35,7 +35,7 @@
 @keyframes color-fade-orange {
     from {
         background-color: var(--black);
-        color: var(--white);
+        color: var(--orange);
     }
     to {
         background-color: var(--orange);
