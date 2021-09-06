@@ -1,9 +1,9 @@
 :root {
-    /* --off-white: #f3f1e2; */
-    --links: #f9f5d7;
+    --links: #b99494;
     --white: #e1e1e1;
-    --black: #101010;
+    --black: #121212;
     --grey: #313131;
+    --light-grey: #212121;
     --red: #cc241d;
     --aqua: #689d6a;
     --blue: #458588;
@@ -211,7 +211,7 @@ a.mdc:hover {
     border-radius: 3px;
 }
 a#cv {
-    color: var(--white);
+    color: var(--yellow);
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -225,7 +225,7 @@ a#cv:hover {
     border-radius: 3px;
 }
 a#twitter {
-    color: var(--white);
+    color: var(--blue);
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -239,7 +239,7 @@ a#twitter:hover {
     border-radius: 3px;
 }
 a#google {
-    color: var(--white);
+    color: var(--green);
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -253,7 +253,7 @@ a#google:hover {
     border-radius: 3px;
 }
 a#github {
-    color: var(--white);
+    color: var(--orange);
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -267,7 +267,7 @@ a#github:hover {
     border-radius: 3px;
 }
 a#linkedin {
-    color: var(--white);
+    color: var(--aqua);
     padding-left: 2px;
     padding-right: 2px;
 }
@@ -363,7 +363,7 @@ html {
 body { 
     background-color: var(--black);
     color: var(--white);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 300;
     font-size: 16px;
 }
@@ -394,10 +394,10 @@ div.main {
 div.heading {
     font-size: 28px;
     color: var(--white);
-    background-color: var(--grey);
+    background-color: var(--light-grey);
     border-radius: 3px;
     padding-top: 1px;
-    padding-bottom: 2px;
+    padding-bottom: 0px;
     padding-right: 10px;
     padding-left: 10px;
     margin-top: 16px;
@@ -428,7 +428,7 @@ h3 {
     margin: 2px;
     font-size: 12px;
     font-weight: lighter;
-    background: #212121;
+    background: var(--light-grey);
     border-radius: 3px;
     padding-left: 4px;
     padding-right: 4px;
@@ -460,8 +460,8 @@ li.pub {
 }
 .emph {
     display: inline;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
     font-size: 16px;
 }
 
