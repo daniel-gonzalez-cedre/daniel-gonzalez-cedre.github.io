@@ -1,55 +1,38 @@
 :root {
+    --links: #7c5151;
     --white: #ffffff;
-    --black: #202020;
-    --red: #fb4934;
-    --aqua: #8ec07c;
-    --blue: #83a598;
-    --green: #b8bb26;
-    --orange: #fe8019;
-    --yellow: #fabd2f;
+    --black: #101010;
+    --grey: #313131;
+    --light-grey: #f5f5fa;
+    --red: #9d0006;
+    --aqua: #427b58;
+    --blue: #076678;
+    --green: #79740e;
+    --orange: #af3a03;
+    --yellow: #b57614;
 }
 
 @keyframes color-fade-link {
     from {
         background-color: var(--white);
-        color: var(--black);
+        color: var(--links);
     }
     to {
-        background-color: var(--black);
+        background-color: var(--links);
         color: var(--white);
     }
 }
-@keyframes color-fade-pdf {
+@keyframes color-fade-green {
     from {
         background-color: var(--white);
-        color: var(--red);
+        color: var(--green);
     }
     to {
-        background-color: var(--red);
+        background-color: var(--green);
         color: var(--white);
     }
 }
-@keyframes color-fade-code {
-    from {
-        background-color: var(--white);
-        color: var(--blue);
-    }
-    to {
-        background-color: var(--blue);
-        color: var(--white);
-    }
-}
-@keyframes color-fade-slides {
-    from {
-        background-color: var(--white);
-        color: var(--aqua);
-    }
-    to {
-        background-color: var(--aqua);
-        color: var(--white);
-    }
-}
-@keyframes color-fade-poster {
+@keyframes color-fade-orange {
     from {
         background-color: var(--white);
         color: var(--orange);
@@ -59,14 +42,50 @@
         color: var(--white);
     }
 }
+@keyframes color-fade-red {
+    from {
+        background-color: var(--white);
+        color: var(--red);
+    }
+    to {
+        background-color: var(--red);
+        color: var(--white);
+    }
+}
+@keyframes color-fade-blue {
+    from {
+        background-color: var(--white);
+        color: var(--blue);
+    }
+    to {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+}
+@keyframes color-fade-aqua {
+    from {
+        background-color: var(--white);
+        color: var(--aqua);
+    }
+    to {
+        background-color: var(--aqua);
+        color: var(--white);
+    }
+}
+@keyframes color-fade-yellow {
+    from {
+        background-color: var(--white);
+        color: var(--yellow);
+    }
+    to {
+        background-color: var(--yellow);
+        color: var(--white);
+    }
+}
 @media only screen and (max-width: 800px) {
     .container {
         flex-direction: column;
         align-items: center;
-    }
-    .sidebar {
-    }
-    .main {
     }
     .info {
         display: inline-flex;
@@ -74,10 +93,11 @@
         width: 400px;
     }
     .name {
-        margin-left: -65px;
+        margin-left: -136px;
+        /* margin-left: -65px; */
     }
     .links {
-        width: 200px;
+        width: 300px;
     }
 }
 @media only screen and (max-device-width: 480px) {
@@ -85,20 +105,16 @@
         flex-direction: column;
         align-items: center;
     }
-    .sidebar {
-    }
-    .main {
-    }
     .info {
         display: inline-flex;
         align-items: center;
-        width: 512px;
+        width: 400px;
     }
     .name {
-        margin-left: -65px;
+        margin-left: -136px;
     }
     .links {
-        width: 200px;
+        width: 300px;
     }
 }
 
@@ -106,18 +122,161 @@ a {
     text-decoration: none;
 }
 a.link {
-    color: var(--black);
+    color: var(--links);
+    /*border-radius: 3px;*/
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
 }
 a.link:hover {
+    color: var(--white);
     padding-left: 2px;
     padding-right: 2px;
     animation-name: color-fade-link;
     animation-duration: 0.5s;
-    background-color: var(--black);
+    background-color: var(--links);
+    border-radius: 3px;
+}
+a.nd {
+    color: var(--blue);
+    font-size: 16px;
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    float: right;
+}
+a.nd:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-blue;
+    animation-duration: 0.5s;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 3px;
+}
+a.fsu {
+    color: var(--red);
+    font-size: 16px;
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    float: right;
+}
+a.fsu:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-red;
+    animation-duration: 0.5s;
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 3px;
+}
+a.fiu {
+    color: var(--yellow);
+    font-size: 16px;
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    float: right;
+}
+a.fiu:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-yellow;
+    animation-duration: 0.5s;
+    background-color: var(--yellow);
+    color: var(--white);
+    border-radius: 3px;
+}
+a.mdc {
+    color: var(--aqua);
+    font-size: 16px;
+    margin-left: -2px;
+    margin-right: -2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    float: right;
+}
+a.mdc:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-aqua;
+    animation-duration: 0.5s;
+    background-color: var(--aqua);
+    color: var(--white);
+    border-radius: 3px;
+}
+a#cv {
+    color: var(--yellow);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#cv:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-yellow;
+    animation-duration: 0.5s;
+    background-color: var(--yellow);
+    color: var(--white);
+    border-radius: 3px;
+}
+a#twitter {
+    color: var(--blue);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#twitter:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-blue;
+    animation-duration: 0.5s;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 3px;
+}
+a#google {
+    color: var(--green);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#google:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-green;
+    animation-duration: 0.5s;
+    background-color: var(--green);
+    color: var(--white);
+    border-radius: 3px;
+}
+a#github {
+    color: var(--orange);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#github:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-orange;
+    animation-duration: 0.5s;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 3px;
+}
+a#linkedin {
+    color: var(--aqua);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+a#linkedin:hover {
+    padding-left: 2px;
+    padding-right: 2px;
+    animation-name: color-fade-aqua;
+    animation-duration: 0.5s;
+    background-color: var(--aqua);
     color: var(--white);
     border-radius: 3px;
 }
@@ -134,7 +293,7 @@ a.pdf {
     font-size: 12px;
 }
 a.pdf:hover {
-    animation-name: color-fade-pdf;
+    animation-name: color-fade-red;
     animation-duration: 0.5s;
     background-color: var(--red);
     color: var(--white);
@@ -153,7 +312,7 @@ a.code {
     font-size: 12px;
 }
 a.code:hover {
-    animation-name: color-fade-code;
+    animation-name: color-fade-blue;
     animation-duration: 0.5s;
     background-color: var(--blue);
     color: var(--white);
@@ -172,7 +331,7 @@ a.slides {
     font-size: 12px;
 }
 a.slides:hover {
-    animation-name: color-fade-slides;
+    animation-name: color-fade-aqua;
     animation-duration: 0.5s;
     background-color: var(--aqua);
     color: var(--white);
@@ -185,15 +344,15 @@ a.poster {
     padding-right: 3px;
     padding-top: 1px;
     padding-bottom: 1px;
-    color: var(--orange);
-    border: 1px solid var(--orange);
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
     border-radius: 3px;
     font-size: 12px;
 }
 a.poster:hover {
-    animation-name: color-fade-poster;
+    animation-name: color-fade-yellow;
     animation-duration: 0.5s;
-    background-color: var(--orange);
+    background-color: var(--yellow);
     color: var(--white);
     border-radius: 3px;
 }
@@ -204,7 +363,7 @@ html {
 body { 
     background-color: var(--white);
     color: var(--black);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 300;
     font-size: 16px;
 }
@@ -234,13 +393,17 @@ div.main {
 }
 div.heading {
     font-size: 28px;
-    color: var(--white);
-    background-color: var(--black);
+    color: var(--black);
+    background-color: var(--light-grey);
     border-radius: 3px;
-    padding: 0px 10px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
     margin-top: 16px;
     margin-bottom: 4px;
     margin-right: 16px;
+    display: inline-block;
 }
 div.content {
     margin-right: 16px;
@@ -250,12 +413,29 @@ h1 {
     display: inline;
     margin: 0px;
     font-size: 16px;
+    font-weight: lighter;
+    padding-left: 5px;
+    padding-right: 4px;
 }
 h2 {
     display: inline;
     margin: 0px;
     font-size: 14px;
+    font-weight: normal;
     text-align: right;
+}
+h3 {
+    display: inline;
+    margin: 2px;
+    font-size: 12px;
+    font-weight: lighter;
+    background: var(--light-grey);
+    color: var(--black);
+    border-radius: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 0.25px;
+    padding-bottom: 0.75px;
     float: right;
 }
 
@@ -264,11 +444,14 @@ sup {
 }
 
 ul {
-    margin: 0px;
+    margin: 2px;
     list-style-type: none;
 }
+ul.education {
+    font-size: 12px;
+}
 ol {
-    margin: 0px;
+    margin: 2px;
     list-style-type: cjk-ideographic;
 }
 li {
@@ -279,8 +462,8 @@ li.pub {
 }
 .emph {
     display: inline;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
     font-size: 16px;
 }
 
@@ -290,15 +473,23 @@ img.headshot {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 50%;
+    border-radius: 3%;
     width: 75%;
+    border: 1px solid var(--light-grey);
 }
 img.icon {
     height: 1em;
     position: relative;
     top: 2px;
-    filter: invert(.5);
-    -webkit-filter: invert(.5);
+}
+img.png {
+    display: inline-block;
+    image-rendering: crisp-edges;
+    margin-left: auto;
+    margin-right: auto;
+}
+#keyboards {
+    text-align: center;
 }
 
 .center {
