@@ -138,7 +138,7 @@ a.link:hover {
     background-color: var(--links);
     border-radius: 3px;
 }
-a.nd {
+a.blue {
     color: var(--blue);
     font-size: 16px;
     margin-left: -2px;
@@ -147,7 +147,7 @@ a.nd {
     padding-right: 2px;
     float: right;
 }
-a.nd:hover {
+a.blue:hover {
     padding-left: 2px;
     padding-right: 2px;
     animation-name: color-fade-blue;
@@ -156,7 +156,7 @@ a.nd:hover {
     color: var(--white);
     border-radius: 3px;
 }
-a.fsu {
+a.red {
     color: var(--red);
     font-size: 16px;
     margin-left: -2px;
@@ -165,7 +165,7 @@ a.fsu {
     padding-right: 2px;
     float: right;
 }
-a.fsu:hover {
+a.red:hover {
     padding-left: 2px;
     padding-right: 2px;
     animation-name: color-fade-red;
@@ -174,7 +174,7 @@ a.fsu:hover {
     color: var(--white);
     border-radius: 3px;
 }
-a.fiu {
+a.yellow {
     color: var(--yellow);
     font-size: 16px;
     margin-left: -2px;
@@ -183,7 +183,7 @@ a.fiu {
     padding-right: 2px;
     float: right;
 }
-a.fiu:hover {
+a.yellow:hover {
     padding-left: 2px;
     padding-right: 2px;
     animation-name: color-fade-yellow;
@@ -192,7 +192,7 @@ a.fiu:hover {
     color: var(--white);
     border-radius: 3px;
 }
-a.mdc {
+a.aqua {
     color: var(--aqua);
     font-size: 16px;
     margin-left: -2px;
@@ -201,7 +201,7 @@ a.mdc {
     padding-right: 2px;
     float: right;
 }
-a.mdc:hover {
+a.aqua:hover {
     padding-left: 2px;
     padding-right: 2px;
     animation-name: color-fade-aqua;
