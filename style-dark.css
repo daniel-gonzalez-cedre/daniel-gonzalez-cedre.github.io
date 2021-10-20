@@ -11,77 +11,6 @@
     --orange: #d65d0e;
     --yellow: #d79921;
 }
-
-@keyframes color-fade-link {
-    from {
-        background-color: var(--black);
-        color: var(--links);
-    }
-    to {
-        background-color: var(--links);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-green {
-    from {
-        background-color: var(--black);
-        color: var(--green);
-    }
-    to {
-        background-color: var(--green);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-orange {
-    from {
-        background-color: var(--black);
-        color: var(--orange);
-    }
-    to {
-        background-color: var(--orange);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-red {
-    from {
-        background-color: var(--black);
-        color: var(--red);
-    }
-    to {
-        background-color: var(--red);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-blue {
-    from {
-        background-color: var(--black);
-        color: var(--blue);
-    }
-    to {
-        background-color: var(--blue);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-aqua {
-    from {
-        background-color: var(--black);
-        color: var(--aqua);
-    }
-    to {
-        background-color: var(--aqua);
-        color: var(--black);
-    }
-}
-@keyframes color-fade-yellow {
-    from {
-        background-color: var(--black);
-        color: var(--yellow);
-    }
-    to {
-        background-color: var(--yellow);
-        color: var(--black);
-    }
-}
 @media only screen and (max-width: 800px) {
     .container {
         flex-direction: column;
@@ -121,22 +50,28 @@
 a {
     text-decoration: none;
 }
+
+    from {
+        background-color: var(--black);
+        color: var(--links);
+    }
+    to {
+        background-color: var(--links);
+        color: var(--black);
+    }
+
 a.link {
     color: var(--links);
-    /*border-radius: 3px;*/
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a.link:hover {
     color: var(--black);
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-link;
-    animation-duration: 0.5s;
     background-color: var(--links);
-    border-radius: 3px;
 }
 a.blue {
     color: var(--blue);
@@ -146,15 +81,12 @@ a.blue {
     padding-left: 2px;
     padding-right: 2px;
     float: right;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a.blue:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-blue;
-    animation-duration: 0.5s;
-    background-color: var(--blue);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--blue);
 }
 a.red {
     color: var(--red);
@@ -164,15 +96,12 @@ a.red {
     padding-left: 2px;
     padding-right: 2px;
     float: right;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a.red:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-red;
-    animation-duration: 0.5s;
-    background-color: var(--red);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--red);
 }
 a.yellow {
     color: var(--yellow);
@@ -182,15 +111,12 @@ a.yellow {
     padding-left: 2px;
     padding-right: 2px;
     float: right;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a.yellow:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-yellow;
-    animation-duration: 0.5s;
-    background-color: var(--yellow);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--yellow);
 }
 a.aqua {
     color: var(--aqua);
@@ -200,85 +126,67 @@ a.aqua {
     padding-left: 2px;
     padding-right: 2px;
     float: right;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a.aqua:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-aqua;
-    animation-duration: 0.5s;
-    background-color: var(--aqua);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--aqua);
 }
 a#cv {
     color: var(--yellow);
     padding-left: 2px;
     padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a#cv:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-yellow;
-    animation-duration: 0.5s;
-    background-color: var(--yellow);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--yellow);
 }
 a#twitter {
     color: var(--blue);
     padding-left: 2px;
     padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a#twitter:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-blue;
-    animation-duration: 0.5s;
-    background-color: var(--blue);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--blue);
 }
 a#google {
     color: var(--green);
     padding-left: 2px;
     padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a#google:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-green;
-    animation-duration: 0.5s;
-    background-color: var(--green);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--green);
 }
 a#github {
     color: var(--orange);
     padding-left: 2px;
     padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a#github:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-orange;
-    animation-duration: 0.5s;
-    background-color: var(--orange);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--orange);
 }
 a#linkedin {
     color: var(--aqua);
     padding-left: 2px;
     padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
 }
 a#linkedin:hover {
-    padding-left: 2px;
-    padding-right: 2px;
-    animation-name: color-fade-aqua;
-    animation-duration: 0.5s;
-    background-color: var(--aqua);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--aqua);
 }
 a.pdf {
     margin-top: 1px;
@@ -288,16 +196,14 @@ a.pdf {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--red);
+    font-size: 12px;
+    transition: 0.5s;
     border: 1px solid var(--red);
     border-radius: 3px;
-    font-size: 12px;
 }
 a.pdf:hover {
-    animation-name: color-fade-red;
-    animation-duration: 0.5s;
-    background-color: var(--red);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--red);
 }
 a.code {
     margin-top: 1px;
@@ -307,16 +213,14 @@ a.code {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--blue);
+    font-size: 12px;
+    transition: 0.5s;
     border: 1px solid var(--blue);
     border-radius: 3px;
-    font-size: 12px;
 }
 a.code:hover {
-    animation-name: color-fade-blue;
-    animation-duration: 0.5s;
-    background-color: var(--blue);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--blue);
 }
 a.slides {
     margin-top: 1px;
@@ -326,16 +230,14 @@ a.slides {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--aqua);
+    font-size: 12px;
+    transition: 0.5s;
     border: 1px solid var(--aqua);
     border-radius: 3px;
-    font-size: 12px;
 }
 a.slides:hover {
-    animation-name: color-fade-aqua;
-    animation-duration: 0.5s;
-    background-color: var(--aqua);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--aqua);
 }
 a.poster {
     margin-top: 1px;
@@ -345,16 +247,14 @@ a.poster {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--yellow);
+    font-size: 12px;
+    transition: 0.5s;
     border: 1px solid var(--yellow);
     border-radius: 3px;
-    font-size: 12px;
 }
 a.poster:hover {
-    animation-name: color-fade-yellow;
-    animation-duration: 0.5s;
-    background-color: var(--yellow);
     color: var(--black);
-    border-radius: 3px;
+    background-color: var(--yellow);
 }
 
 html {
