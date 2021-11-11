@@ -76,7 +76,7 @@ a.link:hover {
 }
 a.blue {
     color: var(--blue);
-    font-size: 16px;
+    font-size: 18px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -91,7 +91,7 @@ a.blue:hover {
 }
 a.red {
     color: var(--red);
-    font-size: 16px;
+    font-size: 18px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -106,7 +106,7 @@ a.red:hover {
 }
 a.yellow {
     color: var(--yellow);
-    font-size: 16px;
+    font-size: 18px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -121,7 +121,7 @@ a.yellow:hover {
 }
 a.aqua {
     color: var(--aqua);
-    font-size: 16px;
+    font-size: 18px;
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -197,7 +197,7 @@ a.pdf {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--red);
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.5s;
     border: 1px solid var(--red);
     border-radius: 3px;
@@ -214,7 +214,7 @@ a.code {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--blue);
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.5s;
     border: 1px solid var(--blue);
     border-radius: 3px;
@@ -231,7 +231,7 @@ a.slides {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--aqua);
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.5s;
     border: 1px solid var(--aqua);
     border-radius: 3px;
@@ -248,7 +248,7 @@ a.poster {
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--yellow);
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.5s;
     border: 1px solid var(--yellow);
     border-radius: 3px;
@@ -266,7 +266,7 @@ body {
     color: var(--white);
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 div.container {
@@ -281,21 +281,21 @@ div.sidebar {
     min-width: 256px;
     margin: 10px;
     margin-top: 16px;
-    font-size: 16px;
+    font-size: 18px;
 }
 div.name {
-    font-size: 28px;
+    font-size: 32px;
     text-align: center;
 }
 div.links {
     text-align: center;
 }
 div.main {
-    width: 75%;
+    width: 66%;
     min-width: 550px;
 }
 div.heading {
-    font-size: 28px;
+    font-size: 32px;
     color: var(--white);
     background-color: var(--light-grey);
     border-radius: 3px;
@@ -314,7 +314,7 @@ div.content {
 h1 {
     display: inline;
     margin: 0px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: lighter;
     padding-left: 5px;
     padding-right: 4px;
@@ -322,7 +322,7 @@ h1 {
 h2 {
     display: inline;
     margin: 0px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     text-align: right;
 }
@@ -349,7 +349,7 @@ ul {
     list-style-type: none;
 }
 ul.education {
-    font-size: 12px;
+    font-size: 16px;
 }
 ol {
     margin: 2px;
@@ -359,13 +359,13 @@ li {
     margin: 0px;
 }
 li.pub {
-    font-size: 14px;
+    font-size: 16px;
 }
 .emph {
     display: inline;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 img {
