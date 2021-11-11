@@ -11,6 +11,7 @@
     --orange: #d65d0e;
     --yellow: #d79921;
 }
+/*
 @media only screen and (max-width: 800px) {
     .container {
         flex-direction: column;
@@ -23,7 +24,6 @@
     }
     .name {
         margin-left: -136px;
-        /* margin-left: -65px; */
     }
     .links {
         width: 300px;
@@ -46,6 +46,7 @@
         width: 300px;
     }
 }
+*/
 
 a {
     text-decoration: none;
@@ -277,6 +278,7 @@ div.container {
 }
 div.sidebar {
     width: 256px;
+    min-width: 256px;
     margin: 10px;
     margin-top: 16px;
     font-size: 12px;
@@ -289,7 +291,8 @@ div.links {
     text-align: center;
 }
 div.main {
-    width: 608px;
+    width: 75%;
+    min-width: 550px;
 }
 div.heading {
     font-size: 28px;
