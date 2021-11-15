@@ -388,7 +388,9 @@ img.png {
     margin-right: auto;
 }
 #keyboards {
+    display: flex;
     text-align: center;
+    justify-content: space-between;
 }
 
 .center {
