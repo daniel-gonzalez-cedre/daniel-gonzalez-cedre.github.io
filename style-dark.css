@@ -11,7 +11,6 @@
     --orange: #d65d0e;
     --yellow: #d79921;
 }
-/*
 @media only screen and (max-width: 800px) {
     .container {
         flex-direction: column;
@@ -46,7 +45,6 @@
         width: 300px;
     }
 }
-*/
 
 a {
     text-decoration: none;
