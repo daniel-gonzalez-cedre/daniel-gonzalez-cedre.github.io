@@ -383,8 +383,7 @@ img.icon {
 }
 img.png {
     display: inline-block;
-    height: 1em;
-    /* image-rendering: crisp-edges; */
+    image-rendering: crisp-edges;
     margin-left: auto;
     margin-right: auto;
 }
