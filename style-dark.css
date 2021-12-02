@@ -190,10 +190,10 @@ a#linkedin:hover {
     background-color: var(--aqua);
 }
 a.pdf {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    padding-left: 3px;
-    padding-right: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--red);
@@ -207,10 +207,10 @@ a.pdf:hover {
     background-color: var(--red);
 }
 a.code {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    padding-left: 3px;
-    padding-right: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--blue);
@@ -224,10 +224,10 @@ a.code:hover {
     background-color: var(--blue);
 }
 a.slides {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    padding-left: 3px;
-    padding-right: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--aqua);
@@ -241,10 +241,10 @@ a.slides:hover {
     background-color: var(--aqua);
 }
 a.poster {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    padding-left: 3px;
-    padding-right: 3px;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
     color: var(--yellow);
@@ -345,10 +345,11 @@ h3 {
     font-weight: lighter;
     background: var(--light-grey);
     border-radius: 3px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 0.25px;
-    padding-bottom: 0.75px;
+    margin-left: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     float: right;
 }
 
@@ -357,21 +358,22 @@ sup {
 }
 
 ul {
-    margin: 2px;
+    margin: 0px;
     list-style-type: none;
 }
 ul.education {
     font-size: 16px;
 }
 ol {
-    margin: 2px;
+    margin: 4px;
     list-style-type: cjk-ideographic;
 }
 li {
-    margin: 0px;
+    margin: 4px;
 }
 li.pub {
     font-size: 16px;
+    margin: 4px;
 }
 .emph {
     display: inline;
