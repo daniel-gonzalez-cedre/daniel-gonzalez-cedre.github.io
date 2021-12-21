@@ -1,5 +1,5 @@
 :root {
-    --links: #b99494;
+    --lain: #b99494;
     --white: #e1e1e1;
     --black: #121212;
     --grey: #313131;
@@ -10,6 +10,7 @@
     --green: #98971a;
     --orange: #d65d0e;
     --yellow: #d79921;
+    --purple: #b16286;
 }
 /*
 @media only screen and (max-width: 800px) {
@@ -54,15 +55,15 @@ a {
 
     from {
         background-color: var(--black);
-        color: var(--links);
+        color: var(--lain);
     }
     to {
-        background-color: var(--links);
+        background-color: var(--lain);
         color: var(--black);
     }
 
 a.link {
-    color: var(--links);
+    color: var(--lain);
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -72,7 +73,7 @@ a.link {
 }
 a.link:hover {
     color: var(--black);
-    background-color: var(--links);
+    background-color: var(--lain);
 }
 a.blue {
     color: var(--blue);
@@ -155,6 +156,17 @@ a#twitter {
 a#twitter:hover {
     color: var(--black);
     background-color: var(--blue);
+}
+a#email {
+    color: var(--purple);
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+a#email:hover {
+    color: var(--black);
+    background-color: var(--purple);
 }
 a#google {
     color: var(--green);
