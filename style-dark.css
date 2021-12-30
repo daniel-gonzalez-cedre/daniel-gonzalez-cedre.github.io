@@ -201,6 +201,10 @@ a#linkedin:hover {
     color: var(--black);
     background-color: var(--aqua);
 }
+p.buttons {
+    margin: 0;
+    margin-top: 4px;
+}
 a.pdf {
     margin-left: 1px;
     margin-right: 1px;
@@ -287,11 +291,6 @@ div.container {
     align-items: flex-start;
     margin: 40px;
     height: auto;
-    /*
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    */
 }
 div.sidebar {
     position: -webkit-sticky;
@@ -310,6 +309,9 @@ div.name {
     text-align: center;
 }
 div.links {
+    text-align: center;
+}
+div.last-update {
     text-align: center;
 }
 div.main {
@@ -363,6 +365,17 @@ h3 {
     padding-top: 2px;
     padding-bottom: 2px;
     float: right;
+}
+h4 {
+    display: inline;
+    font-size: 12px;
+    font-weight: lighter;
+    background: var(--light-grey);
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 sup {
