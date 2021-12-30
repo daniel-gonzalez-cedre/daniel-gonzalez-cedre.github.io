@@ -361,7 +361,7 @@ h2 {
     text-align: right;
 }
 h3 {
-    box-shadow: 0 0 2px 2px var(--light-grey);
+    box-shadow: 0 0 1px 1px var(--light-grey);
     float: right;
     display: inline;
     font-size: 12px;
@@ -371,8 +371,8 @@ h3 {
     margin-left: 4px;
 
     margin: 4px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
     /*
     margin: 2px;
     padding-left: 5px;
@@ -382,15 +382,15 @@ h3 {
     */
 }
 h4 {
-    box-shadow: 0 0 2px 2px var(--light-grey);
+    box-shadow: 0 0 1px 1px var(--light-grey);
     display: inline;
     font-size: 12px;
     font-weight: lighter;
     background: var(--light-grey);
     border-radius: 3px;
 
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
     /*
     padding-left: 5px;
     padding-right: 5px;
