@@ -298,7 +298,7 @@ div.sidebar {
     position: sticky;
     top: 40px;
     width: 20%;
-    min-width: 256px;
+    min-width: 280px;
     padding-right: 40px;
     /*
     margin-top: 16px;
@@ -306,7 +306,7 @@ div.sidebar {
     font-size: 18px;
 }
 div.name {
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
 }
 div.links {
