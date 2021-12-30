@@ -328,17 +328,6 @@ div.main {
 }
 div.heading {
     box-shadow: 0 0 2px 2px var(--light-grey);
-    /*
-    z-index:2;
-    right:0; bottom:0; left:0;
-    background: url(data:image/svg+xml;base64,alotofcodehere);
-    background: -moz-linear-gradient(right,  var(--light-grey) 90%, var(--black) 100%);
-    background: -webkit-gradient(linear, left, right, color-stop(90%, var(--light-grey)), color-stop(100%, var(--black)));
-    background: -webkit-linear-gradient(right,  var(--light-grey) 90%, var(--black) 100%);
-    background: -o-linear-gradient(right, var(--light-grey) 90%, var(--black) 100%);
-    background: -ms-linear-gradient(right, var(--light-grey) 90%, var(--black) 100%);
-    background: linear-gradient(to right, var(--light-grey) 90%, var(--black) 100%);
-    */
     font-size: 32px;
     color: var(--white);
     background-color: var(--light-grey);
