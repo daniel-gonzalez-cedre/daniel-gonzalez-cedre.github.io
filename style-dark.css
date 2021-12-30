@@ -327,6 +327,18 @@ div.main {
     min-width: 550px;
 }
 div.heading {
+    box-shadow: 0 0 2px 2px var(--light-grey);
+    /*
+    z-index:2;
+    right:0; bottom:0; left:0;
+    background: url(data:image/svg+xml;base64,alotofcodehere);
+    background: -moz-linear-gradient(right,  var(--light-grey) 90%, var(--black) 100%);
+    background: -webkit-gradient(linear, left, right, color-stop(90%, var(--light-grey)), color-stop(100%, var(--black)));
+    background: -webkit-linear-gradient(right,  var(--light-grey) 90%, var(--black) 100%);
+    background: -o-linear-gradient(right, var(--light-grey) 90%, var(--black) 100%);
+    background: -ms-linear-gradient(right, var(--light-grey) 90%, var(--black) 100%);
+    background: linear-gradient(to right, var(--light-grey) 90%, var(--black) 100%);
+    */
     font-size: 32px;
     color: var(--white);
     background-color: var(--light-grey);
@@ -360,29 +372,42 @@ h2 {
     text-align: right;
 }
 h3 {
+    box-shadow: 0 0 2px 2px var(--light-grey);
+    float: right;
     display: inline;
-    margin: 2px;
     font-size: 12px;
     font-weight: lighter;
     background: var(--light-grey);
     border-radius: 3px;
     margin-left: 4px;
+
+    margin: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+    /*
+    margin: 2px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
-    float: right;
+    */
 }
 h4 {
+    box-shadow: 0 0 2px 2px var(--light-grey);
     display: inline;
     font-size: 12px;
     font-weight: lighter;
     background: var(--light-grey);
     border-radius: 3px;
+
+    padding-left: 2px;
+    padding-right: 2px;
+    /*
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
+    */
 }
 
 sup {
@@ -422,7 +447,6 @@ img.headshot {
     margin-right: auto;
     border-radius: 5%;
     width: 75%;
-    border: 1px solid var(--light-grey);
 }
 img.icon {
     height: 1em;
