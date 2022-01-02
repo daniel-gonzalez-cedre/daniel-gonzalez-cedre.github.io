@@ -5,6 +5,7 @@
     --grey: #313131;
     --light-grey: #212121;
     --red: #cc241d;
+    --soft-red: #d64f4a;
     --aqua: #689d6a;
     --blue: #458588;
     --green: #98971a;
@@ -169,7 +170,7 @@ a#email:hover {
     background-color: var(--purple);
 }
 a#google {
-    color: var(--green);
+    color: var(--soft-red);
     padding-left: 2px;
     padding-right: 2px;
     transition: 0.5s;
@@ -177,7 +178,7 @@ a#google {
 }
 a#google:hover {
     color: var(--black);
-    background-color: var(--green);
+    background-color: var(--soft-red);
 }
 a#github {
     color: var(--orange);
@@ -200,6 +201,17 @@ a#linkedin {
 a#linkedin:hover {
     color: var(--black);
     background-color: var(--aqua);
+}
+a#orcid {
+    color: var(--green);
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+a#orcid:hover {
+    color: var(--black);
+    background-color: var(--green);
 }
 p.buttons {
     margin: 0;
