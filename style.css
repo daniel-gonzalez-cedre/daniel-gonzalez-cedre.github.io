@@ -1,70 +1,24 @@
 :root {
-    --lain: #b99494;
-    --white: #e1e1e1;
+    --lain: #dda9a1;
+    --white: #ddc7a1;
+    --sand: #cfb17c;
     --black: #121212;
     --grey: #313131;
     --light-grey: #212121;
-    --red: #cc241d;
-    --soft-red: #d64f4a;
-    --aqua: #689d6a;
-    --blue: #458588;
-    --green: #98971a;
-    --orange: #d65d0e;
-    --yellow: #d79921;
-    --purple: #b16286;
+    --red: #ea6962;
+    --orange: #e78a4e;
+    --yellow: #d8a657;
+    --green: #a9b665;
+    --aqua: #89b482;
+    --blue: #7daea3;
+    --purple: #d3869b;
 }
-/*
-@media only screen and (max-width: 800px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .info {
-        display: inline-flex;
-        align-items: center;
-        width: 400px;
-    }
-    .name {
-        margin-left: -136px;
-    }
-    .links {
-        width: 300px;
-    }
-}
-@media only screen and (max-device-width: 480px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .info {
-        display: inline-flex;
-        align-items: center;
-        width: 400px;
-    }
-    .name {
-        margin-left: -136px;
-    }
-    .links {
-        width: 300px;
-    }
-}
-*/
 
 a {
     text-decoration: none;
 }
-
-    from {
-        background-color: var(--black);
-        color: var(--lain);
-    }
-    to {
-        background-color: var(--lain);
-        color: var(--black);
-    }
-
 a.link {
-    color: var(--lain);
+    color: var(--sand);
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -74,7 +28,7 @@ a.link {
 }
 a.link:hover {
     color: var(--black);
-    background-color: var(--lain);
+    background-color: var(--sand);
 }
 a.blue {
     color: var(--blue);
@@ -170,7 +124,7 @@ a#email:hover {
     background-color: var(--purple);
 }
 a#google {
-    color: var(--soft-red);
+    color: var(--aqua);
     padding-left: 2px;
     padding-right: 2px;
     transition: 0.5s;
@@ -178,7 +132,7 @@ a#google {
 }
 a#google:hover {
     color: var(--black);
-    background-color: var(--soft-red);
+    background-color: var(--aqua);
 }
 a#github {
     color: var(--orange);
@@ -192,7 +146,7 @@ a#github:hover {
     background-color: var(--orange);
 }
 a#linkedin {
-    color: var(--aqua);
+    color: var(--red);
     padding-left: 2px;
     padding-right: 2px;
     transition: 0.5s;
@@ -200,7 +154,7 @@ a#linkedin {
 }
 a#linkedin:hover {
     color: var(--black);
-    background-color: var(--aqua);
+    background-color: var(--red);
 }
 a#orcid {
     color: var(--green);
