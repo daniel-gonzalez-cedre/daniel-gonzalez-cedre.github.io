@@ -171,6 +171,21 @@ p.buttons {
     margin: 0;
     margin-top: 4px;
 }
+a.pub {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: var(--green);
+    font-size: 14px;
+    transition: 0.5s;
+    border: 1px solid var(--green);
+    border-radius: 3px;
+}
+a.pub:hover {
+    color: var(--black);
+    background-color: var(--green);
+}
 a.paper {
     padding-left: 4px;
     padding-right: 4px;
