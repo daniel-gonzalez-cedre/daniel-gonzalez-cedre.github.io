@@ -285,15 +285,12 @@ div.sidebar {
     position: sticky;
     top: 40px;
     width: 20%;
-    min-width: 280px;
+    min-width: 200px;
     padding-right: 40px;
-    /*
-    margin-top: 16px;
-    */
-    font-size: 18px;
+    font-size: 14px;
 }
 div.name {
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
 }
 div.links {
@@ -308,7 +305,6 @@ div.main {
     min-width: 550px;
 }
 div.heading {
-    box-shadow: 0 0 2px 2px var(--light-grey);
     font-size: 32px;
     color: var(--white);
     background-color: var(--light-grey);
@@ -342,7 +338,6 @@ h2 {
     text-align: right;
 }
 h3 {
-    box-shadow: 0 0 1px 1px var(--light-grey);
     float: right;
     display: inline;
     font-size: 12px;
@@ -351,33 +346,32 @@ h3 {
     border-radius: 3px;
     margin-left: 4px;
 
+    /*
     margin: 4px;
     padding-left: 4px;
     padding-right: 4px;
-    /*
+    */
     margin: 2px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
-    */
 }
 h4 {
-    box-shadow: 0 0 1px 1px var(--light-grey);
     display: inline;
     font-size: 12px;
     font-weight: lighter;
     background: var(--light-grey);
     border-radius: 3px;
 
+    /*
     padding-left: 4px;
     padding-right: 4px;
-    /*
+    */
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
-    */
 }
 
 sup {
@@ -407,7 +401,7 @@ li.entry {
     display: inline;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 img {
@@ -417,7 +411,7 @@ img.headshot {
     margin-left: auto;
     margin-right: auto;
     border-radius: 5%;
-    width: 75%;
+    width: 85%;
 }
 img.icon {
     height: 1em;
