@@ -474,7 +474,7 @@ img.png {
 }
 
 hr {
-    border: 1px dashed var(--light-grey);
+    border: 1px dashed var(--grey);
     margin: 0px;
 }
 
