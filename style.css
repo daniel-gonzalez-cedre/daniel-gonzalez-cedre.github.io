@@ -14,6 +14,10 @@
     --purple: #d3869b;
 }
 
+div.floatright {
+    float: right;
+}
+
 a {
     text-decoration: none;
 }
@@ -37,7 +41,6 @@ a.blue {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
-    float: right;
     transition: 0.5s;
     border-radius: 3px;
 }
@@ -52,7 +55,6 @@ a.red {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
-    float: right;
     transition: 0.5s;
     border-radius: 3px;
 }
@@ -67,7 +69,6 @@ a.yellow {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
-    float: right;
     transition: 0.5s;
     border-radius: 3px;
 }
@@ -82,7 +83,6 @@ a.aqua {
     margin-right: -2px;
     padding-left: 2px;
     padding-right: 2px;
-    float: right;
     transition: 0.5s;
     border-radius: 3px;
 }
@@ -273,6 +273,10 @@ body {
     font-size: 18px;
 }
 
+table {
+    width: 100%;
+}
+
 div.container {
     display: flex;
     justify-content: space-between;
@@ -401,7 +405,7 @@ li.entry {
     display: inline;
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 img {
