@@ -14,12 +14,36 @@
     --purple: #d3869b;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+div.navigation {
+    text-align: center;
+    line-height: 2;
+}
+
 div.floatright {
     float: right;
 }
 
 a {
     text-decoration: none;
+}
+a.nav {
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    color: var(--sand);
+    font-size: 14px;
+    transition: 0.5s;
+    border: 1px solid var(--sand);
+    border-radius: 3px;
+}
+a.nav:hover {
+    color: var(--black);
+    background-color: var(--sand);
 }
 a.link {
     color: var(--sand);
