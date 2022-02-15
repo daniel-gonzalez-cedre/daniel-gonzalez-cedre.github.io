@@ -465,7 +465,10 @@ img.png {
     margin-right: auto;
 }
 
-hr { border: 1px solid #333333; }
+hr {
+    border: 1px dashed var(--light-grey);
+    margin: 0px;
+}
 
 td.info {
     width: 1px;
