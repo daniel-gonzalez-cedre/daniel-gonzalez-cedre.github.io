@@ -193,8 +193,12 @@ a#orcid:hover {
     background-color: var(--green);
 }
 p.buttons {
+    /* white-space: nowrap; */
     margin: 0;
     margin-top: 4px;
+}
+a {
+    white-space: nowrap;
 }
 a.publication {
     padding-left: 4px;
@@ -319,6 +323,7 @@ div.sidebar {
     font-size: 14px;
 }
 div.name {
+    white-space: nowrap;
     font-size: 28px;
     text-align: center;
 }
@@ -352,6 +357,7 @@ div.content {
 }
 
 h1 {
+    white-space: nowrap;
     display: inline;
     margin: 0px;
     font-size: 18px;
@@ -360,6 +366,7 @@ h1 {
     padding-right: 4px;
 }
 h2 {
+    white-space: nowrap;
     display: inline;
     margin: 0px;
     font-size: 16px;
@@ -367,7 +374,7 @@ h2 {
     text-align: right;
 }
 h3 {
-    float: right;
+    white-space: nowrap;
     display: inline;
     font-size: 12px;
     font-weight: lighter;
@@ -387,6 +394,7 @@ h3 {
     padding-bottom: 2px;
 }
 h4 {
+    white-space: nowrap;
     display: inline;
     font-size: 12px;
     font-weight: lighter;
