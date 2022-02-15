@@ -285,7 +285,7 @@ div.sidebar {
     position: sticky;
     top: 40px;
     width: 20%;
-    min-width: 200px;
+    min-width: 210px;
     padding-right: 40px;
     font-size: 14px;
 }
