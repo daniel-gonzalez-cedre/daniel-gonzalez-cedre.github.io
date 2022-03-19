@@ -342,7 +342,7 @@ div.heading {
     font-size: 32px;
     color: var(--white);
     background-color: var(--light-grey);
-    border-radius: 3px;
+    border-radius: 5px;
     padding-top: 2px;
     padding-bottom: 0px;
     padding-right: 10px;
@@ -351,9 +351,72 @@ div.heading {
     margin-bottom: 4px;
     /* margin-right: 16px; */
 }
-div.content {
+.content {
     /* margin-right: 16px; */
     margin-bottom: 10px;
+}
+
+details {
+}
+summary {
+    font-size: 32px;
+    color: var(--white);
+    background-color: var(--light-grey);
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 12px;
+    margin-bottom: 4px;
+    cursor: pointer;
+
+    list-style: none;
+}
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+summary#aboutme {
+    transition: 0.5s;
+}
+summary#aboutme:hover {
+    color: var(--light-grey);
+    background-color: var(--white);
+}
+summary#education {
+    transition: 0.5s;
+}
+summary#education:hover {
+    color: var(--light-grey);
+    background-color: var(--white);
+}
+summary#internships {
+    transition: 0.5s;
+}
+summary#internships:hover {
+    color: var(--light-grey);
+    background-color: var(--white);
+}
+summary#publications {
+    transition: 0.5s;
+}
+summary#publications:hover {
+    color: var(--light-grey);
+    background-color: var(--white);
+}
+summary#talks {
+    transition: 0.5s;
+}
+summary#talks:hover {
+    color: var(--light-grey);
+    background-color: var(--white);
+}
+summary#teaching {
+    transition: 0.5s;
+}
+summary#teaching:hover {
+    color: var(--light-grey);
+    background-color: var(--white);
 }
 
 h1 {
@@ -411,6 +474,14 @@ h4 {
     padding-bottom: 2px;
 }
 
+p {
+    padding-top: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
 sup {
     vertical-align: top;
 }
@@ -423,7 +494,7 @@ ul.education {
     font-size: 16px;
 }
 ol {
-    margin: 4px;
+    margin: 0px;
     list-style-type: cjk-ideographic;
 }
 li {
