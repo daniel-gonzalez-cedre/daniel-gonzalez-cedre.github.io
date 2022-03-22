@@ -385,7 +385,7 @@ details[open] summary ~ * {
 }
 
 summary#aboutme {
-    transition: 0s;
+    transition: 0.5s;
 }
 summary#aboutme:hover {
     background-color: var(--light-grey);
