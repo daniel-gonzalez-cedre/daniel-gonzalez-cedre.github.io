@@ -1,10 +1,10 @@
 :root {
-    --lain: #dda9a1;
     --white: #ddc7a1;
     --sand: #cfb17c;
     --black: #121212;
-    --light-grey: #313131;
-    --grey: #212121;
+    --dark-grey: #181818;
+    --grey: #202020;
+    --light-grey: #262626;
     --red: #ea6962;
     --orange: #e78a4e;
     --yellow: #d8a657;
@@ -12,6 +12,7 @@
     --aqua: #89b482;
     --blue: #7daea3;
     --purple: #d3869b;
+    --lain: #dda9a1;
 }
 
 html {
@@ -384,45 +385,39 @@ details[open] summary ~ * {
 }
 
 summary#aboutme {
-    transition: 0.5s;
+    transition: 0s;
 }
 summary#aboutme:hover {
-    color: var(--sand);
     background-color: var(--light-grey);
 }
 summary#education {
     transition: 0.5s;
 }
 summary#education:hover {
-    color: var(--sand);
     background-color: var(--light-grey);
 }
 summary#internships {
     transition: 0.5s;
 }
 summary#internships:hover {
-    color: var(--sand);
     background-color: var(--light-grey);
 }
 summary#publications {
     transition: 0.5s;
 }
 summary#publications:hover {
-    color: var(--sand);
     background-color: var(--light-grey);
 }
 summary#talks {
     transition: 0.5s;
 }
 summary#talks:hover {
-    color: var(--sand);
     background-color: var(--light-grey);
 }
 summary#teaching {
     transition: 0.5s;
 }
 summary#teaching:hover {
-    color: var(--sand);
     background-color: var(--light-grey);
 }
 
@@ -448,7 +443,7 @@ h3 {
     display: inline;
     font-size: 12px;
     font-weight: lighter;
-    background: var(--grey);
+    background: var(--dark-grey);
     border-radius: 3px;
     margin-left: 4px;
 
@@ -468,7 +463,7 @@ h4 {
     display: inline;
     font-size: 12px;
     font-weight: lighter;
-    background: var(--grey);
+    background: var(--dark-grey);
     border-radius: 3px;
 
     /*
