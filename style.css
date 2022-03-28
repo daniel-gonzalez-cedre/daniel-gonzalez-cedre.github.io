@@ -377,7 +377,7 @@ details summary::-webkit-details-marker {
     display: none;
 }
 details[open] summary ~ * {
-    animation: unfold 0.5s ease;
+    /*animation: unfold 0.5s ease;*/
 }
 @keyframes unfold {
   0%    {opacity: 0; margin-top: -5px;}
