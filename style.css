@@ -337,7 +337,7 @@ div.lastupdate {
 div.main {
     float: right;
     width: 75%;
-    min-width: 550px;
+    min-width: 580px;
 }
 div.heading {
     font-size: 32px;
@@ -452,7 +452,7 @@ h3 {
     padding-left: 4px;
     padding-right: 4px;
     */
-    margin: 2px;
+    margin: 0px;
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 2px;
@@ -465,6 +465,7 @@ h4 {
     font-weight: lighter;
     background: var(--dark-grey);
     border-radius: 3px;
+    margin: 0px;
 
     /*
     padding-left: 4px;
