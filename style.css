@@ -337,7 +337,7 @@ div.lastupdate {
 div.main {
     float: right;
     width: 75%;
-    min-width: 610px;
+    min-width: 550px;
 }
 div.heading {
     font-size: 32px;
