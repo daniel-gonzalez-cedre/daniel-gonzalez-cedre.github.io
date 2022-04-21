@@ -455,8 +455,8 @@ h3 {
     margin: 0px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 h4 {
     white-space: nowrap;
