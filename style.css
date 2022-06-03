@@ -1,6 +1,6 @@
 :root {
+    --highlight: #ffefc8;
     --white: #ddc7a1;
-    --sand: #cf887c;
     --black: #121212;
     --dark-grey: #181818;
     --grey: #181818;
@@ -37,18 +37,18 @@ a.nav {
     padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
-    color: var(--sand);
+    color: var(--highlight);
     font-size: 14px;
     transition: 0.5s;
-    border: 1px solid var(--sand);
+    border: 1px solid var(--highlight);
     border-radius: 3px;
 }
 a.nav:hover {
     color: var(--black);
-    background-color: var(--sand);
+    background-color: var(--highlight);
 }
 a.link {
-    color: var(--sand);
+    color: var(--highlight);
     margin-left: -2px;
     margin-right: -2px;
     padding-left: 2px;
@@ -58,7 +58,7 @@ a.link {
 }
 a.link:hover {
     color: var(--black);
-    background-color: var(--sand);
+    background-color: var(--highlight);
 }
 a.blue {
     color: var(--blue);
