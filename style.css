@@ -2,7 +2,7 @@
     --highlight: #ffefc8;
     --white: #ddc7a1;
     --black: #121212;
-    --dark-grey: #191919;
+    --dark-grey: #1a1a1a;
     --grey: #202020;
     --light-grey: #303030;
     --red: #ea6962;
@@ -362,7 +362,7 @@ details {
 summary {
     font-size: 32px;
     color: var(--white);
-    background-color: var(--grey);
+    background-color: var(--dark-grey);
     border-radius: 5px;
     padding-top: 2px;
     padding-bottom: 0px;
@@ -388,37 +388,37 @@ summary#aboutme {
     transition: 0.5s;
 }
 summary#aboutme:hover {
-    background-color: var(--light-grey);
+    background-color: var(--grey);
 }
 summary#education {
     transition: 0.5s;
 }
 summary#education:hover {
-    background-color: var(--light-grey);
+    background-color: var(--grey);
 }
 summary#internships {
     transition: 0.5s;
 }
 summary#internships:hover {
-    background-color: var(--light-grey);
+    background-color: var(--grey);
 }
 summary#publications {
     transition: 0.5s;
 }
 summary#publications:hover {
-    background-color: var(--light-grey);
+    background-color: var(--grey);
 }
 summary#talks {
     transition: 0.5s;
 }
 summary#talks:hover {
-    background-color: var(--light-grey);
+    background-color: var(--grey);
 }
 summary#teaching {
     transition: 0.5s;
 }
 summary#teaching:hover {
-    background-color: var(--light-grey);
+    background-color: var(--grey);
 }
 
 h1 {
