@@ -16,6 +16,9 @@
 }
 
 html { scroll-behavior: smooth; }
+object {}
+embed {}
+iframe {}
 div.floatright {
     float: right;
 }
@@ -38,10 +41,7 @@ a.blue:hover { color: var(--blue); }
 a.purple:hover { color: var(--purple); }
 a.button {
     margin: 1px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding: 2px 5px;
     font-family: 'Nunito', sans-serif;
     font-size: 12px;
 }
@@ -131,18 +131,19 @@ div.name {
     width: 100%;
     box-sizing: border-box;
     padding: 16px 32px;
-    font-size: 32px;
+    font-size: 48px;
     white-space: nowrap;
     text-align: left;
     background: var(--black);
 }
 div.container {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: top;
     height: auto;
 }
 div.sidebar {
+    order: 1;
     align-self: flex-start;
     z-index: 998;
     top: 74px;
@@ -150,9 +151,9 @@ div.sidebar {
     position: sticky;
     padding: 32px;
     /* height: 50%; */
-    width: 150px;
-    min-width: 150px;
-    font-size: 24px;
+    width: 180px;
+    min-width: 180px;
+    font-size: 28px;
     background: var(--black);
     border-right: 1px solid var(--white);
     text-align: right;
@@ -173,12 +174,13 @@ div.lastupdate {
     font-size: 12px;
 }
 div.main {
-    float: right;
+    order: 2;
+    /* float: right; */
     padding: 32px;
-    width: 60%;
-    min-width: 435px;
+    width: 75%;
+    min-width: 400px;
     text-align: left;
-    font-size: 18px;
+    font-size: 22px;
 }
 div.heading {
     color: var(--white);
@@ -260,27 +262,61 @@ summary#teaching:hover {
     background-color: var(--grey);
 }
 
-h1 {
-    /* white-space: nowrap; */
-    display: inline;
-    margin: 0px;
-    font-size: 20px;
-    font-weight: normal;
-}
-h2 {
+div.date {
     white-space: nowrap;
     display: inline-block;
     font-weight: lighter;
     background: var(--dark-grey);
     border-radius: 2px;
     margin: 0px;
-    padding: 0px 5px 1px;
+    padding: 2px 6px;
+    font-size: 16px;
+}
+div.author {
+    position: relative;
+    top: -1px;
+    white-space: nowrap;
+    display: inline;
+    font-weight: normal;
+    padding: 0px 2px;
     font-size: 14px;
+}
+div#me {
+    color: var(--lain);
+}
+div.note {
+    position: relative;
+    top: -1px;
+    display: inline;
+    white-space: nowrap;
+    padding: 2px 6px;
+    background: var(--dark-grey);
+    border-radius: 2px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+h1 {
+    /* white-space: nowrap; */
+    display: inline;
+    margin: 0px;
+    font-size: 24px;
+    font-weight: normal;
+}
+h2 {
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: normal;
+    background: var(--dark-grey);
+    border-radius: 2px;
+    margin: 0px;
+    padding: 0px 5px 1px;
+    font-size: 16px;
 }
 h3 {
     white-space: nowrap;
-    display: inline-block;
-    font-weight: lighter;
+    display: inline;
+    font-weight: normal;
     background: var(--dark-grey);
     border-radius: 2px;
     margin: 0px;
@@ -290,12 +326,9 @@ h3 {
 h4 {
     white-space: nowrap;
     display: inline;
-    font-weight: lighter;
+    font-weight: normal;
     padding: 0px 2px;
     font-size: 14px;
-}
-h4#me {
-    color: var(--lain);
 }
 
 p {
@@ -315,23 +348,21 @@ ul {
     list-style-type: none;
 }
 ul.education {
-    font-size: 14px;
+    font-size: 18px;
 }
 ol {
     margin: 0px;
-    padding-left: 8px;
+    padding-top: 0px;
+    padding-left: 4px;
     list-style-type: decimal;
-    /* font-family: 'Nunito', sans-serif; */
 }
 ol.publications {
-    font-size: 16px;
 }
 li {
     margin: 4px;
 }
 li.entry {
-    line-height: 1.4em;
-    margin: 6px;
+    margin-top: 2px;
     margin-bottom: 16px;
 }
 
@@ -342,8 +373,9 @@ img.headshot {
     margin-left: auto;
     margin-right: auto;
     border-radius: 2px;
-    width: 180px;
-    max-width: 180px;
+    width: 256px;
+    min-width: 256px;
+    max-width: 256px;
 }
 img.icon {
     height: 1em;
@@ -385,7 +417,7 @@ a#nd {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#nd:hover {
     color: var(--black);
@@ -397,7 +429,7 @@ a#fsu {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#fsu:hover {
     color: var(--black);
@@ -409,7 +441,7 @@ a#fiu {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#fiu:hover {
     color: var(--black);
@@ -421,7 +453,7 @@ a#mdc {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#mdc:hover {
     color: var(--black);
@@ -433,7 +465,7 @@ a#llnl {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#llnl:hover {
     color: var(--black);
@@ -445,7 +477,7 @@ a#cvrl {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#cvrl:hover {
     color: var(--black);
@@ -457,7 +489,7 @@ a#hawaii {
     padding-right: 2px;
     transition: 0.3s;
     border-radius: 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 a#hawaii:hover {
     color: var(--black);
