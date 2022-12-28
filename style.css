@@ -139,7 +139,7 @@ div.name {
 }
 div.container {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: top;
     height: auto;
 }
@@ -180,6 +180,7 @@ div.main {
     padding: 32px;
     width: 75%;
     min-width: 400px;
+    max-width: 800px;
     text-align: left;
     font-size: 22px;
 }
