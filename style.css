@@ -162,6 +162,7 @@ div.sidebar {
 div.subname {
     white-space: nowrap;
     text-align: center;
+    margin-top: 32px;
 }
 div.links {
     text-align: center;
@@ -176,7 +177,6 @@ div.lastupdate {
 }
 div.main {
     order: 2;
-    /* float: right; */
     padding: 32px;
     width: 75%;
     min-width: 400px;
@@ -333,10 +333,7 @@ h4 {
 }
 
 p {
-    padding-top: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 0px;
+    padding: 0px;
     margin: 0px;
 }
 
@@ -353,6 +350,7 @@ ul.education {
 }
 ol {
     margin: 0px;
+    margin-left: 8px;
     padding-top: 0px;
     padding-left: 4px;
     list-style-type: decimal;
@@ -371,8 +369,7 @@ img {
 }
 img.headshot {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0px auto;
     border-radius: 2px;
     width: 256px;
     min-width: 256px;
@@ -404,12 +401,6 @@ img.png {
 hr {
     border: 0.5px dashed var(--white);
     margin: 0px;
-}
-
-td.info {
-    width: 1px;
-    padding: 0 10px;
-    white-space: nowrap;
 }
 
 a#nd {
