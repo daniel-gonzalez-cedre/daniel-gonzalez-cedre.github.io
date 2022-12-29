@@ -281,36 +281,30 @@ div.heading {
 
 div#me { /* color: var(--highlight); */ }
 div.author {
-    white-space: nowrap;
-    display: inline;
     position: relative;
     top: -1px;
+    white-space: nowrap;
+    display: inline;
+    padding: 2px 4px;
     font-size: 16px;
     font-weight: normal;
-    padding: 2px 4px;
-    /* border-radius: 2px; */
-    /* background: var(--grey); */
 }
 div.date {
     white-space: nowrap;
     display: inline-block;
-    font-weight: lighter;
-    /* background: var(--grey); */
-    border-radius: 2px;
     margin: 0px;
     padding: 2px 6px;
     font-size: 16px;
+    font-weight: normal;
 }
 div.note {
-    white-space: nowrap;
-    display: inline;
     position: relative;
     top: -1px;
+    white-space: nowrap;
+    display: inline;
+    padding: 2px 4px;
     font-size: 16px;
     font-weight: normal;
-    padding: 2px 4px;
-    /* border-radius: 2px; */
-    /* background: var(--grey); */
 }
 
 h1 {
