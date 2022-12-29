@@ -229,21 +229,21 @@ div.lastupdate {
     position: fixed;
     left: 0px;
     bottom: 0px;
-    margin: 16px;
+    margin: 8px 16px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
 }
 div.update {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
-    margin-top: 0px;
+    margin: 0px;
     padding: 0px;
 
     position: relative;
     top: -1px;
 
-    line-height: 15px;
+    line-height: 24px;
     vertical-align: middle;
     text-align: center;
 
@@ -251,7 +251,7 @@ div.update {
     color: (--white);
     font-family: 'EB Garamond', serif;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 14px;
 }
 div.main {
     order: 2;
