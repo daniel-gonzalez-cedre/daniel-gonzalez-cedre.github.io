@@ -1,24 +1,28 @@
 :root {
-    --highlight: #f8e8c1;
-    --white: #ddc7a1;
-    --black: #121212;
-    --dark-grey: #1a1a1a;
-    --grey: #202020;
-    --light-grey: #303030;
+    --white: #cabaa9;
+    --highlight: #e7ca97;
+    --hover: #ffb084;
+
+    /* --black: #100c08; */
+    /* --black: #110c07; */
+    --black: #121010;/
+    --grey: #141414;
+
     --red: #ea6962;
-    --orange: #e78a4e;
-    --yellow: #d8a657;
     --green: #a9b665;
-    --aqua: #89b482;
-    --blue: #7daea3;
+    --yellow: #d8a657;
+    --blue: #83a598;
     --purple: #d3869b;
+    --aqua: #89b482;
+    --orange: #e78a4e;
+
     --lain: #dda9a1;
 }
 
 html { scroll-behavior: smooth; }
-object {}
-embed {}
-iframe {}
+object { }
+embed { }
+iframe { }
 div.floatright {
     float: right;
 }
@@ -30,20 +34,77 @@ a {
     border-radius: 2px;
     white-space: nowrap;
 }
-a.link { color: var(--highlight); }
-a.link:hover { color: var(--lain); }
-a.red:hover { color: var(--red); }
-a.orange:hover { color: var(--orange); }
-a.yellow:hover { color: var(--yellow); }
-a.green:hover { color: var(--green); }
-a.aqua:hover { color: var(--aqua); }
-a.blue:hover { color: var(--blue); }
-a.purple:hover { color: var(--purple); }
+a.link:hover { color: var(--hover); }
+a#red:hover { color: var(--red); }
+a#green:hover { color: var(--green); }
+a#yellow:hover { color: var(--yellow); }
+a#blue:hover { color: var(--blue); }
+a#purple:hover { color: var(--purple); }
+a#aqua:hover { color: var(--aqua); }
+a#orange:hover { color: var(--orange); }
+a#lain:hover { color: var(--lain); }
 a.button {
-    margin: 1px;
-    padding: 2px 5px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 12px;
+    position: relative;
+    top: -2px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-family: 'Cutive Mono', sans-serif;
+    font-size: 14px;
+}
+a.button#red {
+    color: var(--red);
+}
+a.button#red:hover {
+    color: var(--black);
+    background-color: var(--red);
+}
+a.button#green {
+    color: var(--green);
+}
+a.button#green:hover {
+    color: var(--black);
+    background-color: var(--green);
+}
+a.button#yellow {
+    color: var(--yellow);
+}
+a.button#yellow:hover {
+    color: var(--black);
+    background-color: var(--yellow);
+}
+a.button#blue {
+    color: var(--blue);
+}
+a.button#blue:hover {
+    color: var(--black);
+    background-color: var(--blue);
+}
+a.button#purple {
+    color: var(--purple);
+}
+a.button#purple:hover {
+    color: var(--black);
+    background-color: var(--purple);
+}
+a.button#aqua {
+    color: var(--aqua);
+}
+a.button#aqua:hover {
+    color: var(--black);
+    background-color: var(--aqua);
+}
+a.button#orange {
+    color: var(--orange);
+}
+a.button#orange:hover {
+    color: var(--black);
+    background-color: var(--orange);
+}
+a.institute {
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
+    font-size: 18px;
 }
 a#publication {
     color: var(--green);
@@ -164,9 +225,6 @@ div.subname {
     text-align: center;
     margin-top: 32px;
 }
-div.links {
-    text-align: center;
-}
 div.lastupdate {
     position: fixed;
     left: 0px;
@@ -174,6 +232,16 @@ div.lastupdate {
     margin: 16px;
     text-align: center;
     font-size: 12px;
+}
+div.update {
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: lighter;
+    background: var(--grey);
+    border-radius: 2px;
+    margin: 0px;
+    padding: 2px 6px;
+    font-size: 16px;
 }
 div.main {
     order: 2;
@@ -201,101 +269,38 @@ div.heading {
     margin-bottom: 10px;
 }
 
-details {
+div#me { /* color: var(--highlight); */ }
+div.author {
+    white-space: nowrap;
+    display: inline;
+    position: relative;
+    top: -1px;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 2px 4px;
+    /* border-radius: 2px; */
+    /* background: var(--grey); */
 }
-summary {
-    color: var(--white);
-    background-color: var(--dark-grey);
-    border-radius: 2px;
-    padding-top: 2px;
-    padding-bottom: 0px;
-    padding-right: 10px;
-    padding-left: 12px;
-    margin-bottom: 4px;
-    cursor: pointer;
-
-    list-style: none;
-}
-details summary::-webkit-details-marker {
-    display: none;
-}
-details[open] summary ~ * {
-    /*animation: unfold 0.5s ease;*/
-}
-@keyframes unfold {
-  0%    {opacity: 0; margin-top: -5px;}
-  100%  {opacity: 1; margin-top: 0px;}
-}
-
-summary#aboutme {
-    transition: 0.3s;
-}
-summary#aboutme:hover {
-    background-color: var(--grey);
-}
-summary#education {
-    transition: 0.3s;
-}
-summary#education:hover {
-    background-color: var(--grey);
-}
-summary#internships {
-    transition: 0.3s;
-}
-summary#internships:hover {
-    background-color: var(--grey);
-}
-summary#publications {
-    transition: 0.3s;
-}
-summary#publications:hover {
-    background-color: var(--grey);
-}
-summary#talks {
-    transition: 0.3s;
-}
-summary#talks:hover {
-    background-color: var(--grey);
-}
-summary#teaching {
-    transition: 0.3s;
-}
-summary#teaching:hover {
-    background-color: var(--grey);
-}
-
 div.date {
     white-space: nowrap;
     display: inline-block;
     font-weight: lighter;
-    background: var(--dark-grey);
+    /* background: var(--grey); */
     border-radius: 2px;
     margin: 0px;
     padding: 2px 6px;
     font-size: 16px;
 }
-div.author {
-    position: relative;
-    top: -1px;
-    white-space: nowrap;
-    display: inline;
-    font-weight: normal;
-    padding: 0px 2px;
-    font-size: 14px;
-}
-div#me {
-    color: var(--lain);
-}
 div.note {
+    white-space: nowrap;
+    display: inline;
     position: relative;
     top: -1px;
-    display: inline;
-    white-space: nowrap;
-    padding: 2px 6px;
-    background: var(--dark-grey);
-    border-radius: 2px;
-    font-weight: normal;
     font-size: 14px;
+    font-weight: normal;
+    padding: 2px 4px;
+    /* border-radius: 2px; */
+    /* background: var(--grey); */
 }
 
 h1 {
@@ -309,7 +314,7 @@ h2 {
     white-space: nowrap;
     display: inline-block;
     font-weight: normal;
-    background: var(--dark-grey);
+    background: var(--grey);
     border-radius: 2px;
     margin: 0px;
     padding: 0px 5px 1px;
@@ -319,7 +324,7 @@ h3 {
     white-space: nowrap;
     display: inline;
     font-weight: normal;
-    background: var(--dark-grey);
+    background: var(--grey);
     border-radius: 2px;
     margin: 0px;
     padding: 0px 5px 1px;
@@ -338,16 +343,19 @@ p {
     margin: 0px;
 }
 
-sup {
-    vertical-align: top;
-}
+sup { font-size: 10px; }
 
-ul {
+ul { }
+ul.education {
     margin: 0px;
+    font-size: 18px;
     list-style-type: none;
 }
-ul.education {
+ul.teaching {
+    margin: 0px;
     font-size: 18px;
+    /* list-style-type: "⋅  "; */
+    list-style-type: none;
 }
 ol {
     margin: 0px;
@@ -355,19 +363,26 @@ ol {
     padding-top: 0px;
     padding-left: 4px;
     list-style-type: decimal;
+    font-size: 20px;
 }
-ol.publications {
-}
-li {
-    margin: 4px;
-}
+ol.publications { }
+li { margin: 4px; }
 li.entry {
     margin-top: 2px;
     margin-bottom: 16px;
 }
 
-img {
+svg {
+    margin: 6px;
+    fill: var(--highlight);
+    height: 1em;
+    width: 1em;
 }
+svg:hover {
+    fill: var(--hover);
+    transition: 0.3s;
+}
+img { }
 img.headshot {
     display: block;
     margin: 0px auto;
@@ -380,6 +395,9 @@ img.icon {
     height: 1em;
     position: relative;
     top: 2px;
+}
+img.icon:hover {
+    fill: var(--hover);
 }
 img.png {
     display: inline-block;
@@ -402,166 +420,4 @@ img.png {
 hr {
     border: 0.5px dashed var(--white);
     margin: 0px;
-}
-
-a#nd {
-    color: var(--blue);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#nd:hover {
-    color: var(--black);
-    background-color: var(--blue);
-}
-a#fsu {
-    color: var(--red);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#fsu:hover {
-    color: var(--black);
-    background-color: var(--red);
-}
-a#fiu {
-    color: var(--yellow);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#fiu:hover {
-    color: var(--black);
-    background-color: var(--yellow);
-}
-a#mdc {
-    color: var(--aqua);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#mdc:hover {
-    color: var(--black);
-    background-color: var(--aqua);
-}
-a#llnl {
-    color: var(--blue);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#llnl:hover {
-    color: var(--black);
-    background-color: var(--blue);
-}
-a#cvrl {
-    color: var(--yellow);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#cvrl:hover {
-    color: var(--black);
-    background-color: var(--yellow);
-}
-a#hawaii {
-    color: var(--red);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-    font-size: 18px;
-}
-a#hawaii:hover {
-    color: var(--black);
-    background-color: var(--red);
-}
-a#cv {
-    color: var(--yellow);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#cv:hover {
-    color: var(--black);
-    background-color: var(--yellow);
-}
-a#twitter {
-    color: var(--blue);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#twitter:hover {
-    color: var(--black);
-    background-color: var(--blue);
-}
-a#email {
-    color: var(--blue);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#email:hover {
-    color: var(--black);
-    background-color: var(--blue);
-}
-a#google {
-    color: var(--aqua);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#google:hover {
-    color: var(--black);
-    background-color: var(--aqua);
-}
-a#github {
-    color: var(--orange);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#github:hover {
-    color: var(--black);
-    background-color: var(--orange);
-}
-a#linkedin {
-    color: var(--red);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#linkedin:hover {
-    color: var(--black);
-    background-color: var(--red);
-}
-a#orcid {
-    color: var(--green);
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.3s;
-    border-radius: 2px;
-}
-a#orcid:hover {
-    color: var(--black);
-    background-color: var(--green);
 }
