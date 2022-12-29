@@ -285,7 +285,7 @@ div.author {
     display: inline;
     position: relative;
     top: -1px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     padding: 2px 4px;
     /* border-radius: 2px; */
@@ -306,7 +306,7 @@ div.note {
     display: inline;
     position: relative;
     top: -1px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     padding: 2px 4px;
     /* border-radius: 2px; */
@@ -358,7 +358,7 @@ sup { font-size: 10px; }
 ul { }
 ul.education {
     margin: 0px;
-    font-size: 18px;
+    font-size: 16px;
     list-style-type: none;
 }
 ul.teaching {
