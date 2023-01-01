@@ -34,7 +34,7 @@ a {
     border-radius: 2px;
     white-space: nowrap;
 }
-a.link:hover { color: var(--hover); }
+a:hover { color: var(--hover); }
 a#red:hover { color: var(--red); }
 a#green:hover { color: var(--green); }
 a#yellow:hover { color: var(--yellow); }
@@ -179,9 +179,33 @@ body {
     font-weight: 300;
 }
 
+caption {
+    font-size: 22px;
+}
 table {
     width: 100%;
+    min-width: 400px;
+    max-width: 600px;
+    /* border: 1px solid var(--white); */
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    border-collapse: collapse;
+
+    font-size: 16px;
 }
+th, td {
+    padding: 2px 6px;
+}
+tr {
+}
+tr.rule {
+    border-bottom: 0.5px solid var(--white);
+}
+th {
+    text-align: left;
+    font-weight: normal;
+}
+td { text-align: right; }
 
 div.name {
     align-self: flex-start;
@@ -263,16 +287,9 @@ div.main {
     font-size: 22px;
 }
 div.heading {
-    color: var(--white);
-    background-color: var(--grey);
-    border-radius: 2px;
-    padding-top: 2px;
-    padding-bottom: 0px;
-    padding-right: 10px;
-    padding-left: 10px;
-    /* margin-top: 16px; */
-    margin-bottom: 4px;
-    /* margin-right: 16px; */
+    padding: 0px;
+    margin: 0px;
+    font-size: 28px;
 }
 .content {
     /* margin-right: 16px; */
@@ -345,6 +362,11 @@ h4 {
 p {
     padding: 0px;
     margin: 0px;
+}
+p.desc {
+    max-width: 600px;
+    font-size: 16px;
+    padding: 4px 0px;
 }
 
 sup { font-size: 10px; }
