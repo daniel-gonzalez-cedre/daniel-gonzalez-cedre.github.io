@@ -193,13 +193,13 @@ table {
 
     font-size: 16px;
 }
-table.wide {
+table.single {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     min-width: 400px;
     margin: 10px;
 }
-table.narrow {
+table.double {
     width: 100%;
     max-width: 300px;
 }
