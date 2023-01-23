@@ -195,8 +195,8 @@ table {
 }
 table.single {
     width: 100%;
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 500px;
+    min-width: 500px;
     margin: 10px;
 }
 table.double {
