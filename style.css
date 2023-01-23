@@ -45,7 +45,7 @@ a#orange:hover { color: var(--orange); }
 a#lain:hover { color: var(--lain); }
 a.button {
     position: relative;
-    top: -2px;
+    top: -1px;
     padding: 2px 4px;
     border-radius: 2px;
     font-family: 'Cutive Mono', sans-serif;
