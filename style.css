@@ -195,8 +195,8 @@ table {
 }
 table.single {
     width: 100%;
-    max-width: 500px;
     min-width: 400px;
+    max-width: 500px;
     margin: 10px;
 }
 table.double {
@@ -218,7 +218,7 @@ th, td {
 tr {
 }
 tr.rule {
-    border-bottom: 0.5px solid var(--white);
+    border-bottom: 1px dotted var(--white);
 }
 th {
     text-align: left;
