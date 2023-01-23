@@ -56,7 +56,7 @@
                 </a>
             </div>
 
-            <div class="main">
+            <div class="main" style="max-width: 600px;">
                 <div class="heading">Discrete Mathematics</div>
                 <p class="desc">
                     This is the CSE 20110 website for the Spring semester of 2023
@@ -73,11 +73,36 @@
 
                 </p>
                 <p>
-                    <a class="button" id="blue" href="syllabus.pdf" target="_blank">syllabus</a>
-                    <a class="button" id="green" href="calendar.pdf" target="_blank">calendar</a>
-                </p> <br>
+                    <a class="button" id="aqua" href="schedule/syllabus.pdf" target="_blank">syllabus</a>
+                    <a class="button" id="green" href="schedule/calendar.pdf" target="_blank">calendar</a>
+                </p><br>
 
-                <table> <caption>Course Info.</caption>
+                <div class="row">
+                    <div class="column">
+                        <table class="narrow"> <caption>Lecture Notes</caption>
+                            <tr class="rule">
+                                <th><a class="button" id="blue" href="lecturenotes/propositional-logic.pdf" target="_blank">propositional logic</a></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <table class="narrow"> <caption>Problem Sets</caption>
+                            <tr class="rule">
+                                <th><a class="button" id="orange" href="problemsets/survey.pdf" target="_blank">prereq. survey</a></th>
+                            </tr>
+                            <tr class="rule">
+                                <th><a class="button" id="red" href="problemsets/problem-set-01.pdf" target="_blank">problem set 1</a></th>
+                            </tr>
+                            <!--
+                            <tr class="rule">
+                                <th><a class="button" id="red" href="" target="_blank">problem set 2</a></th>
+                            </tr>
+                            -->
+                        </table> <br>
+                    </div>
+                </div>
+
+                <table class="wide"> <caption>Course Info.</caption>
                     <tr class="rule">
                         <th>Instructor</th>
                         <td><a href="https://daniel-gonzalez-cedre.github.io/">Daniel Gonzalez Cedre</a></td>
@@ -110,30 +135,7 @@
                         <th>Zoom</th>
                         <td><a href="https://notredame.zoom.us/j/91041048333" target="_blank">https://notredame.zoom.us/j/91041048333</a></td>
                     </tr>
-                </table> <br>
-
-                <table> <caption>Problem Sets</caption>
-                    <tr class="rule">
-                        <th><a class="button" id="orange" href="problemsets/survey.pdf" target="_blank">prerequisite survey</a></th>
-                        <td>Due on Jan. 20<sup>th</sup></td>
-                    </tr>
-                    <tr class="rule">
-                        <th><a class="button" id="red" href="problemsets/problem-set-01.pdf" target="_blank">problem set 1</a></th>
-                        <td>Due on Jan. 27<sup>th</sup></td>
-                    </tr>
-                    <!--
-                    <tr class="rule">
-                        <th><a class="button" id="red" href="" target="_blank">problem set 2</a></th>
-                        <td>Due on Feb. 3<sup>rd</sup></td>
-                    </tr>
-                    -->
-                </table> <br>
-
-                <!--
-                <table> <caption>Solutions</caption>
-                </table> <br>
-                -->
-
+                </table>
             </div>
         </div>
     </body>

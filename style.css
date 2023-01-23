@@ -183,15 +183,34 @@ caption {
     font-size: 22px;
 }
 table {
-    width: 100%;
-    min-width: 400px;
-    max-width: 600px;
     /* border: 1px solid var(--white); */
+    box-sizing: border-box;
     border-top: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
 
     font-size: 16px;
+}
+table.wide {
+    width: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    margin: 10px;
+}
+table.narrow {
+    width: 100%;
+    max-width: 300px;
+}
+.row {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-evenly;
+    align-items: top;
+}
+.column {
 }
 th, td {
     padding: 2px 6px;
