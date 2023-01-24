@@ -45,11 +45,13 @@ a#orange:hover { color: var(--orange); }
 a#lain:hover { color: var(--lain); }
 a.button {
     position: relative;
-    top: -1px;
+    top: -2px;
+    /* top: -1px; */
     padding: 2px 4px;
     border-radius: 2px;
     font-family: 'Cutive Mono', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
+    /* font-size: 16px; */
 }
 a.button#red {
     color: var(--red);
@@ -300,7 +302,7 @@ div.main {
     order: 2;
     padding: 32px;
     width: 75%;
-    min-width: 400px;
+    min-width: 450px;
     max-width: 800px;
     text-align: left;
     font-size: 22px;
