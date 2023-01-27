@@ -197,7 +197,7 @@ table {
 }
 table.single {
     width: 100%;
-    min-width: 400px;
+    min-width: 450px;
     max-width: 500px;
     margin: 10px;
 }
