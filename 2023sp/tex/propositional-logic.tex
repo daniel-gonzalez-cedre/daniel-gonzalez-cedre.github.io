@@ -3,11 +3,12 @@
 \input{definitions.tex}
 
 \begin{document}
-\begin{center}
-    \textsc{\huge Propositional Logic}\\
-    \textsc{\large Discrete Mathematics}\\
-    \textsc{Daniel Gonzalez Cedre}
-\end{center}
+\datetrue
+
+\setcounter{chapter}{0}
+\chapter{Propositional Logic}
+
+\section{Propositions \& Connectives}
 
 \begin{definition}[Proposition]
     A \emph{proposition} is a sentence (in our language)
@@ -17,8 +18,8 @@
 \begin{definition}[Negation]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given a proposition $p$, the \emph{negation} of $p$,
-            denoted $\neg p$, is defined by
+            Given a proposition $p$, the \emph{negation} of $p$
+            is denoted $\neg p$ and is defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:not}
@@ -36,13 +37,13 @@
         \begin{minipage}[t]{.4\linewidth}
             Some possible readings of $\neg p$:\\
             \begin{itemize}
-                \item[\cdot]
+                \item[$\cdot$]
                     Not $p$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$ does not hold.
-                \item[\cdot]
+                \item[$\cdot$]
                     It is not the case that $p$.
-                \item[\cdot]
+                \item[$\cdot$]
                     We do not have that $p$.
             \end{itemize}
         \end{minipage}
@@ -52,8 +53,8 @@
 \begin{definition}[Conjunction]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{conjunction} of $p$ with $q$,
-            denoted $p \meet q$, is defined by
+            Given two propositions $p$ and $q$, the \emph{conjunction} of $p$ with $q$
+            is denoted $p \meet q$ and is defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:and}
@@ -73,15 +74,15 @@
         \begin{minipage}[t]{.4\linewidth}
             Some possible readings of $p \meet q$:\\
             \begin{itemize}
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$, and $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$, but $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$; also, $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$; further, $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     In addition to $p$, we also have $q$.
             \end{itemize}
         \end{minipage}
@@ -92,8 +93,8 @@
 \begin{definition}[Disjunction]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{disjunction} of $p$ with $q$,
-            denoted $p \join q$, is defined by
+            Given two propositions $p$ and $q$, the \emph{disjunction} of $p$ with $q$
+            is denoted $p \join q$ and is defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:or}
@@ -113,9 +114,9 @@
         \begin{minipage}[t]{.4\linewidth}
             Some possible readings of $p \join q$:\\
             \begin{itemize}
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$, or $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     Either $p$, or $q$.
             \end{itemize}
         \end{minipage}
@@ -125,8 +126,8 @@
 \begin{definition}[Material Implication]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{conditional} formed by assuming $p$ and concluding $q$,
-            denoted $p \rightarrow q$, is defined~by
+            Given two propositions $p$ and $q$, the \emph{conditional} formed by assuming $p$ and concluding $q$
+            is denoted $p \rightarrow q$ and is defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:implies}
@@ -146,34 +147,32 @@
         \begin{minipage}[t]{.4\linewidth}
             Some possible readings of $p \rightarrow q$:\\
             \begin{itemize}
-                \item[\cdot]
+                \item[$\cdot$]
                     If $p$, then $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$ implies $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $q$ is conditioned on $p$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $q$ only if $p$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$ is sufficient for $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $q$ is necessary for $p$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $q$ unless not $p$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $q$ or not $p$.
             \end{itemize}
         \end{minipage}
     \end{center}
 \end{definition}
 
-\newpage
-
 \begin{definition}[Biconditional]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{biconditional} formed by $p$ and $q$,
-            denoted $p \leftrightarrow q$, is defined by
+            Given two propositions $p$ and $q$, the \emph{biconditional} formed by $p$ and $q$
+            is denoted $p \leftrightarrow q$ and is defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:iff}
@@ -191,13 +190,13 @@
             ~
         \end{minipage}%
         \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of $p \leftright q$:\\
+            Some possible readings of $p \leftrightarrow q$:\\
             \begin{itemize}
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$ if and only if $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $p$ is necessary and sufficient for $q$.
-                \item[\cdot]
+                \item[$\cdot$]
                     $q$ is necessary and sufficient for $p$.
             \end{itemize}
         \end{minipage}
@@ -248,17 +247,19 @@
 
     \begin{table}[H]
         \centering
-        \label{tab:implies}
         \begin{tabular}{|CcCc||CcCc|}
             \hline
             \thead{$p$} & \thead{$q$} & \thead{$p \rightarrow q$} & \thead{$\neg p \join q$}\\ \hline
             \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{$\top$}\\
             \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} & \cellcolor{red!30!white}{\thead{$\bot$}}\\
-            \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{\thead{$\top$}}} \\
+            \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{\thead{$\top$}} \\
             \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
         \end{tabular}
     \end{table}
 \end{example}
+
+\newpage
+\section{Boolean Algebras}
 
 \begin{definition}[Boolean Algebra]
     A \emph{Boolean algebra}
@@ -290,7 +291,7 @@
 
     \begin{table}[H]
         \centering
-        \label{tab:booleadd}
+        \label{tab:heyting}
         \begin{tabular}{|Cc|Cc|}
             \hline
             \multicolumn{2}{|c|}{\thead{Heyting Axioms}} \\\hline
@@ -309,6 +310,13 @@
     The truth tables were a nice, intuitive, and compact way of defining the logical connectives,
     but we could just as easily have defined them by assuming that all of the axioms are true,
     without ever writing down a truth table.
+    This provides a more \emph{algebraic} approach to the study of logic,
+    which is more in-line with the way logic is used to actually prove theorems in mathematics.
+
+    As such, while the while the truth tables provided a nice way of defining the logical connectives,
+    we will be taking the algebraic approach by \emph{assuming the axioms} of a Boolean algebra
+    are true about our propositional logic
+    and using them to prove theorems about our logical system.
 \end{definition}
 
 \begin{theorem}[Uniqueness of Complements]\label{thm:unique}
@@ -351,13 +359,8 @@
           &\iff \bot \join (x \meet y) &&\text{by the assumption $p \meet y \iff \bot$}\\
           &\iff x \meet y &&\text{by Identity}.
     \end{alignat*}
-    So, from Commutativity, we can conclude that
-    \begin{equation*}
-        x \iff (y \meet x) \iff (x \meet y) \iff y.
-    \end{equation*}
+    So, from Commutativity, we can conclude that $x \iff (y \meet x) \iff (x \meet y) \iff y$.
 \end{proof}
-
-\newpage
 
 \begin{theorem}[Double Negation]
     For any Boolean algebra $(B, \neg, \meet, \join)$ and any term $p$ in the algebra,
@@ -450,8 +453,6 @@
     Therefore, $p \meet \bot \iff \bot$ and $p \join \top \iff \top$.
 \end{proof}
 
-\newpage
-
 \begin{theorem}[Absorption]
     For every Boolean algebra $(B, \neg, \meet, \join)$ and any two terms $p$ and $q$ in the algebra,
     we have
@@ -484,7 +485,7 @@
             \end{alignat*}
         \end{minipage}
     \end{center}
-    Therefore, $p \meet (p \join q) &\iff p$ and $p \join (p \meet q) &\iff q$.
+    Therefore, $p \meet (p \join q) \iff p$ and $p \join (p \meet q) \iff q$.
 \end{proof}
 
 \begin{theorem}[De Morgan's Laws]
