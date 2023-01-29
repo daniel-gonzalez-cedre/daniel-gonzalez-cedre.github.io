@@ -246,7 +246,6 @@
     Consider the two expressions $\varphi \defn p \rightarrow q$ and $\psi \defn \neg p \join q$.
     We can see that $\varphi$ has two propositional variables: $p$ and $q$.
     $\psi$ also has two propositional variables: the same $p$ and the same $q$.
-
     If we construct the truth table for these two expressions,
     we will see that every assignment of truth values to $p$ and $q$ will result in $p \rightarrow q$ and $\neg p \join q$
     having the same truth value.
@@ -264,13 +263,20 @@
     \end{table}
 \end{example}
 
-\begin{definition}[Tautology]
-    A propositional expression $\varphi$ consisting the propositional variables $p_1, \dots p_n$ is a \emph{tautology}
-    \iffbydefn every assignment of truth values to $p_1, \dots p_n$ results in $\varphi$ being equivalent to $\top$.
+\begin{definition}[Tautology \& Contradiction]
+    Let $\varphi$ be a propositional expression consisting of the propositional variables $p_1, \dots p_n$.\\
+    We say $\varhpi$ is a \emph{tautology}
+    \iffbydefn every assignment of truth values to $p_1, \dots p_n$ such that $\varphi \iff \top$.\\
+    We say $\varphi$ is a \emph{contradiction}
+    \iffbydefn there exists an assignment of truth values to $p_1, \dots p_n$ such that $\varphi \iff \bot$.
 \end{definition}
-\begin{definition}[Contradiction]
-    A propositional expression $\varphi$ consisting the propositional variables $p_1, \dots p_n$ is a \emph{contradiction}
-    \iffbydefn every assignment of truth values to $p_1, \dots p_n$ results in $\varphi$ being equivalent to $\bot$.
+% \begin{definition}[Contradiction]
+%     A propositional expression $\varphi$ consisting the propositional variables $p_1, \dots p_n$ is a \emph{contradiction}
+%     \iffbydefn every assignment of truth values to $p_1, \dots p_n$ results in $\varphi$ being equivalent to $\bot$.
+% \end{definition}
+\begin{definition}[Satisfiability]
+    A propositional expression $\varphi$ consisting the propositional variables $p_1, \dots p_n$ is \emph{satisfiable}
+    \iffbydefn there exists an assignment of truth values to $p_1, \dots p_n$ that results in $\varphi$ being equivalent to $\top$.
 \end{definition}
 
 \section{Boolean Algebras}
