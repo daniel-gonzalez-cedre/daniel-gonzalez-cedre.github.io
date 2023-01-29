@@ -343,6 +343,7 @@
     Let $p$ be a term in a Boolean algebra $(B, \neg, \meet, \join)$.
     Suppose there were two terms $x$ and $y$ in the Boolean algebra such that
     \begin{center}
+        \vspace{-\parskip-\abovedisplayskip}
         \begin{minipage}{.2\linewidth}
             \begin{align*}
                 p \meet x &\iff \bot,\\
@@ -411,29 +412,29 @@
 \begin{proof}
     Let $p$ be a term in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe
-    \begin{center}
-        \begin{minipage}{.45\linewidth}
-            \begin{alignat*}{2}
-                p \meet p &\iff (p \meet p) \join \bot~~~~~~~~~~~~&&\text{by Identity}\\
-                          &\iff (p \meet p) \join (p \meet \neg p) &&\text{by Complement}\\
-                          &\iff p \meet (p \join \neg p) &&\text{by Distributivity}\\
-                          &\iff p \meet \top &&\text{by Complement}\\
-                          &\iff p &&\text{by Identity},
-            \end{alignat*}
-        \end{minipage}%
-        \begin{minipage}{.1\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}{.45\linewidth}
-            \begin{alignat*}{2}
-                p \join p &\iff (p \join p) \meet \top~~~~~~~~~~~~&&\text{by Identity}\\
-                          &\iff (p \join p) \meet (p \join \neg p) &&\text{by Complement}\\
-                          &\iff p \join (p \meet \neg p) &&\text{by Distributivity}\\
-                          &\iff p \join \bot &&\text{by Complement}\\
-                          &\iff p &&\text{by Identity}.
-            \end{alignat*}
-        \end{minipage}
-    \end{center}
+
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{alignat*}{2}
+            p \meet p &\iff (p \meet p) \join \bot~~~~~~~~~~~~&&\text{by Identity}\\
+                        &\iff (p \meet p) \join (p \meet \neg p) &&\text{by Complement}\\
+                        &\iff p \meet (p \join \neg p) &&\text{by Distributivity}\\
+                        &\iff p \meet \top &&\text{by Complement}\\
+                        &\iff p &&\text{by Identity},
+        \end{alignat*}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{alignat*}{2}
+            p \join p &\iff (p \join p) \meet \top~~~~~~~~~~~~&&\text{by Identity}\\
+                        &\iff (p \join p) \meet (p \join \neg p) &&\text{by Complement}\\
+                        &\iff p \join (p \meet \neg p) &&\text{by Distributivity}\\
+                        &\iff p \join \bot &&\text{by Complement}\\
+                        &\iff p &&\text{by Identity}.
+        \end{alignat*}
+    \end{minipage}
+
     Therefore, $p \meet p \iff p$ and $p \join p \iff p$, as desired.
 \end{proof}
 
@@ -449,27 +450,27 @@
 \begin{proof}
     Let $p$ be a term in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe
-    \begin{center}
-        \begin{minipage}{.45\linewidth}
-            \begin{alignat*}{2}
-                p \meet \bot &\iff p \meet (p \meet \neg p)~~~~~~~~~~~~&&\text{by Complement}\\
-                             &\iff (p \meet p) \meet \neg p &&\text{by Associativity}\\
-                             &\iff p \meet \neg p &&\text{by Idempotency}\\
-                             &\iff \bot &&\text{by Complement},
-            \end{alignat*}
-        \end{minipage}%
-        \begin{minipage}{.1\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}{.45\linewidth}
-            \begin{alignat*}{2}
-                p \join \top &\iff p \join (p \join \neg p)~~~~~~~~~~~~&&\text{by Complement}\\
-                             &\iff (p \join p) \join \neg p &&\text{by Associativity}\\
-                             &\iff p \join \neg p &&\text{by Idempotency}\\
-                             &\iff \top &&\text{by Complement}.
-            \end{alignat*}
-        \end{minipage}
-    \end{center}
+
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{alignat*}{2}
+            p \meet \bot &\iff p \meet (p \meet \neg p)~~~~~~~~~~~~&&\text{by Complement}\\
+                            &\iff (p \meet p) \meet \neg p &&\text{by Associativity}\\
+                            &\iff p \meet \neg p &&\text{by Idempotency}\\
+                            &\iff \bot &&\text{by Complement},
+        \end{alignat*}
+    \end{minipage}
+    \hfill\vline\hfill
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{alignat*}{2}
+            p \join \top &\iff p \join (p \join \neg p)~~~~~~~~~~~~&&\text{by Complement}\\
+                            &\iff (p \join p) \join \neg p &&\text{by Associativity}\\
+                            &\iff p \join \neg p &&\text{by Idempotency}\\
+                            &\iff \top &&\text{by Complement}.
+        \end{alignat*}
+    \end{minipage}
+
     Therefore, $p \meet \bot \iff \bot$ and $p \join \top \iff \top$.
 \end{proof}
 
@@ -484,27 +485,27 @@
 \begin{proof}
     Let $p$ and $q$ be terms in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe
-    \begin{center}
-        \begin{minipage}{.45\linewidth}
-            \begin{alignat*}{2}
-                p \meet (p \join q) &\iff (p \join \bot) \meet (p \join q)~~&&\text{by Identity}\\
-                                    &\iff p \join (\bot \meet q) &&\text{by Distributivity}\\
-                                    &\iff p \join \bot &&\text{by Domination}\\
-                                    &\iff p &&\text{by Identity},
-            \end{alignat*}
-        \end{minipage}%
-        \begin{minipage}{.1\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}{.45\linewidth}
-            \begin{alignat*}{2}
-                p \join (p \meet q) &\iff (p \meet \top) \join (p \meet q)~~&&\text{by Identity}\\
-                                    &\iff p \meet (\top \join q) &&\text{by Distributivity}\\
-                                    &\iff p \meet \top &&\text{by Domination}\\
-                                    &\iff p &&\text{by Identity}.
-            \end{alignat*}
-        \end{minipage}
-    \end{center}
+
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{alignat*}{2}
+            p \meet (p \join q) &\iff (p \join \bot) \meet (p \join q)~~&&\text{by Identity}\\
+                                &\iff p \join (\bot \meet q) &&\text{by Distributivity}\\
+                                &\iff p \join \bot &&\text{by Domination}\\
+                                &\iff p &&\text{by Identity},
+        \end{alignat*}
+    \end{minipage}%
+    \hfill\vline\hfill
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{alignat*}{2}
+            p \join (p \meet q) &\iff (p \meet \top) \join (p \meet q)~~&&\text{by Identity}\\
+                                &\iff p \meet (\top \join q) &&\text{by Distributivity}\\
+                                &\iff p \meet \top &&\text{by Domination}\\
+                                &\iff p &&\text{by Identity}.
+        \end{alignat*}
+    \end{minipage}
+
     Therefore, $p \meet (p \join q) \iff p$ and $p \join (p \meet q) \iff q$.
 \end{proof}
 
@@ -518,10 +519,6 @@
 \end{theorem}
 \begin{proof}
     Let $p$ and $q$ be terms in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
-    For the first statement, we need to show that $p \meet q$ is a complement for $\neg p \join \neg q$,
-    meaning $(p \meet q) \meet (\neg p \join \neg q) \iff \bot$
-    and $(p \meet q) \join (\neg p \join \neg q) \iff \top$.
-
     Observe that
     \begin{alignat*}{2}
         (p \meet q) \meet (\neg p \join \neg q) &\iff (q \meet p) \meet (\neg p \join \neg q)~~~~~~~~~~~~&&\text{by Commutativity}\\
@@ -546,7 +543,7 @@
                                                 &\iff \neg q \join \top &&\text{by Complement}\\
                                                 &\iff \top &&\text{by Domination}.
     \end{alignat*}
-    So, we can see that $p \meet q$ is a complement for $\neg p \join \neg q$.
+    So, we can see that $\neg p \join \neg q$ is a complement for $p \meet q$.
     Since complements are unique by \autoref{thm:unique},
     we can conclude that $\neg (p \meet q) \iff \neg p \join \neg q$.
 
