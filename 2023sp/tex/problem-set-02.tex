@@ -6,18 +6,18 @@
 \begin{center}
     \textsc{\huge Problem Set 2}\\
     \textsc{\large Discrete Mathematics}\\
-    {\color{gruvred}Due: $3$\textsuperscript{rd} of February, $2023$}
+    {\color{gruvred}Due: \(3\)\textsuperscript{rd} of February, \(2023\)}
 \end{center}
 
 \begin{enumerate}
     \item
-        Show that $p \rightarrow q$ is logically equivalent to $\neg q \rightarrow \neg p$.
+        Show that \(p \rightarrow q\) is logically equivalent to \(\neg q \rightarrow \neg p\).
     \item
-        Show that $(\neg p \rightarrow \bot)  \rightarrow p$ is a tautology.
+        Show that \((\neg p \rightarrow \bot)  \rightarrow p\) is a tautology.
     \item
-        Show that $(p \rightarrow r) \join (q \rightarrow r)$ is equivalent to $(p \meet q) \rightarrow r$.
+        Show that \((p \rightarrow r) \join (q \rightarrow r)\) is equivalent to \((p \meet q) \rightarrow r\).
     \item
-        Show that $(p \join q) \meet (\neg p \join r) \rightarrow (q \join r)$ is a tautology.
+        Show that \((p \join q) \meet (\neg p \join r) \rightarrow (q \join r)\) is a tautology.
     \item
         Using the predicate definitions below,
         let our universe of discourse be the collection of all characters in the play Macbeth
@@ -77,18 +77,21 @@
         \end{minipage}
         \begin{enumerate}
             \item
-                $\kappa(\text{``Richard Witterel''}) \meet
-                \forall x \pn*{\mu(x) \rightarrow \gamma(x, \text{``Richard Witterel''})}$.
+                \(
+                    \kappa(\text{``Richard Witterel''}) \meet
+                    \forall x \pn*{\mu(x) \rightarrow \gamma(x, \text{``Richard Witterel''})}
+                \).
             \item
-                $\neg \forall x \exists y \pn*{\sigma(y) \meet \rho(x, y)}$.
+                \(\neg \forall x \exists y \pn*{\sigma(y) \meet \rho(x, y)}\).
             \item
-                $\exists x \forall y \pn*{\sigma(x) \meet (\mu(y) \rightarrow \delta(y, x))}$.
+                \(\exists x \forall y \pn*{\sigma(x) \meet (\mu(y) \rightarrow \delta(y, x))}\).
             \item
-                % $\neg \exists x \pn*{\sigma(x)} \rightarrow \forall x \pn*{\kappa(x) \rightarrow \exists y \pnn*{\mu(y) \meet \gamma(x, y)}}$.
-                $\pn*{\neg \exists x \pn*{\sigma(x)}
+                \(
+                    \pn*{\neg \exists x \pn*{\sigma(x)}
                           \meet \pn*{\neg \exists x \pn*{\sigma(x)}
                           \rightarrow \exists x \pn*{\gamma(\text{``Richard Witterel''}, x)}}}
-                 \rightarrow \exists x \pn*{\gamma(\text{``Richard Witterel''}, x)}$.
+                    \rightarrow \exists x \pn*{\gamma(\text{``Richard Witterel''}, x)}
+                \).
         \end{enumerate}
     % \item
     %     Consider the following predicates:
@@ -102,17 +105,17 @@
     %         \beta(x, y) &\defn x \text{ betrayed } y\\
     %     \end{align*}
     \item
-        Let $\varphi$ and $\psi$ be predicates.
-        Rewrite the following first-order sentences so that no quantifier has a $\neg$ to its left.
+        Let \(\varphi\) and \(\psi\) be predicates.
+        Rewrite the following first-order sentences so that no quantifier has a \(\neg\) to its left.
         \begin{enumerate}
             \item
-                $\forall x \exists y (x \join y)$
+                \(\forall x \exists y (x \join y)\)
             \item
-                $\forall x \forall y (\neg x \join (x \leftrightarrow y))$
+                \(\forall x \forall y (\neg x \join (x \leftrightarrow y))\)
             \item
-                $\exists x \forall y \forall z \pn*{\pn*{x \rightarrow y} \rightarrow z}$
+                \(\exists x \forall y \forall z \pn*{\pn*{x \rightarrow y} \rightarrow z}\)
             \item
-                $\exits x \pn*{\varphi(x) \join \forall y \exists z \pn*{\psi(y, z) \rightarrow \neg x}}$
+                \(\exists x \pn*{\varphi(x) \join \forall y \exists z \pn*{\psi(y, z) \rightarrow \neg x}}\)
         \end{enumerate}
 \end{enumerate}
 \end{document}
