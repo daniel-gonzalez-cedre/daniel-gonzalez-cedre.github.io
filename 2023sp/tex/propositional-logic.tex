@@ -526,7 +526,7 @@
     \begin{alignat*}{2}
         (p \meet q) \meet (\neg p \join \neg q) &\iff (q \meet p) \meet (\neg p \join \neg q)~~~~~~~~~~~~&&\text{by Commutativity}\\
                                                 &\iff q \meet (p \meet (\neg p \join \neg q)) &&\text{by Associativity}\\
-                                                &\iff q \meet ((p \meet \neg p) \join (p \meet \neg q)) &&\text{by Distributivity}\\
+                                                &\iff q \meet \pn*{(p \meet \neg p) \join (p \meet \neg q)} &&\text{by Distributivity}\\
                                                 &\iff q \meet (\bot \join (p \meet \neg q)) &&\text{by Complement}\\
                                                 &\iff q \meet (p \meet \neg q) &&\text{by Identity}\\
                                                 &\iff q \meet (\neg q \meet p) &&\text{by Commutativity}\\
@@ -537,9 +537,9 @@
     Further, we have
     \begin{alignat*}{2}
         (p \meet q) \join (\neg p \join \neg q) &\iff (p \meet q) \meet (\neg q \join \neg p)~~~~~~~~~~~~&&\text{by Commutativity}\\
-                                                &\iff ((p \meet q) \join \neg q) \join \neg p &&\text{by Associativity}\\
-                                                &\iff ((p \join \neg q) \meet (q \join \neg q)) \join \neg p &&\text{by Distributivity}\\
-                                                &\iff ((p \join \neg q) \meet \top) \join \neg p &&\text{by Complement}\\
+                                                &\iff \pn*{(p \meet q) \join \neg q} \join \neg p &&\text{by Associativity}\\
+                                                &\iff \pn*{(p \join \neg q) \meet (q \join \neg q)} \join \neg p &&\text{by Distributivity}\\
+                                                &\iff \pn*{(p \join \neg q) \meet \top} \join \neg p &&\text{by Complement}\\
                                                 &\iff (p \join \neg q) \join \neg p &&\text{by Identity}\\
                                                 &\iff (\neg q \join p) \join \neg p &&\text{by Commutativity}\\
                                                 &\iff \neg q \join (p \join \neg p) &&\text{by Associativity}\\
