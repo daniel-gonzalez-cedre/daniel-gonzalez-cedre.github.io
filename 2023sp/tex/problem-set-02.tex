@@ -1,0 +1,118 @@
+\input{preamble.tex}
+\input{definitions.tex}
+\input{environments.tex}
+
+\begin{document}
+\begin{center}
+    \textsc{\huge Problem Set 2}\\
+    \textsc{\large Discrete Mathematics}\\
+    {\color{gruvred}Due: $3$\textsuperscript{rd} of February, $2023$}
+\end{center}
+
+\begin{enumerate}
+    \item
+        Show that $p \rightarrow q$ is logically equivalent to $\neg q \rightarrow \neg p$.
+    \item
+        Show that $(\neg p \rightarrow \bot)  \rightarrow p$ is a tautology.
+    \item
+        Show that $(p \rightarrow r) \join (q \rightarrow r)$ is equivalent to $(p \meet q) \rightarrow r$.
+    \item
+        Show that $(p \join q) \meet (\neg p \join r) \rightarrow (q \join r)$ is a tautology.
+    \item
+        Using the predicate definitions below,
+        let our universe of discourse be the collection of all characters in the play Macbeth
+        and translate the following propositions of the first-order logic into English sentences.\\
+        \begin{minipage}{.5\linewidth}
+            \begin{align*}
+                \kappa(x) &\defn \text{``}x\text{ is a king.''}\\
+                \vartheta(x) &\defn \text{``}x\text{ is a thane.''}\\
+                \upsilon(x) &\defn \text{``}x\text{ is a witch.''}
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+            \begin{align*}
+                \omega(x) &\defn \text{``}x\text{ is man woman-borne.''}\\
+                \mu(x, y) &\defn \text{``}x\text{ murders }y\text{.''}
+            \end{align*}
+        \end{minipage}
+        \begin{enumerate}
+            \item
+                Macbeth is a king, and Banquo is a thane.
+            \item
+                Every king is murdered by someone.
+            \item
+                Someone murders every king.
+            \item
+                No witches murder anyone.
+            \item
+                No kings murder any thanes.
+            \item
+                Macbeth is not murdered by any man woman-borne.
+            \item
+                Every king is a thane.
+            \item
+                Banquo is not a king, yet someone murders him.
+            \item
+                Any witch could not possibly be a king.
+            \item
+                The only kings are those woman-borne.
+        \end{enumerate}
+    \item
+        Using the predicate definitions below,
+        let our universe of discourse be the collection of all living beings on the Obra-Dinn
+        and translate the following propositions of the first-order logic into English sentences.\\
+        \begin{minipage}{.5\linewidth}
+            \begin{align*}
+                \kappa(x) &\defn \text{``}x\text{ is the Captain.''}\\
+                \mu(x) &\defn \text{``}x\text{ is a mate.''}\\
+                \sigma(x) &\defn \text{``}x\text{ is a sea monster.''}
+            \end{align*}
+        \end{minipage}%
+        \begin{minipage}{.5\linewidth}
+            \begin{align*}
+                \delta(x, y) &\defn \text{``}x\text{ is drowned by }y\text{.''}\\
+                \rho(x, y) &\defn \text{``}x\text{ was terribly ravaged by }y\text{.''}\\
+                \gamma(x, y) &\defn \text{``}x\text{ was shot by }y\text{.''}
+            \end{align*}
+        \end{minipage}
+        \begin{enumerate}
+            \item
+                $\kappa(\text{``Richard Witterel''}) \meet
+                \forall x \pn*{\mu(x) \rightarrow \gamma(x, \text{``Richard Witterel''})}$.
+            \item
+                $\neg \forall x \exists y \pn*{\sigma(y) \meet \rho(x, y)}$.
+            \item
+                $\exists x \forall y \pn*{\sigma(x) \meet (\mu(y) \rightarrow \delta(y, x))}$.
+            \item
+                % $\neg \exists x \pn*{\sigma(x)} \rightarrow \forall x \pn*{\kappa(x) \rightarrow \exists y \pnn*{\mu(y) \meet \gamma(x, y)}}$.
+                $\pn*{\neg \exists x \pn*{\sigma(x)}
+                          \meet \pn*{\neg \exists x \pn*{\sigma(x)}
+                          \rightarrow \exists x \pn*{\gamma(\text{``Richard Witterel''}, x)}}}
+                 \rightarrow \exists x \pn*{\gamma(\text{``Richard Witterel''}, x)}$.
+        \end{enumerate}
+    % \item
+    %     Consider the following predicates:
+    %     \begin{align*}
+    %         \kappa(x) &\defn x \text{ is the emperor}\\
+    %         \sigma(x) &\defn x \text{ is a senator}\\
+    %         \chi(x) &\defn x \text{ is an oracle}\\
+    %         \lambda(x) &\defn x \text{ lies}\\
+    %         \theta(x, y) &\defn x \text{ will die on date } y\\
+    %         \mu(x, y) &\defn x \text{ stabbed } y\\
+    %         \beta(x, y) &\defn x \text{ betrayed } y\\
+    %     \end{align*}
+    \item
+        Let $\varphi$ and $\psi$ be predicates.
+        Rewrite the following first-order sentences so that no quantifier has a $\neg$ to its left.
+        \begin{enumerate}
+            \item
+                $\forall x \exists y (x \join y)$
+            \item
+                $\forall x \forall y (\neg x \join (x \leftrightarrow y))$
+            \item
+                $\exists x \forall y \forall z \pn*{\pn*{x \rightarrow y} \rightarrow z}$
+            \item
+                $\exits x \pn*{\varphi(x) \join \forall y \exists z \pn*{\psi(y, z) \rightarrow \neg x}}$
+        \end{enumerate}
+\end{enumerate}
+\end{document}
