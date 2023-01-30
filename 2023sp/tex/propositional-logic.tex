@@ -393,7 +393,8 @@
 \begin{proof}
     Let \((B, \neg, \meet, \join)\) be a Boolean algebra
     and consider an arbitrary term \(p\) in the algebra.
-    We want to show that \(\neg \neg p \iff p\).
+    We want to show that \(\neg \neg p \iff p\),
+    which we can do by establishing that \(p\) and \(\neg \neg p\) are both complements of \(\neg p\).
 
     By the Complement axiom, we know \(p \meet \neg p \iff \bot\) and \(p \join \neg p \iff \top\),
     meaning that \(p\) is the complement of \(\neg p\).
@@ -402,7 +403,8 @@
     showing us that \(\neg \neg p\) is the complement of \(\neg p\).
 
     Since complements are unique, as seen in \autoref{thm:unique},
-    and both \(p\) and \(\neg \neg p\) are complements of \(\neg p\), we must have that \(p \iff \neg \neg p\).
+    and both \(p\) and \(\neg \neg p\) are complements of \(\neg p\),
+    we can therefore conclude that \(p \iff \neg \neg p\).
 \end{proof}
 
 \begin{theorem}[Idempotency]
