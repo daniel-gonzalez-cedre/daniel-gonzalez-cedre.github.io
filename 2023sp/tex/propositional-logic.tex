@@ -264,22 +264,7 @@
     \end{table}
 \end{example}
 
-\begin{definition}[Tautology \& Contradiction]
-    Let \(\varphi\) be a propositional expression consisting of the propositional variables \(p_1, \dots p_n\).\\
-    We say \(\varphi\) is a \emph{tautology}
-    \iffbydefn every assignment of truth values to \(p_1, \dots p_n\) such that \(\varphi \iff \top\).\\
-    We say \(\varphi\) is a \emph{contradiction}
-    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) such that \(\varphi \iff \bot\).
-\end{definition}
-% \begin{definition}[Contradiction]
-%     A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is a \emph{contradiction}
-%     \iffbydefn every assignment of truth values to \(p_1, \dots p_n\) results in \(\varphi\) being equivalent to \(\bot\).
-% \end{definition}
-\begin{definition}[Satisfiability]
-    A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is \emph{satisfiable}
-    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) that results in \(\varphi\) being equivalent to \(\top\).
-\end{definition}
-
+\newpage
 \section{Boolean Algebras}
 
 \begin{definition}[Boolean Algebra]
@@ -342,6 +327,18 @@
     and using them to prove theorems about our logical system.
 \end{definition}
 
+\begin{definition}[Tautology \& Contradiction]
+    Let \(\varphi\) be a propositional expression consisting of the propositional variables \(p_1, \dots p_n\).\\
+    We say \(\varphi\) is a \emph{tautology}
+    \iffbydefn every assignment of truth values to \(p_1, \dots p_n\) such that \(\varphi \iff \top\).\\
+    We say \(\varphi\) is a \emph{contradiction}
+    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) such that \(\varphi \iff \bot\).
+\end{definition}
+\begin{definition}[Satisfiability]
+    A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is \emph{satisfiable}
+    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) that results in \(\varphi\) being equivalent to \(\top\).
+\end{definition}
+
 \begin{theorem}[Uniqueness of Complements]\label{thm:unique}
     Let \(p\) be a term in a Boolean algebra \((B, \neg, \meet, \join)\).
     Suppose there were two terms \(x\) and \(y\) in the Boolean algebra such that
@@ -385,6 +382,34 @@
     \end{alignat*}
     So, from Commutativity, we can conclude that \(x \iff (y \meet x) \iff (x \meet y) \iff y\).
 \end{proof}
+
+\begin{lemma}
+    For every Boolean algebra \((B, \neg, \meet, \join)\), we have
+    \begin{align*}
+        \neg \top &\iff \bot\\
+        \neg \bot &\iff \top.
+    \end{align*}
+\end{lemma}
+\begin{proof}
+    Let \((B, \neg, \meet, \join)\) be a Boolean algebra with the distinguished terms \(\top\) and \(\bot\).
+    We will show that \(\neg \top \iff \bot\) by showing that
+    \(\neg \top\) and \(\bot\) both act like negations for \(\top\).
+
+    First, observe that \(\neg \top \meet \top \iff \bot\) by the Complement axiom.
+    Similarly, we have \(\neg \top \join \top \iff \top\) by the Complement axiom.
+
+    Now, notice that \(\bot \meet \top \iff \bot\) by the Identity axiom.
+    Similarly, we get \(\bot \join \top \iff \top \join \bot \iff \bot\) by the Identity axiom
+    (and Commutativity).
+
+    This shows us that \(\neg \top\) and \(\bot\) are both negations for \(\top\).
+    Therefore, recalling that complements are unique by \autoref{thm:unique},
+    we can conclude \(\neg \top \iff \bot\).
+
+    Showing \(\neg \bot \iff \top\) is left as an exercise to the reader.
+\end{proof}
+
+\newpage
 
 \begin{theorem}[Double Negation]
     For any Boolean algebra \((B, \neg, \meet, \join)\) and any term \(p\) in the algebra,
@@ -480,6 +505,8 @@
     Therefore, \(p \meet \bot \iff \bot\) and \(p \join \top \iff \top\).
 \end{proof}
 
+\newpage
+
 \begin{theorem}[Absorption]
     For every Boolean algebra \((B, \neg, \meet, \join)\) and any two terms \(p\) and \(q\) in the algebra,
     we have
@@ -554,31 +581,5 @@
     we can conclude that \(\neg (p \meet q) \iff \neg p \join \neg q\).
 
     Showing \(\neg (p \join q) \iff \neg p \meet \neg q\) is left as an exercise to the reader.
-\end{proof}
-
-\begin{theorem}
-    For every Boolean algebra \((B, \neg, \meet, \join)\), we have
-    \begin{align*}
-        \neg \top \iff \bot\\
-        \neg \bot \iff \top
-    \end{align*}
-\end{theorem}
-\begin{proof}
-    Let \((B, \neg, \meet, \join)\) be a Boolean algebra with the distinguished terms \(\top\) and \(\bot\).
-    We will show that \(\neg \top \iff \bot\) by showing that
-    \(\neg \top\) and \(\bot\) both act like negations for \(\top\).
-
-    First, observe that \(\neg \top \meet \top \iff \bot\) by the Complement axiom.
-    Similarly, we have \(\neg \top \join \top \iff \top\) by the Complement axiom.
-
-    Now, notice that \(\bot \meet \top \iff \bot\) by the Identity axiom.
-    Similarly, we get \(\bot \join \top \iff \top \join \bot \iff \bot\) by the Identity axiom
-    (and Commutativity).
-
-    This shows us that \(\neg \top\) and \(\bot\) are both negations for \(\top\).
-    Therefore, recalling that complements are unique by \autoref{thm:unique},
-    we can conclude \(\neg \top \iff \bot\).
-
-    Showing \(\neg \bot \iff \top\) is left as an exercise to the reader.
 \end{proof}
 \end{document}
