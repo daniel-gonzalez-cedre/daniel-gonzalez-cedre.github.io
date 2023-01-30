@@ -555,4 +555,30 @@
 
     Showing \(\neg (p \join q) \iff \neg p \meet \neg q\) is left as an exercise to the reader.
 \end{proof}
+
+\begin{theorem}
+    For every Boolean algebra \((B, \neg, \meet, \join)\), we have
+    \begin{align*}
+        \neg \top \iff \bot\\
+        \neg \bot \iff \top
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    Let \((B, \neg, \meet, \join)\) be a Boolean algebra with the distinguished terms \(\top\) and \(\bot\).
+    We will show that \(\neg \top \iff \bot\) by showing that
+    \(\neg \top\) and \(\bot\) both act like negations for \(\top\).
+
+    First, observe that \(\neg \top \meet \top \iff \bot\) by the Complement axiom.
+    Similarly, we have \(\neg \top \join \top \iff \top\) by the Complement axiom.
+
+    Now, notice that \(\bot \meet \top \iff \bot\) by the Identity axiom.
+    Similarly, we get \(\bot \join \top \iff \top \join \bot \iff \bot\) by the Identity axiom
+    (and Commutativity).
+
+    This shows us that \(\neg \top\) and \(\bot\) are both negations for \(\top\).
+    Therefore, recalling that complements are unique by \autoref{thm:unique},
+    we can conclude \(\neg \top \iff \bot\).
+
+    Showing \(\neg \bot \iff \top\) is left as an exercise to the reader.
+\end{proof}
 \end{document}
