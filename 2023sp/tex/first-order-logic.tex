@@ -2,6 +2,8 @@
 \input{environments.tex}
 \input{definitions.tex}
 
+\externaldocument{../propositional-logic/propositional-logic}
+
 \begin{document}
 
 \title{Discrete Mathematics}
@@ -12,7 +14,7 @@
 \datetrue
 
 \setcounter{chapter}{1}
-\chapter{First-Order Logic}
+\chapter{First-Order Logic}\label{chap:firstorder}
 
 \section{Predicates \& Quantification}
 
@@ -86,5 +88,79 @@
 \end{example}
 
 \section{Rules of Inference}
+
+\begin{definition}[Rule of Inference]
+    A \emph{rule of inference} is a construction in the meta-language that tells us
+    how we're allowed to take previous statements in our formal language and derive new statements from them.
+    They essentially describe the allowable algebraic manipulations we can make to the symbols in our language,
+    and in this way they function analogously to the instruction set of a computer
+    (if you're familiar with that).
+
+    Another way to think of this is that they are truth-preserving axioms for our formal system;
+    they are fundamental assumptions about the semantics of our formal language
+    that allow us to reinterpret the statements we formulate in it.
+    They usually take one of two forms: equivalences and inferences.
+    For each of these rules, there is an \emph{underlying tautology},
+    which is a tautological sentence in our formal language expressing the same idea as the rule.
+
+    An \emph{equivalence rule} would take the form \(\varphi \iff \psi\),
+    where \(\varphi\) and \(\psi\) are sentences,
+    indicating that any instance of \(\varphi\) can be replaced by an instance of \(\psi\).
+    The underlying tautology of such a rule is \(p \leftrightarrow q\).
+    \\
+    A popular alternative notation is \(\varphi \equiv \psi\).
+
+    An \emph{inference rule} would take the form \(\Gamma \implies \psi\)
+    % or, equivalently, \(\bigmeet_{i = 1}^{n}\varphi_i \implies \psi\),
+    where \(\Gamma\) is a collection of sentences
+    \(\varphi_1, \dots \varphi_n\) in our formal language
+    and \(\psi\) is some other sentence,
+    indicating that whenever we write down all of the sentences in \(\Gamma\),
+    we can then write down \(\psi\) afterward.
+    The underlying tautology of such a rule is
+    \(\varphi_1 \meet \dots \varphi_n \implies \psi\).
+    \\
+    A popular alternative notation is \(\Gamma \proves \psi\), or \(\varphi_1, \dots \varphi_n \proves \psi\),
+    indicating that we can deduce \(\psi\) from the sentences in \(\Gamma\).
+\end{definition}
+
+The axioms for a Boolean algebra given in
+\autoref{def:boolean} in \autoref{chap:propositional}
+are examples of \emph{equivalence rules of inference},
+and we will take these as part of our collection of rules of inference for the formal language we are building.
+
+\begin{table}[H]
+    \centering
+    \label{tab:rulesequivalence}
+    \begin{tabular}{|Cc|Cc|Cc|} \hline
+        \multicolumn{3}{|c|}{\thead{Equivalence Rules}} \\\hline
+        \thead{Identity} & \thead{\(p \meet \top \iff p\) \\ \(p \join \bot \iff p\)} & \thead{\(p \meet \top \equiv p\) \\ \(p \join \bot \equiv p\)} \\ \hline
+        \thead{Complement \\ (\aka Negation)} & \thead{\(p \meet \neg p \iff \bot\) \\ \(p \join \neg p \iff \top\)} & \thead{\(p \meet \neg p \equiv \bot\) \\ \(p \join \neg p \equiv \top\)} \\ \hline
+        \thead{Commutativity} & \thead{\(p \meet q \iff q \meet p\) \\ \(p \join q \iff q \join p\)} & \thead{\(p \meet q \equiv q \meet p\) \\ \(p \join q \equiv q \join p\)} \\ \hline
+        \thead{Associativity} & \thead{\(p \meet (q \meet r) \iff (p \meet q) \meet r\) \\ \(p \join (q \join r) \iff (p \join q) \join r\)} & \thead{\(p \meet (q \meet r) \equiv (p \meet q) \meet r\) \\ \(p \join (q \join r) \equiv (p \join q) \join r\)} \\ \hline
+        \thead{Distributive Laws} & \thead{\(p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)\)} & \thead{\(p \conjunct (q \disjunct r) \equiv (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \equiv (p \disjunct q) \conjunct (p \disjunct r)\)} \\ \hline
+    \end{tabular}
+\end{table}
+\begin{table}[H]
+    \centering
+    \label{tab:rulesinference}
+    \begin{tabular}{|Cc|Cc|Cc|} \hline
+        \multicolumn{3}{|c|}{\thead{Inference Rules}} \\\hline
+        \thead{Deduction} & \thead{If by assuming \(p\) we are able to derive \(q\),\\ then we can derive \(p \rightarrow q\)} & \thead[l]{\(p \proves q\) \\[1ex] \hline \\[-2ex] \(p \rightarrow q\)} \\ \hline
+        \thead{Modus Ponens} & \thead{If we know that \(p \rightarrow q\) and we have \(p\),\\ then we can derive \(q\)} & \thead[l]{\(p\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(q\)} \\ \hline
+        \thead{Modus Tollens} & \thead{If we know that \(p \rightarrow q\) and we have \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(\neg q\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
+        \thead{Reductio ad Absurdum} & \thead{If by assuming \(p\) we can derive both \(q\) and \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(p \proves q\) \\ \(p \proves \neg q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
+    \end{tabular}
+\end{table}
+
+% \begin{definition}[Modus Ponens]
+%     If we have written down two sentences of the form \(\varphi\) and \(\varphi \rightarrow \psi\),
+%     then we can write down \(\psi\).
+% 
+%     This can also be 
+% \end{definition}
+% 
+% \begin{definition}[Deduction]
+% \end{definition}
 
 \end{document}

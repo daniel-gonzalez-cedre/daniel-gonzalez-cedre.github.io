@@ -2,6 +2,8 @@
 \input{environments.tex}
 \input{definitions.tex}
 
+\externaldocument{../first-order-logic/first-order-logic}
+
 \begin{document}
 
 \title{Discrete Mathematics}
@@ -12,7 +14,7 @@
 \datetrue
 
 \setcounter{chapter}{0}
-\chapter{Propositional Logic}
+\chapter{Propositional Logic}\label{chap:propositional}
 
 \section{Propositions \& Connectives}
 
@@ -29,8 +31,7 @@
             \begin{table}[H]
                 \centering
                 \label{tab:not}
-                \begin{tabular}{|Cc||Cc|}
-                    \hline
+                \begin{tabular}{|Cc||Cc|} \hline
                     \thead{\(p\)} & \thead{\(\neg p\)} \\ \hline
                     \thead{\(\top\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
                     \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\ \hline
@@ -64,8 +65,7 @@
             \begin{table}[H]
                 \centering
                 \label{tab:and}
-                \begin{tabular}{|CcCc||Cc|}
-                    \hline
+                \begin{tabular}{|CcCc||Cc|} \hline
                     \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \meet q\)} \\ \hline
                     \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
                     \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
@@ -104,8 +104,7 @@
             \begin{table}[H]
                 \centering
                 \label{tab:or}
-                \begin{tabular}{|CcCc||Cc|}
-                    \hline
+                \begin{tabular}{|CcCc||Cc|} \hline
                     \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \join q\)} \\ \hline
                     \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
                     \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
@@ -140,8 +139,7 @@
             \begin{table}[H]
                 \centering
                 \label{tab:implies}
-                \begin{tabular}{|CcCc||Cc|}
-                    \hline
+                \begin{tabular}{|CcCc||Cc|} \hline
                     \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \rightarrow q\)} \\ \hline
                     \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
                     \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
@@ -177,7 +175,7 @@
     \end{center}
 \end{definition}
 
-\begin{definition}[Biconditional]
+\begin{definition}[Material Equivalence]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
             Given two propositions \(p\) and \(q\), the \emph{biconditional} formed by \(p\) and \(q\)
@@ -185,8 +183,7 @@
             \begin{table}[H]
                 \centering
                 \label{tab:iff}
-                \begin{tabular}{|CcCc||Cc|}
-                    \hline
+                \begin{tabular}{|CcCc||Cc|} \hline
                     \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \leftrightarrow q\)} \\ \hline
                     \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
                     \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
@@ -255,8 +252,7 @@
 
     \begin{table}[H]
         \centering
-        \begin{tabular}{|CcCc||CcCc|}
-            \hline
+        \begin{tabular}{|CcCc||CcCc|} \hline
             \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \rightarrow q\)} & \thead{\(\neg p \join q\)}\\ \hline
             \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} & \cellcolor{green!30!white}{\(\top\)}\\
             \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} & \cellcolor{red!30!white}{\thead{\(\bot\)}}\\
@@ -269,7 +265,7 @@
 \newpage
 \section{Boolean Algebras}
 
-\begin{definition}[Boolean Algebra]
+\begin{definition}[Boolean Algebra]\label{def:boolean}
     A \emph{Boolean algebra} is a collection of \emph{terms} \(B\)
     with two distinguished (and distinct) terms called \(\top\) and \(\bot\),
     along with a unary operation called \(\neg\) and two binary operations called \(\meet\) and \(\join\),
@@ -278,8 +274,7 @@
     \begin{table}[H]
         \centering
         \label{tab:boole}
-        \begin{tabular}{|Cc|Cc|}
-            \hline
+        \begin{tabular}{|Cc|Cc|} \hline
             \multicolumn{2}{|c|}{\thead{Axioms of a Boolean Algebra}} \\\hline
             \thead{Identity} & \thead{\(p \meet \top \iff p\) \\ \(p \join \bot \iff p\)} \\ \hline
             \thead{Complement \\ (\aka Negation)} & \thead{\(p \meet \neg p \iff \bot\) \\ \(p \join \neg p \iff \top\)} \\ \hline
@@ -300,8 +295,7 @@
     \begin{table}[H]
         \centering
         \label{tab:heyting}
-        \begin{tabular}{|Cc|Cc|}
-            \hline
+        \begin{tabular}{|Cc|Cc|} \hline
             \multicolumn{2}{|c|}{\thead{Heyting Axioms}} \\\hline
             \thead{Conditional Disintegration}   & \thead{\(p \rightarrow q \iff \neg p \join q\)} \\ \hline
             \thead{Biconditional Disintegration} & \thead{\(p \leftrightarrow q \iff (p \rightarrow q) \meet (q \rightarrow p)\)} \\ \hline
