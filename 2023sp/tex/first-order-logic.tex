@@ -1,0 +1,90 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+
+\title{Discrete Mathematics}
+\author{Daniel Gonzalez Cedre}
+\date{University of Notre Dame \\ Spring of 2023}
+\maketitle
+
+\datetrue
+
+\setcounter{chapter}{1}
+\chapter{First-Order Logic}
+
+\section{Predicates \& Quantification}
+
+\begin{definition}[Universe of Discourse]
+    Our \emph{universe of discourse}, usually denoted by the letter \(\Omega\),
+    denotes the collection of objects under consideration.
+    This specifies the objects that are admissible as inputs to predicates,
+    meaning these are the objects we can actually make concrete, descriptive claims about
+    using our formal language.
+\end{definition}
+
+\begin{definition}[Predicate]
+    Given a universe of discourse \(\Omega\) and a non-negative integer \(n\),
+    we say that \(\varphi(x_1, \dots x_n)\) is an \(n\)-ary \emph{predicate}
+    \iffbydefn the substitution of an object \(\omega_i\) from \(\Omega\) for each \(x_i\) in \(\varphi\)
+    results in a proposition \(\varphi(\omega_1, \dots \omega_n)\).
+    These are sometimes referred to as \emph{propositional functions}.
+    Notice that if \(n = 0\) then the \(0\)-ary predicate is simply a proposition.
+
+    The placeholders \(x_1, \dots x_n\) in \(\varphi\) are called \emph{variables},
+    and the process of assigning objects to these variables is called
+    \emph{instantiation} or \emph{variable assignment}.
+\end{definition}
+\begin{example}\label{ex:predicate}
+    If we choose a universe of discourse \(\Omega\) consisting of some collection of people, then
+
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{align*}
+            \mu(x) &\defn \text{``}x \text{ is a mathematician.''}\\
+            \varepsilon(x) &\defn \text{``}x \text{ loves espresso.''}
+        \end{align*}
+    \end{minipage}%
+    \begin{minipage}{.45\linewidth}
+        \vspace{-\parskip-\abovedisplayskip}
+        \begin{align*}
+            \gamma(x, y) &\defn \text{``}x \text{ drinks a Guinness with } y\text{.''}\\
+            \alpha(x, y, z) &\defn \text{``}x\text{, }y\text{, and } z \text{ are colleagues.''}
+        \end{align*}
+    \end{minipage}
+
+    are unary, binary, and ternary predicates respectively.
+\end{example}
+
+\begin{definition}[Universal Quantifier]
+    Given a unary predicate \(\varphi(x)\),
+    the \emph{universal quantification} of the variable \(x\) in \(\varphi\)
+    is denoted by \(\forall x \pn*{\varphi(x)}\)
+    and expresses that \(\varphi(\omega)\) is true for any arbitrary \(\omega\) from our universe of discourse.
+\end{definition}
+\begin{example}
+    Using the definitions from \autoref{ex:predicate},
+    we can rewrite ``Every mathematician loves espresso'' as
+    \(\forall x \pn*{\varepsilon(x)}\) or as \(\forall x \pn*{\mu(x) \rightarrow \varepsilon(x)}\)
+    depending on whether our universe \(\Omega\)
+    is the collection of all mathematicians or the collection of all people.
+\end{example}
+
+\begin{definition}[Existential Quantifier]
+    Given a unary predicate \(\varphi(x)\),
+    the \emph{existential quantification} of the variable \(x\) in \(\varphi\)
+    is denoted by \(\exists x \pn*{\varphi(x)}\)
+    and expresses that \(\varphi(\omega)\) is true for at least one \(\omega\) from our universe of discourse.
+\end{definition}
+\begin{example}
+    Using the definitions from \autoref{ex:predicate},
+    we can rewrite ``Some mathematician loves espresso'' as
+    \(\exists x \pn*{\varepsilon(x)}\) or as \(\exists x \pn*{\mu(x) \meet \varepsilon(x)}\)
+    depending on whether our universe \(\Omega\)
+    is the collection of all mathematicians or the collection of all people.
+\end{example}
+
+\section{Rules of Inference}
+
+\end{document}

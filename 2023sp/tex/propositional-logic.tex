@@ -25,7 +25,7 @@
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
             Given a proposition \(p\), the \emph{negation} of \(p\)
-            is denoted \(\neg p\) and is defined by the following truth table:
+            is denoted \(\neg p\) and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:not}
@@ -60,7 +60,7 @@
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
             Given two propositions \(p\) and \(q\), the \emph{conjunction} of \(p\) with \(q\)
-            is denoted \(p \meet q\) and is defined by the following truth table:
+            is denoted \(p \meet q\) and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:and}
@@ -100,7 +100,7 @@
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
             Given two propositions \(p\) and \(q\), the \emph{disjunction} of \(p\) with \(q\)
-            is denoted \(p \join q\) and is defined by the following truth table:
+            is denoted \(p \join q\) and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:or}
@@ -129,12 +129,14 @@
     \end{center}
 \end{definition}
 
+\newpage
+
 \begin{definition}[Material Implication]
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
             Given two propositions \(p\) and \(q\),
             the \emph{conditional} formed by assuming \(p\) and concluding \(q\)
-            is denoted \(p \rightarrow q\) and is defined by the following truth table:
+            is denoted \(p \rightarrow q\) and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:implies}
@@ -179,7 +181,7 @@
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
             Given two propositions \(p\) and \(q\), the \emph{biconditional} formed by \(p\) and \(q\)
-            is denoted \(p \leftrightarrow q\) and is defined by the following truth table:
+            is denoted \(p \leftrightarrow q\) and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:iff}
@@ -338,6 +340,8 @@
     A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is \emph{satisfiable}
     \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) that results in \(\varphi\) being equivalent to \(\top\).
 \end{definition}
+
+\newpage
 
 \begin{theorem}[Uniqueness of Complements]\label{thm:unique}
     Let \(p\) be a term in a Boolean algebra \((B, \neg, \meet, \join)\).
