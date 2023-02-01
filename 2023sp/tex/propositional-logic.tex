@@ -261,6 +261,10 @@
         \end{tabular}
     \end{table}
 \end{example}
+\begin{definition}[Satisfiability]
+    A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is \emph{satisfiable}
+    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) that results in \(\varphi\) being equivalent to \(\top\).
+\end{definition}
 
 \newpage
 \section{Boolean Algebras}
@@ -323,17 +327,17 @@
     and using them to prove theorems about our logical system.
 \end{definition}
 
-\begin{definition}[Tautology \& Contradiction]
-    Let \(\varphi\) be a propositional expression consisting of the propositional variables \(p_1, \dots p_n\).\\
-    We say \(\varphi\) is a \emph{tautology}
-    \iffbydefn every assignment of truth values to \(p_1, \dots p_n\) such that \(\varphi \iff \top\).\\
-    We say \(\varphi\) is a \emph{contradiction}
-    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) such that \(\varphi \iff \bot\).
+\begin{definition}[Tautology]
+    We say a proposition \(\varphi\) is a \emph{tautology}
+    \iffbydefn we have that \(\varphi \iff \top\).
 \end{definition}
-\begin{definition}[Satisfiability]
-    A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is \emph{satisfiable}
-    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) that results in \(\varphi\) being equivalent to \(\top\).
+\begin{definition}[Contradiction]
+    We say a proposition \(\varphi\) is a \emph{contradiction}
+    \iffbydefn we have that \(\varphi \iff \bot\).
 \end{definition}
+\begin{example}
+    \(p \join \neg p\) is a tautology, and \(p \meet \neg p\) is a contradiction.
+\end{example}
 
 \newpage
 
