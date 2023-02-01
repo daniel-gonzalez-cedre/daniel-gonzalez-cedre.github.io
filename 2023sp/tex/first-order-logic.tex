@@ -95,7 +95,6 @@
     They essentially describe the allowable algebraic manipulations we can make to the symbols in our language,
     and in this way they function analogously to the instruction set of a computer
     (if you're familiar with that).
-
     Another way to think of this is that they are truth-preserving axioms for our formal system;
     they are fundamental assumptions about the semantics of our formal language
     that allow us to reinterpret the statements we formulate in it.
@@ -122,34 +121,59 @@
     \\
     A popular alternative notation is \(\Gamma \proves \psi\), or \(\varphi_1, \dots \varphi_n \proves \psi\),
     indicating that we can deduce \(\psi\) from the sentences in \(\Gamma\).
+
+    We will stick to the \(\iff\) and \(\implies\) notation in this course
+    since it is the most popular modern notation in use among practicing mathematicians.
+    However, keep in mind that certain people
+    (in particular, modern computer scientists, logicians, and set/model theorists)
+    may instead use the \(\equiv\) and \(\proves\) notation.
 \end{definition}
 
-The axioms for a Boolean algebra given in
-\autoref{def:boolean} in \autoref{chap:propositional}
-are examples of \emph{equivalence rules of inference},
-and we will take these as part of our collection of rules of inference for the formal language we are building.
+% The rules in the two tables below encompass the rules we have for \emph{unquantified} statements in our language.
+% Notice that these encompass the axioms for a Boolean (and Heyting) algebra from the previous chapter.
+
+\begin{center}
+    \vspace{-\parskip-\abovedisplayskip}
+    \begin{minipage}[t]{.5\linewidth}
+        \begin{table}[H]
+            \centering
+            \label{tab:rulesequivalence}
+            \begin{tabular}{|Cc|Cc|} \hline
+                \multicolumn{2}{|c|}{\thead{Equivalence Rules}} \\\hline
+                \thead{Identity} & \thead{\(p \meet \top \iff p\) \\ \(p \join \bot \iff p\)} \\ \hline
+                \thead{Complement \\ (\aka Negation)} & \thead{\(p \meet \neg p \iff \bot\) \\ \(p \join \neg p \iff \top\)} \\ \hline
+                \thead{Commutativity} & \thead{\(p \meet q \iff q \meet p\) \\ \(p \join q \iff q \join p\)} \\ \hline
+                \thead{Associativity} & \thead{\(p \meet (q \meet r) \iff (p \meet q) \meet r\) \\ \(p \join (q \join r) \iff (p \join q) \join r\)} \\ \hline
+                \thead{Distributivity} & \thead{\(p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)\)} \\ \hline
+                \thead{Conditional \\ Disintegration} & \thead{\(p \rightarrow q \iff \neg p \join q\)} \\ \hline
+                \thead{Biconditional \\ Disintegration} & \thead{\(p \leftrightarrow q \iff (p \rightarrow q) \meet (q \rightarrow p)\)} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}%
+    \begin{minipage}[t]{.5\linewidth}
+        \begin{table}[H]
+            \centering
+            \label{tab:rulesinference}
+            \begin{tabular}{|Cc|Cc|r|} \hline
+                \multicolumn{3}{|c|}{\thead{Unquantified Inference Rules}} \\\hline
+                \thead{Deduction} & \thead{If by assuming \(p\) \\ we are able to derive \(q\),\\ then we can derive \(p \rightarrow q\)} & \thead[r]{\(p \implies q\) \\[1ex] \hline \\[-2ex] \(p \rightarrow q\)} \\ \hline
+                \thead{Modus Ponens} & \thead{If we know \(p \rightarrow q\) \\  and we have \(p\),\\ then we can derive \(q\)} & \thead[r]{\(p\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(q\)} \\ \hline
+                \thead{Modus Tollens} & \thead{If we know \(p \rightarrow q\) \\ and we have \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[r]{\(\neg q\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
+                \thead{Reductio \\ ad Absurdum} & \thead{If by assuming \(p\) \\ we can derive both \(q\) and \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[r]{\(p \implies q\) \\ \(p \implies \neg q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}
+\end{center}
 
 \begin{table}[H]
     \centering
-    \label{tab:rulesequivalence}
-    \begin{tabular}{|Cc|Cc|Cc|} \hline
-        \multicolumn{3}{|c|}{\thead{Equivalence Rules}} \\\hline
-        \thead{Identity} & \thead{\(p \meet \top \iff p\) \\ \(p \join \bot \iff p\)} & \thead{\(p \meet \top \equiv p\) \\ \(p \join \bot \equiv p\)} \\ \hline
-        \thead{Complement \\ (\aka Negation)} & \thead{\(p \meet \neg p \iff \bot\) \\ \(p \join \neg p \iff \top\)} & \thead{\(p \meet \neg p \equiv \bot\) \\ \(p \join \neg p \equiv \top\)} \\ \hline
-        \thead{Commutativity} & \thead{\(p \meet q \iff q \meet p\) \\ \(p \join q \iff q \join p\)} & \thead{\(p \meet q \equiv q \meet p\) \\ \(p \join q \equiv q \join p\)} \\ \hline
-        \thead{Associativity} & \thead{\(p \meet (q \meet r) \iff (p \meet q) \meet r\) \\ \(p \join (q \join r) \iff (p \join q) \join r\)} & \thead{\(p \meet (q \meet r) \equiv (p \meet q) \meet r\) \\ \(p \join (q \join r) \equiv (p \join q) \join r\)} \\ \hline
-        \thead{Distributive Laws} & \thead{\(p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)\)} & \thead{\(p \conjunct (q \disjunct r) \equiv (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \equiv (p \disjunct q) \conjunct (p \disjunct r)\)} \\ \hline
-    \end{tabular}
-\end{table}
-\begin{table}[H]
-    \centering
-    \label{tab:rulesinference}
-    \begin{tabular}{|Cc|Cc|Cc|} \hline
-        \multicolumn{3}{|c|}{\thead{Inference Rules}} \\\hline
-        \thead{Deduction} & \thead{If by assuming \(p\) we are able to derive \(q\),\\ then we can derive \(p \rightarrow q\)} & \thead[l]{\(p \proves q\) \\[1ex] \hline \\[-2ex] \(p \rightarrow q\)} \\ \hline
-        \thead{Modus Ponens} & \thead{If we know that \(p \rightarrow q\) and we have \(p\),\\ then we can derive \(q\)} & \thead[l]{\(p\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(q\)} \\ \hline
-        \thead{Modus Tollens} & \thead{If we know that \(p \rightarrow q\) and we have \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(\neg q\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
-        \thead{Reductio ad Absurdum} & \thead{If by assuming \(p\) we can derive both \(q\) and \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(p \proves q\) \\ \(p \proves \neg q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
+    \label{tab:rulesquantifiers}
+    \begin{tabular}{|Cc|Cc|r|} \hline
+        \multicolumn{3}{|c|}{\thead{Quantified Inference Rules}} \\\hline
+        \thead{Universal Instantiation \\ (\(\forall\) Elimination)} & \thead{If we know \(\forall x \pn*{\varphi(x)}\), \\ then we can derive \(\varphi(t)\) for any \(t\).} & \thead[r]{\(\forall x \pn*{\varphi(x)}\) \\[1ex] \hline \\[-2ex] \(\varphi(t)\) for any \(t\)} \\ \hline
+        \thead{Universal Generalization \\ (\(\forall\) Introduction)} & \thead{If we know \(\varphi(t)\) for an arbitrary \(t\), \\ then we can derive \(\forall x \pn*{\varphi(x)}\).} & \thead[r]{\(\varphi(t)\) for an arbitrary \(t\) \\[1ex] \hline \\[-2ex] \(\forall x \pn*{\varphi(x)}\)} \\ \hline
+        \thead{Existential Instantiation \\ (\(\exists\) Elimination)} & \thead{If we know \(\exists x \pn*{\varphi(x)}\), then we can derive \\ \(\varphi(t)\) for some \(t\) that hasn't yet appeared.} & \thead[r]{\(\exists x \pn*{\varphi(x)}\) \\[1ex] \hline \\[-2ex] \(\varphi(t)\) for some \(t\) that hasn't yet appeared} \\ \hline
+        \thead{Existential Generalization \\ (\(\exists\) Introduction)} & \thead{If we know \(\varphi(t)\) for some particular \(t\), \\ then we can derive \(\exists x \pn*{\varphi(x)}\).} & \thead[r]{\(\varphi(t)\) for some particular \(t\) \\[1ex] \hline \\[-2ex] \(\exists x \pn*{\varphi(x)}\)} \\ \hline
     \end{tabular}
 \end{table}
 
