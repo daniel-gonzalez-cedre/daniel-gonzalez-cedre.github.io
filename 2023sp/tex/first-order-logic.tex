@@ -134,7 +134,7 @@
 
 \begin{center}
     \vspace{-\parskip-\abovedisplayskip}
-    \begin{minipage}[t]{.5\linewidth}
+    \begin{minipage}[t]{.40\linewidth}
         \begin{table}[H]
             \centering
             \label{tab:rulesequivalence}
@@ -150,7 +150,10 @@
             \end{tabular}
         \end{table}
     \end{minipage}%
-    \begin{minipage}[t]{.5\linewidth}
+    \begin{minipage}[t]{.1\linewidth}
+        ~
+    \end{minipage}%
+    \begin{minipage}[t]{.45\linewidth}
         \begin{table}[H]
             \centering
             \label{tab:rulesinference}
@@ -177,14 +180,75 @@
     \end{tabular}
 \end{table}
 
-% \begin{definition}[Modus Ponens]
-%     If we have written down two sentences of the form \(\varphi\) and \(\varphi \rightarrow \psi\),
-%     then we can write down \(\psi\).
-% 
-%     This can also be 
-% \end{definition}
-% 
-% \begin{definition}[Deduction]
-% \end{definition}
+\begin{lemma}\label{lem:forall}
+    Let \(\varphi\) be a predicate.
+    If we know \(\forall x \pn*{\neg \varphi(x)}\), then we have \(\neg \exists x \pn*{\varphi(x)}\).
+\end{lemma}
+\begin{proof}
+    Suppose that \(\forall x \pn*{\neg \varphi(x)}\).
+    Assume, towards a contradiction, that \(\exists x \pn*{\varphi(x)}\).
+    Then, we know that \(\varphi(t)\) for some \(t\).
+    From our first assumption, we know that \(\neg \varphi(s)\) for any \(s\);
+    in particular, we know that \(\neg \varphi(t)\).
+    But then, we obtain \(\varphi(t) \meet \neg \varphi(t)\), which is a contradiction. \contradiction
+
+    Therefore, we can conclude \(\neg \exists x \pn*{\varphi(x)}\).
+\end{proof}
+
+\begin{lemma}\label{lem:negexists}
+    Let \(\varphi\) be a predicate.
+    If we know \(\neg \exists x \pn*{\varphi(x)}\), then we have \(\forall x \pn*{\neg \varphi(x)}\).
+\end{lemma}
+\begin{proof}
+    Suppose that \(\neg \exists x \pn*{\varphi(x)}\) and let \(t\) be an arbitrary object.
+
+    Towards a contradiction, assume that \(\varphi(t)\).
+    That would then mean \(\exists x \pn*{\varphi(x)}\).
+    However, we already assumed \(\neg \exists x \pn*{\varphi(x)}\), which is absurd. \contradiction
+
+    Therefore, we must have \(\neg \varphi(t)\).
+    Since \(t\) was arbitrary, we can then conclude \(\forall x \pn*{\neg \varphi(x)}\).
+\end{proof}
+
+\begin{lemma}\label{lem:exists}
+    Let \(\varphi\) be a predicate.
+    If we know \(\exists x \pn*{\neg \varphi(x)}\), then we have \(\neg \forall x \pn*{\varphi(x)}\).
+\end{lemma}
+\begin{proof}
+    Suppose that \(\exists x \pn*{\neg \varphi(x)}\).
+    Then, we know that \(\neg \varphi(t)\) for some \(t\).
+    Assume, towards a contradiction, that \(\forall x \pn*{\varphi(x)}\).
+    Then, we have \(\varphi(s)\) for any \(s\);
+    in particular, we know \(\varphi(t)\).
+    But then, we have \(\neg \varphi(t) \meet \varphi(t)\), giving us a contradiction. \contradiction
+
+    Therefore, we can conclude \(\neg \forall x \pn*{\varphi(x)}\).
+\end{proof}
+
+\begin{lemma}\label{lem:negforall}
+    Let \(\varphi\) be a predicate.
+    If we know \(\neg \forall x \pn*{\varphi(x)}\), then we have \(\exists x \pn*{\neg \varphi(x)}\).
+\end{lemma}
+\begin{proof}
+    Suppose \(\neg \forall x \pn*{\varphi(x)}\).
+    Towards a contradiction, assume that \(\neg \exists x \pn*{\neg \varphi(x)}\).
+    Then by \autoref{lem:negexists}, we can deduce \(\forall x \pn*{\neg \neg \varphi(x)}\),
+    which is equivalent to \(\forall x \pn*{\varphi(x)}\).
+    However, this contradicts our initial assumption that \(\neg \forall x \pn*{\varphi(x)}\). \contradiction
+
+    Therefore, we can conclude that \(\exists x \pn*{\varphi(x)}\).
+\end{proof}
+
+\begin{theorem}[Negation of Quantifiers]
+    For any predicate \(\varphi\), we have
+    \begin{align*}
+        \neg \forall x \pn*{\varphi(x)} &\iff \exists x \pn*{\neg \varphi(x))}\\
+        \neg \exists x \pn*{\varphi(x)} &\iff \forall x \pn*{\neg \varphi(x))}\\
+    \end{align*}
+\end{theorem}
+\begin{proof}
+    By \autoref{lem:forall}, \autoref{lem:negexists}, \autoref{lem:exists}, and \autoref{lem:negforall},
+    we get the conclusion.
+\end{proof}
 
 \end{document}
