@@ -157,12 +157,12 @@
         \begin{table}[H]
             \centering
             \label{tab:rulesinference}
-            \begin{tabular}{|Cc|Cc|r|} \hline
+            \begin{tabular}{|Cc|l|l|} \hline
                 \multicolumn{3}{|c|}{\thead{Unquantified Inference Rules}} \\\hline
-                \thead{Deduction} & \thead{If by assuming \(p\) \\ we are able to derive \(q\),\\ then we can derive \(p \rightarrow q\)} & \thead[r]{\(p \implies q\) \\[1ex] \hline \\[-2ex] \(p \rightarrow q\)} \\ \hline
-                \thead{Modus Ponens} & \thead{If we know \(p \rightarrow q\) \\  and we have \(p\),\\ then we can derive \(q\)} & \thead[r]{\(p\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(q\)} \\ \hline
-                \thead{Modus Tollens} & \thead{If we know \(p \rightarrow q\) \\ and we have \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[r]{\(\neg q\) \\ \(p \rightarrow q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
-                \thead{Reductio \\ ad Absurdum} & \thead{If by assuming \(p\) \\ we can derive both \(q\) and \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[r]{\(p \implies q\) \\ \(p \implies \neg q\) \\[1ex] \hline \\[-2ex] \(\neg p\)} \\ \hline
+                \thead{Deduction} & \thead[l]{If by assuming \(p\) \\ we are able to derive \(q\),\\ then we can derive \(p \rightarrow q\)} & \thead[l]{\(\begin{array}{c} p \implies q \\ \cline{1-1} p \rightarrow q\end{array}\)} \\ \hline
+                \thead{Modus Ponens} & \thead[l]{If we know \(p \rightarrow q\) \\  and we have \(p\),\\ then we can derive \(q\)} & \thead[l]{\(\begin{array}{l} p \\ p \rightarrow q \\ \cline{1-1} q \end{array}\)} \\ \hline
+                \thead{Modus Tollens} & \thead[l]{If we know \(p \rightarrow q\) \\ and we have \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(\begin{array}{l} \neg q \\ p \rightarrow q \\ \cline{1-1} \neg p \end{array}\)} \\ \hline
+                \thead{Reductio \\ ad Absurdum} & \thead[l]{If by assuming \(p\) \\ we can derive both \(q\) and \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(\begin{array}{l} p \implies q \\ p \implies \neg q \\ \cline{1-1} \neg p \end{array}\)} \\ \hline
             \end{tabular}
         \end{table}
     \end{minipage}
@@ -171,12 +171,12 @@
 \begin{table}[H]
     \centering
     \label{tab:rulesquantifiers}
-    \begin{tabular}{|Cc|Cc|r|} \hline
+    \begin{tabular}{|Cc|l|l|} \hline
         \multicolumn{3}{|c|}{\thead{Quantified Inference Rules}} \\\hline
-        \thead{Universal Instantiation \\ (\(\forall\) Elimination)} & \thead{If we know \(\forall x \pn*{\varphi(x)}\), \\ then we can derive \(\varphi(t)\) for any \(t\).} & \thead[r]{\(\forall x \pn*{\varphi(x)}\) \\[1ex] \hline \\[-2ex] \(\varphi(t)\) for any \(t\)} \\ \hline
-        \thead{Universal Generalization \\ (\(\forall\) Introduction)} & \thead{If we know \(\varphi(t)\) for an arbitrary \(t\), \\ then we can derive \(\forall x \pn*{\varphi(x)}\).} & \thead[r]{\(\varphi(t)\) for an arbitrary \(t\) \\[1ex] \hline \\[-2ex] \(\forall x \pn*{\varphi(x)}\)} \\ \hline
-        \thead{Existential Instantiation \\ (\(\exists\) Elimination)} & \thead{If we know \(\exists x \pn*{\varphi(x)}\), then we can derive \\ \(\varphi(t)\) for some \(t\) that hasn't yet appeared.} & \thead[r]{\(\exists x \pn*{\varphi(x)}\) \\[1ex] \hline \\[-2ex] \(\varphi(t)\) for some \(t\) that hasn't yet appeared} \\ \hline
-        \thead{Existential Generalization \\ (\(\exists\) Introduction)} & \thead{If we know \(\varphi(t)\) for some particular \(t\), \\ then we can derive \(\exists x \pn*{\varphi(x)}\).} & \thead[r]{\(\varphi(t)\) for some particular \(t\) \\[1ex] \hline \\[-2ex] \(\exists x \pn*{\varphi(x)}\)} \\ \hline
+        \thead{Universal Instantiation \\ (\(\forall\) Elimination)} & \thead[l]{If we know \(\forall x \pn*{\varphi(x)}\), \\ then we can derive \(\varphi(t)\) for any \(t\).} & \thead[l]{\(\begin{array}{l} \forall x \pn*{\varphi(x)} \\ \cline{1-1} \varphi(t) \text{ for any } t\end{array}\)} \\ \hline
+        \thead{Universal Generalization \\ (\(\forall\) Introduction)} & \thead[l]{If we know \(\varphi(t)\) for an arbitrary \(t\), \\ then we can derive \(\forall x \pn*{\varphi(x)}\).} & \thead[l]{\(\begin{array}{l} \varphi(t) \text{ for an arbitrary } t \\ \cline{1-1} \forall x \pn*{\varphi(x)} \end{array}\)} \\ \hline
+        \thead{Existential Instantiation \\ (\(\exists\) Elimination)} & \thead[l]{If we know \(\exists x \pn*{\varphi(x)}\), then we can derive \\ \(\varphi(t)\) for some \(t\) that hasn't yet appeared.} & \thead[l]{\(\begin{array}{l} \exists x \pn*{\varphi(x)} \\ \cline{1-1} \varphi(t) \text{ for some } t \text{ that hasn't yet appeared}\end{array}\)} \\ \hline
+        \thead{Existential Generalization \\ (\(\exists\) Introduction)} & \thead[l]{If we know \(\varphi(t)\) for some particular \(t\), \\ then we can derive \(\exists x \pn*{\varphi(x)}\).} & \thead[l]{\(\begin{array}{l} \varphi(t) \text{ for some particular } t \\ \cline{1-1} \exists x \pn*{\varphi(x)} \end{array}\)} \\ \hline
     \end{tabular}
 \end{table}
 
@@ -190,8 +190,7 @@
     Then, we know that \(\varphi(t)\) for some \(t\).
     From our first assumption, we know that \(\neg \varphi(s)\) for any \(s\);
     in particular, we know that \(\neg \varphi(t)\).
-    But then, we obtain \(\varphi(t) \meet \neg \varphi(t)\), which is a contradiction. \contradiction
-
+    But then, we obtain \(\varphi(t) \meet \neg \varphi(t)\), which is a contradiction. \contradiction\\
     Therefore, we can conclude \(\neg \exists x \pn*{\varphi(x)}\).
 \end{proof}
 
@@ -201,11 +200,9 @@
 \end{lemma}
 \begin{proof}
     Suppose that \(\neg \exists x \pn*{\varphi(x)}\) and let \(t\) be an arbitrary object.
-
     Towards a contradiction, assume that \(\varphi(t)\).
     That would then mean \(\exists x \pn*{\varphi(x)}\).
-    However, we already assumed \(\neg \exists x \pn*{\varphi(x)}\), which is absurd. \contradiction
-
+    However, we already assumed \(\neg \exists x \pn*{\varphi(x)}\), which is absurd. \contradiction\\
     Therefore, we must have \(\neg \varphi(t)\).
     Since \(t\) was arbitrary, we can then conclude \(\forall x \pn*{\neg \varphi(x)}\).
 \end{proof}
@@ -220,8 +217,7 @@
     Assume, towards a contradiction, that \(\forall x \pn*{\varphi(x)}\).
     Then, we have \(\varphi(s)\) for any \(s\);
     in particular, we know \(\varphi(t)\).
-    But then, we have \(\neg \varphi(t) \meet \varphi(t)\), giving us a contradiction. \contradiction
-
+    But then, we have \(\neg \varphi(t) \meet \varphi(t)\), giving us a contradiction. \contradiction\\
     Therefore, we can conclude \(\neg \forall x \pn*{\varphi(x)}\).
 \end{proof}
 
@@ -234,8 +230,7 @@
     Towards a contradiction, assume that \(\neg \exists x \pn*{\neg \varphi(x)}\).
     Then by \autoref{lem:negexists}, we can deduce \(\forall x \pn*{\neg \neg \varphi(x)}\),
     which is equivalent to \(\forall x \pn*{\varphi(x)}\).
-    However, this contradicts our initial assumption that \(\neg \forall x \pn*{\varphi(x)}\). \contradiction
-
+    However, this contradicts our initial assumption that \(\neg \forall x \pn*{\varphi(x)}\). \contradiction\\
     Therefore, we can conclude that \(\neg \neg \exists x \pn*{\varphi(x)}\),
     which is equivalent to \(\exists x \pn*{\varphi(x)}\).
 \end{proof}
@@ -248,8 +243,65 @@
     \end{align*}
 \end{theorem}
 \begin{proof}
-    By \autoref{lem:forall}, \autoref{lem:negexists}, \autoref{lem:exists}, and \autoref{lem:negforall},
-    we get the conclusion.
+    This follows from \autoref{lem:forall}, \hyperref[lem:negexists]{2.2}, \hyperref[lem:exists]{2.3},
+    and \hyperref[lem:negforall]{2.4}.
+    The details are left as an exercise for the reader.
 \end{proof}
+
+\begin{remark}[Order of Quantification]
+    Notice that the \emph{order} of quantification often matters when writing or interpreting an expression,
+    meaning \(\forall x \exists y \pn*{\varphi(x, y)} \not \iff \exists y \forall x \pn*{\varphi(x, y)}\).
+    However, if two instances of the \emph{same} quantifier occur immediately adjacent to each other,
+    then they will commute: \(\forall x \forall y \pn*{\varphi(x, y)} \iff \forall y \forall x \pn*{\varphi(x, y)}\).
+\end{remark}
+
+\section{Validity of Arguments}
+
+\begin{definition}
+    Let \(\varphi_1, \dots \varphi_n\) and \(\psi\) be sentences in our language.
+    Consider an argument of the form
+    \[
+    \begin{array}{ r l }
+                & \varphi_1 \\
+                & \vdots \\
+                & \varphi_n \\
+        \cline{1-2}
+        \therefore & \psi
+    \end{array}
+    \]
+    We say that such an argument is \emph{valid} \iffbydefn
+    either of the following (equivalent) criteria is satisfied:
+    \begin{enumerate}
+        \item[I.]\label{validi}
+            The sentence
+            \(\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi\)
+            is a tautology.
+        \item[II.]\label{validii}
+            We have \(\varphi_1, \dots \varphi_n \implies \psi\).
+    \end{enumerate}
+    Condition \hyperref[validi]{I.\ }states that \emph{any} truth assignment
+    that makes \(\varphi_1 \meet \dots \varphi_n\) true must also make \(\psi\) true.
+    Condition \hyperref[validi]{II.\ }states that,
+    from the assumption that \(\varphi_1, \dots \varphi_n\) all hold,
+    we \emph{have a derivation}
+    that \(\psi\) is the case by using the rules of equivalence and inference.
+
+    Conversely, we say the argument is \emph{invalid} \iffbydefn
+    either of the following (equivalent) criteria is satisfied: 
+    \begin{enumerate}
+        \item[I.]
+            The sentence
+            \(\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi\)
+            is \emph{not} a tautology.
+        \item[II.]
+            We have \(\varphi_1, \dots \varphi_n \not \implies \psi\).
+    \end{enumerate}
+    Condition \hyperref[validi]{I.\ }states that \emph{there is a} truth assignment
+    that makes \(\varphi_1 \meet \dots \varphi_n\) true and also \(\psi\) false.
+    Condition \hyperref[validi]{II.\ }states that,
+    from the assumption that \(\varphi_1, \dots \varphi_n\) all hold,
+    we \emph{can not have a derivation}
+    that \(\psi\) is the case by using the rules of equivalence and inference.
+\end{definition}
 
 \end{document}
