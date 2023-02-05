@@ -11,6 +11,51 @@
 
 \begin{enumerate}
     \item
+        Implement the following sentences as functions using \texttt{Python}.
+        Each function should take as many inputs (of type \texttt{bool})
+        as there are propositional variables in the sentences,
+        and should return the correct truth value for the sentence
+        when its variables are replaced by your function's inputs.
+
+        \begin{center}
+            \begin{minipage}{.3\linewidth}
+                For example,
+                \(\neg \pn*{p \meet q}\) could be rewritten as \texttt{f} in two ways:
+            \end{minipage}%
+            \begin{minipage}{.05\linewidth}
+                ~
+            \end{minipage}%
+            \begin{minipage}{.3\linewidth}
+\begin{verbatim}def f(p, q):
+    return not(p and q)\end{verbatim}
+            \end{minipage}%
+            \begin{minipage}{.3\linewidth}
+\begin{verbatim}f = lambda p, q: not(p and q)\end{verbatim}
+            \end{minipage}
+        \end{center}
+
+        Your functions \emph{must be named}
+        \texttt{ps3pr1a},
+        \texttt{ps3pr1b},
+        \texttt{ps3pr1c},
+        \texttt{ps3pr1d},
+        and \texttt{ps3pr1e}, respectively.
+        Turn in your code as \emph{one} separate \texttt{Python} file
+        named \texttt{ps03-<lastname>-<firstname>.py}
+        with the rest of your work.
+        \begin{enumerate}
+            \item
+                \(\pn*{\neg p \rightarrow \bot} \rightarrow p\)
+            \item
+                \((p \rightarrow q) \leftrightarrow (\neg q \rightarrow \neg p)\)
+            \item
+                \(p \rightarrow (q \rightarrow r)\)
+            \item
+                \((p \rightarrow q) \rightarrow r\)
+            \item
+                \(\pn*{(p \join q) \meet (\neg p \join r)} \rightarrow (q \join r)\)
+        \end{enumerate}
+    \item
         Show that the following arguments are valid.
         \begin{remark}
             Every application of a rule of inference must be explicitly referenced by name for these subproblems.
@@ -166,9 +211,9 @@
                     \end{minipage}%
                     \begin{minipage}{0.5\linewidth}
                         \begin{enumerate}
-                            \item
+                            \item[iv.]
                                 No ghost in a shell is a person.
-                            \item
+                            \item[v.]
                                 There is a human who is not an android.
                         \end{enumerate}
                     \end{minipage}
