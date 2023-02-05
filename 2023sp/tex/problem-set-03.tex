@@ -1,0 +1,189 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+\begin{center}
+    \textsc{\huge Problem Set 3}\\
+    \textsc{Discrete Mathematics}\\
+    {\color{gruvred}Due: $10$\textsuperscript{th} of February, $2023$}
+\end{center}
+
+\begin{enumerate}
+    \item
+        Show that the following arguments are valid.
+        \begin{remark}
+            Every application of a rule of inference must be explicitly referenced by name for these subproblems.
+        \end{remark}
+        \begin{enumerate}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \rightarrow \psi \\
+                        \cline{1-1}
+                        \varphi \implies q
+                    \end{array}
+                \)
+                \hfill known as \textbf{Conditional Elimination}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \rightarrow \psi \\
+                        \psi \rightarrow \chi \\
+                        \cline{1-1}
+                        \varphi \rightarrow \chi
+                    \end{array}
+                \)
+                \hfill known as the \textbf{Hypothetical Syllogism}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \\
+                        \psi \\
+                        \cline{1-1}
+                        \varphi \meet \psi
+                    \end{array}
+                \)
+                \hfill known as \textbf{Adjunction}, \aka \textbf{Conjunction Introduction}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \meet \psi \\
+                        \cline{1-1}
+                        \varphi
+                    \end{array}
+                \)
+                \hfill known as \textbf{Simplification}, \aka \textbf{Conjunction Elimination}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \\
+                        \cline{1-1}
+                        \varphi \join \psi
+                    \end{array}
+                \)
+                \hfill known as \textbf{Addition}, \aka \textbf{Disjunction Introduction}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \rightarrow \chi \\
+                        \psi \rightarrow \chi \\
+                        \varphi \join \psi \\
+                        \cline{1-1}
+                        \chi
+                    \end{array}
+                \)
+                \hfill known as \textbf{Proof by Cases}, \aka \textbf{Disjunction Elimination}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \join \psi \\
+                        \neg \varphi \\
+                        \cline{1-1}
+                        \psi
+                    \end{array}
+                \)
+                \hfill known as the \textbf{Disjunctive Syllogism}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \rightarrow \chi \\
+                        \psi \rightarrow \xi \\
+                        \varphi \join \psi \\
+                        \cline{1-1}
+                        \chi \join \xi
+                    \end{array}
+                \)
+                \hfill known as the \textbf{Constructive Dilemma}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \\
+                        \neg \varphi \\
+                        \cline{1-1}
+                        \psi
+                    \end{array}
+                \)
+                \hfill known as the \textbf{Ex Falso Quodlibet}, \aka the \textbf{Principle of Explosion}
+            \item
+                \(
+                    \begin{array}{l}
+                        \varphi \leftrightarrow \psi \\
+                        \varphi \\
+                        \cline{1-1}
+                        \psi
+                    \end{array}
+                \)
+                \hfill known as the \textbf{Ex Falso Quodlibet}, \aka the \textbf{Principle of Explosion}
+        \end{enumerate}
+    \item
+        Imagine a universe of discourse consisting of the collection of sentient humanoid beings
+        (\eg people, humans, androids) in the year \(2029\) in Japan.
+        Now, consider the following facts:
+
+        \begin{center}
+            \begin{minipage}{0.45\linewidth}
+                \begin{enumerate}
+                    \item[I.]
+                        Every ghost in a shell is an android.
+                    \item[II.]
+                        Some androids are ghosts in shells.
+                    \item[III.]
+                        All humans are people.
+                \end{enumerate}
+            \end{minipage}%
+            \begin{minipage}{0.45\linewidth}
+                \begin{enumerate}
+                    \item[IV.]
+                        No androids are people.
+                    \item[V.]
+                        Major Kusanagi (\kanji{草薙素子}) is an android.
+                    \item[VI.]
+                        Togusa (\kana{トグサ}) is a human.
+                \end{enumerate}
+            \end{minipage}
+        \end{center}
+
+        \begin{enumerate}
+            \item\label{prob:2a}
+                Translate these six statements into the first-order logic by defining appropriate predicates.
+            \item
+                Translate each of the following English sentences into the first-order logic
+                using the definitions made in \hyperref[prob:2a]{subproblem~2(a)}
+                and then determine whether or not they follow from the facts given.
+                If you think they do follow, then prove the argument is valid.
+                Otherwise, provide an informal argument of invalidity.
+                \begin{center}
+                    \begin{minipage}{0.5\linewidth}
+                        \begin{enumerate}
+                            \item
+                                Major Kusanagi is a person.
+                            \item
+                                Someone is a ghost in a shell.
+                            \item
+                                Togusa is an android if he is a ghost in a shell.
+                        \end{enumerate}
+                    \end{minipage}%
+                    \begin{minipage}{0.5\linewidth}
+                        \begin{enumerate}
+                            \item
+                                No ghost in a shell is a person.
+                            \item
+                                There is a human who is not an android.
+                        \end{enumerate}
+                    \end{minipage}
+                \end{center}
+        \end{enumerate}
+\end{enumerate}
+
+% ALGORITHM
+% \begin{algorithm}[caption={placeholder}, label={alg:placeholder}]
+%     input:  int list $\brackets*{x_1, \dots x_n}$ with $n \geq 2$
+%     output: int list
+%     begin
+%         for $x$ in $\brackets*{x_1, \dots x_n}$:
+%             do something
+%         return result
+%     end
+% \end{algorithm}
+\end{document}
