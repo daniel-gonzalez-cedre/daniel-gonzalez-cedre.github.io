@@ -19,24 +19,46 @@
 \end{quote}
 
 \section{The Language of Set Theory}
-In order to use our first-order logic as a language with which to talk about sets,
-we need to specify:
-\begin{enumerate}
-    \item
-        What is our universe of discourse \(\Omega\)?
-    \item
-        What are our fundamental predicate symbols?
-\end{enumerate}
-With these two questions answered,
-we will be able to take objects from \(\Omega\) and make atomic formul{\ae} out of them,
-which we can then use to construct our {\wff}.
+In order to use our first-order logic as a language with which to talk about math,
+we need to specify: what is our universe of discourse \(\Omega\), and what are our fundamental predicate symbols?
+% \begin{enumerate}
+%     \item
+%         What is our universe of discourse \(\Omega\)?
+%     \item
+%         What are our fundamental predicate symbols?
+% \end{enumerate}
+% With these two questions answered,
+% we will be able to take objects from \(\Omega\) and make atomic formul{\ae} out of them,
+% which we can then use to construct our {\wff}.
+The analogy drawn in class between the structure of the study of mathematics
+and the abstract structure of a modern computer
+should hopefully communicate how natural and common the notion is of having one \emph{type} of object
+that implements other, more complicated objects.
+However, this decision actually goes back to the beginning of
+this \(20\)\textsuperscript{th} century revolution in mathematics.
+The initial solution people came up with to the fundamental logical and foundational problems they had discovered
+has to use a \emph{ramified}---or \emph{typed}---ontology,
+where different objects had different \emph{types} in a hierarchy and there were rules governing how objects
+could be manipulated based on their \emph{type}.
+The problem with this approach is that it becomes very syntactically-cumbersome for humans
+(the primary practitioners of mathematics) to deal with directly,
+so it was quickly abandoned for an \emph{untyped} approach.
+
+\begin{note}
+    The converse is true about the \emph{\(\lambda\)-calculus},
+    which is perhaps the most famous mathematical model of computation after the Turing machine.
+    Although the untyped \(\lambda\)-calculus is more expressive (\ie stronger)
+    than any of the typed \(\lambda\)-calculi (and is thus more interesting to study for mathematicians),
+    the modern functional programming languages we have today (\eg Haskell, the Lisps, F\#)
+    are actually implementations of typed \(\lambda\)-calculi
+    because computers have no issues dealing with the syntactic complications of a typed theory.
+\end{note}
 
 Our universe of discourse will consist of \emph{those objects that we can prove exist}
 using the rules of inference and the \emph{axioms of set theory} (which we will develop in this chapter).
 The axioms of set theory will be sentences in the \emph{language of Zermelo-Fraenkel set theory}
 that describe \emph{what exactly sets are} and \emph{how they work}.
-
-We will have two predicate symbols, defined below.
+The language of set theory will have two predicate symbols, defined below.
 
 \begin{definition}[Equality]\label{def:equal}
     We define the binary predicate \(=\) to mean that
@@ -58,18 +80,13 @@ We will have two predicate symbols, defined below.
     along with
     \begin{enumerate}
         \item[I.]
-            a universe of discourse consisting of those things that we can prove exist
-            from the axioms (presented in \autoref{sec:axioms}) by using the rules of inference,
+            a universe of discourse consisting of
+            those things that provably exist from the axioms (\autoref{sec:axioms}),
         \item[II.]
-            the binary predicate for equality (\autoref{def:equal}),
-            for which we use the \(=\) symbol.
-        \item[III.]
-            the binary predicate for elementhood (\autoref{def:element}),
-            for which we use the \(\in\) symbol.
+            the binary predicates for equality (\(=\), \autoref{def:equal})
+            and elementhood (\(\in\), \autoref{def:element}).
     \end{enumerate}
 \end{definition}
-
-\newpage
 
 \section{Axioms of Set Theory}\label{sec:axioms}
 
