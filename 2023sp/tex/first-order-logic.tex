@@ -312,8 +312,82 @@
     is able to correctly decide whether or not it has a proof in a finite amount of time.
 \end{theorem}
 
-% \begin{definition}[Well-Formed Formula]
-%     
-% \end{definition}
+\begin{definition}[Term]
+    Given a universe of discourse \(\Omega\),
+    we say that \(x\) is a \emph{term} if it is either a specific member of \(\Omega\)
+    or a variable symbol denoting a not-yet-determined member of \(\Omega\).
+    In class, we have been referring to these as \emph{objects}.
+\end{definition}
+
+\begin{definition}
+    In our language, given a universe of discourse \(\Omega\), we have the following symbols:
+    \begin{list}{\(\cdot\)}{}
+        \item
+            \emph{Constant symbols:} terms denoting specific members of \(\Omega\)
+            (\eg \(7\), Socrates, \(\R\), \(\varnothing\)).
+        \item
+            \emph{Variable symbols:} terms denoting members of \(\Omega\) that are not-yet determined,
+            usually written with a single letter from the Latin or Greek alphabets
+            with or without natural number subscripts
+            (\eg \(x_1\), \(\varphi_{23}\), \(y\), \(\beta\), \(A\), \(\Gamma\)).
+        \item
+            \emph{Predicate symbols:} \(n\)-ary predicates \(\psi\pn*{x_1, \dots x_n}\)
+            taking the terms \(x_1, \dots x_n\) as arguments and returning a proposition once all variables are eliminated
+            (\eg \(=\), \(\leq\), \(\in\), \(\subseteq\), \(\isomorphic\)).
+        \item
+            \emph{Functional symbols:} we haven't encountered any of these yet;
+            they work similarly to predicates in that they take \(n\) terms as arguments,
+            but they return a specific object of \(\Omega\) as their output
+            once all free variables are eliminated
+            (\eg \(+\), \(\times\), \(\gcd(x, y)\), \(\abs{x}\), ``\(x\) is the father of \(y\)'').
+        \item
+            \emph{Grouping symbols:} the simple curved parentheses ( and ), used for grouping expressions.
+        \item
+            \emph{Logical connectives:} the unary connective \(\neg\)
+            and the binary connectives \(\meet, \join, \rightarrow, \leftrightarrow\),
+            which form a Boolean algebra along with \(\top\) and \(\bot\).
+        \item
+            \emph{Quantifier symbols:} the universal quantifier \(\forall\)
+            and the existential quantifier \(\exists\).
+    \end{list}
+    Once we specify some basic predicate and functional symbols,
+    we can then define new predicates and functionals on the basis of the already-existing ones
+    as the need arises.
+\end{definition}
+
+\begin{definition}[Atomic Formul{\ae}]
+    We say \(\varphi\) is an \emph{atomic formula} \iffbydefn
+    we have \(\varphi \iff \psi\pn*{x_1, \dots x_n}\) for some \(n\)-ary predicate \(\psi\)
+    with \(x_1, \dots x_n\) being terms.
+    Note that atomic formul{\ae} may or may not contain free variables.
+\end{definition}
+
+\begin{definition}[Well-Formed Formul{\ae}]
+    We define \emph{well-formed formul{\ae}} recursively (\ie inductively) using the atomic formul{\ae} as our basis.
+    We say that \(\varphi\) is a \emph{well-formed formula} (abbreviated {\wff}) \iffbydefn
+    any of the following holds:
+    \begin{enumerate}
+        \item[I.]
+            \(\varphi\) is an atomic formula
+        \item[II.]
+            \(\varphi \iff \neg \pn*{\psi}\), where \(\psi\) is a {\wff}
+        \item[III.]
+            \(\varphi \iff \pn*{\psi} \meet \pn*{\chi}\), where \(\psi\) is a {\wff}
+        \item[IV.]
+            \(\varphi \iff \pn*{\psi} \join \pn*{\chi}\), where \(\psi\) and \(\chi\) are {\wff}
+        \item[V.]
+            \(\varphi \iff \pn*{\psi} \rightarrow \pn*{\chi}\), where \(\psi\) and \(\chi\) are {\wff}
+        \item[VI.]
+            \(\varphi \iff \pn*{\psi} \leftrightarrow \pn*{\chi}\), where \(\psi\) and \(\chi\) are {\wff}
+        \item[VII.]
+            \(\varphi \iff \forall x \pn*{\psi}\), where \(\psi\) is {\wff}
+        \item[VIII.]
+            \(\varphi \iff \exists x \pn*{\psi}\), where \(\psi\) is {\wff}
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Sentence]
+    We say that a {\wff} \(\varphi\) is a \emph{sentence} \iffbydefn it contains no free variables.
+\end{definition}
 
 \end{document}

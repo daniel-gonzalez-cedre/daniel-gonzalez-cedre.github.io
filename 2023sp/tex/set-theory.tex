@@ -1,0 +1,95 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+
+\title{Discrete Mathematics}
+\author{Daniel Gonzalez Cedre}
+\date{University of Notre Dame \\ Spring of 2023}
+\maketitle
+
+\setcounter{chapter}{2}
+\chapter{Zermelo-Fraenkel Set Theory}
+\begin{quote}
+    ``No one shall expel us from the paradise that Cantor has created.''
+    \begin{flushright}
+        ---David Hilbert
+    \end{flushright}
+\end{quote}
+
+\section{The Language of Set Theory}
+In order to use our first-order logic as a language with which to talk about sets,
+we need to specify:
+\begin{enumerate}
+    \item
+        What is our universe of discourse \(\Omega\)?
+    \item
+        What are our fundamental predicate symbols?
+\end{enumerate}
+With these two questions answered,
+we will be able to take objects from \(\Omega\) and make atomic formul{\ae} out of them,
+which we can then use to construct our {\wff}.
+
+Our universe of discourse will consist of \emph{those objects that we can prove exist}
+using the rules of inference and the \emph{axioms of set theory} (which we will develop in this chapter).
+The axioms of set theory will be sentences in the \emph{language of Zermelo-Fraenkel set theory}
+that describe \emph{what exactly sets are} and \emph{how they work}.
+
+We will have two predicate symbols, defined below.
+
+\begin{definition}[Equality]\label{def:equal}
+    We define the binary predicate \(=\) to mean that
+    its left argument is \emph{identically the same} as its right argument.
+    So, if \(x\) and \(y\) are sets, then we say \(x = y\)
+    when we mean that the names \(x\) and \(y\) both refer to the same underlying object.
+\end{definition}
+
+\begin{definition}[Elementhood]\label{def:element}
+    We define the binary predicate \(\in\) to mean that its left argument is
+    contained in its right argument as an element.
+    So, if \(x\) and \(y\) are sets, then the phrase \(x \in y\)
+    conveys that \(x\) is an element of \(y\).
+\end{definition}
+
+\begin{definition}[Language of Set Theory]
+    The \emph{language of Zermelo-Fraenkel set theory}
+    consists of the first-order logic
+    along with
+    \begin{enumerate}
+        \item[I.]
+            a universe of discourse consisting of those things that we can prove exist
+            from the axioms (presented in \autoref{sec:axioms}) by using the rules of inference,
+        \item[II.]
+            the binary predicate for equality (\autoref{def:equal}),
+            for which we use the \(=\) symbol.
+        \item[III.]
+            the binary predicate for elementhood (\autoref{def:element}),
+            for which we use the \(\in\) symbol.
+    \end{enumerate}
+\end{definition}
+
+\newpage
+
+\section{Axioms of Set Theory}\label{sec:axioms}
+
+\setcounter{preaxiom}{-1}
+\begin{axiom}[Existence]
+    \(\exists x \pn*{x = x}\)
+\end{axiom}
+This axiom asserts that our universe of discourse is non-empty.
+Assuming this axiom lets us know for sure that when we make claims about sets,
+those claims are actually in reference to objects that provably exist
+(because we can use this axiom as an assumption in any proof).
+
+% ALGORITHM
+% \begin{algorithm}[caption={placeholder}, label={alg:placeholder}]
+%     input:  int list $\brackets*{x_1, \dots x_n}$ with $n \geq 2$
+%     output: int list
+%     begin
+%         for $x$ in $\brackets*{x_1, \dots x_n}$:
+%             do something
+%         return result
+%     end
+% \end{algorithm}
+\end{document}
