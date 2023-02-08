@@ -91,22 +91,119 @@ The language of set theory will have two predicate symbols, defined below.
 \section{Axioms of Set Theory}\label{sec:axioms}
 
 \setcounter{preaxiom}{-1}
-\begin{axiom}[Existence]
-    \(\exists x \pn*{x = x}\)
+\begin{axiom}[Existence]\label{ax:existence}
+    \vspace{-\abovedisplayskip}
+    \[
+        \exists x \pn*{x = x}
+    \]
+    This axiom asserts that our universe of discourse is non-empty.
+    Assuming this axiom lets us know for sure that when we make claims about sets,
+    those claims are actually in reference to objects that provably exist
+    (because we can use this axiom as an assumption in any proof).
 \end{axiom}
-This axiom asserts that our universe of discourse is non-empty.
-Assuming this axiom lets us know for sure that when we make claims about sets,
-those claims are actually in reference to objects that provably exist
-(because we can use this axiom as an assumption in any proof).
 
-% ALGORITHM
-% \begin{algorithm}[caption={placeholder}, label={alg:placeholder}]
-%     input:  int list $\brackets*{x_1, \dots x_n}$ with $n \geq 2$
-%     output: int list
-%     begin
-%         for $x$ in $\brackets*{x_1, \dots x_n}$:
-%             do something
-%         return result
-%     end
-% \end{algorithm}
+\begin{axiom}[Extensionality]\label{ax:extensionality}
+    \vspace{-\abovedisplayskip}
+    \[
+        \forall x \forall y \pn*{\pn*{x = y} \iff \forall z \pn*{z \in x \iff z \in y}}
+    \]
+    This axiom states that sets are equal \ifandonlyif they have the same elements,
+    capturing what we mean by two sets being (or not being) equal.
+    This establishes a fundamental relationship between \(=\) and \(\in\).
+\end{axiom}
+
+\begin{definition}[\(\in\)-Augmented Quantification]
+    When we want to talk about all of the elements of a set \(A\) that satisfy a given {\wff} \(\varphi(\cdot)\),
+    we say
+    \[
+        \pn*{\forall x \in A}\pn*{\varphi(x)} \iffdefn \forall x \pn*{x \in A \implies \varphi(x)}.
+    \]
+    Similarly, if we want to say that there is an element in \(A\) with the property \(\varphi(\cdot)\),
+    we say
+    \[
+        \pn*{\exists x \in A}\pn*{\varphi(x)} \iffdefn \forall x \pn*{x \in A \meet \varphi(x)}.
+    \]
+    The parentheses around \(\pn*{\forall x \in A}\) and \(\pn*{\exists x \in A}\)
+    can be added or dropped for clarity based on context.
+\end{definition}
+
+\begin{theorem}
+    Let \(\varphi\) be a {\wff} with at most one free variable and let \(A\) be a set.
+    Then, the following statements hold.
+    \[
+        \forall a \in A \pn*{\varphi(a)} \iff \pn*{\bigmeet_{a \in A}\varphi(a)}
+        ~~~~~~~~~~~~~~~~
+        \exists a \in A \pn*{\varphi(a)} \iff \pn*{\bigjoin_{a \in A}\varphi(a)}
+    \]
+\end{theorem}
+\begin{proof}
+    This is left as an exercise for the reader.
+\end{proof}
+
+\begin{definition}[Set-Builder Notation]\label{not:setbuilder}
+    The notation \(\set*{x_1, \dots x_n}\),
+    where each \(x_1, \dots x_n\) is a term, 
+    describes the set containing each of the \(x_i\)'s, and \emph{only} the \(x_i\)'s, as elements.
+    So, we say \(\set*{x_1, \dots x_n}\) denotes the set \(X\) satisfying
+    \(
+        \forall a \pn*{a \in X \iff \bigjoin_{i = 1}^{n}\pn*{a = x_i}}.
+    \)
+    Another way of saying this is that \(X \defn \set*{x_1, \dots x_n}\) is the set that satisfies
+    \[
+        \pn*{\bigmeet_{i = 1}^{n}x_i \in X}
+             \meet \forall a \pn*{a \in X \implies \pn*{\exists x \in X \pn*{a = x}}}.
+    \]
+\end{definition}
+
+\begin{definition}[Set-Comprehension Notation]
+    If \(\varphi\) is a {\wff} with at most one free variable,
+    then when we write down \(\set*{a \suchthat \varphi(a)}\),
+    we mean the set consisting of all possible \(a\) satisfying the formula \(\varphi\)
+    when the every occurrence of the free variable in \(\varphi\) is replaced by \(a\).
+    Similarly, if we have an already-existing set \(A\),
+    we can define the set of all elements of \(A\) that satisfy \(\varphi\)
+    with the notation \(\set*{a \in A \suchthat \varphi(a)}\).
+    These notations are read ``the set of all \(a\) (in \(A\)) such that \(\varphi(a)\)''.
+    More precisely,
+    \begin{align*}
+        \exists x \pn*{x = \set*{a \suchthat \varphi(a)}}
+            &\iff \exists x \forall a \pn*{a \in x \iff \varphi(a)},\\
+        \exists x \pn*{x = \set*{a  \in A \suchthat \varphi(a)}}
+            &\iff \exists x \forall a \pn*{a \in x \iff \pn*{a \in A \meet \varphi(a)}}.
+    \end{align*}
+
+    \begin{note}
+        This set may not always exist!
+        Remember that we can only speak about the objects that \emph{provably} exist,
+        so when use this notation, we must be sure (with proof) that it is actually a set!
+    \end{note}
+\end{definition}
+
+\begin{axiom}[Pairing]\label{ax:pairing}
+    \vspace{-\abovedisplayskip}
+    \[\forall x \forall y \exists z \pn*{z = \set*{x, y}}\]
+    This axiom allows us to take two existing sets and construct a set containing the pair of them.
+\end{axiom}
+
+\begin{axiom}[Union]\label{ax:union}
+    \vspace{-\abovedisplayskip}
+    \[
+        \forall x \exists A \pn*{U = \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}}
+    \]
+    The notation we use for this set \(A\), which we call the \emph{union of \(x\)},
+    is \(\union x \defn \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}\).
+    Notice carefully that this is \emph{not} the union of \(x\) with some other set;
+    it is \emph{just} the union of \(x\).
+\end{axiom}
+
+\begin{theorem}[Union of Two Sets]
+    Let \(x\) and \(y\) be sets.
+    Then, \(\exists A \pn*{A = \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}}\).
+    The notation we use for this \(A\) is \(x \union y\).
+\end{theorem}
+\begin{proof}
+    This is left as an exercise for the reader (for now).
+\end{proof}
+
+
 \end{document}
