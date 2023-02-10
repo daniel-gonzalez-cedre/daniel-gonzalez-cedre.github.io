@@ -65,6 +65,7 @@ The language of set theory will have two predicate symbols, defined below.
     its left argument is \emph{identically the same} as its right argument.
     So, if \(x\) and \(y\) are sets, then we say \(x = y\)
     when we mean that the names \(x\) and \(y\) both refer to the same underlying object.
+    As a result, we will take \(\forall x \pn*{x = x}\) as an axiom for this predicate.
 \end{definition}
 
 \begin{definition}[Elementhood]\label{def:element}
@@ -127,18 +128,29 @@ The language of set theory will have two predicate symbols, defined below.
     can be added or dropped for clarity based on context.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}[First-Order Set Notation]
     Let \(\varphi\) be a {\wff} with at most one free variable and let \(A\) be a set.
     Then, the following statements hold.
     \[
-        \forall a \in A \pn*{\varphi(a)} \iff \pn*{\bigmeet_{a \in A}\varphi(a)}
+        \pn*{\forall a \in A}\pn*{\varphi(a)} \iff \pn*{\bigmeet_{a \in A}\varphi(a)}
         ~~~~~~~~~~~~~~~~
-        \exists a \in A \pn*{\varphi(a)} \iff \pn*{\bigjoin_{a \in A}\varphi(a)}
+        \pn*{\exists a \in A}\pn*{\varphi(a)} \iff \pn*{\bigjoin_{a \in A}\varphi(a)}
     \]
 \end{theorem}
 \begin{proof}
-    This is left as an exercise for the reader.
+    This proof is left as an exercise to the reader.
 \end{proof}
+% \begin{proof}
+%     Let \(\varphi\) be a {\wff} with at most one free variable \(x\).
+%     Let \(A\) be a set.
+%     We know, by definition, that
+%     \(\pn*{\forall x \in A}\pn*{\varphi(x)} \iff \forall x \pn*{x \in A \implies \varphi(x)}\)
+%     and that
+%     \(\pn*{\exists x \in A}\pn*{\varphi(x)} \iff \exists x \pn*{x \in A \meet \varphi(x)}\).
+% 
+%     First, suppose that \(\pn*{\forall x \in A}\pn*{\varphi(x)}\).
+%     Then, letting \(a\) be an arbitrary set, we have \(a \in A \implies \varphi(a)\).
+% \end{proof}
 
 \begin{definition}[Set-Builder Notation]\label{not:setbuilder}
     The notation \(\set*{x_1, \dots x_n}\),
@@ -173,9 +185,10 @@ The language of set theory will have two predicate symbols, defined below.
     \end{align*}
 
     \begin{note}
-        This set may not always exist!
+        These sets may not always exist!
         Remember that we can only speak about the objects that \emph{provably} exist,
-        so when use this notation, we must be sure (with proof) that it is actually a set!
+        so when use this notation,
+        we must be sure (with proof) that it is actually a set!
     \end{note}
 \end{definition}
 
@@ -192,18 +205,74 @@ The language of set theory will have two predicate symbols, defined below.
     \]
     The notation we use for this set \(A\), which we call the \emph{union of \(x\)},
     is \(\union x \defn \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}\).
-    Notice carefully that this is \emph{not} the union of \(x\) with some other set;
-    it is \emph{just} the union of \(x\).
+    % Notice carefully that this is \emph{not} the union of \(x\) with some other set;
+    % it is \emph{just} the union of \(x\).
 \end{axiom}
 
-\begin{theorem}[Union of Two Sets]
-    Let \(x\) and \(y\) be sets.
-    Then, \(\exists A \pn*{A = \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}}\).
-    The notation we use for this \(A\) is \(x \union y\).
+\begin{theorem}[Union of Two Sets]\label{thm:union}
+    For any sets \(x\) and \(y\),
+    we have \(\exists A \pn*{A = \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}}\).
+    Such an \(A\) is denoted \(x \union y\).
 \end{theorem}
 \begin{proof}
-    This is left as an exercise for the reader (for now).
+    Let \(x\) and \(y\) be sets.
+    By \autoref{ax:pairing}, we know \(A \defn \set*{x, y}\) exists.
+    By \autoref{ax:union}, we know \(\union A\) exists.
+    Recall that \(\union A = \set*{a \suchthat \pn*{\exists z \in A}{a \in z}}\).
+    Now, let \(b\) be an arbitrary set and observe
+    \begin{alignat*}{2}
+        b \in \union A &\iff \pn*{\exists z \in A}\pn*{b \in z} &&\text{by definition of \(\union A\)} \\
+                       &\iff (b \in x) \join (b \in y) &&\text{since \(A = \set*{x, y}\)} \\
+                       &\iff b \in \set*{a \suchthat (a \in x) \join (a \in y)}~~~~&&\text{by definition}.
+    \end{alignat*}
+    Therefore, we have that \(\union A = \set*{a \suchthat (a \in x) \join (a \in y)}\),
+    so \(x \union y \defn \set*{a \suchthat (a \in x) \join (a \in y)}\) exists.
 \end{proof}
+
+\begin{axiom}[Separation]\label{ax:separation}
+    \vspace{-\abovedisplayskip}
+    \[
+        \text{If \(\varphi\) is a \wff, then }
+        \forall x \exists y \pn*{y = \set*{a \in x \suchthat \varphi(a)}}
+    \]
+    This axiom tells us that, if we start with an already-existing set \(x\),
+    then we can collect all of its elements that satisfy \(\varphi\)
+    and put them in a set by themselves.
+\end{axiom}
+
+\begin{theorem}[Intersection of Two Sets]\label{thm:intersection}
+    For any sets \(x\) and \(y\), we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \in y)}}\).
+    Such an \(A\) is denoted \(x \intersection y\).
+\end{theorem}
+\begin{proof}
+    Let \(x\) and \(y\) be sets. Recall that \(x \union y\) exists by \autoref{thm:union}.
+    Then, by \autoref{ax:separation},
+    we know that \(A \defn \set*{a \in x \union y \suchthat (a \in x) \meet (a \in y)}\) exists.
+    Now, let \(b\) be an arbitrary set and observe
+    \begin{alignat*}{2}
+        b \in A &\iff b \in \set*{a \in x \union y \suchthat (a \in x) \meet (a \in y)} &&\text{by the definition of \(A\)} \\
+                &\iff (b \in x \union y) \meet \pn*{(b \in x) \meet (b \in y)} &&\text{by definition} \\
+                &\iff \pn*{(b \in x) \join (b \in y)} \meet \pn*{(b \in x) \meet (b \in y)} &&\text{by definition of } x \union y \\
+                &\iff \pn*{\pn*{(b \in x) \join (b \in y)} \meet (b \in x)} \meet (b \in y) &&\text{by Associativity} \\
+                &\iff \pn*{\pn*{(b \in x) \meet (b \in x)} \meet \pn*{(b \in y) \meet (b \in x)}} \meet (b \in y)~~~~&&\text{by Distributivity} \\
+                &\iff \pn*{(b \in x) \meet \pn*{(b \in y) \meet (b \in x)}} \meet (b \in y) &&\text{by Idempotency} \\
+                &\iff \pn*{(b \in x) \meet \pn*{(b \in x) \meet (b \in y)}} \meet (b \in y) &&\text{by Commutativity} \\
+                &\iff \pn*{\pn*{(b \in x) \meet (b \in x)} \meet (b \in y)} \meet (b \in y) &&\text{by Associativity} \\
+                &\iff \pn*{(b \in x) \meet (b \in y)} \meet (b \in y) &&\text{by Idempotency} \\
+                &\iff (b \in x) \meet \pn*{(b \in y) \meet (b \in y)} &&\text{by Associativity} \\
+                &\iff (b \in x) \meet (b \in y) &&\text{by Idempotency} \\
+                &\iff b \in \set*{a \suchthat (a \in x) \meet (a \in y)} &&\text{by definition}.
+    \end{alignat*}
+    Therefore, we have that \(A = \set*{a \suchthat (a \in x) \meet (a \in y)}\),
+    showing that \(x \intersection y = \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
+\end{proof}
+
+% \begin{axiom}[Regularity]
+%     \vspace{-\abovedisplayskip}
+%     \[
+%         \forall x \pn*{x \neq \emptyset \implies }
+%     \]
+% \end{axiom}
 
 
 \end{document}

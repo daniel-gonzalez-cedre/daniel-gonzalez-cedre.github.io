@@ -33,11 +33,15 @@
     \let\oldendproof\endproof
 
     \renewenvironment{proof}[1][\proofname]{%
+        \ifindenttheorems
+            \vspace{-\abovedisplayskip}
+        \else
+        \fi
         \oldproof[#1]\quote~
 
     }{%
         %\endquote\oldendproof
-        \endquote\qed
+        \endquote\vspace{-\parskip}\qed
     }
     % end new proof environment
 \else
