@@ -320,8 +320,8 @@ div.heading {
 
 div#me {
     /* color: var(--highlight); */
-    text-decoration: underline dotted var(--white);
-    -webkit-text-decoration: underline dotted var(--white);
+    text-decoration: underline var(--white) dotted 1px;
+    -webkit-text-decoration: underline var(--white) dotted;
 }
 div.author {
     position: relative;
