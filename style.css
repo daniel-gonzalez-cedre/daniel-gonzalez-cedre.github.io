@@ -318,7 +318,10 @@ div.heading {
     margin-bottom: 10px;
 }
 
-div#me { /* color: var(--highlight); */ }
+div#me {
+    /* color: var(--highlight); */
+    text-decoration: underline dotted;
+}
 div.author {
     position: relative;
     top: -1px;
