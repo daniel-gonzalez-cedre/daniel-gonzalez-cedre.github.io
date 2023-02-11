@@ -268,7 +268,8 @@ div.sidebar {
 div.subname {
     white-space: nowrap;
     text-align: center;
-    margin-top: 32px;
+    margin-top: 16px;
+    font-size: 26px;
 }
 div.lastupdate {
     position: fixed;
