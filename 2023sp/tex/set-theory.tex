@@ -347,6 +347,31 @@ The language of set theory will have two predicate symbols, defined below.
     It is left as a simple exercise to the reader to prove that \((a, b)\) always exists.
 \end{definition}
 
+% \begin{theorem}[Adequacy of Ordered Pairs]
+%     We have \((a, b) = (x, y) \iff (a = x) \meet (b = y)\) for any sets \(a, b, x, y\).
+% \end{theorem}
+% \begin{proof}
+%     Let \(a, b, x, y\) be sets.
+%     Recall that \((a, b) = \set*{\set*{a}, \set*{a, b}}\) and \((x, y) = \set*{\set*{x}, \set*{x, y}}\).
+%     There are two directions to this proof: the \(\implies\) direction, and the \(\impliedby\) direction.
+% 
+%     \begin{case}[Forward direction]
+%         Suppose \((a, b) = (x, y)\) and assume, towards a contradiction, that \(a \neq x\) or \(b \neq y\).
+%         
+%     \end{case}
+% 
+%     \begin{case}[Backward direction]
+%         Suppose \(a = x\) and \(b = y\).
+%         \autoref{ax:extensionality} then clearly shows \(\set*{a} = \set*{x}\) and \(\set*{a, b} = \set*{x, y}\).
+%         Therefore, \(\set*{\set*{a}, \set*{a, b}} = \set*{\set*{x}, \set*{x, y}}\),
+%         so \((a, b) = (x, y)\).
+%     \end{case}
+% 
+%     Towards a 
+% 
+%     Observe
+% \end{proof}
+
 \begin{definition}[Cartesian Product]
     We define the \emph{Cartesian product} of two sets \(A\) and \(B\),
     which is the set of all possible ordered pairs with
@@ -365,7 +390,13 @@ The language of set theory will have two predicate symbols, defined below.
     \(\exists x \pn*{x = \emptyset}\).
 \end{theorem}
 \begin{proof}
-    \hl{details to be filled in}  % TODO
+    We know, by \autoref{ax:existence}, that there exists a set \(x\).
+    Now, consider \(E \defn \set*{y \in x \suchthat  y \neq y}\),
+    which we know exists by \autoref{ax:separation}.
+    We can clearly see that \(E\) is empty,
+    because if \(x \in E\) then we would immediately run into the contradiction \(x \neq x\).
+
+    Therefore, \(E = \emptyset\), so the empty set exists.
 \end{proof}
 
 \begin{definition}[Successor Functional]
