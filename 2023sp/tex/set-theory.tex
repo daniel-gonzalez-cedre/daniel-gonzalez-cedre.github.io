@@ -43,7 +43,7 @@ could be manipulated based on their \emph{type}.
 The problem with this approach is that it becomes very syntactically-cumbersome for humans
 (the primary practitioners of mathematics) to deal with directly,
 so it was quickly abandoned for an \emph{untyped} approach.
-
+\vspace{-\parskip}
 \begin{note}
     The converse is true about the \emph{\(\lambda\)-calculus},
     which is perhaps the most famous mathematical model of computation after the Turing machine.
@@ -53,7 +53,7 @@ so it was quickly abandoned for an \emph{untyped} approach.
     are actually implementations of typed \(\lambda\)-calculi
     because computers have no issues dealing with the syntactic complications of a typed theory.
 \end{note}
-
+\vspace{-\parskip}
 Our universe of discourse will consist of \emph{those objects that we can prove exist}
 using the rules of inference and the \emph{axioms of set theory} (which we will develop in this chapter).
 The axioms of set theory will be sentences in the \emph{language of Zermelo-Fraenkel set theory}
@@ -65,7 +65,16 @@ The language of set theory will have two predicate symbols, defined below.
     its left argument is \emph{identically the same} as its right argument.
     So, if \(x\) and \(y\) are sets, then we say \(x = y\)
     when we mean that the names \(x\) and \(y\) both refer to the same underlying object.
-    As a result, we will take \(\forall x \pn*{x = x}\) as an axiom for this predicate.
+    As a result, we will take the following three axioms for this predicate:
+    \vspace{-\parskip}
+    \[
+        \forall x \pn*{x = x}
+        ~~~~~~~~~~~~~~~~
+        \forall x \forall y \pn*{\pn*{x = y} \iff \pn*{y = x}}
+        ~~~~~~~~~~~~~~~~
+        \forall x \forall y \forall z \pn*{\pn*{x = y \meet y = x} \implies \pn*{x = z}}
+    \]
+    \vspace{-\parskip-\abovedisplayskip}
 \end{definition}
 
 \begin{definition}[Elementhood]\label{def:element}
@@ -232,7 +241,7 @@ The language of set theory will have two predicate symbols, defined below.
 \begin{axiom}[Separation]\label{ax:separation}
     \vspace{-\abovedisplayskip}
     \[
-        \text{If \(\varphi\) is a \wff, then }
+        \text{If \(\varphi\) is a {\wff} with at most one free variable, then }
         \forall x \exists y \pn*{y = \set*{a \in x \suchthat \varphi(a)}}
     \]
     This axiom tells us that, if we start with an already-existing set \(x\),
@@ -242,7 +251,7 @@ The language of set theory will have two predicate symbols, defined below.
 
 \begin{theorem}[Intersection of Two Sets]\label{thm:intersection}
     For any sets \(x\) and \(y\), we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \in y)}}\).
-    Such an \(A\) is denoted \(x \intersection y\).
+    Such an \(A\) is denoted \(x \intersect y\).
 \end{theorem}
 \begin{proof}
     Let \(x\) and \(y\) be sets. Recall that \(x \union y\) exists by \autoref{thm:union}.
@@ -264,15 +273,117 @@ The language of set theory will have two predicate symbols, defined below.
                 &\iff b \in \set*{a \suchthat (a \in x) \meet (a \in y)} &&\text{by definition}.
     \end{alignat*}
     Therefore, we have that \(A = \set*{a \suchthat (a \in x) \meet (a \in y)}\),
-    showing that \(x \intersection y = \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
+    showing that \(x \intersect y = \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
 \end{proof}
 
-% \begin{axiom}[Regularity]
-%     \vspace{-\abovedisplayskip}
-%     \[
-%         \forall x \pn*{x \neq \emptyset \implies }
-%     \]
-% \end{axiom}
+% \begin{definition}[Difference of Two Sets]
+%     \hl{fill this in}  % TODO
+% \end{definition}
 
+\begin{axiom}[Power Set]
+    \vspace{-\abovedisplayskip}
+    \[
+        \forall x \exists y \pn*{y = \set*{s \suchthat s \subseteq x}}.
+    \]
+
+    This axiom tells us that, whenever we have a set \(x\) that exists,
+    we are allowed to collect \emph{all} of its subsets into one set, called the \emph{power set} of \(x\).
+    We use the notation \(\power{x}\).
+\end{axiom}
+
+\begin{definition}[Empty Set]
+    We say that a set \(A\) is \emph{empty} \iffbydefn \(\forall x \pn*{x \not \in A}\).
+    Since there can only be one empty set by \autoref{ax:extensionality},
+    we refer to this set as \emph{the} empty set and use the special symbol \(\emptyset\).
+\end{definition}
+
+\begin{axiom}[Regularity]\label{ax:regularity}
+    \vspace{-\abovedisplayskip}
+    \[
+        \forall x \pn*{\pn*{x \neq \emptyset} \implies \pn*{\exists y \in x}\pn*{x \intersect y = \emptyset}}.
+    \]
+
+    This axiom establishes the \emph{regularity} (\aka \emph{well-foundedness}) of the \(\in\) predicate.
+    Literally, this axiom simply says that every non-empty set has an element disjoint with it.
+    However, this seemingly strange axiom has far-reaching consequences,
+    not least of which is that it lets us prove that sets do not contain themselves.
+\end{axiom}
+
+\begin{theorem}[\(\in\) Well-foundedness]
+    For any set \(x\), we have \(x \not \in x\).
+\end{theorem}
+\begin{proof}
+    Let \(x\) be an arbitrary set.
+    Towards a contradiction, assume \(x \in x\).
+    Let \(y \defn \set*{a \in x \suchthat a = x} = \set*{x}\), which we know exists by \autoref{ax:separation}.
+    Since \(x \in y\), we know \(y \neq \emptyset\).
+    Thus, \autoref{ax:regularity} lets us know there is a \(z \in y\) such that \(y \intersect z = \emptyset\).
+    Since \(y = \set*{x}\) and \(z \in y\), this implies \(z = x\), yielding \(y \intersect x = \emptyset\).
+    However, we already knew that \(x \in y\) and \(x \in x\),
+    so we know by definition that \(x \in \set*{a \suchthat a \in y \meet a \in x} = y \intersect x\),
+    and therefore \(y \intersect x \neq \emptyset\). \contradiction
+
+    Therefore, we must have that \(x \not \in x\).
+    Since \(x\) was arbitrary, we can conclude \(\forall x \pn*{x \not \in x}\), as desired.
+\end{proof}
+% \begin{proof}
+%     Let \(X\) be an arbitrary set.
+%     Towards a contradiction, assume \(X \in X\).
+%     Let \(Y \defn \set*{a \in X \suchthat a = X} = \set*{X}\), which we know exists by \autoref{ax:separation}.
+%     Since \(X \in Y\), we know \(Y \neq \emptyset\).
+%     Thus, \autoref{ax:regularity} lets us know there is a \(Z \in Y\) such that \(Y \intersect Z = \emptyset\).
+%     Since \(Y = \set*{X}\) and \(Z \in Y\), this implies \(Z = X\), yielding \(Y \intersect X = \emptyset\).
+%     However, we already knew that \(X \in Y\) and \(X \in X\),
+%     so we know by definition that \(X \in \set*{a \suchthat a \in Y \meet a \in X} = Y \intersect X\),
+%     and therefore \(Y \intersect X \neq \emptyset\). \contradiction
+% 
+%     Therefore, we must have that \(X \not \in X\).
+%     Since \(X\) was arbitrary, we can conclude \(\forall x \pn*{x \not \in x}\), as desired.
+% \end{proof}
+
+\begin{definition}[Kuratowski Ordered Pairs]
+    We define the \emph{ordered pair} with left coordinate \(a\) and right coordinate \(b\)
+    by \((a, b) \defn \set*{\set*{a}, \set*{a, b}}\).
+    It is left as a simple exercise to the reader to prove that \((a, b)\) always exists.
+\end{definition}
+
+\begin{definition}[Cartesian Product]
+    We define the \emph{Cartesian product} of two sets \(A\) and \(B\),
+    which is the set of all possible ordered pairs with
+    left coordinate coming from \(A\) and right coordinate coming from \(B\),
+    by \(A \times B \defn \set*{(a, b) \suchthat a \in A \meet b \in b}\).
+\end{definition}
+
+\begin{theorem}[Existence of Cartesian Products]
+    For any sets \(X\) and \(Y\), the Cartesian product \(X \times Y\) exists.
+\end{theorem}
+\begin{proof}
+    \hl{details to be filled in}  % TODO
+\end{proof}
+
+\begin{theorem}[Existence of \(\emptyset\)]
+    \(\exists x \pn*{x = \emptyset}\).
+\end{theorem}
+\begin{proof}
+    \hl{details to be filled in}  % TODO
+\end{proof}
+
+\begin{definition}[Successor Functional]
+    Given an arbitrary set \(x\), we define the \emph{successor} of \(x\) to be the set \(\set*{x} \union x\),
+    for which we introduce the notation \(\successor{x} \defn \set*{x} \union x\).
+    It should be clear the successor of any set always exists.
+
+    \begin{note}
+        The successor \(\successor{x}\) of a set \(x\) consists of
+        all of the elements of \(x\) as well as \(x\) itself.
+    \end{note}
+\end{definition}
+
+\begin{axiom}[Infinity]
+    \vspace{-\abovedisplayskip}
+    \[
+        \exists N \pn*{N = \set*{n \suchthat n = \emptyset \join \exists\pn*{m \in N}\pn*{n = \successor{m}}}}
+    \]
+\end{axiom}
 
 \end{document}

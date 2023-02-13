@@ -1,0 +1,58 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+\begin{center}
+    \textsc{\huge Problem Set 4}\\
+    \textsc{Discrete Mathematics}\\
+    {\color{gruvred}Due: $20$\textsuperscript{th} of February, $2023$}
+\end{center}
+
+\begin{enumerate}
+    \item
+        \begin{enumerate}
+            \item
+                Show that \(\forall x \pn*{\emptyset \subseteq x}\).
+            \item
+                Show that \(\forall x \pn*{x \subseteq x}\).
+            \item
+                Show that \(\forall x \pn*{x \subseteq \emptyset \implies x = \emptyset}\).
+            \item
+                Show that \(\pn*{x = y} \iff \pn*{x \subseteq y \meet y \subseteq x}\) for all \(x, y\).
+        \end{enumerate}
+    \item
+        \begin{enumerate}
+            \item
+                Show that \(x \intersect y \subseteq x\) for all \(x, y\).
+            \item
+                Show that \(x \subseteq x \union y\) for all \(x, y\).
+            \item
+                Show that \(\forall x \forall y \pn*{x \intersect y \subseteq x \union y}\).
+        \end{enumerate}
+    \item
+        Prove that \(\forall x \forall y \forall z \pn*{\pn*{x \subseteq y \meet y \subseteq z}
+                                                        \implies x \subseteq z}\).
+    \item
+        The \emph{difference} of two sets \(x\) and \(y\) is given by
+        \(x \setminus y \defn \set*{a \suchthat a \in x \meet a \not \in y}\).
+        \begin{enumerate}
+            \item
+                Show that \(x \setminus y\) exists for any two sets \(x, y\).
+            \item
+                Is it the case that \(\pn*{x \setminus y \subseteq x}\) for any sets \(x, y\)?
+                Prove your assertion in either case.
+        \end{enumerate}
+    \item
+        Recall that \(A \times B \defn \set*{(a, b) \suchthat a \in A \meet b \in B}\).
+        \begin{enumerate}
+            \item
+                Show that \(\forall A \pn*{A \times \emptyset = \emptyset}\).
+            \item
+                Is it the case that \(A \times B = B \times A\) for any sets \(A, B\)?
+                Prove your assertion in either case.
+        \end{enumerate}
+    \item
+        Prove that \(x \subseteq \successor{x}\) for any \(x\).
+\end{enumerate}
+\end{document}
