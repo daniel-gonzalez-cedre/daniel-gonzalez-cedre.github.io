@@ -446,21 +446,21 @@ The language of set theory will have two predicate symbols, defined below.
     \begin{align*}
         n + 0 &\defn n\\
         % n + 1 &\defn \successor{n}\\
-        n + \successor{m} &\defn \successor{n + m} \text{ if } m \text{ is a natural number}
+        n + \successor{m} &\defn \successor{n + m}~~~~\text{ if } m \text{ is a successor number}
     \end{align*}
 
     Similarly, we define the \emph{product} of two natural numbers \(n\) and \(m\) recursively by
     \begin{align*}
         n \cdot 0 &\defn 0\\
         % n \cdot 1 &\defn n\\
-        n \cdot \successor{m} &\defn \successor{n + m} \text{ if } m \text{ is a natural number}
+        n \cdot \successor{m} &\defn \pn*{n + m} + n~~~~\text{ if } m \text{ is a successor number}
     \end{align*}
 
     Finally, we can recursively define the \emph{exponentiation} of one natural number \(n\) by another as
     \begin{align*}
         n^{0} &\defn 1\\
         % n^{1} &\defn n\\
-        n^{\successor{m}} &\defn n^{m} \cdot m \text{ if } m \text{ is a natural number}
+        n^{\successor{m}} &\defn n^{m} \cdot m~~~~\text{ if } m \text{ is a successor number}
     \end{align*}
 \end{definition}
 
@@ -494,7 +494,7 @@ The language of set theory will have two predicate symbols, defined below.
         \exists N \pn*{N = \set*{n \suchthat n = \emptyset \join \exists\pn*{m \in N}\pn*{n = \successor{m}}}}
     \]
 
-    We call this set the \emph{set of natural numbers} and denote it by the symbol \(\mathbb{N}\).
+    We call this set the \emph{set of natural numbers} and use the symbol \(\mathbb{N}\) to denote it.
 \end{axiom}
 
 \end{document}
