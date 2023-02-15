@@ -400,14 +400,92 @@ The language of set theory will have two predicate symbols, defined below.
 \end{proof}
 
 \begin{definition}[Successor Functional]
-    Given an arbitrary set \(x\), we define the \emph{successor} of \(x\) to be the set \(\set*{x} \union x\),
-    for which we introduce the notation \(\successor{x} \defn \set*{x} \union x\).
-    It should be clear the successor of any set always exists.
+    Given an arbitrary set \(x\), we define the \emph{successor} of \(x\) to be the set \(x \union \set*{x}\),
+    for which we introduce the notation \(\successor{x} \defn x \union \set*{x}\).
+    It should be clear that the successor of any set always exists.
 
     \begin{note}
-        The successor \(\successor{x}\) of a set \(x\) consists of
+        The successor \(\successor{x}\) of a set \(x\) is a set consisting of
         all of the elements of \(x\) as well as \(x\) itself.
     \end{note}
+\end{definition}
+
+\begin{definition}[von Neumann Ordinals]
+    The \emph{natural numbers}, also known as the \emph{finite ordinal numbers},
+    are defined recursively as follows:
+    \begin{alignat*}{2}
+        0 &\defn \emptyset &&\text{ is a natural number} \\
+        n + 1 &\defn S(n)
+               = n \union \set*{n}
+               = \set{0, 1, 2, \dots n}~~~~&&\text{ if } n \text{ is a natural number}
+    \end{alignat*}
+    We say that a natural number \(n\) is a \emph{successor number}
+    \iffbydefn there exists a natural number \(m\) such that \(n = \successor{m}\).
+    Every natural number except for \(0\) is a successor number,
+    so when we define properties or operations on the natural numbers,
+    we will usually take a recursive approach that explicitly defines what happens at \(0\)
+    and then specifies what happens when you've encountered a successor number.
+
+    If \(n\) is a successor natural number,
+    then we define the \emph{predecessor} of \(n\) to be \(n - 1 \defn m\),
+    where \(m\) is a natural number such that \(\successor{m} = n\).
+\end{definition}
+
+% \begin{theorem}[Uniqueness of Predecessors]
+%     If \(n\) is a natural number
+%     such that \(\exists m_1 \pn*{n = \successor{m_1}}\) and \(\exists m_2 \pn*{n = \successor{m_2}}\),
+%     then \(m_1 = m_2\).
+% \end{theorem}
+% \begin{proof}
+%     
+% \end{proof}
+
+\begin{definition}[Arithmetic on the Natural Numbers]
+    Given a natural number \(n\),
+    its \emph{sum} with another natural number \(m\) is recursively given by
+    \begin{align*}
+        n + 0 &\defn n\\
+        % n + 1 &\defn \successor{n}\\
+        n + \successor{m} &\defn \successor{n + m} \text{ if } m \text{ is a natural number}
+    \end{align*}
+
+    Similarly, we define the \emph{product} of two natural numbers \(n\) and \(m\) recursively by
+    \begin{align*}
+        n \cdot 0 &\defn 0\\
+        % n \cdot 1 &\defn n\\
+        n \cdot \successor{m} &\defn \successor{n + m} \text{ if } m \text{ is a natural number}
+    \end{align*}
+
+    Finally, we can recursively define the \emph{exponentiation} of one natural number \(n\) by another as
+    \begin{align*}
+        n^{0} &\defn 1\\
+        % n^{1} &\defn n\\
+        n^{\successor{m}} &\defn n^{m} \cdot m \text{ if } m \text{ is a natural number}
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Order on the Natural Numbers]
+    Given two natural numbers \(n\) and \(m\),
+    say that \(n\) is \emph{less than or equal to} \(m\) \iffbydefn \(n \subseteq m\).
+    The syntax we use to express this relationship is \(n \leq m\).
+
+    If \(n \leq m\) and \(n \neq m\), then we say \(n < m\),
+    which means \(n\) is \emph{strictly less than} \(m\).
+\end{definition}
+
+\begin{definition}[Iterated Sums \& Products]
+    If \(n\) and \(x_0, \dots x_{n - 1}\) are natural numbers,
+    then we define the \emph{iterated sum} of the \(x_i\) recursively by
+    \begin{align*}
+        \sum_{i = 0}^{0}x_i &= x_0\\
+        \sum_{i = 0}^{k + 1}x_i &= \pn*{\sum_{i = 0}^{k}x_i} + \pn*{x_{k + 1}}~~~~\text{ if } 0 < k + 1 \leq n.
+    \end{align*}
+
+    Similarly, we define the \emph{iterated product} of the \(x_i\) recursively as
+    \begin{align*}
+        \prod_{i = 0}^{0}x_i &= x_0\\
+        \prod_{i = 0}^{k + 1}x_i &= \pn*{\prod_{i = 0}^{k}x_i} \cdot \pn*{x_{k + 1}}~~~~\text{ if } 0 < k + 1 \leq n.
+    \end{align*}
 \end{definition}
 
 \begin{axiom}[Infinity]
@@ -415,6 +493,8 @@ The language of set theory will have two predicate symbols, defined below.
     \[
         \exists N \pn*{N = \set*{n \suchthat n = \emptyset \join \exists\pn*{m \in N}\pn*{n = \successor{m}}}}
     \]
+
+    We call this set the \emph{set of natural numbers} and denote it by the symbol \(\mathbb{N}\).
 \end{axiom}
 
 \end{document}
