@@ -1,0 +1,105 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\externaldocument{../set-theory/set-theory}
+
+\begin{document}
+
+\title{Discrete Mathematics}
+\author{Daniel Gonzalez Cedre}
+\date{University of Notre Dame \\ Spring of 2023}
+\maketitle
+
+\setcounter{chapter}{3}
+\chapter{Mathematical Induction}
+
+\section{Weak Induction}
+
+\begin{theorem}[\(\N\) is Well-Ordered]\label{thm:lep}
+    \vspace{-\parskip}
+    \[
+        \pn*{\forall A \subseteq \N}\pn*{A \neq \emptyset \implies \pn*{\exists a \in A}\pn*{\forall b \in A}\pn*{a \leq b}}
+    \]
+    This says that every nonempty subset of \(\N\) has a least element
+    (according to the \(\leq\) order defined on \(\N\)).
+\end{theorem}
+\begin{proof}
+    This proof is left as an exercise.
+\end{proof}
+
+\begin{theorem}[Weak Induction]
+    If \(\varphi(\cdot)\) is a {\wff}, then
+    \[
+        \pn*{\forall n \in \N}\pn*{\varphi(n)}
+        ~\iff~ \varphi(0) \meet \pn*{\forall k \in \N}\pn*{\varphi(k) \implies \varphi(k + 1)}.
+    \]
+\end{theorem}
+\begin{proof}
+    There are two fragments to this proof:
+    the forward (\(\implies\)) direction and the backward (\(\impliedby\)) direction.
+
+    \begin{case}[Fragment 1 (\(\implies\))]
+        Suppose that \(\pn*{\forall n \in \N}\pn*{\varphi(n)}\).
+        Since \(0 \in \N\), we then obviously have \(\varphi(0)\).
+        Now, let \(k \in \N\) and assume \(\varphi(k)\).
+        Since \(k + 1 \in \N\), we know from our initial assumption that \(\varphi(k + 1)\).
+        Thus, we have \(\pn*{\forall k \in \N}\pn*{\varphi(k) \implies \varphi(k + 1)}\),
+        and we have reached both of our desired conclusions.
+    \end{case}
+
+    \begin{case}[Fragment 2 (\(\impliedby\))]
+        Assume \(\varphi(0)\) and \(\pn*{\forall k \in \N}\pn*{\varphi(k) \implies \varphi(k + 1)}\).
+        Towards a contradiction,
+        suppose that there is some \(n \in \N\) such that \(\neg \varphi(a)\).
+        Consider \(A \defn \set*{x \in \N \suchthat \neg \varphi(x)}\),
+        which we clearly know exists by \autoref{ax:separation}.
+        We know that \(n \in A\) because we assumed that \(\neg \varphi(n)\),
+        which implies that \(A \neq \emptyset\).
+        Then, we can use \autoref{thm:lep} to conclude that there is a minimal element \(a\) in \(A\).
+
+        Since we know that \(\varphi(0)\), it follows that \(a \neq 0\), so \(a\) must be a successor number.
+        This means there is a \(b \in \N\) such that \(b + 1 = a\).
+
+        If \(b \in A\), then that would mean that \(a \leq b\) since \(a\) is minimal in \(A\).
+        However, we know that \(b < b + 1 = a\), so we would then have \(a \leq b < a\). \contradiction\\
+        Therefore, \(b \not \in A\).
+
+        % Since we assumed \(\neg \varphi(n)\), we know \(n \in A\) by definition,
+        % showing us that \(A \neq \emptyset\).
+        % Since we assumed \(\varphi(0)\), we know that \(0 \not \in A\) by definition,
+    \end{case}
+\end{proof}
+
+Let's practice induction by proving the following theorem.
+\newpage
+\begin{theorem}[Gaussian Summation Formula]\label{thm:gaussiansum}
+    \[
+        \pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}.
+    \]
+\end{theorem}
+\begin{proof}
+    We will prove the claim by induction on \(n \in \N\).
+
+    \begin{case}[Base Case]
+        Observe that \(\sum_{i = 0}^{0}i = 0 = \frac{0*(0 + 1)}{2}\).
+        Therefore, the statement is satisfied at \(0\).
+    \end{case}
+
+    \begin{case}[Inductive Step]
+        Let \(k \in \N\) and assume \(\sum_{i = 0}^{k}i = \frac{k(k + 1)}{2}\)
+        (this is our \emph{inductive hypothesis}).
+        Now, observe
+        \begin{alignat*}{2}
+            \sum_{i = 0}^{k + 1}i &= \pn*{\sum_{i = 0}^{k}i} + (k + 1) &&\text{ by definition}\\
+                                  &= \pn*{\frac{k(k + 1)}{2}} + (k + 1)~~~~&&\text{ by the \emph{inductive hypothesis}}\\
+                                  &= (k + 1)\pn*{\frac{k}{2} + 1} &&\text{ by factoring out } (k + 1)\\
+                                  &= \frac{(k + 1)(k + 2)}{2} &&\text{ because } \frac{k}{2} + 1 = \frac{k}{2} + \frac{2}{2} = \frac{k + 2}{2}.
+        \end{alignat*}
+        Thus, we have that \(\sum_{i = 0}^{k + 1}i = \frac{(k + 1)(k + 2)}{2}\), as desired.
+    \end{case}
+
+    Therefore, we can conclude that \(\pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}\).
+\end{proof}
+
+\end{document}
