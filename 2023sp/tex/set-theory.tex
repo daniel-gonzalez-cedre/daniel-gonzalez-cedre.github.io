@@ -98,9 +98,10 @@ The language of set theory will have two predicate symbols, defined below.
     \end{enumerate}
 \end{definition}
 
-\section{Axioms of Set Theory}\label{sec:axioms}
-
+\section{The Axioms of Set Theory}\label{sec:axioms}
 \setcounter{preaxiom}{-1}
+
+\subsection{The Axiom of Existence}
 \begin{axiom}[Existence]\label{ax:existence}
     \vspace{-\abovedisplayskip}
     \[
@@ -112,6 +113,7 @@ The language of set theory will have two predicate symbols, defined below.
     (because we can use this axiom as an assumption in any proof).
 \end{axiom}
 
+\subsection{The Axiom of Extensionality}
 \begin{axiom}[Extensionality]\label{ax:extensionality}
     \vspace{-\abovedisplayskip}
     \[
@@ -146,9 +148,9 @@ The language of set theory will have two predicate symbols, defined below.
         \pn*{\exists a \in A}\pn*{\varphi(a)} \iff \pn*{\bigjoin_{a \in A}\varphi(a)}
     \]
 \end{theorem}
-\begin{proof}
-    This proof is left as an exercise to the reader.
-\end{proof}
+% \begin{proof}
+%     This proof is left as an exercise to the reader.
+% \end{proof}
 % \begin{proof}
 %     Let \(\varphi\) be a {\wff} with at most one free variable \(x\).
 %     Let \(A\) be a set.
@@ -201,12 +203,14 @@ The language of set theory will have two predicate symbols, defined below.
     \end{note}
 \end{definition}
 
+\subsection{The Pairing Axiom}
 \begin{axiom}[Pairing]\label{ax:pairing}
     \vspace{-\abovedisplayskip}
     \[\forall x \forall y \exists z \pn*{z = \set*{x, y}}\]
     This axiom allows us to take two existing sets and construct a set containing the pair of them.
 \end{axiom}
 
+\subsection{The Axiom of Union}
 \begin{axiom}[Union]\label{ax:union}
     \vspace{-\abovedisplayskip}
     \[
@@ -238,15 +242,15 @@ The language of set theory will have two predicate symbols, defined below.
     so \(x \union y \defn \set*{a \suchthat (a \in x) \join (a \in y)}\) exists.
 \end{proof}
 
+\subsection{The Axiom Schema of Separation}
 \begin{axiom}[Separation]\label{ax:separation}
     \vspace{-\abovedisplayskip}
     \[
         \text{If \(\varphi\) is a {\wff} with at most one free variable, then }
         \forall x \exists y \pn*{y = \set*{a \in x \suchthat \varphi(a)}}
     \]
-    This axiom tells us that, if we start with an already-existing set \(x\),
-    then we can collect all of its elements that satisfy \(\varphi\)
-    and put them in a set by themselves.
+    Given an already-existing set \(x\),
+    this axiom says we can \emph{separate} the elements that satisfy \(\varphi\) from \(x\).
 \end{axiom}
 
 \begin{theorem}[Intersection of Two Sets]\label{thm:intersection}
@@ -307,6 +311,7 @@ The language of set theory will have two predicate symbols, defined below.
     (you may also encounter the alternative notations \(x \subset y\) and \(x \subsetneqq y\)).
 \end{definition}
 
+\subsection{The Power Set Axiom}
 \begin{axiom}[Power Set]
     \vspace{-\abovedisplayskip}
     \[
@@ -324,6 +329,7 @@ The language of set theory will have two predicate symbols, defined below.
     we refer to this set as \emph{the} empty set and use the special symbol \(\emptyset\).
 \end{definition}
 
+\subsection{The Axiom of Regularity}
 \begin{axiom}[Regularity]\label{ax:regularity}
     \vspace{-\abovedisplayskip}
     \[
@@ -409,9 +415,9 @@ The language of set theory will have two predicate symbols, defined below.
 \begin{theorem}[Existence of Cartesian Products]
     For any sets \(X\) and \(Y\), the Cartesian product \(X \times Y\) exists.
 \end{theorem}
-\begin{proof}
-    \hl{details to be filled in}  % TODO
-\end{proof}
+% \begin{proof}
+%     Let \(X\) and \(Y\) be sets and consider \(Z = \set*{z \in \union\pn*{\set*{X, Y}} \suchthat }\)
+% \end{proof}
 
 \begin{theorem}[Existence of \(\emptyset\)]
     \(\exists x \pn*{x = \emptyset}\).
@@ -491,9 +497,41 @@ The language of set theory will have two predicate symbols, defined below.
     \end{align*}
 \end{definition}
 
-% \begin{example}
-%     
-% \end{example}
+\newpage
+\begin{example}
+    Let's compute \(2 + 3\).
+    \begin{alignat*}{2}
+        2 + 3 &= 2 + \successor{2} &&\text{ because } 3 = \successor{2}\\
+              &= \successor{2 + 2} &&\text{ by definition of } 2 + \successor{2}\\
+              &= \successor{2 + \successor{1}} &&\text{ because } 2 = \successor{1}\\
+              &= \successor{\successor{2 + 1}} &&\text{ by definition of } 2 + \successor{1}\\
+              &= \successor{\successor{2 + \successor{0}}} &&\text{ because } 1 = \successor{0}\\
+              &= \successor{\successor{\successor{2 + 0}}}~~~~&&\text{ by definition of } 2 + \successor{0}\\
+              &= \successor{\successor{\successor{2}}} &&\text{ by definition of } 2 + 0\\
+              &= \successor{\successor{3}} &&\text{ because } 3 = \successor{2} \text{ by definition}\\
+              &= \successor{4} &&\text{ because } 4 = \successor{3} \text{ by definition}\\
+              &= 5 &&\text{ because } 5 = \successor{4} \text{ by definition}.
+    \end{alignat*}
+    Thus, we have a proof that \(2 + 3 = 5\).
+\end{example}
+\begin{example}
+    Let's compute \(2 \cdot 3\).
+    \begin{alignat*}{2}
+        2 \cdot 3 &= 2 \cdot \successor{2} &&\text{ because } 3 = \successor{2}\\
+              &= 2 \cdot 2 + 2 &&\text{ by definition of } 2 \cdot \successor{2}\\
+              &= 2 \cdot \successor{1} + 2 &&\text{ because } 2 = \successor{1}\\
+              &= \pn*{2 \cdot 1 + 2} + 2 &&\text{ by definition of } 2 \cdot \successor{1}\\
+              &= \pn*{2 \cdot \successor{0} + 2} + 2 &&\text{ because } 1 = \successor{0}\\
+              &= \pn*{\pn*{2 \cdot 0 + 2} + 2} + 2~~~~&&\text{ by definition of } 2 \cdot \successor{0}\\
+              &= \pn*{\pn*{0 + 2} + 2} + 2 &&\text{ because } 2 \cdot 0 = 0 \text{ by definition}\\
+              &= \pn*{2 + 2} + 2 &&\text{ because } 0 + 2 = 2 \text{ \emph{(this requires its own proof)}}\\
+              &= 4 + 2 &&\text{ because } 2 + 2 = 4 \text{ \emph{(this requires its own proof)}}\\
+              &= 6 &&\text{ because } 2 + 4 = 6 \text{ \emph{(this requires its own proof)}}
+    \end{alignat*}
+    Since those last three steps are not a part of any definition or theorem so far,
+    we would need to \emph{separately} prove \(0 + 2 = 2\) and \(2 + 2 = 4\) and \(2 + 4 = 6\)
+    and then apply those results to this proof of \(2 \cdot 3 = 6\).
+\end{example}
 
 \begin{definition}[Order on the Natural Numbers]
     Given two natural numbers \(n\) and \(m\),
@@ -504,7 +542,6 @@ The language of set theory will have two predicate symbols, defined below.
     which means \(n\) is \emph{strictly less than} \(m\).
 \end{definition}
 
-\newpage
 \begin{definition}[Iterated Sums \& Products]
     If \(n\) and \(x_0, \dots x_{n - 1}\) are natural numbers,
     then we define the \emph{iterated sum} of the \(x_i\) recursively by
@@ -512,6 +549,7 @@ The language of set theory will have two predicate symbols, defined below.
         \sum_{i = 0}^{0}x_i &= x_0\\
         \sum_{i = 0}^{k + 1}x_i &= \pn*{\sum_{i = 0}^{k}x_i} + \pn*{x_{k + 1}}~~~~\text{ if } 0 < k + 1 \leq n.
     \end{align*}
+\newpage
     Similarly, we define the \emph{iterated product} of the \(x_i\) recursively as
     \begin{align*}
         \prod_{i = 0}^{0}x_i &= x_0\\
@@ -519,15 +557,110 @@ The language of set theory will have two predicate symbols, defined below.
     \end{align*}
 \end{definition}
 
+\subsection{The Axiom of Infinity}
 \begin{axiom}[Infinity]
     \vspace{-\abovedisplayskip}
     \[
         \exists N \pn*{N = \set*{n \suchthat n = \emptyset \join \exists\pn*{m \in N}\pn*{n = \successor{m}}}}
     \]
     We call this set the \emph{set of natural numbers} and use the symbol \(\N\) to denote it.
+    For convenience,
+    we also define the \emph{positive naturals} by \(\N_+ \defn \set*{n \in \N \suchthat n > 0}\).
 \end{axiom}
 
-\begin{theorem}[\(\N\) is an Ordered Semigroup]
+% APPENDIX
+\appendix
+\chapter{Construction of the Number Sets}
+There are a few different ways of constructing of each of the important number sets.
+We will use \emph{quotient constructions}---a fundamental technique in modern algebra---%
+and present the standard construction for each set.
+
+\section{The Integers}
+Consider the equivalence relation \(\sim\) on \(\pn*{\N \times \N} \times \pn*{\N \times \N}\)
+given by \((a, b) \sim (c, d)\) \iffbydefn \(a + d = c + b\).
+Notice that this relation captures the idea that ordered pairs \((a, b), (c, d)\) are related
+if \(a - b = c - d\), so the ordered pairs \((a, b)\) represent ``differences'' between natural numbers.
+However, since the difference of two natural numbers is not always defined,
+we can still express that relationship using only addition,
+and we consider them \emph{equivalent} if the differences they represent are the same.
+We then define the \emph{equivalence class} of an ordered pair \((a, b) \in \N \times \N\) under the \(\sim\)
+relation as \([(a, b)]_{\sim} = \set*{(c, d) \in \N \times \N \suchthat (a, b) \sim (c, d)}\).\\
+We then say \(\Z \defn \sfrac{\N \times \N}{\sim}\) is the set of integers,
+which is \(\set*{[(a, b)]_{\sim} \suchthat (a, b) \in \N \times \N}\).
+So every integer, underneath, is an equivalence class of ordered pairs of natural numbers.
+We define the integer \(z \in \Z\) to be the equivalence class \([(a, b)]_{\sim}\) such that \(z + b = a\),
+meaning that \(z\) represents the difference \(a - b\).
+% This simulates the idea of \emph{closing} \(\N\) under the subtraction operation
+% with a \emph{quotient construction} (a fundamental technique of modern algebra).\\
+The arithmetic operations on \(\N\) extend naturally to \(\Z\)
+by operating on the representatives of the equivalence classes.
+% define integer arithmetic
+
+\section{The Rationals}
+We take a similar approach to the rational numbers as we did the integers.
+Consider the equivalence relation \(\sim\) on \(\Z \times \N_+\)
+given by \((p, q) \sim (r, s)\) \iffbydefn \(p \cdot s = r \cdot q\).
+This captures the essence of \(\sfrac{p}{q} = \sfrac{r}{s}\).\\
+We then say \(\Q \defn \sfrac{\Z \times \N_+}{\sim}\) is the set of rational numbers,
+which is \(\set*{[(p, q)]_{\sim} \suchthat (p, q) \in \Z \times \N_+}\).
+So, similarly to the integers,
+we represent a rational number \(\sfrac{p}{q}\)
+as an equivalence class of ordered pairs of integers with positive naturals
+so that the equivalence class of \((p, q)\) represents all of those fractions equal to \(\sfrac{p}{q}\).
+The arithmetic operations on \(\Z\) and \(\N\) extend naturally to \(\Q\)
+by operating on the equivalence class representatives.
+% define rational arithmetic
+
+\section{The Reals}
+The approach we must take to define the reals is similar in some ways but very different in other ways.
+We would still like a quotient construction,
+but we can not define our relation on \(\N\), \(\Z\), or \(\Q\) directly.
+Instead, the idea here will then be to take quotients of these things called
+\emph{Cauchy sequences} of rational numbers.
+
+\begin{definition}[Cauchy Sequence]\label{def:cauchy}
+    We say that a sequence \(q: \N \to \Q\)
+    of rational numbers \(\langle q_i \rangle_{i \in \N} = q_0, q_1, \dots \)
+    is \emph{Cauchy convergent} {\ifandonlyif}
+    % \vspace{-\parskip}
+    \[
+        \pn*{\forall \varepsilon > 0}\pn*{\exists m \in \N}\pn*{\forall n_1, n_2 \in \N}
+        \pn*{\pn*{n_1 > m~\meet~n_2 > m} \implies \abs{q_{n_1} - q_{n_2}} < \varepsilon}.
+    \]
+    We call such sequences \emph{Cauchy sequences}, with the adjective \emph{Cauchy} for short.
+\end{definition}
+
+We then define \(\sim\) on the set of all rational Cauchy sequences \(\mathcal{Q}\)
+\(\langle p_i \rangle_{i \in \N} \sim \langle q_i \rangle_{i \in \N}\) \iffbydefn
+\(\langle p_i - q_i \rangle_{i \in \N} = \langle 0 \rangle_{i \in \N}\).
+Then \(\R \defn \sfrac{\mathcal{Q}}{\sim}\) is the set of real numbers
+(\ie each real number is a class of \emph{equivalent} Cauchy sequences over \(\Q\)).
+
+% \section{The Complex Numbers}
+
+
+\chapter{Basic Algebraic Properties}
+\section{The Naturals}
+\begin{theorem}[\(\N\) is \emph{the smallest} Ordered Semiring]
+    \hl{TODO}
 \end{theorem}
+
+\section{The Integers}
+\begin{theorem}[\(\Z\) is \emph{the smallest} Ordered Ring]
+    \hl{TODO}
+\end{theorem}
+
+\section{The Rationals}
+\begin{theorem}[\(\Q\) is \emph{the smallest} Ordered Field]
+    \hl{TODO}
+\end{theorem}
+
+\section{The Reals}
+\begin{theorem}[\(\R\) is \emph{the smallest} Complete Ordered Field]
+    \hl{TODO}
+\end{theorem}
+
+% \section{The Complex Numbers}
+
 
 \end{document}
