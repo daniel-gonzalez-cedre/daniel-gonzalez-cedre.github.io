@@ -250,7 +250,8 @@ The language of set theory will have two predicate symbols, defined below.
 \end{axiom}
 
 \begin{theorem}[Intersection of Two Sets]\label{thm:intersection}
-    For any sets \(x\) and \(y\), we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \in y)}}\).
+    For any sets \(x\) and \(y\),
+    we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \in y)}}\).
     Such an \(A\) is denoted \(x \intersect y\).
 \end{theorem}
 \begin{proof}
@@ -276,9 +277,35 @@ The language of set theory will have two predicate symbols, defined below.
     showing that \(x \intersect y = \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
 \end{proof}
 
-% \begin{definition}[Difference of Two Sets]
-%     \hl{fill this in}  % TODO
-% \end{definition}
+\begin{theorem}[Difference of Two Sets]
+    For any sets \(x\) and \(y\),
+    we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \not \in y)}}\).
+    Such an \(A\) is denoted \(x \setminus y\).
+\end{theorem}
+\begin{proof}
+    Let \(x\) and \(y\) be sets.
+    Consider \(A \defn \set*{a \in x \suchthat a \not \in y}\),
+    which we know exists by \autoref{ax:separation}.
+    Now, let \(b\) be an arbitrary set and observe
+    \begin{alignat*}{2}
+        b \in A &\iff b \in \set*{a \in x \suchthat a \not \in y} &&\text{by the definition of \(A\)} \\
+                &\iff \pn*{b \in x} \meet \pn*{b \not \in y} &&\text{by definition} \\
+                &\iff b \in \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}~~~~&&\text{by definition}.
+    \end{alignat*}
+    Therefore, \(A = \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}\) by \autoref{ax:extensionality},
+    showing that \(x \setminus y = \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}\) exists.
+\end{proof}
+
+\begin{definition}[Subsets]
+    We say that \(x\) is a \emph{subset} of \(y\) when every element of \(x\) is also an element of \(y\).
+    Formally, we define
+    \[
+        x \subseteq y \iffdefn \forall a \pn*{a \in x \implies a \in y}.
+    \]
+    If \(x \subseteq y\) but \(x \neq y\),
+    then we say that \(x\) is a \emph{proper subset} of \(y\) and we write \(x \subsetneq y\)
+    (you may also encounter the alternative notations \(x \subset y\) and \(x \subsetneqq y\)).
+\end{definition}
 
 \begin{axiom}[Power Set]
     \vspace{-\abovedisplayskip}
@@ -464,6 +491,10 @@ The language of set theory will have two predicate symbols, defined below.
     \end{align*}
 \end{definition}
 
+% \begin{example}
+%     
+% \end{example}
+
 \begin{definition}[Order on the Natural Numbers]
     Given two natural numbers \(n\) and \(m\),
     say that \(n\) is \emph{less than or equal to} \(m\) \iffbydefn \(n \subseteq m\).
@@ -473,6 +504,7 @@ The language of set theory will have two predicate symbols, defined below.
     which means \(n\) is \emph{strictly less than} \(m\).
 \end{definition}
 
+\newpage
 \begin{definition}[Iterated Sums \& Products]
     If \(n\) and \(x_0, \dots x_{n - 1}\) are natural numbers,
     then we define the \emph{iterated sum} of the \(x_i\) recursively by
