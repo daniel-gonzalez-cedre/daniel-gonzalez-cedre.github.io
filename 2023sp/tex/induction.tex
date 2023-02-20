@@ -16,6 +16,14 @@
 
 \section{Weak Induction}
 
+\begin{definition}[Well-Order]
+    If $X$ is a set with a relation $\leq$ defined on it,
+    we say that $\leq$ is a \emph{well-order} on $X$ \iffbydefn
+    every non-empty subset of $X$ has a minimal element.
+    Formally, $\leq$ is a well-order on $X$
+    \iffbydefn $\pn*{\forall A \in \power{X}}\pn*{\exists a \in A}\pn*{\forall b \in A}{a \leq b}$.
+\end{definition}
+
 \begin{theorem}[\(\N\) is Well-Ordered]\label{thm:lep}
     \vspace{-\parskip}
     \[
@@ -28,7 +36,7 @@
     This proof is left as an exercise.
 \end{proof}
 
-\begin{theorem}[Weak Induction]
+\begin{theorem}[Weak Induction]\label{thm:weakinduction}
     If \(\varphi(\cdot)\) is a {\wff}, then
     \[
         \pn*{\forall n \in \N}\pn*{\varphi(n)}
@@ -62,7 +70,7 @@
         This means there is a \(b \in \N\) such that \(b + 1 = a\).
 
         If \(b \in A\), then that would mean that \(a \leq b\) since \(a\) is minimal in \(A\).
-        However, we know that \(b < b + 1 = a\), so we would then have \(a \leq b < a\). \contradiction\\
+        However, we know that \(b < b + 1 = a\), so we would then have \(a \leq b < a\). \contradiction
         Therefore, \(b \not \in A\).
 
         % Since we assumed \(\neg \varphi(n)\), we know \(n \in A\) by definition,
@@ -71,8 +79,12 @@
     \end{case}
 \end{proof}
 
-Let's practice induction by proving the following theorem.
-\newpage
+Notice that the above theorem actually generalizes beyond just $\N$.
+In fact, we can generalize the proof of \autoref{thm:weakinduction}
+to \emph{any} well-ordered set $X$ by replacing $k + 1$
+with the least element of the non-empty subset $X \setminus \set*{\ell \in X \suchthat \ell \leq k}$.
+
+Let's practice induction by proving the following few theorems.
 \begin{theorem}[Gaussian Summation Formula]\label{thm:gaussiansum}
     \[
         \pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}.
@@ -101,5 +113,37 @@ Let's practice induction by proving the following theorem.
 
     Therefore, we can conclude that \(\pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}\).
 \end{proof}
+
+\begin{theorem}[Gaussian Summation Formula]\label{thm:gaussiansum}
+    \[
+        \pn*{\forall n \in \N_+}\pn*{3n \leq 3^n}.
+    \]
+\end{theorem}
+\begin{proof}
+    We will prove the claim by induction on $n \in \N_+$.
+
+    \begin{case}[Base Case]
+        Observe that $3 \cdot 0 = 0 \leq 1 = 3^0$.
+    \end{case}
+
+    \begin{case}[Inductive Step]
+        Let $k \in \N_+$ and assume $3 \cdot k \leq 3^k$
+        (this is our \emph{inductive hypothesis}).
+        Now, observe
+        \begin{alignat*}{2}
+            3 \cdot (k + 1) &= 3 \cdot k + 3 &&\text{ by the distributive property of multiplication} \\
+                            &\leq 3^k + 3 &&\text{ by the \emph{inductive hypothesis}} \\
+                            &\leq 3^k + 3^k &&\text{ because $1 \leq k \implies a^1 \leq a^k$ if $a < 0$}\footnotemark[2]\footnotemark[3] \\
+                            &\leq 3^k + 3^k + 3^k &&\text{ since $a^k$ is always positive if $0 < a$}\footnotemark[2]\footnotemark[3] \\
+                            &= 3 \cdot 3^k &&\text{ because $\textstyle \sum_{i = 1}^{m}a = m \cdot a$ for any $a$}\footnotemark[2]\footnotemark[3] \\
+                            &= 3^{k + 1} &&\text{ because $a^ba^c = a^{b + c}$ for any $a$}\footnotemark[2]\footnotemark[3]
+        \end{alignat*}
+        So, $3 \cdot (k + 1) \leq 3^{k + 1}$, as desired.
+    \end{case}
+    Therefore, $\pn*{\forall n \in \N}\pn*{3n \leq 3^n}$.
+\end{proof}
+
+\footnotetext[2]{This is true in any ordered semiring where exponentiation is defined recursively in terms of multiplication.}
+\footnotetext[3]{You can assume ``basic grade-school'' properties of algebra like these without special mention.}
 
 \end{document}

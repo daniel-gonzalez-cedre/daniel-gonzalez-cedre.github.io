@@ -189,7 +189,7 @@
     Then, we know that \(\varphi(t)\) for some \(t\).
     From our first assumption, we know that \(\neg \varphi(s)\) for any \(s\);
     in particular, we know that \(\neg \varphi(t)\).
-    But then, we obtain \(\varphi(t) \meet \neg \varphi(t)\), which is a contradiction. \contradiction\\
+    But then, we obtain \(\varphi(t) \meet \neg \varphi(t)\), which is a contradiction. \contradiction
     Therefore, we can conclude \(\neg \exists x \pn*{\varphi(x)}\).
 \end{proof}
 
@@ -216,7 +216,7 @@
     Assume, towards a contradiction, that \(\forall x \pn*{\varphi(x)}\).
     Then, we have \(\varphi(s)\) for any \(s\);
     in particular, we know \(\varphi(t)\).
-    But then, we have \(\neg \varphi(t) \meet \varphi(t)\), giving us a contradiction. \contradiction\\
+    But then, we have \(\neg \varphi(t) \meet \varphi(t)\), giving us a contradiction. \contradiction
     Therefore, we can conclude \(\neg \forall x \pn*{\varphi(x)}\).
 \end{proof}
 
@@ -229,7 +229,7 @@
     Towards a contradiction, assume that \(\neg \exists x \pn*{\neg \varphi(x)}\).
     Then by \autoref{lem:negexists}, we can deduce \(\forall x \pn*{\neg \neg \varphi(x)}\),
     which is equivalent to \(\forall x \pn*{\varphi(x)}\).
-    However, this contradicts our initial assumption that \(\neg \forall x \pn*{\varphi(x)}\). \contradiction\\
+    However, this contradicts our initial assumption that \(\neg \forall x \pn*{\varphi(x)}\). \contradiction
     Therefore, we can conclude that \(\neg \neg \exists x \pn*{\varphi(x)}\),
     which is equivalent to \(\exists x \pn*{\varphi(x)}\).
 \end{proof}
@@ -249,11 +249,12 @@
 
 \begin{remark}[Order of Quantification]
     Notice that the \emph{order} of quantification often matters when writing or interpreting an expression,
-    meaning \(\forall x \exists y \pn*{\varphi(x, y)} \not \iff \exists y \forall x \pn*{\varphi(x, y)}\).
+    meaning \(\forall x \exists y \pn*{\varphi(x, y)} \niff \exists y \forall x \pn*{\varphi(x, y)}\).
     However, if two instances of the \emph{same} quantifier occur immediately adjacent to each other,
     then they will commute: \(\forall x \forall y \pn*{\varphi(x, y)} \iff \forall y \forall x \pn*{\varphi(x, y)}\).
 \end{remark}
 
+\newpage
 \section{Validity of Arguments}
 
 \begin{definition}[Validity]
@@ -295,7 +296,7 @@
             \(\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi\)
             is \emph{not} a tautology.
         \item[II.]
-            We have \(\varphi_1, \dots \varphi_n \not \implies \psi\).
+            We have \(\varphi_1, \dots \varphi_n \nimplies \psi\).
     \end{enumerate}
     Condition \hyperref[validi]{I.\ }states that \emph{there is a} truth assignment
     that makes \(\varphi_1 \meet \dots \varphi_n\) true and also \(\psi\) false.
