@@ -17,22 +17,29 @@
 \section{Propositions \& Connectives}
 
 \begin{definition}[Proposition]
-    A \emph{proposition} is a sentence (in our language)
-    that has one (and only one) definite, consistent truth value.
+    A \emph{proposition} is a statement
+    that has \emph{one and only one} consistent truth value.
 \end{definition}
 
+\begin{definition}[Satisfiability]
+    A propositional expression $\varphi$ consisting the propositional variables $p_1, \dots p_n$ is \emph{satisfiable}
+    \iffbydefn there exists an assignment of truth values to $p_1, \dots p_n$ that results in $\varphi$ being equivalent to $\top$.
+\end{definition}
+
+
 \begin{definition}[Negation]
+    ~
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given a proposition \(p\), the \emph{negation} of \(p\)
-            is denoted \(\neg p\) and can be defined by the following truth table:
+            Given a proposition $p$, the \emph{negation} of $p$
+            is denoted $\neg p$ and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:not}
                 \begin{tabular}{|Cc||Cc|} \hline
-                    \thead{\(p\)} & \thead{\(\neg p\)} \\ \hline
-                    \thead{\(\top\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
-                    \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\ \hline
+                    \thead{$p$} & \thead{$\neg p$} \\ \hline
+                    \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                    \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
                 \end{tabular}
             \end{table}
         \end{minipage}%
@@ -40,35 +47,36 @@
             ~
         \end{minipage}%
         \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of \(\neg p\):\\
-            \begin{list}{\(\cdot\)}{}
+            Some possible readings of $\neg p$:\\
+            \begin{list}{$\cdot$}{}
                 \item
-                    Not \(p\).
+                    Not $p$.
                 \item
-                    \(p\) does not hold.
+                    $p$ does not hold.
                 \item
-                    It is not the case that \(p\).
+                    It is not the case that $p$.
                 \item
-                    We do not have that \(p\).
+                    We do not have that $p$.
             \end{list}
         \end{minipage}
     \end{center}
 \end{definition}
 
 \begin{definition}[Conjunction]
+    ~
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions \(p\) and \(q\), the \emph{conjunction} of \(p\) with \(q\)
-            is denoted \(p \meet q\) and can be defined by the following truth table:
+            Given two propositions $p$ and $q$, the \emph{conjunction} of $p$ with $q$
+            is denoted $p \meet q$ and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:and}
                 \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \meet q\)} \\ \hline
-                    \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\top\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\ \hline
+                    \thead{$p$} & \thead{$q$} & \thead{$p \meet q$} \\ \hline
+                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\ \hline
                 \end{tabular}
             \end{table}
         \end{minipage}%
@@ -76,18 +84,18 @@
             ~
         \end{minipage}%
         \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of \(p \meet q\):\\
-            \begin{list}{\(\cdot\)}{}
+            Some possible readings of $p \meet q$:\\
+            \begin{list}{$\cdot$}{}
                 \item
-                    \(p\), and \(q\).
+                    $p$, and $q$.
                 \item
-                    \(p\), but \(q\).
+                    $p$, but $q$.
                 \item
-                    \(p\); also, \(q\).
+                    $p$; also, $q$.
                 \item
-                    \(p\); further, \(q\).
+                    $p$; further, $q$.
                 \item
-                    In addition to \(p\), we also have \(q\).
+                    In addition to $p$, we also have $q$.
             \end{list}
         \end{minipage}
     \end{center}
@@ -95,19 +103,20 @@
 
 
 \begin{definition}[Disjunction]
+    ~
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions \(p\) and \(q\), the \emph{disjunction} of \(p\) with \(q\)
-            is denoted \(p \join q\) and can be defined by the following truth table:
+            Given two propositions $p$ and $q$, the \emph{disjunction} of $p$ with $q$
+            is denoted $p \join q$ and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:or}
                 \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \join q\)} \\ \hline
-                    \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\ \hline
+                    \thead{$p$} & \thead{$q$} & \thead{$p \join q$} \\ \hline
+                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\ \hline
                 \end{tabular}
             \end{table}
         \end{minipage}%
@@ -115,34 +124,33 @@
             ~
         \end{minipage}%
         \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of \(p \join q\):\\
-            \begin{list}{\(\cdot\)}{}
+            Some possible readings of $p \join q$:\\
+            \begin{list}{$\cdot$}{}
                 \item
-                    \(p\), or \(q\).
+                    $p$, or $q$.
                 \item
-                    Either \(p\), or \(q\).
+                    Either $p$, or $q$.
             \end{list}
         \end{minipage}
     \end{center}
 \end{definition}
 
-\newpage
-
 \begin{definition}[Material Implication]
+    ~
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions \(p\) and \(q\),
-            the \emph{conditional} formed by assuming \(p\) and concluding \(q\)
-            is denoted \(p \rightarrow q\) and can be defined by the following truth table:
+            Given two propositions $p$ and $q$,
+            the \emph{conditional} formed by assuming $p$ and concluding $q$
+            is denoted $p \rightarrow q$ and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:implies}
                 \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \rightarrow q\)} \\ \hline
-                    \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\ \hline
+                    \thead{$p$} & \thead{$q$} & \thead{$p \rightarrow q$} \\ \hline
+                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
                 \end{tabular}
             \end{table}
         \end{minipage}%
@@ -150,43 +158,44 @@
             ~
         \end{minipage}%
         \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of \(p \rightarrow q\):\\
-            \begin{list}{\(\cdot\)}{}
+            Some possible readings of $p \rightarrow q$:\\
+            \begin{list}{$\cdot$}{}
                 \item
-                    If \(p\), then \(q\).
+                    If $p$, then $q$.
                 \item
-                    \(p\) implies \(q\).
+                    $p$ implies $q$.
                 \item
-                    \(q\) is conditioned on \(p\).
+                    $q$ is conditioned on $p$.
                 \item
-                    \(q\) only if \(p\).
+                    $q$ only if $p$.
                 \item
-                    \(p\) is sufficient for \(q\).
+                    $p$ is sufficient for $q$.
                 \item
-                    \(q\) is necessary for \(p\).
+                    $q$ is necessary for $p$.
                 \item
-                    \(q\) unless not \(p\).
+                    $q$ unless not $p$.
                 \item
-                    \(q\) or not \(p\).
+                    $q$ or not $p$.
             \end{list}
         \end{minipage}
     \end{center}
 \end{definition}
 
 \begin{definition}[Material Equivalence]
+    ~
     \begin{center}
         \begin{minipage}[t]{.55\linewidth}
-            Given two propositions \(p\) and \(q\), the \emph{biconditional} formed by \(p\) and \(q\)
-            is denoted \(p \leftrightarrow q\) and can be defined by the following truth table:
+            Given two propositions $p$ and $q$, the \emph{biconditional} formed by $p$ and $q$
+            is denoted $p \leftrightarrow q$ and can be defined by the following truth table:
             \begin{table}[H]
                 \centering
                 \label{tab:iff}
                 \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \leftrightarrow q\)} \\ \hline
-                    \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-                    \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\top\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} \\
-                    \thead{\(\bot\)} & \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\ \hline
+                    \thead{$p$} & \thead{$q$} & \thead{$p \leftrightarrow q$} \\ \hline
+                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
                 \end{tabular}
             \end{table}
         \end{minipage}%
@@ -194,104 +203,75 @@
             ~
         \end{minipage}%
         \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of \(p \leftrightarrow q\):\\
-            \begin{list}{\(\cdot\)}
+            Some possible readings of $p \leftrightarrow q$:\\
+            \begin{list}{$\cdot$}
                 \item
-                    \(p\) if and only if \(q\).
+                    $p$ if and only if $q$.
                 \item
-                    \(p\) is necessary and sufficient for \(q\).
+                    $p$ is necessary and sufficient for $q$.
                 \item
-                    \(q\) is necessary and sufficient for \(p\).
+                    $q$ is necessary and sufficient for $p$.
             \end{list}
         \end{minipage}
     \end{center}
 \end{definition}
 
-% \begin{definition}[Well-Formed Formula]
-%     We say that \(\varphi\) is a \emph{proposition} \iffbydefn any one of the following conditions are true:
-%     \begin{alignat}{2}
-%         \varphi &= \top\\
-%         \varphi &= \bot\\
-%         \varphi &= \neg (p), &&\text{ where \(p\) is a proposition}\\
-%         \varphi &= (p \meet q), &&\text{ where \(p\) and \(q\) are propositions}\\
-%         \varphi &= (p \join q), &&\text{ where \(p\) and \(q\) are propositions}\\
-%         \varphi &= (p \rightarrow q), &&\text{ where \(p\) and \(q\) are propositions}\\
-%         \varphi &= (p \leftrightarrow q), &&\text{ where \(p\) and \(q\) are propositions}
-%     \end{alignat}
-%     As we can see, this is a \emph{recursive} definition.
-%     We start with two base cases that claim that \(\top\) and \(\bot\) are propositions.
-%     We then take existing propositions (starting with \(\top\) and \(\bot\))
-%     and build more complicated expressions out of simpler ones.
-% \end{definition}
-
-% \begin{definition}[Equivalence]
-%     Let \(n\) and \(m\) be natural numbers (whole numbers \(\geq 0\).
-%     Let \(\varphi_n\) and \(\psi_m\) be propositional expressions composed of \(n\) and \(m\) propositional variables respectively.
-%     With the notation \(\varphi_n \iff \psi_n\),
-%     we say that ``\(\varphi_n\) is logically equivalent to \(\psi_n\)''
-%     \iffbydefn every assignment of truth values (either \(\top\) or \(\bot\))
-%     to the propositional variables of \(\varphi_n\) and \(\psi_m\) results in the two expressions having the same truth value.
-% \end{definition}
-
 \begin{definition}[Equivalence]
-    If we have two expressions \(\varphi\) and \(\psi\) in our formal language,
+    If we have two expressions $\varphi$ and $\psi$ in our formal language,
     consisting of some number of (possibly shared) propositional variables, connected together by logical connectives,
-    then with the notation \(\varphi \iff \psi\) we say that \(\varphi\) is equivalent to \(\psi\)
-    \iffbydefn every assignment of truth values to the propositional variables of \(\varphi\) and \(\psi\) results
+    then with the notation $\varphi \iff \psi$ we say that $\varphi$ is equivalent to $\psi$
+    \iffbydefn every assignment of truth values to the propositional variables of $\varphi$ and $\psi$ results
     in the same truth value for the two expressions.
 \end{definition}
 \begin{example}
-    Consider the two expressions \(\varphi \defn p \rightarrow q\) and \(\psi \defn \neg p \join q\).
-    We can see that \(\varphi\) has two propositional variables: \(p\) and \(q\).
-    \(\psi\) also has two propositional variables: the same \(p\) and the same \(q\).
+    Consider the two expressions $\varphi \defn p \rightarrow q$ and $\psi \defn \neg p \join q$.
+    We can see that $\varphi$ has two propositional variables: $p$ and $q$.
+    $\psi$ also has two propositional variables: the same $p$ and the same $q$.
     If we construct the truth table for these two expressions,
-    we will see that every assignment of truth values to \(p\) and \(q\) will result in \(p \rightarrow q\) and \(\neg p \join q\)
+    we will see that every assignment of truth values to $p$ and $q$ will result in $p \rightarrow q$ and $\neg p \join q$
     having the same truth value.
 
     \begin{table}[H]
         \centering
         \begin{tabular}{|CcCc||CcCc|} \hline
-            \thead{\(p\)} & \thead{\(q\)} & \thead{\(p \rightarrow q\)} & \thead{\(\neg p \join q\)}\\ \hline
-            \thead{\(\top\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} & \cellcolor{green!30!white}{\(\top\)}\\
-            \thead{\(\top\)} & \thead{\(\bot\)} & \cellcolor{red!30!white}{\thead{\(\bot\)}} & \cellcolor{red!30!white}{\thead{\(\bot\)}}\\
-            \thead{\(\bot\)} & \thead{\(\top\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\
-            \thead{\(\bot\)} & \thead{\(\bot\)} & \cellcolor{green!30!white}{\thead{\(\top\)}} & \cellcolor{green!30!white}{\thead{\(\top\)}} \\ \hline
+            \thead{$p$} & \thead{$q$} & \thead{$p \rightarrow q$} & \thead{$\neg p \join q$}\\ \hline
+            \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{$\top$}\\
+            \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} & \cellcolor{red!30!white}{\thead{$\bot$}}\\
+            \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+            \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
         \end{tabular}
     \end{table}
 \end{example}
-\begin{definition}[Satisfiability]
-    A propositional expression \(\varphi\) consisting the propositional variables \(p_1, \dots p_n\) is \emph{satisfiable}
-    \iffbydefn there exists an assignment of truth values to \(p_1, \dots p_n\) that results in \(\varphi\) being equivalent to \(\top\).
-\end{definition}
 
 \newpage
+
 \section{Boolean Algebras}
 
 \begin{definition}[Boolean Algebra]\label{def:boolean}
-    A \emph{Boolean algebra} is a collection of \emph{terms} \(B\)
-    with two distinguished (and distinct) terms called \(\top\) and \(\bot\),
-    along with a unary operation called \(\neg\) and two binary operations called \(\meet\) and \(\join\),
-    such that the following statements are true for any terms \(p, q, r\) in \(B\):
+    A \emph{Boolean algebra} is a collection of \emph{terms} $B$
+    with two distinguished (and distinct) terms called $\top$ and $\bot$,
+    along with a unary operation called $\neg$ and two binary operations called $\meet$ and $\join$,
+    such that the following statements are true for any terms $p, q, r$ in $B$:
 
     \begin{table}[H]
         \centering
         \label{tab:boole}
         \begin{tabular}{|Cc|Cc|} \hline
             \multicolumn{2}{|c|}{\thead{Axioms of a Boolean Algebra}} \\\hline
-            \thead{Identity} & \thead{\(p \meet \top \iff p\) \\ \(p \join \bot \iff p\)} \\ \hline
-            \thead{Complement \\ (\aka Negation)} & \thead{\(p \meet \neg p \iff \bot\) \\ \(p \join \neg p \iff \top\)} \\ \hline
-            \thead{Commutativity} & \thead{\(p \meet q \iff q \meet p\) \\ \(p \join q \iff q \join p\)} \\ \hline
-            \thead{Associativity} & \thead{\(p \meet (q \meet r) \iff (p \meet q) \meet r\) \\ \(p \join (q \join r) \iff (p \join q) \join r\)} \\ \hline
-            \thead{Distributive Laws} & \thead{\(p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)\)} \\ \hline
+            \thead{Identity} & \thead{$p \meet \top \iff p$ \\ $p \join \bot \iff p$} \\ \hline
+            \thead{Complement \\ (\aka Negation)} & \thead{$p \meet \neg p \iff \bot$ \\ $p \join \neg p \iff \top$} \\ \hline
+            \thead{Commutativity} & \thead{$p \meet q \iff q \meet p$ \\ $p \join q \iff q \join p$} \\ \hline
+            \thead{Associativity} & \thead{$p \meet (q \meet r) \iff (p \meet q) \meet r$ \\ $p \join (q \join r) \iff (p \join q) \join r$} \\ \hline
+            \thead{Distributive Laws} & \thead{$p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)$ \\ $p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)$} \\ \hline
         \end{tabular}
     \end{table}
 
     This kind of structure is also referred to as a \emph{complemented, distributive lattice}.
     Since we are establishing the algebra of \emph{propositions},
-    our terms consist only of \(\top\) and \(\bot\).
+    our terms consist only of $\top$ and $\bot$.
 
     However, since none of these axioms tell us how to use the (very useful) symbols
-    \(\rightarrow\) and \(\leftrightarrow\), we need two additional axioms that will turn our Boolean algebra
+    $\rightarrow$ and $\leftrightarrow$, we need two additional axioms that will turn our Boolean algebra
     into an example of a \emph{Heyting algebra}:
 
     \begin{table}[H]
@@ -299,16 +279,16 @@
         \label{tab:heyting}
         \begin{tabular}{|Cc|Cc|} \hline
             \multicolumn{2}{|c|}{\thead{Heyting Axioms}} \\\hline
-            \thead{Conditional Disintegration}   & \thead{\(p \rightarrow q \iff \neg p \join q\)} \\ \hline
-            \thead{Biconditional Disintegration} & \thead{\(p \leftrightarrow q \iff (p \rightarrow q) \meet (q \rightarrow p)\)} \\ \hline
+            \thead{Conditional Disintegration}   & \thead{$p \rightarrow q \iff \neg p \join q$} \\ \hline
+            \thead{Biconditional Disintegration} & \thead{$p \leftrightarrow q \iff (p \rightarrow q) \meet (q \rightarrow p)$} \\ \hline
         \end{tabular}
     \end{table}
 
     By referring to the truth tables,
     it should be easy to see that these axioms are \emph{truth preserving} transformations,
-    meaning that taking an expression like \(p \meet (q \rightarrow r)\)
+    meaning that taking an expression like $p \meet (q \rightarrow r)$
     and applying an axiom like Identity to it
-    does not change the truth value of the resulting expression \((p \meet \top) \meet (q \rightarrow r)\).
+    does not change the truth value of the resulting expression $(p \meet \top) \meet (q \rightarrow r)$.
     For this reason, these are sometimes referred to as \emph{equivalence laws} and many treatments of this subject
     \emph{prove} these laws by referring to the truth tables.
 
@@ -326,22 +306,20 @@
 \end{definition}
 
 \begin{definition}[Tautology]
-    We say a proposition \(\varphi\) is a \emph{tautology}
-    \iffbydefn we have that \(\varphi \iff \top\).
+    We say a proposition $\varphi$ is a \emph{tautology}
+    \iffbydefn we have that $\varphi \iff \top$.
 \end{definition}
 \begin{definition}[Contradiction]
-    We say a proposition \(\varphi\) is a \emph{contradiction}
-    \iffbydefn we have that \(\varphi \iff \bot\).
+    We say a proposition $\varphi$ is a \emph{contradiction}
+    \iffbydefn we have that $\varphi \iff \bot$.
 \end{definition}
 \begin{example}
-    \(p \join \neg p\) is a tautology, and \(p \meet \neg p\) is a contradiction.
+    $p \join \neg p$ is a tautology, and $p \meet \neg p$ is a contradiction.
 \end{example}
 
-\newpage
-
 \begin{theorem}[Uniqueness of Complements]\label{thm:unique}
-    Let \(p\) be a term in a Boolean algebra \((B, \neg, \meet, \join)\).
-    Suppose there were two terms \(x\) and \(y\) in the Boolean algebra such that
+    Let $p$ be a term in a Boolean algebra $(B, \neg, \meet, \join)$.
+    Suppose there were two terms $x$ and $y$ in the Boolean algebra such that
     \begin{center}
         \begin{minipage}{.2\linewidth}
             \begin{align*}
@@ -356,83 +334,76 @@
             \end{align*}
         \end{minipage}
     \end{center}
-    meaning that \(x\) and \(y\) act like negations for \(p\).
-    Then, we have \(x \iff y\).
+    meaning that $x$ and $y$ act like negations for $p$.
+    Then, we have $x \iff y$.
 \end{theorem}
 \begin{proof}
-    Let \((B, \neg, \meet, \join)\) be a Boolean algebra
-    and consider an arbitrary term \(p\) in the algebra.
-    Suppose we have \(x\) and \(y\) satisfying the conditions given in the statement of the theorem above.
+    Let $(B, \neg, \meet, \join)$ be a Boolean algebra
+    and consider an arbitrary term $p$ in the algebra.
+    Suppose we have $x$ and $y$ satisfying the conditions given in the statement of the theorem above.
     Then, we can observe
     \begin{alignat*}{2}
         x &\iff \top \meet x ~~~~~~~~~~~~~~~~&&\text{by Identity}\\
-          &\iff (p \join y) \meet x &&\text{by the assumption \(p \join y \iff \top\)}\\
+          &\iff (p \join y) \meet x &&\text{by the assumption $p \join y \iff \top$}\\
           &\iff (p \meet x) \join (y \meet x) &&\text{by Distributivity}\\
-          &\iff \bot \join (y \meet x) &&\text{by the assumption \(p \meet x \iff \bot\)}\\
+          &\iff \bot \join (y \meet x) &&\text{by the assumption $p \meet x \iff \bot$}\\
           &\iff y \meet x &&\text{by Identity}.
     \end{alignat*}
     Similarly, we can see that
     \begin{alignat*}{2}
         y &\iff \top \meet y ~~~~~~~~~~~~~~~~&&\text{by Identity}\\
-          &\iff (p \join x) \meet y &&\text{by the assumption \(p \join x \iff \top\)}\\
+          &\iff (p \join x) \meet y &&\text{by the assumption $p \join x \iff \top$}\\
           &\iff (p \meet y) \join (x \meet y) &&\text{by Distributivity}\\
-          &\iff \bot \join (x \meet y) &&\text{by the assumption \(p \meet y \iff \bot\)}\\
+          &\iff \bot \join (x \meet y) &&\text{by the assumption $p \meet y \iff \bot$}\\
           &\iff x \meet y &&\text{by Identity}.
     \end{alignat*}
-    So, from Commutativity, we can conclude that \(x \iff (y \meet x) \iff (x \meet y) \iff y\).
+    So, from Commutativity, we can conclude that $x \iff (y \meet x) \iff (x \meet y) \iff y$.
 \end{proof}
 
 \begin{lemma}
-    For every Boolean algebra \((B, \neg, \meet, \join)\), we have
+    For every Boolean algebra $(B, \neg, \meet, \join)$, we have
     \begin{align*}
         \neg \top &\iff \bot\\
         \neg \bot &\iff \top.
     \end{align*}
 \end{lemma}
 \begin{proof}
-    Let \((B, \neg, \meet, \join)\) be a Boolean algebra with the distinguished terms \(\top\) and \(\bot\).
-    We will show that \(\neg \top \iff \bot\) by showing that
-    \(\neg \top\) and \(\bot\) both act like negations for \(\top\).
+    Let $(B, \neg, \meet, \join)$ be a Boolean algebra with the distinguished terms $\top$ and $\bot$.
+    We will show that $\neg \top \iff \bot$ by showing that
+    $\neg \top$ and $\bot$ both act like negations for $\top$.
 
-    First, observe that \(\neg \top \meet \top \iff \bot\) by the Complement axiom.
-    Similarly, we have \(\neg \top \join \top \iff \top\) by the Complement axiom.
-
-    Now, notice that \(\bot \meet \top \iff \bot\) by the Identity axiom.
-    Similarly, we get \(\bot \join \top \iff \top \join \bot \iff \bot\) by the Identity axiom
+    First, observe $\neg \top \meet \top \iff \bot$ by the Complement rule.
+    Similarly, we have $\neg \top \join \top \iff \top$ by the Complement rule.
+    Now, $\bot \meet \top \iff \bot$ by the Identity rule.
+    Similarly, $\bot \join \top \iff \top \join \bot \iff \bot$ by the Identity rule
     (and Commutativity).
-
-    This shows us that \(\neg \top\) and \(\bot\) are both negations for \(\top\).
+    This shows us that $\neg \top$ and $\bot$ are both negations for $\top$.
     Therefore, recalling that complements are unique by \autoref{thm:unique},
-    we can conclude \(\neg \top \iff \bot\).
-
-    Showing \(\neg \bot \iff \top\) is left as an exercise to the reader.
+    we can conclude $\neg \top \iff \bot$.
+    Showing $\neg \bot \iff \top$ is left as an exercise to the reader.
 \end{proof}
 
-\newpage
-
 \begin{theorem}[Double Negation]
-    For any Boolean algebra \((B, \neg, \meet, \join)\) and any term \(p\) in the algebra,
-    we have \(\neg \neg p \iff p\).
+    For any Boolean algebra $(B, \neg, \meet, \join)$ and any term $p$ in $B$,
+    we have $\neg \neg p \iff p$.
 \end{theorem}
 \begin{proof}
-    Let \((B, \neg, \meet, \join)\) be a Boolean algebra
-    and consider an arbitrary term \(p\) in the algebra.
-    We want to show that \(\neg \neg p \iff p\),
-    which we can do by establishing that \(p\) and \(\neg \neg p\) are both complements of \(\neg p\).
-
-    By the Complement axiom, we know \(p \meet \neg p \iff \bot\) and \(p \join \neg p \iff \top\),
-    meaning that \(p\) is the complement of \(\neg p\).
+    Let $(B, \neg, \meet, \join)$ be a Boolean algebra
+    and consider an arbitrary term $p$ in the algebra.
+    We want to show that $\neg \neg p \iff p$,
+    which we can do by establishing that $p$ and $\neg \neg p$ are both complements of $\neg p$.
+    By the Complement rule, we know $p \meet \neg p \iff \bot$ and $p \join \neg p \iff \top$,
+    meaning that $p$ is the complement of $\neg p$.
     Similarly, we can see that
-    \(\neg p \meet \neg (\neg p) \iff \bot\) and \(\neg p \join \neg (\neg p) \iff \top\),
-    showing us that \(\neg \neg p\) is the complement of \(\neg p\).
-
+    $\neg p \meet \neg (\neg p) \iff \bot$ and $\neg p \join \neg (\neg p) \iff \top$,
+    showing us that $\neg \neg p$ is the complement of $\neg p$.
     Since complements are unique, as seen in \autoref{thm:unique},
-    and both \(p\) and \(\neg \neg p\) are complements of \(\neg p\),
-    we can therefore conclude that \(p \iff \neg \neg p\).
+    and both $p$ and $\neg \neg p$ are complements of $\neg p$,
+    we can conclude that $p \iff \neg \neg p$.
 \end{proof}
 
 \begin{theorem}[Idempotency]
-    For every Boolean algebra \((B, \neg, \meet, \join)\) and every term \(p\) in the algebra,
+    For every Boolean algebra $(B, \neg, \meet, \join)$ and every term $p$ in the algebra,
     we have
     \begin{align*}
         p \meet p &\iff p\\
@@ -440,7 +411,7 @@
     \end{align*}
 \end{theorem}
 \begin{proof}
-    Let \(p\) be a term in an arbitrary Boolean algebra \((B, \neg, \meet, \join)\).
+    Let $p$ be a term in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe
 
     \begin{minipage}{.45\linewidth}
@@ -465,12 +436,12 @@
         \end{alignat*}
     \end{minipage}
 
-    Therefore, \(p \meet p \iff p\) and \(p \join p \iff p\), as desired.
+    Therefore, $p \meet p \iff p$ and $p \join p \iff p$, as desired.
 \end{proof}
 
 % TODO
 \begin{theorem}[Domination]
-    For every Boolean algebra \((B, \neg, \meet, \join)\) and every term \(p\) in the algebra,
+    For every Boolean algebra $(B, \neg, \meet, \join)$ and every term $p$ in the algebra,
     we have
     \begin{align*}
         p \meet \bot &\iff \bot\\
@@ -478,7 +449,7 @@
     \end{align*}
 \end{theorem}
 \begin{proof}
-    Let \(p\) be a term in an arbitrary Boolean algebra \((B, \neg, \meet, \join)\).
+    Let $p$ be a term in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe
 
     \begin{minipage}{.45\linewidth}
@@ -501,13 +472,11 @@
         \end{alignat*}
     \end{minipage}
 
-    Therefore, \(p \meet \bot \iff \bot\) and \(p \join \top \iff \top\).
+    Therefore, $p \meet \bot \iff \bot$ and $p \join \top \iff \top$.
 \end{proof}
 
-\newpage
-
 \begin{theorem}[Absorption]
-    For every Boolean algebra \((B, \neg, \meet, \join)\) and any two terms \(p\) and \(q\) in the algebra,
+    For every Boolean algebra $(B, \neg, \meet, \join)$ and any two terms $p$ and $q$ in the algebra,
     we have
     \begin{align*}
         p \meet (p \join q) &\iff p\\
@@ -515,7 +484,7 @@
     \end{align*}
 \end{theorem}
 \begin{proof}
-    Let \(p\) and \(q\) be terms in an arbitrary Boolean algebra \((B, \neg, \meet, \join)\).
+    Let $p$ and $q$ be terms in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe
 
     \begin{minipage}{.45\linewidth}
@@ -538,11 +507,11 @@
         \end{alignat*}
     \end{minipage}
 
-    Therefore, \(p \meet (p \join q) \iff p\) and \(p \join (p \meet q) \iff q\).
+    Therefore, $p \meet (p \join q) \iff p$ and $p \join (p \meet q) \iff q$.
 \end{proof}
 
 \begin{theorem}[De Morgan's Laws]
-    For every Boolean algebra \((B, \neg, \meet, \join)\) and any two terms \(p\) and \(q\) in the algebra,
+    For every Boolean algebra $(B, \neg, \meet, \join)$ and any two terms $p$ and $q$ in the algebra,
     we have
     \begin{align*}
         \neg (p \meet q) &\iff \neg p \join \neg q\\
@@ -550,7 +519,7 @@
     \end{align*}
 \end{theorem}
 \begin{proof}
-    Let \(p\) and \(q\) be terms in an arbitrary Boolean algebra \((B, \neg, \meet, \join)\).
+    Let $p$ and $q$ be terms in an arbitrary Boolean algebra $(B, \neg, \meet, \join)$.
     Observe that
     \begin{alignat*}{2}
         (p \meet q) \meet (\neg p \join \neg q) &\iff (q \meet p) \meet (\neg p \join \neg q)~~~~~~~~~~~~&&\text{by Commutativity}\\
@@ -563,6 +532,9 @@
                                                 &\iff \bot \meet p &&\text{by Complement}\\
                                                 &\iff \bot &&\text{by Domination}.
     \end{alignat*}
+
+\newpage
+
     Further, we have
     \begin{alignat*}{2}
         (p \meet q) \join (\neg p \join \neg q) &\iff (p \meet q) \meet (\neg q \join \neg p)~~~~~~~~~~~~&&\text{by Commutativity}\\
@@ -575,10 +547,10 @@
                                                 &\iff \neg q \join \top &&\text{by Complement}\\
                                                 &\iff \top &&\text{by Domination}.
     \end{alignat*}
-    So, we can see that \(\neg p \join \neg q\) is a complement for \(p \meet q\).
+    So, we can see that $\neg p \join \neg q$ is a complement for $p \meet q$.
     Since complements are unique by \autoref{thm:unique},
-    we can conclude that \(\neg (p \meet q) \iff \neg p \join \neg q\).
+    we can conclude that $\neg (p \meet q) \iff \neg p \join \neg q$.
 
-    Showing \(\neg (p \join q) \iff \neg p \meet \neg q\) is left as an exercise to the reader.
+    Showing $\neg (p \join q) \iff \neg p \meet \neg q$ is left as an exercise to the reader.
 \end{proof}
 \end{document}

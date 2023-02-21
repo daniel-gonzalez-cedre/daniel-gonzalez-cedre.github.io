@@ -17,7 +17,7 @@
 \section{Predicates \& Quantification}
 
 \begin{definition}[Universe of Discourse]
-    Our \emph{universe of discourse}, usually denoted by the letter \(\Omega\),
+    Our \emph{universe of discourse}, usually denoted by the letter $\Omega$,
     denotes the collection of objects under consideration.
     This specifies the objects that are admissible as inputs to predicates,
     meaning these are the objects we can actually make concrete, descriptive claims about
@@ -25,19 +25,19 @@
 \end{definition}
 
 \begin{definition}[Predicate]
-    Given a universe of discourse \(\Omega\) and a non-negative integer \(n\),
-    we say that \(\varphi(x_1, \dots x_n)\) is an \(n\)-ary \emph{predicate}
-    \iffbydefn the substitution of an object \(\omega_i\) from \(\Omega\) for each \(x_i\) in \(\varphi\)
-    results in a proposition \(\varphi(\omega_1, \dots \omega_n)\).
+    Given a universe of discourse $\Omega$ and a non-negative integer $n$,
+    we say that $\varphi(x_1, \dots x_n)$ is an $n$-ary \emph{predicate}
+    \iffbydefn the substitution of an object $\omega_i$ from $\Omega$ for each $x_i$ in $\varphi$
+    results in a proposition $\varphi(\omega_1, \dots \omega_n)$.
     These are sometimes referred to as \emph{propositional functions}.
-    Notice that if \(n = 0\) then the \(0\)-ary predicate is simply a proposition.
+    Notice that if $n = 0$ then the $0$-ary predicate is simply a proposition.
 
-    The placeholders \(x_1, \dots x_n\) in \(\varphi\) are called \emph{variables},
+    The placeholders $x_1, \dots x_n$ in $\varphi$ are called \emph{variables},
     and the process of assigning objects to these variables is called
     \emph{instantiation} or \emph{variable assignment}.
 \end{definition}
 \begin{example}\label{ex:predicate}
-    If we choose a universe of discourse \(\Omega\) consisting of some collection of people, then
+    If we choose a universe of discourse $\Omega$ consisting of some collection of people, then
 
     \begin{minipage}{.45\linewidth}
         \vspace{-\parskip-\abovedisplayskip}
@@ -58,32 +58,34 @@
 \end{example}
 
 \begin{definition}[Universal Quantifier]
-    Given a unary predicate \(\varphi(x)\),
-    the \emph{universal quantification} of the variable \(x\) in \(\varphi\)
-    is denoted by \(\forall x \pn*{\varphi(x)}\)
-    and expresses that \(\varphi(\omega)\) is true for any arbitrary \(\omega\) from our universe of discourse.
+    Given a unary predicate $\varphi(x)$,
+    the \emph{universal quantification} of the variable $x$ in $\varphi$
+    is denoted by $\forall x \pn*{\varphi(x)}$
+    and expresses that $\varphi(\omega)$ is true for any arbitrary $\omega$ from our universe of discourse.
 \end{definition}
 \begin{example}
     Using the definitions from \autoref{ex:predicate},
     we can rewrite ``Every mathematician loves espresso'' as
-    \(\forall x \pn*{\varepsilon(x)}\) or as \(\forall x \pn*{\mu(x) \rightarrow \varepsilon(x)}\)
-    depending on whether our universe \(\Omega\)
+    $\forall x \pn*{\varepsilon(x)}$ or as $\forall x \pn*{\mu(x) \rightarrow \varepsilon(x)}$
+    depending on whether our universe $\Omega$
     is the collection of all mathematicians or the collection of all people.
 \end{example}
 
 \begin{definition}[Existential Quantifier]
-    Given a unary predicate \(\varphi(x)\),
-    the \emph{existential quantification} of the variable \(x\) in \(\varphi\)
-    is denoted by \(\exists x \pn*{\varphi(x)}\)
-    and expresses that \(\varphi(\omega)\) is true for at least one \(\omega\) from our universe of discourse.
+    Given a unary predicate $\varphi(x)$,
+    the \emph{existential quantification} of the variable $x$ in $\varphi$
+    is denoted by $\exists x \pn*{\varphi(x)}$
+    and expresses that $\varphi(\omega)$ is true for at least one $\omega$ from our universe of discourse.
 \end{definition}
 \begin{example}
     Using the definitions from \autoref{ex:predicate},
     we can rewrite ``Some mathematician loves espresso'' as
-    \(\exists x \pn*{\varepsilon(x)}\) or as \(\exists x \pn*{\mu(x) \meet \varepsilon(x)}\)
-    depending on whether our universe \(\Omega\)
+    $\exists x \pn*{\varepsilon(x)}$ or as $\exists x \pn*{\mu(x) \meet \varepsilon(x)}$
+    depending on whether our universe $\Omega$
     is the collection of all mathematicians or the collection of all people.
 \end{example}
+
+\newpage
 
 \section{Rules of Inference}
 
@@ -100,31 +102,29 @@
     For each of these rules, there is an \emph{underlying tautology},
     which is a tautological sentence in our formal language expressing the same idea as the rule.
 
-    An \emph{equivalence rule} would take the form \(\varphi \iff \psi\),
-    where \(\varphi\) and \(\psi\) are sentences,
-    indicating that any instance of \(\varphi\) can be replaced by an instance of \(\psi\).
-    The underlying tautology of such a rule is \(p \leftrightarrow q\).
-    \\
-    A popular alternative notation is \(\varphi \equiv \psi\).
+    An \emph{equivalence rule} would take the form $\varphi \iff \psi$,
+    where $\varphi$ and $\psi$ are sentences,
+    indicating that any instance of $\varphi$ can be replaced by an instance of $\psi$.
+    The underlying tautology of such a rule is $p \leftrightarrow q$.
+    A popular alternative notation is $\varphi \equiv \psi$.
 
-    An \emph{inference rule} would take the form \(\Gamma \implies \psi\)
-    % or, equivalently, \(\bigmeet_{i = 1}^{n}\varphi_i \implies \psi\),
-    where \(\Gamma\) is a collection of sentences
-    \(\varphi_1, \dots \varphi_n\) in our formal language
-    and \(\psi\) is some other sentence,
-    indicating that whenever we write down all of the sentences in \(\Gamma\),
-    we can then write down \(\psi\) afterward.
+    An \emph{inference rule} would take the form $\Gamma \implies \psi$
+    % or, equivalently, $\bigmeet_{i = 1}^{n}\varphi_i \implies \psi$,
+    where $\Gamma$ is a collection of sentences
+    $\varphi_1, \dots \varphi_n$ in our formal language
+    and $\psi$ is some other sentence,
+    indicating that whenever we write down all of the sentences in $\Gamma$,
+    we can then write down $\psi$ afterward.
     The underlying tautology of such a rule is
-    \(\varphi_1 \meet \dots \varphi_n \implies \psi\).
-    \\
-    A popular alternative notation is \(\Gamma \proves \psi\), or \(\varphi_1, \dots \varphi_n \proves \psi\),
-    indicating that we can deduce \(\psi\) from the sentences in \(\Gamma\).
+    $\varphi_1 \meet \dots \varphi_n \implies \psi$.
+    A popular alternative notation is $\Gamma \proves \psi$, or $\varphi_1, \dots \varphi_n \proves \psi$,
+    indicating that $\psi$ is deducible from the sentences in $\Gamma$.
 
-    We will stick to the \(\iff\) and \(\implies\) notation in this course
+    We will stick to the $\iff$ and $\implies$ notation in this course
     since it is the most popular modern notation in use among practicing mathematicians.
     However, keep in mind that certain people
     (in particular, modern computer scientists, logicians, and set/model theorists)
-    may instead use the \(\equiv\) and \(\proves\) notation.
+    may instead use the $\equiv$ and $\proves$ notation.
 \end{definition}
 
 % The rules in the two tables below encompass the rules we have for \emph{unquantified} statements in our language.
@@ -138,13 +138,13 @@
             \label{tab:rulesequivalence}
             \begin{tabular}{|Cc|Cc|} \hline
                 \multicolumn{2}{|c|}{\thead{Equivalence Rules}} \\\hline
-                \thead{Identity} & \thead{\(p \meet \top \iff p\) \\ \(p \join \bot \iff p\)} \\ \hline
-                \thead{Complement \\ (\aka Negation)} & \thead{\(p \meet \neg p \iff \bot\) \\ \(p \join \neg p \iff \top\)} \\ \hline
-                \thead{Commutativity} & \thead{\(p \meet q \iff q \meet p\) \\ \(p \join q \iff q \join p\)} \\ \hline
-                \thead{Associativity} & \thead{\(p \meet (q \meet r) \iff (p \meet q) \meet r\) \\ \(p \join (q \join r) \iff (p \join q) \join r\)} \\ \hline
-                \thead{Distributivity} & \thead{\(p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)\) \\ \(p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)\)} \\ \hline
-                \thead{Conditional \\ Disintegration} & \thead{\(p \rightarrow q \iff \neg p \join q\)} \\ \hline
-                \thead{Biconditional \\ Disintegration} & \thead{\(p \leftrightarrow q \iff (p \rightarrow q) \meet (q \rightarrow p)\)} \\ \hline
+                \thead{Identity} & \thead{$p \meet \top \iff p$ \\ $p \join \bot \iff p$} \\ \hline
+                \thead{Complement \\ (\aka Negation)} & \thead{$p \meet \neg p \iff \bot$ \\ $p \join \neg p \iff \top$} \\ \hline
+                \thead{Commutativity} & \thead{$p \meet q \iff q \meet p$ \\ $p \join q \iff q \join p$} \\ \hline
+                \thead{Associativity} & \thead{$p \meet (q \meet r) \iff (p \meet q) \meet r$ \\ $p \join (q \join r) \iff (p \join q) \join r$} \\ \hline
+                \thead{Distributivity} & \thead{$p \conjunct (q \disjunct r) \iff (p \conjunct q) \disjunct (p \conjunct r)$ \\ $p \disjunct (q \conjunct r) \iff (p \disjunct q) \conjunct (p \disjunct r)$} \\ \hline
+                \thead{Conditional \\ Disintegration} & \thead{$p \rightarrow q \iff \neg p \join q$} \\ \hline
+                \thead{Biconditional \\ Disintegration} & \thead{$p \leftrightarrow q \iff (p \rightarrow q) \meet (q \rightarrow p)$} \\ \hline
             \end{tabular}
         \end{table}
     \end{minipage}%
@@ -157,11 +157,11 @@
             \label{tab:rulesinference}
             \begin{tabular}{|Cc|l|l|} \hline
                 \multicolumn{3}{|c|}{\thead{Unquantified Inference Rules}} \\\hline
-                \thead{Truth Axiom} & \thead[l]{We can always write \(\top\) \\ without any prior assumptions} & \thead[l]{\(\begin{array}{c} ~ \\ \cline{1-1} \top\end{array}\)} \\ \hline
-                \thead{Deduction \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Conditional \\ Introduction} & \thead[l]{If by assuming \(p\) \\ we are able to derive \(q\),\\ then we can derive \(p \rightarrow q\)} & \thead[l]{\(\begin{array}{c} p \implies q \\ \cline{1-1} p \rightarrow q\end{array}\)} \\ \hline
-                \thead{Modus Ponens} & \thead[l]{If we know \(p \rightarrow q\) \\  and we have \(p\),\\ then we can derive \(q\)} & \thead[l]{\(\begin{array}{l} p \\ p \rightarrow q \\ \cline{1-1} q \end{array}\)} \\ \hline
-                \thead{Modus Tollens} & \thead[l]{If we know \(p \rightarrow q\) \\ and we have \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(\begin{array}{l} \neg q \\ p \rightarrow q \\ \cline{1-1} \neg p \end{array}\)} \\ \hline
-                \thead{Reductio \\ ad Absurdum \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Proof by \\ Contradiction} & \thead[l]{If by assuming \(p\) \\ we can derive both \(q\) and \(\neg q\),\\ then we can derive \(\neg p\)} & \thead[l]{\(\begin{array}{l} p \implies q \\ p \implies \neg q \\ \cline{1-1} \neg p \end{array}\)} \\ \hline
+                \thead{Truth Axiom} & \thead[l]{We can always write $\top$ \\ without any prior assumptions} & \thead[l]{$\begin{array}{c} ~ \\ \cline{1-1} \top\end{array}$} \\ \hline
+                \thead{Deduction \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Conditional \\ Introduction} & \thead[l]{If by assuming $p$ \\ we are able to derive $q$,\\ then we can derive $p \rightarrow q$} & \thead[l]{$\begin{array}{c} p \implies q \\ \cline{1-1} p \rightarrow q\end{array}$} \\ \hline
+                \thead{Modus Ponens} & \thead[l]{If we know $p \rightarrow q$ \\  and we have $p$,\\ then we can derive $q$} & \thead[l]{$\begin{array}{l} p \\ p \rightarrow q \\ \cline{1-1} q \end{array}$} \\ \hline
+                \thead{Modus Tollens} & \thead[l]{If we know $p \rightarrow q$ \\ and we have $\neg q$,\\ then we can derive $\neg p$} & \thead[l]{$\begin{array}{l} \neg q \\ p \rightarrow q \\ \cline{1-1} \neg p \end{array}$} \\ \hline
+                \thead{Reductio \\ ad Absurdum \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Proof by \\ Contradiction} & \thead[l]{If by assuming $p$ \\ we can derive both $q$ and $\neg q$,\\ then we can derive $\neg p$} & \thead[l]{$\begin{array}{l} p \implies q \\ p \implies \neg q \\ \cline{1-1} \neg p \end{array}$} \\ \hline
             \end{tabular}
         \end{table}
     \end{minipage}
@@ -172,73 +172,75 @@
     \label{tab:rulesquantifiers}
     \begin{tabular}{|Cc|l|l|} \hline
         \multicolumn{3}{|c|}{\thead{Quantified Inference Rules}} \\\hline
-        \thead{Universal Instantiation \\ (\(\forall\) Elimination)} & \thead[l]{If we know \(\forall x \pn*{\varphi(x)}\), \\ then we can derive \(\varphi(t)\) for any \(t\).} & \thead[l]{\(\begin{array}{l} \forall x \pn*{\varphi(x)} \\ \cline{1-1} \varphi(t) \text{ for any } t\end{array}\)} \\ \hline
-        \thead{Universal Generalization \\ (\(\forall\) Introduction)} & \thead[l]{If we know \(\varphi(t)\) for an arbitrary \(t\), \\ then we can derive \(\forall x \pn*{\varphi(x)}\).} & \thead[l]{\(\begin{array}{l} \varphi(t) \text{ for an arbitrary } t \\ \cline{1-1} \forall x \pn*{\varphi(x)} \end{array}\)} \\ \hline
-        \thead{Existential Instantiation \\ (\(\exists\) Elimination)} & \thead[l]{If we know \(\exists x \pn*{\varphi(x)}\), then we can derive \\ \(\varphi(t)\) for some \(t\) that hasn't yet appeared.} & \thead[l]{\(\begin{array}{l} \exists x \pn*{\varphi(x)} \\ \cline{1-1} \varphi(t) \text{ for some } t \text{ that hasn't yet appeared}\end{array}\)} \\ \hline
-        \thead{Existential Generalization \\ (\(\exists\) Introduction)} & \thead[l]{If we know \(\varphi(t)\) for some particular \(t\), \\ then we can derive \(\exists x \pn*{\varphi(x)}\).} & \thead[l]{\(\begin{array}{l} \varphi(t) \text{ for some particular } t \\ \cline{1-1} \exists x \pn*{\varphi(x)} \end{array}\)} \\ \hline
+        \thead{Universal Instantiation \\ ($\forall$ Elimination)} & \thead[l]{If we know $\forall x \pn*{\varphi(x)}$, \\ then we can derive $\varphi(t)$ for any $t$.} & \thead[l]{$\begin{array}{l} \forall x \pn*{\varphi(x)} \\ \cline{1-1} \varphi(t) \text{ for any } t\end{array}$} \\ \hline
+        \thead{Universal Generalization \\ ($\forall$ Introduction)} & \thead[l]{If we know $\varphi(t)$ for an arbitrary $t$, \\ then we can derive $\forall x \pn*{\varphi(x)}$.} & \thead[l]{$\begin{array}{l} \varphi(t) \text{ for an arbitrary } t \\ \cline{1-1} \forall x \pn*{\varphi(x)} \end{array}$} \\ \hline
+        \thead{Existential Instantiation \\ ($\exists$ Elimination)} & \thead[l]{If we know $\exists x \pn*{\varphi(x)}$, then we can derive \\ $\varphi(t)$ for some $t$ that hasn't yet appeared.} & \thead[l]{$\begin{array}{l} \exists x \pn*{\varphi(x)} \\ \cline{1-1} \varphi(t) \text{ for some } t \text{ that hasn't yet appeared}\end{array}$} \\ \hline
+        \thead{Existential Generalization \\ ($\exists$ Introduction)} & \thead[l]{If we know $\varphi(t)$ for some particular $t$, \\ then we can derive $\exists x \pn*{\varphi(x)}$.} & \thead[l]{$\begin{array}{l} \varphi(t) \text{ for some particular } t \\ \cline{1-1} \exists x \pn*{\varphi(x)} \end{array}$} \\ \hline
     \end{tabular}
 \end{table}
 
+\newpage
+
 \begin{lemma}\label{lem:forall}
-    Let \(\varphi\) be a predicate.
-    If we know \(\forall x \pn*{\neg \varphi(x)}\), then we have \(\neg \exists x \pn*{\varphi(x)}\).
+    Let $\varphi$ be a predicate.
+    If we know $\forall x \pn*{\neg \varphi(x)}$, then we have $\neg \exists x \pn*{\varphi(x)}$.
 \end{lemma}
 \begin{proof}
-    Suppose that \(\forall x \pn*{\neg \varphi(x)}\).
-    Assume, towards a contradiction, that \(\exists x \pn*{\varphi(x)}\).
-    Then, we know that \(\varphi(t)\) for some \(t\).
-    From our first assumption, we know that \(\neg \varphi(s)\) for any \(s\);
-    in particular, we know that \(\neg \varphi(t)\).
-    But then, we obtain \(\varphi(t) \meet \neg \varphi(t)\), which is a contradiction. \contradiction
-    Therefore, we can conclude \(\neg \exists x \pn*{\varphi(x)}\).
+    Suppose that $\forall x \pn*{\neg \varphi(x)}$.
+    Assume, towards a contradiction, that $\exists x \pn*{\varphi(x)}$.
+    Then, we know that $\varphi(t)$ for some $t$.
+    From our first assumption, we know that $\neg \varphi(s)$ for any $s$;
+    in particular, we know that $\neg \varphi(t)$.
+    But then, we obtain $\varphi(t) \meet \neg \varphi(t)$, which is a contradiction. \contradiction
+    Therefore, we can conclude $\neg \exists x \pn*{\varphi(x)}$.
 \end{proof}
 
 \begin{lemma}\label{lem:negexists}
-    Let \(\varphi\) be a predicate.
-    If we know \(\neg \exists x \pn*{\varphi(x)}\), then we have \(\forall x \pn*{\neg \varphi(x)}\).
+    Let $\varphi$ be a predicate.
+    If we know $\neg \exists x \pn*{\varphi(x)}$, then we have $\forall x \pn*{\neg \varphi(x)}$.
 \end{lemma}
 \begin{proof}
-    Suppose that \(\neg \exists x \pn*{\varphi(x)}\) and let \(t\) be an arbitrary object.
-    Towards a contradiction, assume that \(\varphi(t)\).
-    That would then mean \(\exists x \pn*{\varphi(x)}\).
-    However, we already assumed \(\neg \exists x \pn*{\varphi(x)}\), which is absurd. \contradiction\\
-    Therefore, we must have \(\neg \varphi(t)\).
-    Since \(t\) was arbitrary, we can then conclude \(\forall x \pn*{\neg \varphi(x)}\).
+    Suppose that $\neg \exists x \pn*{\varphi(x)}$ and let $t$ be an arbitrary object.
+    Towards a contradiction, assume that $\varphi(t)$.
+    That would then mean $\exists x \pn*{\varphi(x)}$.
+    However, we already assumed $\neg \exists x \pn*{\varphi(x)}$, which is absurd. \contradiction
+    Therefore, we must have $\neg \varphi(t)$.
+    Since $t$ was arbitrary, we can then conclude $\forall x \pn*{\neg \varphi(x)}$.
 \end{proof}
 
 \begin{lemma}\label{lem:exists}
-    Let \(\varphi\) be a predicate.
-    If we know \(\exists x \pn*{\neg \varphi(x)}\), then we have \(\neg \forall x \pn*{\varphi(x)}\).
+    Let $\varphi$ be a predicate.
+    If we know $\exists x \pn*{\neg \varphi(x)}$, then we have $\neg \forall x \pn*{\varphi(x)}$.
 \end{lemma}
 \begin{proof}
-    Suppose that \(\exists x \pn*{\neg \varphi(x)}\).
-    Then, we know that \(\neg \varphi(t)\) for some \(t\).
-    Assume, towards a contradiction, that \(\forall x \pn*{\varphi(x)}\).
-    Then, we have \(\varphi(s)\) for any \(s\);
-    in particular, we know \(\varphi(t)\).
-    But then, we have \(\neg \varphi(t) \meet \varphi(t)\), giving us a contradiction. \contradiction
-    Therefore, we can conclude \(\neg \forall x \pn*{\varphi(x)}\).
+    Suppose that $\exists x \pn*{\neg \varphi(x)}$.
+    Then, we know that $\neg \varphi(t)$ for some $t$.
+    Assume, towards a contradiction, that $\forall x \pn*{\varphi(x)}$.
+    Then, we have $\varphi(s)$ for any $s$;
+    in particular, we know $\varphi(t)$.
+    But then, we have $\neg \varphi(t) \meet \varphi(t)$, giving us a contradiction. \contradiction
+    Therefore, we can conclude $\neg \forall x \pn*{\varphi(x)}$.
 \end{proof}
 
 \begin{lemma}\label{lem:negforall}
-    Let \(\varphi\) be a predicate.
-    If we know \(\neg \forall x \pn*{\varphi(x)}\), then we have \(\exists x \pn*{\neg \varphi(x)}\).
+    Let $\varphi$ be a predicate.
+    If we know $\neg \forall x \pn*{\varphi(x)}$, then we have $\exists x \pn*{\neg \varphi(x)}$.
 \end{lemma}
 \begin{proof}
-    Suppose \(\neg \forall x \pn*{\varphi(x)}\).
-    Towards a contradiction, assume that \(\neg \exists x \pn*{\neg \varphi(x)}\).
-    Then by \autoref{lem:negexists}, we can deduce \(\forall x \pn*{\neg \neg \varphi(x)}\),
-    which is equivalent to \(\forall x \pn*{\varphi(x)}\).
-    However, this contradicts our initial assumption that \(\neg \forall x \pn*{\varphi(x)}\). \contradiction
-    Therefore, we can conclude that \(\neg \neg \exists x \pn*{\varphi(x)}\),
-    which is equivalent to \(\exists x \pn*{\varphi(x)}\).
+    Suppose $\neg \forall x \pn*{\varphi(x)}$.
+    Towards a contradiction, assume that $\neg \exists x \pn*{\neg \varphi(x)}$.
+    Then by \autoref{lem:negexists}, we get $\forall x \pn*{\neg \neg \varphi(x)}$,
+    which is equivalent to $\forall x \pn*{\varphi(x)}$.
+    However, this contradicts our assumption that $\neg \forall x \pn*{\varphi(x)}$. \contradiction
+    Therefore, we can conclude that $\neg \neg \exists x \pn*{\varphi(x)}$,
+    which is equivalent to $\exists x \pn*{\varphi(x)}$.
 \end{proof}
 
 \begin{theorem}[Negation of Quantifiers]
-    For any predicate \(\varphi\), we have
+    For any predicate $\varphi$, we have
     \begin{align*}
         \neg \forall x \pn*{\varphi(x)} &\iff \exists x \pn*{\neg \varphi(x))}\\
-        \neg \exists x \pn*{\varphi(x)} &\iff \forall x \pn*{\neg \varphi(x))}\\
+        \neg \exists x \pn*{\varphi(x)} &\iff \forall x \pn*{\neg \varphi(x))}
     \end{align*}
 \end{theorem}
 \begin{proof}
@@ -249,16 +251,16 @@
 
 \begin{remark}[Order of Quantification]
     Notice that the \emph{order} of quantification often matters when writing or interpreting an expression,
-    meaning \(\forall x \exists y \pn*{\varphi(x, y)} \niff \exists y \forall x \pn*{\varphi(x, y)}\).
+    meaning $\forall x \exists y \pn*{\varphi(x, y)} \niff \exists y \forall x \pn*{\varphi(x, y)}$.
     However, if two instances of the \emph{same} quantifier occur immediately adjacent to each other,
-    then they will commute: \(\forall x \forall y \pn*{\varphi(x, y)} \iff \forall y \forall x \pn*{\varphi(x, y)}\).
+    then they will commute: $\forall x \forall y \pn*{\varphi(x, y)} \iff \forall y \forall x \pn*{\varphi(x, y)}$.
 \end{remark}
 
 \newpage
 \section{Validity of Arguments}
 
 \begin{definition}[Validity]
-    Let \(\varphi_1, \dots \varphi_n\) and \(\psi\) be sentences in our language.
+    Let $\varphi_1, \dots \varphi_n$ and $\psi$ be sentences in our language.
     Consider an argument of the form
     \[
     \begin{array}{ r l }
@@ -274,17 +276,17 @@
     \begin{enumerate}
         \item[I.]\label{validi}
             The sentence
-            \(\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi\)
+            $\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi$
             is a tautology.
         \item[II.]\label{validii}
-            We have \(\varphi_1, \dots \varphi_n \implies \psi\).
+            We have $\varphi_1, \dots \varphi_n \implies \psi$.
     \end{enumerate}
     Condition \hyperref[validi]{I.\ }states that \emph{any} truth assignment
-    that makes \(\varphi_1 \meet \dots \varphi_n\) true must also make \(\psi\) true.
+    that makes $\varphi_1 \meet \dots \varphi_n$ true must also make $\psi$ true.
     Condition \hyperref[validi]{II.\ }states that,
-    from the assumption that \(\varphi_1, \dots \varphi_n\) all hold,
+    from the assumption that $\varphi_1, \dots \varphi_n$ all hold,
     we \emph{have a derivation}
-    that \(\psi\) is the case by using the rules of equivalence and inference.
+    that $\psi$ is the case by using the rules of equivalence and inference.
 \end{definition}
 
 \begin{definition}[Invalidity]
@@ -293,17 +295,17 @@
     \begin{enumerate}
         \item[I.]
             The sentence
-            \(\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi\)
+            $\pn*{\varphi_1 \meet \dots \varphi_n} \rightarrow \psi$
             is \emph{not} a tautology.
         \item[II.]
-            We have \(\varphi_1, \dots \varphi_n \nimplies \psi\).
+            We have $\varphi_1, \dots \varphi_n \nimplies \psi$.
     \end{enumerate}
     Condition \hyperref[validi]{I.\ }states that \emph{there is a} truth assignment
-    that makes \(\varphi_1 \meet \dots \varphi_n\) true and also \(\psi\) false.
+    that makes $\varphi_1 \meet \dots \varphi_n$ true and also $\psi$ false.
     Condition \hyperref[validi]{II.\ }states that,
-    from the assumption that \(\varphi_1, \dots \varphi_n\) all hold,
+    from the assumption that $\varphi_1, \dots \varphi_n$ all hold,
     we \emph{can not have a derivation}
-    that \(\psi\) is the case by using the rules of equivalence and inference.
+    that $\psi$ is the case by using the rules of equivalence and inference.
 \end{definition}
 
 \begin{theorem}[Church's Theorem]
@@ -315,42 +317,42 @@
 \end{theorem}
 
 \begin{definition}[Term]
-    Given a universe of discourse \(\Omega\),
-    we say that \(x\) is a \emph{term} if it is either a specific member of \(\Omega\)
-    or a variable symbol denoting a not-yet-determined member of \(\Omega\).
+    Given a universe of discourse $\Omega$,
+    we say that $x$ is a \emph{term} if it is either a specific member of $\Omega$
+    or a variable symbol denoting a not-yet-determined member of $\Omega$.
     In class, we have been referring to these as \emph{objects}.
 \end{definition}
 
 \begin{definition}
-    In our language, given a universe of discourse \(\Omega\), we have the following symbols:
-    \begin{list}{\(\cdot\)}{}
+    In our language, given a universe of discourse $\Omega$, we have the following symbols:
+    \begin{list}{$\cdot$}{}
         \item
-            \emph{Constant symbols:} terms denoting specific members of \(\Omega\)
-            (\eg \(7\), Socrates, \(\R\), \(\varnothing\)).
+            \emph{Constant symbols:} terms denoting specific members of $\Omega$
+            (\eg $7$, Socrates, $\R$, $\varnothing$).
         \item
-            \emph{Variable symbols:} terms denoting members of \(\Omega\) that are not-yet determined,
+            \emph{Variable symbols:} terms denoting members of $\Omega$ that are not-yet determined,
             usually written with a single letter from the Latin or Greek alphabets
             with or without natural number subscripts
-            (\eg \(x_1\), \(\varphi_{23}\), \(y\), \(\beta\), \(A\), \(\Gamma\)).
+            (\eg $x_1$, $\varphi_{23}$, $y$, $\beta$, $A$, $\Gamma$).
         \item
-            \emph{Predicate symbols:} \(n\)-ary predicates \(\psi\pn*{x_1, \dots x_n}\)
-            taking the terms \(x_1, \dots x_n\) as arguments and returning a proposition once all variables are eliminated
-            (\eg \(=\), \(\leq\), \(\in\), \(\subseteq\), \(\isomorphic\)).
+            \emph{Predicate symbols:} $n$-ary predicates $\psi\pn*{x_1, \dots x_n}$
+            taking the terms $x_1, \dots x_n$ as arguments and returning a proposition once all variables are eliminated
+            (\eg $=$, $\leq$, $\in$, $\subseteq$, $\isomorphic$).
         \item
             \emph{Functional symbols:} we haven't encountered any of these yet;
-            they work similarly to predicates in that they take \(n\) terms as arguments,
-            but they return a specific object of \(\Omega\) as their output
+            they work similarly to predicates in that they take $n$ terms as arguments,
+            but they return a specific object of $\Omega$ as their output
             once all free variables are eliminated
-            (\eg \(+\), \(\times\), \(\gcd(x, y)\), \(\abs{x}\), ``\(x\) is the father of \(y\)'').
+            (\eg $+$, $\times$, $\gcd(x, y)$, $\abs{x}$, ``$x$ is the father of $y$'').
         \item
             \emph{Grouping symbols:} the simple curved parentheses ( and ), used for grouping expressions.
         \item
-            \emph{Logical connectives:} the unary connective \(\neg\)
-            and the binary connectives \(\meet, \join, \rightarrow, \leftrightarrow\),
-            which form a Boolean algebra along with \(\top\) and \(\bot\).
+            \emph{Logical connectives:} the unary connective $\neg$
+            and the binary connectives $\meet, \join, \rightarrow, \leftrightarrow$,
+            which form a Boolean algebra along with $\top$ and $\bot$.
         \item
-            \emph{Quantifier symbols:} the universal quantifier \(\forall\)
-            and the existential quantifier \(\exists\).
+            \emph{Quantifier symbols:} the universal quantifier $\forall$
+            and the existential quantifier $\exists$.
     \end{list}
     Once we specify some basic predicate and functional symbols,
     we can then define new predicates and functionals on the basis of the already-existing ones
@@ -358,38 +360,38 @@
 \end{definition}
 
 \begin{definition}[Atomic Formul{\ae}]
-    We say \(\varphi\) is an \emph{atomic formula} \iffbydefn
-    we have \(\varphi \iff \psi\pn*{x_1, \dots x_n}\) for some \(n\)-ary predicate \(\psi\)
-    with \(x_1, \dots x_n\) being terms.
+    We say $\varphi$ is an \emph{atomic formula} \iffbydefn
+    we have $\varphi \iff \psi\pn*{x_1, \dots x_n}$ for some $n$-ary predicate $\psi$
+    with $x_1, \dots x_n$ being terms.
     Note that atomic formul{\ae} may or may not contain free variables.
 \end{definition}
 
 \begin{definition}[Well-Formed Formul{\ae}]
     We define \emph{well-formed formul{\ae}} recursively (\ie inductively) using the atomic formul{\ae} as our basis.
-    We say that \(\varphi\) is a \emph{well-formed formula} (abbreviated {\wff}) \iffbydefn
+    We say that $\varphi$ is a \emph{well-formed formula} (abbreviated {\wff}) \iffbydefn
     any of the following holds:
     \begin{enumerate}
         \item[I.]
-            \(\varphi\) is an atomic formula
+            $\varphi$ is an atomic formula
         \item[II.]
-            \(\varphi \iff \neg \pn*{\psi}\), where \(\psi\) is a {\wff}
+            $\varphi \iff \neg \pn*{\psi}$, where $\psi$ is a {\wff}
         \item[III.]
-            \(\varphi \iff \pn*{\psi} \meet \pn*{\chi}\), where \(\psi\) is a {\wff}
+            $\varphi \iff \pn*{\psi} \meet \pn*{\chi}$, where $\psi$ is a {\wff}
         \item[IV.]
-            \(\varphi \iff \pn*{\psi} \join \pn*{\chi}\), where \(\psi\) and \(\chi\) are {\wff}
+            $\varphi \iff \pn*{\psi} \join \pn*{\chi}$, where $\psi$ and $\chi$ are {\wff}
         \item[V.]
-            \(\varphi \iff \pn*{\psi} \rightarrow \pn*{\chi}\), where \(\psi\) and \(\chi\) are {\wff}
+            $\varphi \iff \pn*{\psi} \rightarrow \pn*{\chi}$, where $\psi$ and $\chi$ are {\wff}
         \item[VI.]
-            \(\varphi \iff \pn*{\psi} \leftrightarrow \pn*{\chi}\), where \(\psi\) and \(\chi\) are {\wff}
+            $\varphi \iff \pn*{\psi} \leftrightarrow \pn*{\chi}$, where $\psi$ and $\chi$ are {\wff}
         \item[VII.]
-            \(\varphi \iff \forall x \pn*{\psi}\), where \(\psi\) is {\wff}
+            $\varphi \iff \forall x \pn*{\psi}$, where $\psi$ is {\wff}
         \item[VIII.]
-            \(\varphi \iff \exists x \pn*{\psi}\), where \(\psi\) is {\wff}
+            $\varphi \iff \exists x \pn*{\psi}$, where $\psi$ is {\wff}
     \end{enumerate}
 \end{definition}
 
 \begin{definition}[Sentence]
-    We say that a {\wff} \(\varphi\) is a \emph{sentence} \iffbydefn it contains no free variables.
+    We say that a {\wff} $\varphi$ is a \emph{sentence} \iffbydefn it contains no free variables.
 \end{definition}
 
 \end{document}

@@ -99,11 +99,10 @@ The language of set theory will have two predicate symbols, defined below.
 \end{definition}
 
 \section{The Axioms of Set Theory}\label{sec:axioms}
-\setcounter{preaxiom}{-1}
+\setcounter{axiom}{-1}
 
 \subsection{The Axiom of Existence}
 \begin{axiom}[Existence]\label{ax:existence}
-    \vspace{-\abovedisplayskip}
     \[
         \exists x \pn*{x = x}
     \]
@@ -115,7 +114,6 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom of Extensionality}
 \begin{axiom}[Extensionality]\label{ax:extensionality}
-    \vspace{-\abovedisplayskip}
     \[
         \forall x \forall y \pn*{\pn*{x = y} \iff \forall z \pn*{z \in x \iff z \in y}}
     \]
@@ -205,14 +203,12 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Pairing Axiom}
 \begin{axiom}[Pairing]\label{ax:pairing}
-    \vspace{-\abovedisplayskip}
     \[\forall x \forall y \exists z \pn*{z = \set*{x, y}}\]
     This axiom allows us to take two existing sets and construct a set containing the pair of them.
 \end{axiom}
 
 \subsection{The Axiom of Union}
 \begin{axiom}[Union]\label{ax:union}
-    \vspace{-\abovedisplayskip}
     \[
         \forall x \exists A \pn*{A = \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}}
     \]
@@ -223,9 +219,8 @@ The language of set theory will have two predicate symbols, defined below.
 \end{axiom}
 
 \begin{theorem}[Union of Two Sets]\label{thm:union}
-    For any sets \(x\) and \(y\),
-    we have \(\exists A \pn*{A = \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}}\).
-    Such an \(A\) is denoted \(x \union y\).
+    If \(x\) and \(y\) are sets,
+    then \(x \union y \defn \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}\) exists.
 \end{theorem}
 \begin{proof}
     Let \(x\) and \(y\) be sets.
@@ -244,19 +239,17 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom Schema of Separation}
 \begin{axiom}[Separation]\label{ax:separation}
-    \vspace{-\abovedisplayskip}
     \[
         \text{If \(\varphi\) is a {\wff} with at most one free variable, then }
         \forall x \exists y \pn*{y = \set*{a \in x \suchthat \varphi(a)}}
     \]
     Given an already-existing set \(x\),
-    this axiom says we can \emph{separate} the elements that satisfy \(\varphi\) from \(x\).
+    this axiom stats that we can \emph{separate} the elements that satisfy \(\varphi\) from \(x\).
 \end{axiom}
 
 \begin{theorem}[Intersection of Two Sets]\label{thm:intersection}
-    For any sets \(x\) and \(y\),
-    we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \in y)}}\).
-    Such an \(A\) is denoted \(x \intersect y\).
+    If \(x\) and \(y\) are sets,
+    then \(x \intersect y \defn \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
 \end{theorem}
 \begin{proof}
     Let \(x\) and \(y\) be sets. Recall that \(x \union y\) exists by \autoref{thm:union}.
@@ -282,9 +275,8 @@ The language of set theory will have two predicate symbols, defined below.
 \end{proof}
 
 \begin{theorem}[Difference of Two Sets]
-    For any sets \(x\) and \(y\),
-    we have \(\exists A \pn*{A = \set*{a \suchthat (a \in x) \meet (a \not \in y)}}\).
-    Such an \(A\) is denoted \(x \setminus y\).
+    If \(x\) and \(y\) are sets,
+    then \(x \setminus y \defn \set*{a \suchthat (a \in x) \meet (a \not \in y)}\) exists.
 \end{theorem}
 \begin{proof}
     Let \(x\) and \(y\) be sets.
@@ -302,7 +294,7 @@ The language of set theory will have two predicate symbols, defined below.
 
 \begin{definition}[Subsets]
     We say that \(x\) is a \emph{subset} of \(y\) when every element of \(x\) is also an element of \(y\).
-    Formally, we define
+    Formally,
     \[
         x \subseteq y \iffdefn \forall a \pn*{a \in x \implies a \in y}.
     \]
@@ -313,7 +305,6 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Power Set Axiom}
 \begin{axiom}[Power Set]
-    \vspace{-\abovedisplayskip}
     \[
         \forall x \exists y \pn*{y = \set*{s \suchthat s \subseteq x}}.
     \]
@@ -331,7 +322,6 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom of Regularity}
 \begin{axiom}[Regularity]\label{ax:regularity}
-    \vspace{-\abovedisplayskip}
     \[
         \forall x \pn*{\pn*{x \neq \emptyset} \implies \pn*{\exists y \in x}\pn*{x \intersect y = \emptyset}}.
     \]
@@ -415,9 +405,11 @@ The language of set theory will have two predicate symbols, defined below.
 \begin{theorem}[Existence of Cartesian Products]
     For any sets \(X\) and \(Y\), the Cartesian product \(X \times Y\) exists.
 \end{theorem}
-% \begin{proof}
-%     Let \(X\) and \(Y\) be sets and consider \(Z = \set*{z \in \union\pn*{\set*{X, Y}} \suchthat }\)
-% \end{proof}
+\begin{proof}
+    This is left as a (tedious) exercise for the reader.
+\end{proof}
+
+\newpage
 
 \begin{theorem}[Existence of \(\emptyset\)]
     \(\exists x \pn*{x = \emptyset}\).
@@ -497,7 +489,6 @@ The language of set theory will have two predicate symbols, defined below.
     \end{align*}
 \end{definition}
 
-\newpage
 \begin{example}
     Let's compute \(2 + 3\).
     \begin{alignat*}{2}
@@ -549,7 +540,6 @@ The language of set theory will have two predicate symbols, defined below.
         \sum_{i = 0}^{0}x_i &= x_0\\
         \sum_{i = 0}^{k + 1}x_i &= \pn*{\sum_{i = 0}^{k}x_i} + \pn*{x_{k + 1}}~~~~\text{ if } 0 < k + 1 \leq n.
     \end{align*}
-\newpage
     Similarly, we define the \emph{iterated product} of the \(x_i\) recursively as
     \begin{align*}
         \prod_{i = 0}^{0}x_i &= x_0\\
@@ -559,7 +549,6 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom of Infinity}
 \begin{axiom}[Infinity]
-    \vspace{-\abovedisplayskip}
     \[
         \exists N \pn*{N = \set*{n \suchthat n = \emptyset \join \exists\pn*{m \in N}\pn*{n = \successor{m}}}}
     \]
@@ -622,7 +611,6 @@ Instead, the idea here will then be to take quotients of these things called
     We say that a sequence \(q: \N \to \Q\)
     of rational numbers \(\langle q_i \rangle_{i \in \N} = q_0, q_1, \dots \)
     is \emph{Cauchy convergent} {\ifandonlyif}
-    % \vspace{-\parskip}
     \[
         \pn*{\forall \varepsilon > 0}\pn*{\exists m \in \N}\pn*{\forall n_1, n_2 \in \N}
         \pn*{\pn*{n_1 > m~\meet~n_2 > m} \implies \abs{q_{n_1} - q_{n_2}} < \varepsilon}.
