@@ -199,18 +199,21 @@ Let's practice induction by proving the following few theorems.
     For any $n, m \in \N$, if $n = 2m$ or $n = 2m + 1$, then $n \geq m$.
 \end{lemma}
 \begin{proof}
+    Let $n \in \N$ and $m \in \N$.
     There are two cases.
     \begin{case}[Case 1]
-        Hypothetically, suppose that $\ell > k$.
-        We would then have $k = 2\ell > 2k = k + k \geq k$,
-        so that $k > k$, implying $k \neq k$. \contradiction
-        This shows us $\ell \leq k$.
+        If $n = 2m$, then
+        suppose towards a contradiction that $m > n$.
+        We would then have $n = 2m > 2n = n + n \geq n$,
+        so that $n > n$, implying $n \neq n$. \contradiction
+        This shows us $m \leq n$.
     \end{case}
     \begin{case}[Case 2]
-        Again, assume towards a contradiction that $\ell > k$.
-        This would mean $k = 2\ell + 1 > 2k + 1 > 2k = k + k \geq k$,
-        so $k > k$, implying $k \neq k$. \contradiction
-        Thus, mirroring the first case, we must have $\ell \leq k$.
+        If $n = 2m + 1$, then
+        again assume towards a contradiction that $m > n$.
+        This would mean $n = 2m + 1 > 2n + 1 > 2n = n + n \geq n$,
+        so $n > n$, implying $n \neq n$. \contradiction
+        So, we get $m \leq n$.
     \end{case}
 \end{proof}
 
