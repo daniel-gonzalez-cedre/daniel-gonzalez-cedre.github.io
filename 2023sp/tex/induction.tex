@@ -79,18 +79,20 @@
     \iff \varphi(0) \meet \pn*{\forall k \in \N}\pn*{\varphi(k) \implies \varphi(k + 1)}$.
 \end{proof}
 
-Notice that the above theorem actually generalizes beyond just $\N$.
+\begin{note}
+The above theorem actually generalizes beyond just $\N$.
 In fact, we can generalize the proof of \autoref{thm:weakinduction}
 to \emph{any} well-ordered set $X$ by replacing $k + 1$
 with the least element of the non-empty subset $X \setminus \set*{\ell \in X \suchthat \ell \leq k}$.
+\end{note}
 
 \newpage
 
 Let's practice induction by proving the following few theorems.
 
-\begin{theorem}[Gaussian Summation Formula]\label{thm:gaussiansum}
+\begin{lemma}[Gaussian Summation Formula]\label{thm:gaussiansum}
     $\displaystyle \pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}$.
-\end{theorem}
+\end{lemma}
 \begin{proof}
     We will prove the claim by induction on $n \in \N$.
     \begin{case}[Base Case]
@@ -109,12 +111,12 @@ Let's practice induction by proving the following few theorems.
         \end{alignat*}
         Thus, we have that $\displaystyle \sum_{i = 0}^{k + 1}i = \frac{(k + 1)(k + 2)}{2}$, as desired.
     \end{case}
-    Therefore, we can conclude that $\displaystyle \pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}$.
+    Therefore, we can conclude that $\pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}$.
 \end{proof}
 
-\begin{theorem}
+\begin{lemma}
     $3n \leq 3^n$ for all $n \in \N_+$.
-\end{theorem}
+\end{lemma}
 \begin{proof}
     We will prove the claim by induction on $n \in \N_+$.
     \begin{case}[Base Case]
@@ -141,9 +143,9 @@ Let's practice induction by proving the following few theorems.
 \footnotetext[2]{This is true in any \emph{ordered semiring} where exponentiation is defined in terms of multiplication.}
 \footnotetext[3]{This is true in any \emph{field}.}
 
-\begin{theorem}
+\begin{lemma}
     $\displaystyle \sum_{i = 0}^{n}2^i = 2^{n + 1} - 1$ for all $n \in \N$.
-\end{theorem}
+\end{lemma}
 \begin{proof}
     We will prove the claim by induction on $n \in \N_+$.
     \begin{case}[Base Case]
@@ -161,7 +163,25 @@ Let's practice induction by proving the following few theorems.
         \end{alignat*}
         So, we get $\displaystyle \sum_{i = 0}^{k + 1}2^i = 2^{k + 1} - 1$, as desired.
     \end{case}
-    Therefore, we can conclude $\displaystyle \pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}2^i = 2^{n + 1} - 1}$.
+    Therefore, we can conclude $\pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}2^i = 2^{n + 1} - 1}$.
+\end{proof}
+
+\section{Strong Induction}
+\begin{theorem}[Strong Induction]\label{thm:stronginduction}
+    If $\varphi(\cdot)$ is a {\wff} and $r \in \N$, then
+    \[
+        \pn*{\forall n \in \N}\pn*{\varphi(n)}
+        \iff \pn*{\bigmeet_{i = 0}^{r}\varphi(r)}
+        \meet \pn*{\forall k \in \N}\pn*{\pn*{\forall \ell \leq k}\pn*{\varphi(\ell)} \implies \varphi(k + 1)}.
+    \]
+\end{theorem}
+
+\begin{lemma}
+    $\pn*{\forall n \in \N}\pn*{\exists r \in \N}\pn*{\exists c_0, \dots c_r \in \set*{0, 1}}\pn*{n = \sum_{i = 0}^{r}c_i 2^i}$;
+    \ie every natural number admits a binary representation.
+\end{lemma}
+\begin{proof}
+    We will prove the claim by using \autoref{thm:stronginduction}.
 \end{proof}
 
 \end{document}

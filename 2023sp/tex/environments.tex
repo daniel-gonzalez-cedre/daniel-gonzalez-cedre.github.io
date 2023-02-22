@@ -37,28 +37,58 @@
     ~\\\qed
 }
 
+\newtheoremstyle{cedretheorem} % name
+    {1ex}  % space above
+    {-1ex}  % space below
+    {\itshape} % body font
+    {}  % indent amount
+    {\bfseries}  % theorem head font
+    {.\\}  % punctuation after theorem head
+    {.5em}  % space after theorem head
+    {}  % theorem head spec (can be left empty, meaning ‘normal’)
+
+\newtheoremstyle{cedredefinition} % name
+    {1ex}  % space above
+    {-1ex}  % space below
+    {} % body font
+    {}  % indent amount
+    {\bfseries}  % theorem head font
+    {.\\}  % punctuation after theorem head
+    {.5em}  % space after theorem head
+    {}  % theorem head spec (can be left empty, meaning ‘normal’)
+
+\newtheoremstyle{cedrenote} % name
+    {}  % space above
+    {}  % space below
+    {} % body font
+    {}  % indent amount
+    {\bfseries}  % theorem head font
+    {.}  % punctuation after theorem head
+    {.5em}  % space after theorem head
+    {}  % theorem head spec (can be left empty, meaning ‘normal’)
+
 % style for theorems
-\theoremstyle{thm}
+\theoremstyle{cedretheorem}
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{corollary}{Corollary}
-\newtheorem{claim}{Claim}
-\newtheorem{conjecture}{Conjecture}
-\newtheorem{justification}{Justification}
+\newtheorem{lemma}{Lemma}[theorem]
+\newtheorem{proposition}{Proposition}[theorem]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}{Conjecture}[theorem]
+\newtheorem*{claim}{Claim}
+\newtheorem*{justification}{Justification}
 
 % style for definitions
-\theoremstyle{definition}
+\theoremstyle{cedredefinition}
 \newtheorem{axiom}{Axiom}
 \newtheorem{definition}{Definition}
-\newtheorem{notation}{Notation}
-\newtheorem{exercise}{Exercise}
-\newtheorem{example}{Example}
-\newtheorem{counterexample}{Counterexample}
+\newtheorem{notation}{Notation}[definition]
+\newtheorem{exercise}{Exercise}[definition]
+\newtheorem{example}{Example}[definition]
+\newtheorem*{counterexample}{Counterexample}
 
-% style for remarks
-\theoremstyle{definition}
-\newtheorem{idea}{Idea}
+% style for notes
+\theoremstyle{cedrenote}
+\newtheorem{idea}{Idea}[definition]
 \newtheorem*{remark}{Remark}
 \newtheorem*{note}{Note}
 
@@ -90,25 +120,25 @@
     \renewcommand{\thelemma}{\thechapter.\arabic{lemma}}
     \renewcommand{\theproposition}{\thechapter.\arabic{proposition}}
     \renewcommand{\thecorollary}{\thechapter.\arabic{corollary}}
-    \renewcommand{\theclaim}{\thechapter.\arabic{claim}}
     \renewcommand{\theconjecture}{\thechapter.\arabic{conjecture}}
-    \renewcommand{\thejustification}{\thechapter.\arabic{justification}}
+    % \renewcommand{\theclaim}{\thechapter.\arabic{claim}}
+    % \renewcommand{\thejustification}{\thechapter.\arabic{justification}}
     \renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
     \renewcommand{\thenotation}{\thechapter.\arabic{notation}}
     \renewcommand{\theexample}{\thechapter.\arabic{example}}
-    \renewcommand{\thecounterexample}{\thechapter.\arabic{counterexample}}
+    % \renewcommand{\thecounterexample}{\thechapter.\arabic{counterexample}}
     \counterwithin*{equation}{chapter}
     \counterwithin*{theorem}{chapter}
     \counterwithin*{lemma}{chapter}
     \counterwithin*{proposition}{chapter}
     \counterwithin*{corollary}{chapter}
-    \counterwithin*{claim}{chapter}
     \counterwithin*{conjecture}{chapter}
-    \counterwithin*{justification}{chapter}
+    % \counterwithin*{claim}{chapter}
+    % \counterwithin*{justification}{chapter}
     \counterwithin*{definition}{chapter}
     \counterwithin*{notation}{chapter}
     \counterwithin*{exercise}{chapter}
     \counterwithin*{example}{chapter}
-    \counterwithin*{counterexample}{chapter}
+    % \counterwithin*{counterexample}{chapter}
 \else
 \fi

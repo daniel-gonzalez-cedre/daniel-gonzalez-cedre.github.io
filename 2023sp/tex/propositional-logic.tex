@@ -28,192 +28,178 @@
 
 
 \begin{definition}[Negation]
-    ~
-    \begin{center}
-        \begin{minipage}[t]{.55\linewidth}
-            Given a proposition $p$, the \emph{negation} of $p$
-            is denoted $\neg p$ and can be defined by the following truth table:
-            \begin{table}[H]
-                \centering
-                \label{tab:not}
-                \begin{tabular}{|Cc||Cc|} \hline
-                    \thead{$p$} & \thead{$\neg p$} \\ \hline
-                    \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
-                    \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
-                \end{tabular}
-            \end{table}
-        \end{minipage}%
-        \begin{minipage}[t]{.05\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of $\neg p$:\\
-            \begin{list}{$\cdot$}{}
-                \item
-                    Not $p$.
-                \item
-                    $p$ does not hold.
-                \item
-                    It is not the case that $p$.
-                \item
-                    We do not have that $p$.
-            \end{list}
-        \end{minipage}
-    \end{center}
+    \begin{minipage}[t]{.55\linewidth}
+        Given a proposition $p$, the \emph{negation} of $p$
+        is denoted $\neg p$ and can be defined by the following truth table:
+        \begin{table}[H]
+            \centering
+            \label{tab:not}
+            \begin{tabular}{|Cc||Cc|} \hline
+                \thead{$p$} & \thead{$\neg p$} \\ \hline
+                \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}%
+    \begin{minipage}[t]{.05\linewidth}
+        ~
+    \end{minipage}%
+    \begin{minipage}[t]{.4\linewidth}
+        Some possible readings of $\neg p$:\\
+        \begin{list}{$\cdot$}{}
+            \item
+                Not $p$.
+            \item
+                $p$ does not hold.
+            \item
+                It is not the case that $p$.
+            \item
+                We do not have that $p$.
+        \end{list}
+    \end{minipage}
 \end{definition}
 
 \begin{definition}[Conjunction]
-    ~
-    \begin{center}
-        \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{conjunction} of $p$ with $q$
-            is denoted $p \meet q$ and can be defined by the following truth table:
-            \begin{table}[H]
-                \centering
-                \label{tab:and}
-                \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{$p$} & \thead{$q$} & \thead{$p \meet q$} \\ \hline
-                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
-                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
-                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\ \hline
-                \end{tabular}
-            \end{table}
-        \end{minipage}%
-        \begin{minipage}[t]{.05\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of $p \meet q$:\\
-            \begin{list}{$\cdot$}{}
-                \item
-                    $p$, and $q$.
-                \item
-                    $p$, but $q$.
-                \item
-                    $p$; also, $q$.
-                \item
-                    $p$; further, $q$.
-                \item
-                    In addition to $p$, we also have $q$.
-            \end{list}
-        \end{minipage}
-    \end{center}
+    \begin{minipage}[t]{.55\linewidth}
+        Given two propositions $p$ and $q$, the \emph{conjunction} of $p$ with $q$
+        is denoted $p \meet q$ and can be defined by the following truth table:
+        \begin{table}[H]
+            \centering
+            \label{tab:and}
+            \begin{tabular}{|CcCc||Cc|} \hline
+                \thead{$p$} & \thead{$q$} & \thead{$p \meet q$} \\ \hline
+                \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                \thead{$\bot$} & \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                \thead{$\bot$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}%
+    \begin{minipage}[t]{.05\linewidth}
+        ~
+    \end{minipage}%
+    \begin{minipage}[t]{.4\linewidth}
+        Some possible readings of $p \meet q$:\\
+        \begin{list}{$\cdot$}{}
+            \item
+                $p$, and $q$.
+            \item
+                $p$, but $q$.
+            \item
+                $p$; also, $q$.
+            \item
+                $p$; further, $q$.
+            \item
+                In addition to $p$, we also have $q$.
+        \end{list}
+    \end{minipage}
 \end{definition}
 
+\newpage
 
 \begin{definition}[Disjunction]
-    ~
-    \begin{center}
-        \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{disjunction} of $p$ with $q$
-            is denoted $p \join q$ and can be defined by the following truth table:
-            \begin{table}[H]
-                \centering
-                \label{tab:or}
-                \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{$p$} & \thead{$q$} & \thead{$p \join q$} \\ \hline
-                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\ \hline
-                \end{tabular}
-            \end{table}
-        \end{minipage}%
-        \begin{minipage}[t]{.05\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of $p \join q$:\\
-            \begin{list}{$\cdot$}{}
-                \item
-                    $p$, or $q$.
-                \item
-                    Either $p$, or $q$.
-            \end{list}
-        \end{minipage}
-    \end{center}
+    \begin{minipage}[t]{.55\linewidth}
+        Given two propositions $p$ and $q$, the \emph{disjunction} of $p$ with $q$
+        is denoted $p \join q$ and can be defined by the following truth table:
+        \begin{table}[H]
+            \centering
+            \label{tab:or}
+            \begin{tabular}{|CcCc||Cc|} \hline
+                \thead{$p$} & \thead{$q$} & \thead{$p \join q$} \\ \hline
+                \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\top$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\bot$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}%
+    \begin{minipage}[t]{.05\linewidth}
+        ~
+    \end{minipage}%
+    \begin{minipage}[t]{.4\linewidth}
+        Some possible readings of $p \join q$:\\
+        \begin{list}{$\cdot$}{}
+            \item
+                $p$, or $q$.
+            \item
+                Either $p$, or $q$.
+        \end{list}
+    \end{minipage}
 \end{definition}
 
 \begin{definition}[Material Implication]
-    ~
-    \begin{center}
-        \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$,
-            the \emph{conditional} formed by assuming $p$ and concluding $q$
-            is denoted $p \rightarrow q$ and can be defined by the following truth table:
-            \begin{table}[H]
-                \centering
-                \label{tab:implies}
-                \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{$p$} & \thead{$q$} & \thead{$p \rightarrow q$} \\ \hline
-                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
-                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
-                \end{tabular}
-            \end{table}
-        \end{minipage}%
-        \begin{minipage}[t]{.05\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of $p \rightarrow q$:\\
-            \begin{list}{$\cdot$}{}
-                \item
-                    If $p$, then $q$.
-                \item
-                    $p$ implies $q$.
-                \item
-                    $q$ is conditioned on $p$.
-                \item
-                    $q$ only if $p$.
-                \item
-                    $p$ is sufficient for $q$.
-                \item
-                    $q$ is necessary for $p$.
-                \item
-                    $q$ unless not $p$.
-                \item
-                    $q$ or not $p$.
-            \end{list}
-        \end{minipage}
-    \end{center}
+    \begin{minipage}[t]{.55\linewidth}
+        Given two propositions $p$ and $q$,
+        the \emph{conditional} formed by assuming $p$ and concluding $q$
+        is denoted $p \rightarrow q$ and is given by:
+        \begin{table}[H]
+            \centering
+            \label{tab:implies}
+            \begin{tabular}{|CcCc||Cc|} \hline
+                \thead{$p$} & \thead{$q$} & \thead{$p \rightarrow q$} \\ \hline
+                \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                \thead{$\bot$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}%
+    \begin{minipage}[t]{.05\linewidth}
+        ~
+    \end{minipage}%
+    \begin{minipage}[t]{.4\linewidth}
+        Some possible readings of $p \rightarrow q$:\\
+        \begin{list}{$\cdot$}{}
+            \item
+                If $p$, then $q$.
+            \item
+                $p$ implies $q$.
+            \item
+                $q$ is conditioned on $p$.
+            \item
+                $q$ only if $p$.
+            \item
+                $p$ is sufficient for $q$.
+            \item
+                $q$ is necessary for $p$.
+            \item
+                $q$ unless not $p$.
+            \item
+                $q$ or not $p$.
+        \end{list}
+    \end{minipage}
 \end{definition}
 
 \begin{definition}[Material Equivalence]
-    ~
-    \begin{center}
-        \begin{minipage}[t]{.55\linewidth}
-            Given two propositions $p$ and $q$, the \emph{biconditional} formed by $p$ and $q$
-            is denoted $p \leftrightarrow q$ and can be defined by the following truth table:
-            \begin{table}[H]
-                \centering
-                \label{tab:iff}
-                \begin{tabular}{|CcCc||Cc|} \hline
-                    \thead{$p$} & \thead{$q$} & \thead{$p \leftrightarrow q$} \\ \hline
-                    \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
-                    \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
-                    \thead{$\bot$} & \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
-                    \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
-                \end{tabular}
-            \end{table}
-        \end{minipage}%
-        \begin{minipage}[t]{.05\linewidth}
-            ~
-        \end{minipage}%
-        \begin{minipage}[t]{.4\linewidth}
-            Some possible readings of $p \leftrightarrow q$:\\
-            \begin{list}{$\cdot$}
-                \item
-                    $p$ if and only if $q$.
-                \item
-                    $p$ is necessary and sufficient for $q$.
-                \item
-                    $q$ is necessary and sufficient for $p$.
-            \end{list}
-        \end{minipage}
-    \end{center}
+    \begin{minipage}[t]{.55\linewidth}
+        Given two propositions $p$ and $q$, the \emph{biconditional} formed by $p$ and $q$
+        is denoted $p \leftrightarrow q$ and can be defined by:
+        \begin{table}[H]
+            \centering
+            \label{tab:iff}
+            \begin{tabular}{|CcCc||Cc|} \hline
+                \thead{$p$} & \thead{$q$} & \thead{$p \leftrightarrow q$} \\ \hline
+                \thead{$\top$} & \thead{$\top$} & \cellcolor{green!30!white}{\thead{$\top$}} \\
+                \thead{$\top$} & \thead{$\bot$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                \thead{$\bot$} & \thead{$\top$} & \cellcolor{red!30!white}{\thead{$\bot$}} \\
+                \thead{$\bot$} & \thead{$\bot$} & \cellcolor{green!30!white}{\thead{$\top$}} \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{minipage}%
+    \begin{minipage}[t]{.05\linewidth}
+        ~
+    \end{minipage}%
+    \begin{minipage}[t]{.4\linewidth}
+        Some possible readings of $p \leftrightarrow q$:\\
+        \begin{list}{$\cdot$}{}
+            \item
+                $p$ if and only if $q$.
+            \item
+                $p$ is necessary and sufficient for $q$.
+            \item
+                $q$ is necessary and sufficient for $p$.
+        \end{list}
+    \end{minipage}
 \end{definition}
 
 \begin{definition}[Equivalence]
@@ -317,6 +303,8 @@
     $p \join \neg p$ is a tautology, and $p \meet \neg p$ is a contradiction.
 \end{example}
 
+\newpage
+
 \begin{theorem}[Uniqueness of Complements]\label{thm:unique}
     Let $p$ be a term in a Boolean algebra $(B, \neg, \meet, \join)$.
     Suppose there were two terms $x$ and $y$ in the Boolean algebra such that
@@ -401,6 +389,8 @@
     and both $p$ and $\neg \neg p$ are complements of $\neg p$,
     we can conclude that $p \iff \neg \neg p$.
 \end{proof}
+
+\newpage
 
 \begin{theorem}[Idempotency]
     For every Boolean algebra $(B, \neg, \meet, \join)$ and every term $p$ in the algebra,
@@ -532,8 +522,6 @@
                                                 &\iff \bot \meet p &&\text{by Complement}\\
                                                 &\iff \bot &&\text{by Domination}.
     \end{alignat*}
-
-\newpage
 
     Further, we have
     \begin{alignat*}{2}

@@ -20,22 +20,22 @@
 
 \section{The Language of Set Theory}
 In order to use our first-order logic as a language with which to talk about math,
-we need to specify: what is our universe of discourse \(\Omega\), and what are our fundamental predicate symbols?
+we need to specify: what is our universe of discourse $\Omega$, and what are our fundamental predicate symbols?
 % \begin{enumerate}
 %     \item
-%         What is our universe of discourse \(\Omega\)?
+%         What is our universe of discourse $\Omega$?
 %     \item
 %         What are our fundamental predicate symbols?
 % \end{enumerate}
 % With these two questions answered,
-% we will be able to take objects from \(\Omega\) and make atomic formul{\ae} out of them,
+% we will be able to take objects from $\Omega$ and make atomic formul{\ae} out of them,
 % which we can then use to construct our {\wff}.
 The analogy drawn in class between the structure of the study of mathematics
 and the abstract structure of a modern computer
 should hopefully communicate how natural and common the notion is of having one \emph{type} of object
 that implements other, more complicated objects.
 However, this decision actually goes back to the beginning of
-this \(20\)\textsuperscript{th} century revolution in mathematics.
+this $20$\textsuperscript{th} century revolution in mathematics.
 The initial solution people came up with to the fundamental logical and foundational problems they had discovered
 has to use a \emph{ramified}---or \emph{typed}---ontology,
 where different objects had different \emph{types} in a hierarchy and there were rules governing how objects
@@ -45,12 +45,12 @@ The problem with this approach is that it becomes very syntactically-cumbersome 
 so it was quickly abandoned for an \emph{untyped} approach.
 \vspace{-\parskip}
 \begin{note}
-    The converse is true about the \emph{\(\lambda\)-calculus},
+    The converse is true about the \emph{$\lambda$-calculus},
     which is perhaps the most famous mathematical model of computation after the Turing machine.
-    Although the untyped \(\lambda\)-calculus is more expressive (\ie stronger)
-    than any of the typed \(\lambda\)-calculi (and is thus more interesting to study for mathematicians),
+    Although the untyped $\lambda$-calculus is more expressive (\ie stronger)
+    than any of the typed $\lambda$-calculi (and is thus more interesting to study for mathematicians),
     the modern functional programming languages we have today (\eg Haskell, the LISP dialects, F\#)
-    are actually implementations of typed \(\lambda\)-calculi
+    are actually implementations of typed $\lambda$-calculi
     because computers have no issues dealing with the syntactic complications of a typed theory.
 \end{note}
 \vspace{-\parskip}
@@ -61,12 +61,11 @@ that describe \emph{what exactly sets are} and \emph{how they work}.
 The language of set theory will have two predicate symbols, defined below.
 
 \begin{definition}[Equality]\label{def:equal}
-    We define the binary predicate \(=\) to mean that
-    its left argument is \emph{identically the same} as its right argument.
-    So, if \(x\) and \(y\) are sets, then we say \(x = y\)
-    when we mean that the names \(x\) and \(y\) both refer to the same underlying object.
-    As a result, we will take the following three axioms for this predicate:
-    \vspace{-\parskip}
+    We define the binary predicate $=$ to mean that
+    its left argument is \emph{identical to} its right argument;
+    \ie we say $x = y$
+    when we mean that the symbols $x$ and $y$ refer to the same object.
+    We will take the following axioms for equality:
     \[
         \forall x \pn*{x = x}
         ~~~~~~~~~~~~~~~~
@@ -74,14 +73,13 @@ The language of set theory will have two predicate symbols, defined below.
         ~~~~~~~~~~~~~~~~
         \forall x \forall y \forall z \pn*{\pn*{x = y \meet y = x} \implies \pn*{x = z}}
     \]
-    \vspace{-\parskip-\abovedisplayskip}
 \end{definition}
 
 \begin{definition}[Elementhood]\label{def:element}
-    We define the binary predicate \(\in\) to mean that its left argument is
+    We define the binary predicate $\in$ to mean that its left argument is
     contained in its right argument as an element.
-    So, if \(x\) and \(y\) are sets, then the phrase \(x \in y\)
-    conveys that \(x\) is an element of \(y\).
+    So, if $x$ and $y$ are sets, then the phrase $x \in y$
+    conveys that $x$ is an element of $y$.
 \end{definition}
 
 \begin{definition}[Language of Set Theory]
@@ -93,8 +91,8 @@ The language of set theory will have two predicate symbols, defined below.
             a universe of discourse consisting of
             those things that provably exist from the axioms (\autoref{sec:axioms}),
         \item[II.]
-            the binary predicates for equality (\(=\), \autoref{def:equal})
-            and elementhood (\(\in\), \autoref{def:element}).
+            the binary predicates for equality ($=$, \autoref{def:equal})
+            and elementhood ($\in$, \autoref{def:element}).
     \end{enumerate}
 \end{definition}
 
@@ -103,6 +101,7 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom of Existence}
 \begin{axiom}[Existence]\label{ax:existence}
+    ~\vspace{-\baselineskip}
     \[
         \exists x \pn*{x = x}
     \]
@@ -114,31 +113,32 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom of Extensionality}
 \begin{axiom}[Extensionality]\label{ax:extensionality}
+    ~\vspace{-\baselineskip}
     \[
         \forall x \forall y \pn*{\pn*{x = y} \iff \forall z \pn*{z \in x \iff z \in y}}
     \]
     This axiom states that sets are equal \ifandonlyif they have the same elements,
     capturing what we mean by two sets being (or not being) equal.
-    This establishes a fundamental relationship between \(=\) and \(\in\).
+    This establishes a fundamental relationship between $=$ and $\in$.
 \end{axiom}
 
-\begin{definition}[\(\in\)-Augmented Quantification]
-    When we want to talk about all of the elements of a set \(A\) that satisfy a given {\wff} \(\varphi(\cdot)\),
+\begin{definition}[$\in$-Augmented Quantification]
+    When we want to talk about all of the elements of a set $A$ that satisfy a given {\wff} $\varphi(\cdot)$,
     we say
     \[
         \pn*{\forall x \in A}\pn*{\varphi(x)} \iffdefn \forall x \pn*{x \in A \implies \varphi(x)}.
     \]
-    Similarly, if we want to say that there is an element in \(A\) with the property \(\varphi(\cdot)\),
+    Similarly, if we want to say that there is an element in $A$ with the property $\varphi(\cdot)$,
     we say
     \[
         \pn*{\exists x \in A}\pn*{\varphi(x)} \iffdefn \exists x \pn*{x \in A \meet \varphi(x)}.
     \]
-    The parentheses around \(\pn*{\forall x \in A}\) and \(\pn*{\exists x \in A}\)
+    The parentheses around $\pn*{\forall x \in A}$ and $\pn*{\exists x \in A}$
     can be added or dropped for clarity based on context.
 \end{definition}
 
 \begin{theorem}[First-Order Set Notation]
-    Let \(\varphi\) be a {\wff} with at most one free variable and let \(A\) be a set.
+    Let $\varphi$ be a {\wff} with at most one free variable and let $A$ be a set.
     Then, the following statements hold.
     \[
         \pn*{\forall a \in A}\pn*{\varphi(a)} \iff \pn*{\bigmeet_{a \in A}\varphi(a)}
@@ -150,26 +150,26 @@ The language of set theory will have two predicate symbols, defined below.
 %     This proof is left as an exercise to the reader.
 % \end{proof}
 % \begin{proof}
-%     Let \(\varphi\) be a {\wff} with at most one free variable \(x\).
-%     Let \(A\) be a set.
+%     Let $\varphi$ be a {\wff} with at most one free variable $x$.
+%     Let $A$ be a set.
 %     We know, by definition, that
-%     \(\pn*{\forall x \in A}\pn*{\varphi(x)} \iff \forall x \pn*{x \in A \implies \varphi(x)}\)
+%     $\pn*{\forall x \in A}\pn*{\varphi(x)} \iff \forall x \pn*{x \in A \implies \varphi(x)}$
 %     and that
-%     \(\pn*{\exists x \in A}\pn*{\varphi(x)} \iff \exists x \pn*{x \in A \meet \varphi(x)}\).
+%     $\pn*{\exists x \in A}\pn*{\varphi(x)} \iff \exists x \pn*{x \in A \meet \varphi(x)}$.
 % 
-%     First, suppose that \(\pn*{\forall x \in A}\pn*{\varphi(x)}\).
-%     Then, letting \(a\) be an arbitrary set, we have \(a \in A \implies \varphi(a)\).
+%     First, suppose that $\pn*{\forall x \in A}\pn*{\varphi(x)}$.
+%     Then, letting $a$ be an arbitrary set, we have $a \in A \implies \varphi(a)$.
 % \end{proof}
 
 \begin{definition}[Set-Builder Notation]\label{not:setbuilder}
-    The notation \(\set*{x_1, \dots x_n}\),
-    where each \(x_1, \dots x_n\) is a term, 
-    describes the set containing each of the \(x_i\)'s, and \emph{only} the \(x_i\)'s, as elements.
-    So, we say \(\set*{x_1, \dots x_n}\) denotes the set \(X\) satisfying
-    \(
+    The notation $\set*{x_1, \dots x_n}$,
+    where each $x_1, \dots x_n$ is a term, 
+    describes the set containing each of the $x_i$'s, and \emph{only} the $x_i$'s, as elements.
+    So, we say $\set*{x_1, \dots x_n}$ denotes the set $X$ satisfying
+    $
         \forall a \pn*{a \in X \iff \bigjoin_{i = 1}^{n}\pn*{a = x_i}}.
-    \)
-    Another way of saying this is that \(X \defn \set*{x_1, \dots x_n}\) is the set that satisfies
+    $
+    Another way of saying this is that $X \defn \set*{x_1, \dots x_n}$ is the set that satisfies
     \[
         \pn*{\bigmeet_{i = 1}^{n}x_i \in X}
              \meet \forall a \pn*{a \in X \implies \pn*{\exists x \in X \pn*{a = x}}}.
@@ -177,14 +177,14 @@ The language of set theory will have two predicate symbols, defined below.
 \end{definition}
 
 \begin{definition}[Set-Comprehension Notation]
-    If \(\varphi\) is a {\wff} with at most one free variable,
-    then when we write down \(\set*{a \suchthat \varphi(a)}\),
-    we mean the set consisting of all possible \(a\) satisfying the formula \(\varphi\)
-    when the every occurrence of the free variable in \(\varphi\) is replaced by \(a\).
-    Similarly, if we have an already-existing set \(A\),
-    we can define the set of all elements of \(A\) that satisfy \(\varphi\)
-    with the notation \(\set*{a \in A \suchthat \varphi(a)}\).
-    These notations are read ``the set of all \(a\) (in \(A\)) such that \(\varphi(a)\)''.
+    If $\varphi$ is a {\wff} with at most one free variable,
+    then when we write down $\set*{a \suchthat \varphi(a)}$,
+    we mean the set consisting of all possible $a$ satisfying the formula $\varphi$
+    when the every occurrence of the free variable in $\varphi$ is replaced by $a$.
+    Similarly, if we have an already-existing set $A$,
+    we can define the set of all elements of $A$ that satisfy $\varphi$
+    with the notation $\set*{a \in A \suchthat \varphi(a)}$.
+    These notations are read ``the set of all $a$ (in $A$) such that $\varphi(a)$''.
     More precisely,
     \begin{align*}
         \exists x \pn*{x = \set*{a \suchthat \varphi(a)}}
@@ -203,61 +203,66 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Pairing Axiom}
 \begin{axiom}[Pairing]\label{ax:pairing}
-    \[\forall x \forall y \exists z \pn*{z = \set*{x, y}}\]
+    ~\vspace{-\baselineskip}
+    \[
+        \forall x \forall y \exists z \pn*{z = \set*{x, y}}
+    \]
     This axiom allows us to take two existing sets and construct a set containing the pair of them.
 \end{axiom}
 
 \subsection{The Axiom of Union}
 \begin{axiom}[Union]\label{ax:union}
+    ~\vspace{-\baselineskip}
     \[
         \forall x \exists A \pn*{A = \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}}
     \]
-    The notation we use for this set \(A\), which we call the \emph{union of \(x\)},
-    is \(\union x \defn \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}\).
-    % Notice carefully that this is \emph{not} the union of \(x\) with some other set;
-    % it is \emph{just} the union of \(x\).
+    The notation we use for this set $A$, which we call the \emph{union of $x$},
+    is $\union x \defn \set*{z \suchthat \pn*{\exists y \in x}\pn*{z \in y}}$.
+    % Notice carefully that this is \emph{not} the union of $x$ with some other set;
+    % it is \emph{just} the union of $x$.
 \end{axiom}
 
 \begin{theorem}[Union of Two Sets]\label{thm:union}
-    If \(x\) and \(y\) are sets,
-    then \(x \union y \defn \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}\) exists.
+    If $x$ and $y$ are sets,
+    then $x \union y \defn \set*{z \suchthat \pn*{z \in x} \join \pn*{z \in y}}$ exists.
 \end{theorem}
 \begin{proof}
-    Let \(x\) and \(y\) be sets.
-    By \autoref{ax:pairing}, we know \(A \defn \set*{x, y}\) exists.
-    By \autoref{ax:union}, we know \(\union A\) exists.
-    Recall that \(\union A = \set*{a \suchthat \pn*{\exists z \in A}{a \in z}}\).
-    Now, let \(b\) be an arbitrary set and observe
+    Let $x$ and $y$ be sets.
+    By \autoref{ax:pairing}, we know $A \defn \set*{x, y}$ exists.
+    By \autoref{ax:union}, we know $\union A$ exists.
+    Recall that $\union A = \set*{a \suchthat \pn*{\exists z \in A}{a \in z}}$.
+    Now, let $b$ be an arbitrary set and observe
     \begin{alignat*}{2}
-        b \in \union A &\iff \pn*{\exists z \in A}\pn*{b \in z} &&\text{by definition of \(\union A\)} \\
-                       &\iff (b \in x) \join (b \in y) &&\text{since \(A = \set*{x, y}\)} \\
+        b \in \union A &\iff \pn*{\exists z \in A}\pn*{b \in z} &&\text{by definition of $\union A$} \\
+                       &\iff (b \in x) \join (b \in y) &&\text{since $A = \set*{x, y}$} \\
                        &\iff b \in \set*{a \suchthat (a \in x) \join (a \in y)}~~~~&&\text{by definition}.
     \end{alignat*}
-    Therefore, we have that \(\union A = \set*{a \suchthat (a \in x) \join (a \in y)}\),
-    so \(x \union y \defn \set*{a \suchthat (a \in x) \join (a \in y)}\) exists.
+    Therefore, we have that $\union A = \set*{a \suchthat (a \in x) \join (a \in y)}$,
+    so $x \union y \defn \set*{a \suchthat (a \in x) \join (a \in y)}$ exists.
 \end{proof}
 
 \subsection{The Axiom Schema of Separation}
 \begin{axiom}[Separation]\label{ax:separation}
+    ~\vspace{-\baselineskip}
     \[
-        \text{If \(\varphi\) is a {\wff} with at most one free variable, then }
+        \text{If $\varphi$ is a {\wff} with at most one free variable, then }
         \forall x \exists y \pn*{y = \set*{a \in x \suchthat \varphi(a)}}
     \]
-    Given an already-existing set \(x\),
-    this axiom stats that we can \emph{separate} the elements that satisfy \(\varphi\) from \(x\).
+    % Given an already-existing set $x$,
+    % this axiom stats that we can \emph{separate} the elements that satisfy $\varphi$ from $x$.
 \end{axiom}
 
 \begin{theorem}[Intersection of Two Sets]\label{thm:intersection}
-    If \(x\) and \(y\) are sets,
-    then \(x \intersect y \defn \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
+    If $x$ and $y$ are sets,
+    then $x \intersect y \defn \set*{a \suchthat (a \in x) \meet (a \in y)}$ exists.
 \end{theorem}
 \begin{proof}
-    Let \(x\) and \(y\) be sets. Recall that \(x \union y\) exists by \autoref{thm:union}.
+    Let $x$ and $y$ be sets. Recall that $x \union y$ exists by \autoref{thm:union}.
     Then, by \autoref{ax:separation},
-    we know that \(A \defn \set*{a \in x \union y \suchthat (a \in x) \meet (a \in y)}\) exists.
-    Now, let \(b\) be an arbitrary set and observe
+    we know that $A \defn \set*{a \in x \union y \suchthat (a \in x) \meet (a \in y)}$ exists.
+    Now, let $b$ be an arbitrary set and observe
     \begin{alignat*}{2}
-        b \in A &\iff b \in \set*{a \in x \union y \suchthat (a \in x) \meet (a \in y)} &&\text{by the definition of \(A\)} \\
+        b \in A &\iff b \in \set*{a \in x \union y \suchthat (a \in x) \meet (a \in y)} &&\text{by the definition of $A$} \\
                 &\iff (b \in x \union y) \meet \pn*{(b \in x) \meet (b \in y)} &&\text{by definition} \\
                 &\iff \pn*{(b \in x) \join (b \in y)} \meet \pn*{(b \in x) \meet (b \in y)} &&\text{by definition of } x \union y \\
                 &\iff \pn*{\pn*{(b \in x) \join (b \in y)} \meet (b \in x)} \meet (b \in y) &&\text{by Associativity} \\
@@ -270,124 +275,123 @@ The language of set theory will have two predicate symbols, defined below.
                 &\iff (b \in x) \meet (b \in y) &&\text{by Idempotency} \\
                 &\iff b \in \set*{a \suchthat (a \in x) \meet (a \in y)} &&\text{by definition}.
     \end{alignat*}
-    Therefore, we have that \(A = \set*{a \suchthat (a \in x) \meet (a \in y)}\),
-    showing that \(x \intersect y = \set*{a \suchthat (a \in x) \meet (a \in y)}\) exists.
+    Therefore, we have that $A = \set*{a \suchthat (a \in x) \meet (a \in y)}$,
+    showing that $x \intersect y = \set*{a \suchthat (a \in x) \meet (a \in y)}$ exists.
 \end{proof}
 
 \begin{theorem}[Difference of Two Sets]
-    If \(x\) and \(y\) are sets,
-    then \(x \setminus y \defn \set*{a \suchthat (a \in x) \meet (a \not \in y)}\) exists.
+    If $x$ and $y$ are sets,
+    then $x \setminus y \defn \set*{a \suchthat (a \in x) \meet (a \not \in y)}$ exists.
 \end{theorem}
 \begin{proof}
-    Let \(x\) and \(y\) be sets.
-    Consider \(A \defn \set*{a \in x \suchthat a \not \in y}\),
+    Let $x$ and $y$ be sets.
+    Consider $A \defn \set*{a \in x \suchthat a \not \in y}$,
     which we know exists by \autoref{ax:separation}.
-    Now, let \(b\) be an arbitrary set and observe
+    Now, let $b$ be an arbitrary set and observe
     \begin{alignat*}{2}
-        b \in A &\iff b \in \set*{a \in x \suchthat a \not \in y} &&\text{by the definition of \(A\)} \\
+        b \in A &\iff b \in \set*{a \in x \suchthat a \not \in y} &&\text{by the definition of $A$} \\
                 &\iff \pn*{b \in x} \meet \pn*{b \not \in y} &&\text{by definition} \\
                 &\iff b \in \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}~~~~&&\text{by definition}.
     \end{alignat*}
-    Therefore, \(A = \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}\) by \autoref{ax:extensionality},
-    showing that \(x \setminus y = \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}\) exists.
+    Therefore, $A = \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}$ by \autoref{ax:extensionality},
+    showing that $x \setminus y = \set*{a \suchthat \pn*{a \in x} \meet \pn*{a \not \in y}}$ exists.
 \end{proof}
 
 \begin{definition}[Subsets]
-    We say that \(x\) is a \emph{subset} of \(y\) when every element of \(x\) is also an element of \(y\).
+    We say that $x$ is a \emph{subset} of $y$ when every element of $x$ is also an element of $y$.
     Formally,
     \[
         x \subseteq y \iffdefn \forall a \pn*{a \in x \implies a \in y}.
     \]
-    If \(x \subseteq y\) but \(x \neq y\),
-    then we say that \(x\) is a \emph{proper subset} of \(y\) and we write \(x \subsetneq y\)
-    (you may also encounter the alternative notations \(x \subset y\) and \(x \subsetneqq y\)).
+    If $x \subseteq y$ but $x \neq y$,
+    then we say that $x$ is a \emph{proper subset} of $y$ and we write $x \subsetneq y$
+    (you may also encounter the alternative notations $x \subset y$ and $x \subsetneqq y$).
 \end{definition}
 
 \subsection{The Power Set Axiom}
 \begin{axiom}[Power Set]
+    ~\vspace{-\baselineskip}
     \[
         \forall x \exists y \pn*{y = \set*{s \suchthat s \subseteq x}}.
     \]
-
-    This axiom tells us that, whenever we have a set \(x\) that exists,
-    we are allowed to collect \emph{all} of its subsets into one set, called the \emph{power set} of \(x\).
-    We use the notation \(\power{x}\).
+    This axiom tells us that, whenever we have a set $x$ that exists,
+    we are allowed to collect \emph{all} of its subsets into one set, called the \emph{power set} of $x$.
+    We use the notation $\power{x}$.
 \end{axiom}
 
 \begin{definition}[Empty Set]
-    We say that a set \(A\) is \emph{empty} \iffbydefn \(\forall x \pn*{x \not \in A}\).
+    We say that a set $A$ is \emph{empty} \iffbydefn $\forall x \pn*{x \not \in A}$.
     Since there can only be one empty set by \autoref{ax:extensionality},
-    we refer to this set as \emph{the} empty set and use the special symbol \(\emptyset\).
+    we refer to this set as \emph{the} empty set and use the special symbol $\emptyset$.
 \end{definition}
 
 \subsection{The Axiom of Regularity}
 \begin{axiom}[Regularity]\label{ax:regularity}
+    ~\vspace{-\baselineskip}
     \[
         \forall x \pn*{\pn*{x \neq \emptyset} \implies \pn*{\exists y \in x}\pn*{x \intersect y = \emptyset}}.
     \]
-
-    This axiom establishes the \emph{regularity} (\aka \emph{well-foundedness}) of the \(\in\) predicate.
-    Literally, this axiom simply says that every non-empty set has an element disjoint with it.
-    However, this seemingly strange axiom has far-reaching consequences,
-    not least of which is that it lets us prove that sets do not contain themselves.
+    This axiom establishes the \emph{regularity} (\aka \emph{well-foundedness}) of the $\in$ predicate.
+    % Literally, this axiom simply says that every non-empty set has an element disjoint with it.
+    % However, this seemingly strange axiom has far-reaching consequences,
+    % not least of which is that it lets us prove that sets do not contain themselves.
 \end{axiom}
 
-\begin{theorem}[\(\in\) Well-foundedness]
-    For any set \(x\), we have \(x \not \in x\).
+\begin{theorem}[$\in$ Well-foundedness]
+    For any set $x$, we have $x \not \in x$.
 \end{theorem}
 \begin{proof}
-    Let \(x\) be an arbitrary set.
-    Towards a contradiction, assume \(x \in x\).
-    Let \(y \defn \set*{a \in x \suchthat a = x} = \set*{x}\), which we know exists by \autoref{ax:separation}.
-    Since \(x \in y\), we know \(y \neq \emptyset\).
-    Thus, \autoref{ax:regularity} lets us know there is a \(z \in y\) such that \(y \intersect z = \emptyset\).
-    Since \(y = \set*{x}\) and \(z \in y\), this implies \(z = x\), yielding \(y \intersect x = \emptyset\).
-    However, we already knew that \(x \in y\) and \(x \in x\),
-    so we know by definition that \(x \in \set*{a \suchthat a \in y \meet a \in x} = y \intersect x\),
-    and therefore \(y \intersect x \neq \emptyset\). \contradiction
-
-    Therefore, we must have that \(x \not \in x\).
-    Since \(x\) was arbitrary, we can conclude \(\forall x \pn*{x \not \in x}\), as desired.
+    Let $x$ be an arbitrary set.
+    Towards a contradiction, assume $x \in x$.
+    Let $y \defn \set*{a \in x \suchthat a = x} = \set*{x}$, which we know exists by \autoref{ax:separation}.
+    Since $x \in y$, we know $y \neq \emptyset$.
+    Thus, \autoref{ax:regularity} lets us know there is a $z \in y$ such that $y \intersect z = \emptyset$.
+    Since $y = \set*{x}$ and $z \in y$, this implies $z = x$, yielding $y \intersect x = \emptyset$.
+    However, we already knew that $x \in y$ and $x \in x$,
+    so we know by definition that $x \in \set*{a \suchthat a \in y \meet a \in x} = y \intersect x$,
+    and therefore $y \intersect x \neq \emptyset$. \contradiction
+    Therefore, we must have that $x \not \in x$.
+    Since $x$ was arbitrary, we can conclude $\forall x \pn*{x \not \in x}$, as desired.
 \end{proof}
 % \begin{proof}
-%     Let \(X\) be an arbitrary set.
-%     Towards a contradiction, assume \(X \in X\).
-%     Let \(Y \defn \set*{a \in X \suchthat a = X} = \set*{X}\), which we know exists by \autoref{ax:separation}.
-%     Since \(X \in Y\), we know \(Y \neq \emptyset\).
-%     Thus, \autoref{ax:regularity} lets us know there is a \(Z \in Y\) such that \(Y \intersect Z = \emptyset\).
-%     Since \(Y = \set*{X}\) and \(Z \in Y\), this implies \(Z = X\), yielding \(Y \intersect X = \emptyset\).
-%     However, we already knew that \(X \in Y\) and \(X \in X\),
-%     so we know by definition that \(X \in \set*{a \suchthat a \in Y \meet a \in X} = Y \intersect X\),
-%     and therefore \(Y \intersect X \neq \emptyset\). \contradiction
+%     Let $X$ be an arbitrary set.
+%     Towards a contradiction, assume $X \in X$.
+%     Let $Y \defn \set*{a \in X \suchthat a = X} = \set*{X}$, which we know exists by \autoref{ax:separation}.
+%     Since $X \in Y$, we know $Y \neq \emptyset$.
+%     Thus, \autoref{ax:regularity} lets us know there is a $Z \in Y$ such that $Y \intersect Z = \emptyset$.
+%     Since $Y = \set*{X}$ and $Z \in Y$, this implies $Z = X$, yielding $Y \intersect X = \emptyset$.
+%     However, we already knew that $X \in Y$ and $X \in X$,
+%     so we know by definition that $X \in \set*{a \suchthat a \in Y \meet a \in X} = Y \intersect X$,
+%     and therefore $Y \intersect X \neq \emptyset$. \contradiction
 % 
-%     Therefore, we must have that \(X \not \in X\).
-%     Since \(X\) was arbitrary, we can conclude \(\forall x \pn*{x \not \in x}\), as desired.
+%     Therefore, we must have that $X \not \in X$.
+%     Since $X$ was arbitrary, we can conclude $\forall x \pn*{x \not \in x}$, as desired.
 % \end{proof}
 
 \begin{definition}[Kuratowski Ordered Pairs]
-    We define the \emph{ordered pair} with left coordinate \(a\) and right coordinate \(b\)
-    by \((a, b) \defn \set*{\set*{a}, \set*{a, b}}\).
-    It is left as a simple exercise to the reader to prove that \((a, b)\) always exists.
+    We define the \emph{ordered pair} with left coordinate $a$ and right coordinate $b$
+    by $(a, b) \defn \set*{\set*{a}, \set*{a, b}}$.
+    It is left as a simple exercise to the reader to prove that $(a, b)$ always exists.
 \end{definition}
 
 % \begin{theorem}[Adequacy of Ordered Pairs]
-%     We have \((a, b) = (x, y) \iff (a = x) \meet (b = y)\) for any sets \(a, b, x, y\).
+%     We have $(a, b) = (x, y) \iff (a = x) \meet (b = y)$ for any sets $a, b, x, y$.
 % \end{theorem}
 % \begin{proof}
-%     Let \(a, b, x, y\) be sets.
-%     Recall that \((a, b) = \set*{\set*{a}, \set*{a, b}}\) and \((x, y) = \set*{\set*{x}, \set*{x, y}}\).
-%     There are two directions to this proof: the \(\implies\) direction, and the \(\impliedby\) direction.
+%     Let $a, b, x, y$ be sets.
+%     Recall that $(a, b) = \set*{\set*{a}, \set*{a, b}}$ and $(x, y) = \set*{\set*{x}, \set*{x, y}}$.
+%     There are two directions to this proof: the $\implies$ direction, and the $\impliedby$ direction.
 % 
 %     \begin{case}[Forward direction]
-%         Suppose \((a, b) = (x, y)\) and assume, towards a contradiction, that \(a \neq x\) or \(b \neq y\).
+%         Suppose $(a, b) = (x, y)$ and assume, towards a contradiction, that $a \neq x$ or $b \neq y$.
 %         
 %     \end{case}
 % 
 %     \begin{case}[Backward direction]
-%         Suppose \(a = x\) and \(b = y\).
-%         \autoref{ax:extensionality} then clearly shows \(\set*{a} = \set*{x}\) and \(\set*{a, b} = \set*{x, y}\).
-%         Therefore, \(\set*{\set*{a}, \set*{a, b}} = \set*{\set*{x}, \set*{x, y}}\),
-%         so \((a, b) = (x, y)\).
+%         Suppose $a = x$ and $b = y$.
+%         \autoref{ax:extensionality} then clearly shows $\set*{a} = \set*{x}$ and $\set*{a, b} = \set*{x, y}$.
+%         Therefore, $\set*{\set*{a}, \set*{a, b}} = \set*{\set*{x}, \set*{x, y}}$,
+%         so $(a, b) = (x, y)$.
 %     \end{case}
 % 
 %     Towards a 
@@ -396,42 +400,39 @@ The language of set theory will have two predicate symbols, defined below.
 % \end{proof}
 
 \begin{definition}[Cartesian Product]
-    We define the \emph{Cartesian product} of two sets \(A\) and \(B\),
+    We define the \emph{Cartesian product} of two sets $A$ and $B$,
     which is the set of all possible ordered pairs with
-    left coordinate coming from \(A\) and right coordinate coming from \(B\),
-    by \(A \times B \defn \set*{(a, b) \suchthat a \in A \meet b \in b}\).
+    left coordinate coming from $A$ and right coordinate coming from $B$,
+    by $A \times B \defn \set*{(a, b) \suchthat a \in A \meet b \in b}$.
 \end{definition}
 
 \begin{theorem}[Existence of Cartesian Products]
-    For any sets \(X\) and \(Y\), the Cartesian product \(X \times Y\) exists.
+    For any sets $X$ and $Y$, the Cartesian product $X \times Y$ exists.
+\end{theorem}
+% \begin{proof}
+%     This is left as a (tedious) exercise for the reader.
+% \end{proof}
+
+\begin{theorem}[Existence of $\emptyset$]
+    $\exists x \pn*{x = \emptyset}$.
 \end{theorem}
 \begin{proof}
-    This is left as a (tedious) exercise for the reader.
-\end{proof}
-
-\newpage
-
-\begin{theorem}[Existence of \(\emptyset\)]
-    \(\exists x \pn*{x = \emptyset}\).
-\end{theorem}
-\begin{proof}
-    We know, by \autoref{ax:existence}, that there exists a set \(x\).
-    Now, consider \(E \defn \set*{y \in x \suchthat  y \neq y}\),
+    We know, by \autoref{ax:existence}, that there exists a set $x$.
+    Now, consider $E \defn \set*{y \in x \suchthat  y \neq y}$,
     which we know exists by \autoref{ax:separation}.
-    We can clearly see that \(E\) is empty,
-    because if \(x \in E\) then we would immediately run into the contradiction \(x \neq x\).
-
-    Therefore, \(E = \emptyset\), so the empty set exists.
+    We can clearly see that $E$ is empty,
+    because if $x \in E$ then we would immediately run into the contradiction $x \neq x$.
+    Therefore, we have $E = \emptyset$, so the empty set exists.
 \end{proof}
 
 \begin{definition}[Successor Functional]
-    Given an arbitrary set \(x\), we define the \emph{successor} of \(x\) to be the set \(x \union \set*{x}\),
-    for which we introduce the notation \(\successor{x} \defn x \union \set*{x}\).
+    Given an arbitrary set $x$, we define the \emph{successor} of $x$ to be the set $x \union \set*{x}$,
+    for which we introduce the notation $\successor{x} \defn x \union \set*{x}$.
     It should be clear that the successor of any set always exists.
 
     \begin{note}
-        The successor \(\successor{x}\) of a set \(x\) is a set consisting of
-        all of the elements of \(x\) as well as \(x\) itself.
+        The successor $\successor{x}$ of a set $x$ is a set consisting of
+        all of the elements of $x$ as well as $x$ itself.
     \end{note}
 \end{definition}
 
@@ -444,44 +445,43 @@ The language of set theory will have two predicate symbols, defined below.
                = n \union \set*{n}
                = \set{0, 1, 2, \dots n}~~~~&&\text{ if } n \text{ is a natural number}
     \end{alignat*}
-    We say that a natural number \(n\) is a \emph{successor number}
-    \iffbydefn there exists a natural number \(m\) such that \(n = \successor{m}\).
-    Every natural number except for \(0\) is a successor number,
+    We say that a natural number $n$ is a \emph{successor number}
+    \iffbydefn there exists a natural number $m$ such that $n = \successor{m}$.
+    Every natural number except for $0$ is a successor number,
     so when we define properties or operations on the natural numbers,
-    we will usually take a recursive approach that explicitly defines what happens at \(0\)
+    we will usually take a recursive approach that explicitly defines what happens at $0$
     and then specifies what happens when you've encountered a successor number.
-
-    If \(n\) is a successor natural number,
-    then we define the \emph{predecessor} of \(n\) to be \(n - 1 \defn m\),
-    where \(m\) is a natural number such that \(\successor{m} = n\).
+    If $n$ is a successor natural number,
+    then we define the \emph{predecessor} of $n$ to be $n - 1 \defn m$,
+    where $m$ is a natural number such that $\successor{m} = n$.
 \end{definition}
 
 % \begin{theorem}[Uniqueness of Predecessors]
-%     If \(n\) is a natural number
-%     such that \(\exists m_1 \pn*{n = \successor{m_1}}\) and \(\exists m_2 \pn*{n = \successor{m_2}}\),
-%     then \(m_1 = m_2\).
+%     If $n$ is a natural number
+%     such that $\exists m_1 \pn*{n = \successor{m_1}}$ and $\exists m_2 \pn*{n = \successor{m_2}}$,
+%     then $m_1 = m_2$.
 % \end{theorem}
 % \begin{proof}
 %     
 % \end{proof}
 
 \begin{definition}[Arithmetic on the Natural Numbers]
-    Given a natural number \(n\),
-    its \emph{sum} with another natural number \(m\) is recursively given by
+    Given a natural number $n$,
+    its \emph{sum} with another natural number $m$ is recursively given by
     \begin{align*}
         n + 0 &\defn n\\
         % n + 1 &\defn \successor{n}\\
         n + \successor{m} &\defn \successor{n + m}~~~~\text{ if } m \text{ is a successor number}
     \end{align*}
 
-    Similarly, we define the \emph{product} of two natural numbers \(n\) and \(m\) recursively by
+    Similarly, we define the \emph{product} of two natural numbers $n$ and $m$ recursively by
     \begin{align*}
         n \cdot 0 &\defn 0\\
         % n \cdot 1 &\defn n\\
         n \cdot \successor{m} &\defn \pn*{n + m} + n~~~~\text{ if } m \text{ is a successor number}
     \end{align*}
 
-    Finally, we can recursively define the \emph{exponentiation} of one natural number \(n\) by another as
+    Finally, we can recursively define the \emph{exponentiation} of one natural number $n$ by another as
     \begin{align*}
         n^{0} &\defn 1\\
         % n^{1} &\defn n\\
@@ -489,8 +489,8 @@ The language of set theory will have two predicate symbols, defined below.
     \end{align*}
 \end{definition}
 
-\begin{example}
-    Let's compute \(2 + 3\).
+\begin{example}[$2 + 3 = 5$]
+    ~\vspace{-\baselineskip}
     \begin{alignat*}{2}
         2 + 3 &= 2 + \successor{2} &&\text{ because } 3 = \successor{2}\\
               &= \successor{2 + 2} &&\text{ by definition of } 2 + \successor{2}\\
@@ -503,10 +503,10 @@ The language of set theory will have two predicate symbols, defined below.
               &= \successor{4} &&\text{ because } 4 = \successor{3} \text{ by definition}\\
               &= 5 &&\text{ because } 5 = \successor{4} \text{ by definition}.
     \end{alignat*}
-    Thus, we have a proof that \(2 + 3 = 5\).
+    Thus, we have a proof that $2 + 3 = 5$.
 \end{example}
-\begin{example}
-    Let's compute \(2 \cdot 3\).
+\begin{example}[$2 \cdot 3 = 6$]
+    ~\vspace{-\baselineskip}
     \begin{alignat*}{2}
         2 \cdot 3 &= 2 \cdot \successor{2} &&\text{ because } 3 = \successor{2}\\
               &= 2 \cdot 2 + 2 &&\text{ by definition of } 2 \cdot \successor{2}\\
@@ -520,27 +520,27 @@ The language of set theory will have two predicate symbols, defined below.
               &= 6 &&\text{ because } 2 + 4 = 6 \text{ \emph{(this requires its own proof)}}
     \end{alignat*}
     Since those last three steps are not a part of any definition or theorem so far,
-    we would need to \emph{separately} prove \(0 + 2 = 2\) and \(2 + 2 = 4\) and \(2 + 4 = 6\)
-    and then apply those results to this proof of \(2 \cdot 3 = 6\).
+    we would need to \emph{separately} prove $0 + 2 = 2$ and $2 + 2 = 4$ and $2 + 4 = 6$
+    and then apply those results to this proof of $2 \cdot 3 = 6$.
 \end{example}
 
 \begin{definition}[Order on the Natural Numbers]
-    Given two natural numbers \(n\) and \(m\),
-    say that \(n\) is \emph{less than or equal to} \(m\) \iffbydefn \(n \subseteq m\).
-    The syntax we use to express this relationship is \(n \leq m\).
+    Given two natural numbers $n$ and $m$,
+    say that $n$ is \emph{less than or equal to} $m$ \iffbydefn $n \subseteq m$.
+    The syntax we use to express this relationship is $n \leq m$.
 
-    If \(n \leq m\) and \(n \neq m\), then we say \(n < m\),
-    which means \(n\) is \emph{strictly less than} \(m\).
+    If $n \leq m$ and $n \neq m$, then we say $n < m$,
+    which means $n$ is \emph{strictly less than} $m$.
 \end{definition}
 
 \begin{definition}[Iterated Sums \& Products]
-    If \(n\) and \(x_0, \dots x_{n - 1}\) are natural numbers,
-    then we define the \emph{iterated sum} of the \(x_i\) recursively by
+    If $n$ and $x_0, \dots x_{n - 1}$ are natural numbers,
+    then we define the \emph{iterated sum} of the $x_i$ recursively by
     \begin{align*}
         \sum_{i = 0}^{0}x_i &= x_0\\
         \sum_{i = 0}^{k + 1}x_i &= \pn*{\sum_{i = 0}^{k}x_i} + \pn*{x_{k + 1}}~~~~\text{ if } 0 < k + 1 \leq n.
     \end{align*}
-    Similarly, we define the \emph{iterated product} of the \(x_i\) recursively as
+    Similarly, we define the \emph{iterated product} of the $x_i$ recursively as
     \begin{align*}
         \prod_{i = 0}^{0}x_i &= x_0\\
         \prod_{i = 0}^{k + 1}x_i &= \pn*{\prod_{i = 0}^{k}x_i} \cdot \pn*{x_{k + 1}}~~~~\text{ if } 0 < k + 1 \leq n.
@@ -549,12 +549,13 @@ The language of set theory will have two predicate symbols, defined below.
 
 \subsection{The Axiom of Infinity}
 \begin{axiom}[Infinity]
+    ~\vspace{-\baselineskip}
     \[
         \exists N \pn*{N = \set*{n \suchthat n = \emptyset \join \exists\pn*{m \in N}\pn*{n = \successor{m}}}}
     \]
-    We call this set the \emph{set of natural numbers} and use the symbol \(\N\) to denote it.
+    We call this set the \emph{set of natural numbers} and use the symbol $\N$ to denote it.
     For convenience,
-    we also define the \emph{positive naturals} by \(\N_+ \defn \set*{n \in \N \suchthat n > 0}\).
+    we also define the \emph{positive naturals} by $\N_+ \defn \set*{n \in \N \suchthat n > 0}$.
 \end{axiom}
 
 % APPENDIX
@@ -565,51 +566,51 @@ We will use \emph{quotient constructions}---a fundamental technique in modern al
 and present the standard construction for each set.
 
 \section{The Integers}
-Consider the equivalence relation \(\sim\) on \(\pn*{\N \times \N} \times \pn*{\N \times \N}\)
-given by \((a, b) \sim (c, d)\) \iffbydefn \(a + d = c + b\).
-Notice that this relation captures the idea that ordered pairs \((a, b), (c, d)\) are related
-if \(a - b = c - d\), so the ordered pairs \((a, b)\) represent ``differences'' between natural numbers.
+Consider the equivalence relation $\sim$ on $\pn*{\N \times \N} \times \pn*{\N \times \N}$
+given by $(a, b) \sim (c, d)$ \iffbydefn $a + d = c + b$.
+Notice that this relation captures the idea that ordered pairs $(a, b), (c, d)$ are related
+if $a - b = c - d$, so the ordered pairs $(a, b)$ represent ``differences'' between natural numbers.
 However, since the difference of two natural numbers is not always defined,
 we can still express that relationship using only addition,
 and we consider them \emph{equivalent} if the differences they represent are the same.
-We then define the \emph{equivalence class} of an ordered pair \((a, b) \in \N \times \N\) under the \(\sim\)
-relation as \([(a, b)]_{\sim} = \set*{(c, d) \in \N \times \N \suchthat (a, b) \sim (c, d)}\).\\
-We then say \(\Z \defn \sfrac{\N \times \N}{\sim}\) is the set of integers,
-which is \(\set*{[(a, b)]_{\sim} \suchthat (a, b) \in \N \times \N}\).
+We then define the \emph{equivalence class} of an ordered pair $(a, b) \in \N \times \N$ under the $\sim$
+relation as $[(a, b)]_{\sim} = \set*{(c, d) \in \N \times \N \suchthat (a, b) \sim (c, d)}$.\\
+We then say $\Z \defn \sfrac{\N \times \N}{\sim}$ is the set of integers,
+which is $\set*{[(a, b)]_{\sim} \suchthat (a, b) \in \N \times \N}$.
 So every integer, underneath, is an equivalence class of ordered pairs of natural numbers.
-We define the integer \(z \in \Z\) to be the equivalence class \([(a, b)]_{\sim}\) such that \(z + b = a\),
-meaning that \(z\) represents the difference \(a - b\).
-% This simulates the idea of \emph{closing} \(\N\) under the subtraction operation
+We define the integer $z \in \Z$ to be the equivalence class $[(a, b)]_{\sim}$ such that $z + b = a$,
+meaning that $z$ represents the difference $a - b$.
+% This simulates the idea of \emph{closing} $\N$ under the subtraction operation
 % with a \emph{quotient construction} (a fundamental technique of modern algebra).\\
-The arithmetic operations on \(\N\) extend naturally to \(\Z\)
+The arithmetic operations on $\N$ extend naturally to $\Z$
 by operating on the representatives of the equivalence classes.
 % define integer arithmetic
 
 \section{The Rationals}
 We take a similar approach to the rational numbers as we did the integers.
-Consider the equivalence relation \(\sim\) on \(\Z \times \N_+\)
-given by \((p, q) \sim (r, s)\) \iffbydefn \(p \cdot s = r \cdot q\).
-This captures the essence of \(\sfrac{p}{q} = \sfrac{r}{s}\).\\
-We then say \(\Q \defn \sfrac{\Z \times \N_+}{\sim}\) is the set of rational numbers,
-which is \(\set*{[(p, q)]_{\sim} \suchthat (p, q) \in \Z \times \N_+}\).
+Consider the equivalence relation $\sim$ on $\Z \times \N_+$
+given by $(p, q) \sim (r, s)$ \iffbydefn $p \cdot s = r \cdot q$.
+This captures the essence of $\sfrac{p}{q} = \sfrac{r}{s}$.\\
+We then say $\Q \defn \sfrac{\Z \times \N_+}{\sim}$ is the set of rational numbers,
+which is $\set*{[(p, q)]_{\sim} \suchthat (p, q) \in \Z \times \N_+}$.
 So, similarly to the integers,
-we represent a rational number \(\sfrac{p}{q}\)
+we represent a rational number $\sfrac{p}{q}$
 as an equivalence class of ordered pairs of integers with positive naturals
-so that the equivalence class of \((p, q)\) represents all of those fractions equal to \(\sfrac{p}{q}\).
-The arithmetic operations on \(\Z\) and \(\N\) extend naturally to \(\Q\)
+so that the equivalence class of $(p, q)$ represents all of those fractions equal to $\sfrac{p}{q}$.
+The arithmetic operations on $\Z$ and $\N$ extend naturally to $\Q$
 by operating on the equivalence class representatives.
 % define rational arithmetic
 
 \section{The Reals}
 The approach we must take to define the reals is similar in some ways but very different in other ways.
 We would still like a quotient construction,
-but we can not define our relation on \(\N\), \(\Z\), or \(\Q\) directly.
+but we can not define our relation on $\N$, $\Z$, or $\Q$ directly.
 Instead, the idea here will then be to take quotients of these things called
 \emph{Cauchy sequences} of rational numbers.
 
 \begin{definition}[Cauchy Sequence]\label{def:cauchy}
-    We say that a sequence \(q: \N \to \Q\)
-    of rational numbers \(\langle q_i \rangle_{i \in \N} = q_0, q_1, \dots \)
+    We say that a sequence $q: \N \to \Q$
+    of rational numbers $\langle q_i \rangle_{i \in \N} = q_0, q_1, \dots $
     is \emph{Cauchy convergent} {\ifandonlyif}
     \[
         \pn*{\forall \varepsilon > 0}\pn*{\exists m \in \N}\pn*{\forall n_1, n_2 \in \N}
@@ -618,33 +619,33 @@ Instead, the idea here will then be to take quotients of these things called
     We call such sequences \emph{Cauchy sequences}, with the adjective \emph{Cauchy} for short.
 \end{definition}
 
-We then define \(\sim\) on the set of all rational Cauchy sequences \(\mathcal{Q}\)
-\(\langle p_i \rangle_{i \in \N} \sim \langle q_i \rangle_{i \in \N}\) \iffbydefn
-\(\langle p_i - q_i \rangle_{i \in \N} = \langle 0 \rangle_{i \in \N}\).
-Then \(\R \defn \sfrac{\mathcal{Q}}{\sim}\) is the set of real numbers
-(\ie each real number is a class of \emph{equivalent} Cauchy sequences over \(\Q\)).
+We then define $\sim$ on the set of all rational Cauchy sequences $\mathcal{Q}$
+$\langle p_i \rangle_{i \in \N} \sim \langle q_i \rangle_{i \in \N}$ \iffbydefn
+$\langle p_i - q_i \rangle_{i \in \N} = \langle 0 \rangle_{i \in \N}$.
+Then $\R \defn \sfrac{\mathcal{Q}}{\sim}$ is the set of real numbers
+(\ie each real number is a class of \emph{equivalent} Cauchy sequences over $\Q$).
 
 % \section{The Complex Numbers}
 
 
 \chapter{Basic Algebraic Properties}
 \section{The Naturals}
-\begin{theorem}[\(\N\) is \emph{the smallest} Ordered Semiring]
+\begin{theorem}[$\N$ is \emph{the smallest} Ordered Semiring]
     \hl{TODO}
 \end{theorem}
 
 \section{The Integers}
-\begin{theorem}[\(\Z\) is \emph{the smallest} Ordered Ring]
+\begin{theorem}[$\Z$ is \emph{the smallest} Ordered Ring]
     \hl{TODO}
 \end{theorem}
 
 \section{The Rationals}
-\begin{theorem}[\(\Q\) is \emph{the smallest} Ordered Field]
+\begin{theorem}[$\Q$ is \emph{the smallest} Ordered Field]
     \hl{TODO}
 \end{theorem}
 
 \section{The Reals}
-\begin{theorem}[\(\R\) is \emph{the smallest} Complete Ordered Field]
+\begin{theorem}[$\R$ is \emph{the smallest} Complete Ordered Field]
     \hl{TODO}
 \end{theorem}
 
