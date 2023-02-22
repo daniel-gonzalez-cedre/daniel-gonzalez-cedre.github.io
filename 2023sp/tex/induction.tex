@@ -90,9 +90,9 @@ with the least element of the non-empty subset $X \setminus \set*{\ell \in X \su
 
 Let's practice induction by proving the following few theorems.
 
-\begin{lemma}[Gaussian Summation Formula]\label{thm:gaussiansum}
+\begin{example}[Gaussian Summation Formula]\label{thm:gaussiansum}
     $\displaystyle \pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}$.
-\end{lemma}
+\end{example}
 \begin{proof}
     We will prove the claim by induction on $n \in \N$.
     \begin{case}[Base Case]
@@ -114,9 +114,9 @@ Let's practice induction by proving the following few theorems.
     Therefore, we can conclude that $\pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}i = \frac{n(n + 1)}{2}}$.
 \end{proof}
 
-\begin{lemma}
+\begin{example}
     $3n \leq 3^n$ for all $n \in \N_+$.
-\end{lemma}
+\end{example}
 \begin{proof}
     We will prove the claim by induction on $n \in \N_+$.
     \begin{case}[Base Case]
@@ -143,16 +143,16 @@ Let's practice induction by proving the following few theorems.
 \footnotetext[2]{This is true in any \emph{ordered semiring} where exponentiation is defined in terms of multiplication.}
 \footnotetext[3]{This is true in any \emph{field}.}
 
-\begin{lemma}
+\begin{example}
     $\displaystyle \sum_{i = 0}^{n}2^i = 2^{n + 1} - 1$ for all $n \in \N$.
-\end{lemma}
+\end{example}
 \begin{proof}
     We will prove the claim by induction on $n \in \N$.
     \begin{case}[Base Case]
-        Observe that $\displaystyle \sum_{i = 0}^{0}2^i = 2^0 = 1 = 2 - 1 = 2^{1 + 1} - 1$
+        Observe that $\sum_{i = 0}^{0}2^i = 2^0 = 1 = 2 - 1 = 2^{1 + 1} - 1$
     \end{case}
     \begin{case}[Inductive Step]
-        Let $k \in \N_+$ and assume that $\displaystyle \sum_{i = 0}^{k}2^i = 2^{k + 1} - 1$
+        Let $k \in \N_+$ and assume that $\sum_{i = 0}^{k}2^i = 2^{k + 1} - 1$
         (this is our \emph{inductive hypothesis}).
         Observe that
         \begin{alignat*}{2}
@@ -161,9 +161,57 @@ Let's practice induction by proving the following few theorems.
                                     &= 2 \cdot 2^{k + 1} - 1 &&\text{ using some basic algebra} \\
                                     &= 2^{k + 2} - 1 &&\text{ using some basic algebra}.
         \end{alignat*}
-        So, we get $\displaystyle \sum_{i = 0}^{k + 1}2^i = 2^{k + 1} - 1$, as desired.
+        So, we get $\sum_{i = 0}^{k + 1}2^i = 2^{k + 1} - 1$, as desired.
     \end{case}
     Therefore, we can conclude $\pn*{\forall n \in \N}\pn*{\sum_{i = 0}^{n}2^i = 2^{n + 1} - 1}$.
+\end{proof}
+
+\begin{example}
+    Every natural number is either even or odd.
+\end{example}
+\begin{proof}
+    We will prove the claim by using \emph{strong} induction on $\N$.
+    \begin{case}[Base Case]
+        Firstly, observe that $0 = 2 \cdot 0$ by definition;
+        since $0 \in \N$, we now know that $0$ is even.\\
+        Secondly, observe that $1 = 0 + 1 = 2 \cdot 0 + 1$ by definition;
+        since $0 \in \N$, we also know that $1$ is odd.
+    \end{case}
+    \begin{case}[Inductive Step]
+        Let $k \in \N$ and assume, for any $\ell \leq k$, that $\ell$ is either even or odd.
+        In particular, $k$ is either even or odd.
+        \begin{case}[Case 1]
+            If $k$ is even, then there is an $\ell \in \N$ such that $k = 2\ell$.
+            But then $k + 1 = 2\ell + 1$, so $k + 1$ is odd.
+        \end{case}
+        \begin{case}[Case 2]
+            If $k$ is odd, then there is an $\ell \in \N$ such that $k = 2\ell + 1$.
+            Similarly then,
+            we can see that $k + 1 = \pn*{2\ell + 1} + 1 = 2\ell + \pn*{1 + 1} = 2\ell + 2 = 2\pn*{\ell + 1}$,
+            so that $k + 1$ is even.
+        \end{case}
+        Thus, from these two cases, $k + 1$ is either even or odd.
+    \end{case}
+    Therefore, $\pn*{\forall n \in \N}\pn*{\pn*{n \text{ is even}} \join \pn*{n \text{ is odd}}}$.
+\end{proof}
+
+\begin{lemma}
+    For any $n, m \in \N$, if $n = 2m$ or $n = 2m + 1$, then $n \geq m$.
+\end{lemma}
+\begin{proof}
+    There are two cases.
+    \begin{case}[Case 1]
+        Hypothetically, suppose that $\ell > k$.
+        We would then have $k = 2\ell > 2k = k + k \geq k$,
+        so that $k > k$, implying $k \neq k$. \contradiction
+        This shows us $\ell \leq k$.
+    \end{case}
+    \begin{case}[Case 2]
+        Again, assume towards a contradiction that $\ell > k$.
+        This would mean $k = 2\ell + 1 > 2k + 1 > 2k = k + k \geq k$,
+        so $k > k$, implying $k \neq k$. \contradiction
+        Thus, mirroring the first case, we must have $\ell \leq k$.
+    \end{case}
 \end{proof}
 
 \section{Strong Induction}
@@ -172,16 +220,23 @@ Let's practice induction by proving the following few theorems.
     \[
         \pn*{\forall n \in \N}\pn*{\varphi(n)}
         \iff \pn*{\bigmeet_{i = 0}^{r}\varphi(r)}
-        \meet \pn*{\forall k \in \N}\pn*{\pn*{\forall \ell \leq k}\pn*{\varphi(\ell)} \implies \varphi(k + 1)}.
+        \meet \pn*{\forall k \in \N}\pn*{\pn*{\forall \ell \leq k}\pn*{\varphi(\ell)} \implies \varphi(\ell + 1)}.
     \]
 \end{theorem}
+\begin{note}
+    An equivalent way to state the \emph{inductive hypothesis} for a proof involving strong induction
+    is to say that we assume $\pn*{\forall \ell < k}\pn*{\varphi(\ell)}$,
+    and then our task in the inductive step is to prove $\varphi(k)$.
+    % This is entirely equivalent to assuming $\pn*{\forall \ell \leq k}\pn*{\varphi(\ell)}$
+    % and then proving $\varphi(k + 1)$, as written in \autoref{thm:stronginduction}.
+\end{note}
 
-\begin{lemma}
+\begin{example}
     $\pn*{\forall n \in \N}\pn*{\exists r \in \N}\pn*{\exists c_0, \dots c_r \in \set*{0, 1}}\pn*{n = \sum_{i = 0}^{r}c_i 2^i}$;
     \ie every natural number admits a binary representation.
-\end{lemma}
+\end{example}
 \begin{proof}
-    We will prove the claim by using \autoref{thm:stronginduction}.
+    We will prove the claim by using \emph{strong} induction on $\N$.
 \end{proof}
 
 \end{document}
