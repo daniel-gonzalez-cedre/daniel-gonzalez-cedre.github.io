@@ -148,10 +148,10 @@
             \end{tabular}
         \end{table}
     \end{minipage}%
-    \begin{minipage}[t]{.1\linewidth}
+    \begin{minipage}[t]{.07\linewidth}
         ~
     \end{minipage}%
-    \begin{minipage}[t]{.5\linewidth}
+    \begin{minipage}[t]{.53\linewidth}
         \begin{table}[H]
             \centering
             \label{tab:rulesinference}
@@ -161,7 +161,7 @@
                 \thead{Deduction \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Conditional \\ Introduction} & \thead[l]{If by assuming $p$ \\ we are able to derive $q$,\\ then we can derive $p \rightarrow q$} & \thead[l]{$\begin{array}{c} p \implies q \\ \cline{1-1} p \rightarrow q\end{array}$} \\ \hline
                 \thead{Modus Ponens} & \thead[l]{If we know $p \rightarrow q$ \\  and we have $p$,\\ then we can derive $q$} & \thead[l]{$\begin{array}{l} p \\ p \rightarrow q \\ \cline{1-1} q \end{array}$} \\ \hline
                 \thead{Modus Tollens} & \thead[l]{If we know $p \rightarrow q$ \\ and we have $\neg q$,\\ then we can derive $\neg p$} & \thead[l]{$\begin{array}{l} \neg q \\ p \rightarrow q \\ \cline{1-1} \neg p \end{array}$} \\ \hline
-                \thead{Reductio \\ ad Absurdum \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Proof by \\ Contradiction} & \thead[l]{If by assuming $p$ \\ we can derive both $q$ and $\neg q$,\\ then we can derive $\neg p$} & \thead[l]{$\begin{array}{l} p \implies q \\ p \implies \neg q \\ \cline{1-1} \neg p \end{array}$} \\ \hline
+                \thead{Reductio \\ ad Absurdum \\ -- -- -- -- -- -- -- -- -- -- \\ \aka Proof by \\ Contradiction} & \thead[l]{If by assuming $p$ \\ we can derive both $q$ and $\neg q$,\\ then we can derive $\neg p$} & \thead[l]{$\begin{array}{l} \neg p \implies q \\ \neg p \implies \neg q \\ \cline{1-1} p \end{array}$} \\ \hline
             \end{tabular}
         \end{table}
     \end{minipage}
