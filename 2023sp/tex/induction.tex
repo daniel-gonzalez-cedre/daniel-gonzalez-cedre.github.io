@@ -195,7 +195,7 @@ Let's practice induction by proving the following few theorems.
     Therefore, $\pn*{\forall n \in \N}\pn*{\pn*{n \text{ is even}} \join \pn*{n \text{ is odd}}}$.
 \end{proof}
 
-\begin{lemma}
+\begin{lemma}\label{lem:order}
     For any $n, m \in \N$, if $n = 2m$ or $n = 2m + 1$, then $n \geq m$.
 \end{lemma}
 \begin{proof}
@@ -240,6 +240,50 @@ Let's practice induction by proving the following few theorems.
 \end{example}
 \begin{proof}
     We will prove the claim by using \emph{strong} induction on $\N$.
+    \begin{case}[Base Case]
+        Consider $r \defn 0$ and $c_0 \defn 0$ and observe that
+        $0 = 0 \cdot 1 = 0 \cdot 2^{0} = \sum_{i = 0}^{0}c_i 2^i = \sum_{i = 0}^{r}c_i 2^i$.
+    \end{case}
+    \begin{case}[Inductive Step]
+        Let $k \in \N$ and assume that
+        $\pn*{\forall \ell \leq k}\pn*{\exists r \in \N}\pn*{\exists c_0, \dots c_r \in \set*{0, 1}}
+        \pn*{\ell = \sum_{i = 0}^{r}c_i 2^i}$.
+        Since $k$, being a natural number, must be either even or odd, we can consider the following two cases.
+        \begin{case}[Case 1]
+            If $k$ is even, then we know $k = 2 \ell$ for some $\ell \in \N$ by definition.
+            This implies that $\ell \leq k$ by \autoref{lem:order},
+            so we then we can apply the \emph{inductive hypothesis} to get $\ell = \sum_{i = 0}^{r}c_i 2^i$
+            for some $r \in \N$ and some $c_0, \dots c_r \in \set*{0, 1}$.
+            We can then see that
+            \begin{alignat*}{2}
+                k + 1 = 2\ell + 1
+                      &= 1 + 2 \sum_{i = 0}^{r}c_i 2^i &&\text{ by the \emph{inductive hypothesis}}\\
+                      &= 1 + \sum_{i = 0}^{r}c_i 2^{i + 1} &&\text{ by distribution and the fact that } 2 \cdot 2^i = 2^{i + 1}\\
+                      &= 1 + \sum_{i = 1}^{r + 1}c_{i - 1} 2^i &&\text{ by shifting our indices of summation}\\
+                      &= 1 \cdot 2^0 + \sum_{i = 1}^{r + 1}c_{i - 1} 2^i \cdot 2^0 &&\text{ because } 1 = 2^0
+            \end{alignat*}
+            So, if we let $\tilde{r} \defn r + 1$, $\tilde{c}_0 \defn 1$, and $\tilde{c}_i \defn c_{i - 1}$,
+            we can conclude $k + 1 = \sum_{i = 0}^{\tilde{r}}\tilde{c}_i 2^i$.
+            % with the observation that $\tilde{r} \in \N$ and $\tilde{c}_0, \dots \tilde{c}_r \in \set*{0, 1}$.
+        \end{case}
+        \begin{case}[Case 2]
+            If $k$ is odd, then we know $k = 2 \ell + 1$ for some $\ell \in \N$ by definition.
+            \autoref{lem:order} then tells us that $\ell \leq k$,
+            so again we know that $\ell = \sum_{i = 0}^{r}c_i 2^i$
+            for some $r \in \N$ and some $c_0, \dots c_r \in \set*{0, 1}$
+            by the \emph{inductive hypothesis}.
+            We now observe that
+            \begin{alignat*}{2}
+                k + 1 = \pn*{2\ell + 1} + 1 = 2\ell + 2 = 2^2 \ell
+                      &= 2^2 \sum_{i = 0}^{r}c_i 2^i &&\text{ by the \emph{inductive hypothesis}}\\
+                      &= \sum_{i = 0}^{r}c_i 2^{i + 2} &&\text{ by distribution and } 2^2 2^i = 2^{i + 2}\\
+                      &= 0 + 0 + \sum_{i = 2}^{r + 2}c_{i - 2}2^i &&\text{ by shifting our indices}
+            \end{alignat*}
+            So, if we let $\tilde{r} \defn r + 2$, $\tilde{c}_0 \defn 0$, $\tilde{c}_1 \defn 0$, and $\tilde{c}_i \defn c_{i - 1}$,
+            we can conclude $k + 1 = \sum_{i = 0}^{\tilde{r}}\tilde{c}_i 2^i$.
+        \end{case}
+    \end{case}
+    Therefore, every natural number has a binary representation.
 \end{proof}
 
 \end{document}
