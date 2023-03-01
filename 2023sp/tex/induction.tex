@@ -262,9 +262,9 @@ Let's practice induction by proving the following few theorems.
                       &= 1 + \sum_{i = 1}^{r + 1}c_{i - 1} 2^i &&\text{ by shifting our indices of summation}\\
                       &= 1 \cdot 2^0 + \sum_{i = 1}^{r + 1}c_{i - 1} 2^i \cdot 2^0 &&\text{ because } 1 = 2^0
             \end{alignat*}
-            So, if we let $\tilde{r} \defn r + 1$, $\tilde{c}_0 \defn 1$, and $\tilde{c}_i \defn c_{i - 1}$,
-            we can conclude $k + 1 = \sum_{i = 0}^{\tilde{r}}\tilde{c}_i 2^i$.
-            % with the observation that $\tilde{r} \in \N$ and $\tilde{c}_0, \dots \tilde{c}_r \in \set*{0, 1}$.
+            So, if we let $\tilde{r} \defn r + 1$, $\tilde{c}_0 \defn 1$,
+            and $\tilde{c}_i \defn c_{i - 1}$ for $i \in \set*{1, \dots \tilde{r}}$,
+            we find $k + 1 = \sum_{i = 0}^{\tilde{r}}\tilde{c}_i 2^i$.
         \end{case}
         \begin{case}[Case 2]
             If $k$ is odd, then we know $k = 2 \ell + 1$ for some $\ell \in \N$ by definition.
@@ -279,8 +279,9 @@ Let's practice induction by proving the following few theorems.
                       &= \sum_{i = 0}^{r}c_i 2^{i + 2} &&\text{ by distribution and } 2^2 2^i = 2^{i + 2}\\
                       &= 0 + 0 + \sum_{i = 2}^{r + 2}c_{i - 2}2^i &&\text{ by shifting our indices}
             \end{alignat*}
-            So, if we let $\tilde{r} \defn r + 2$, $\tilde{c}_0 \defn 0$, $\tilde{c}_1 \defn 0$, and $\tilde{c}_i \defn c_{i - 1}$,
-            we can conclude $k + 1 = \sum_{i = 0}^{\tilde{r}}\tilde{c}_i 2^i$.
+            So, if we let $\tilde{r} \defn r + 2$, $\tilde{c}_0 \defn 0$, $\tilde{c}_1 \defn 0$,
+            and $\tilde{c}_i \defn c_{i - 1}$ for $i \in \set*{2, \dots \tilde{r}}$,
+            we find $k + 1 = \sum_{i = 0}^{\tilde{r}}\tilde{c}_i 2^i$.
         \end{case}
     \end{case}
     Therefore, every natural number has a binary representation.

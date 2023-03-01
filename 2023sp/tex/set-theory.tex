@@ -266,10 +266,10 @@ The language of set theory will have two predicate symbols, defined below.
                 &\iff (b \in x \union y) \meet \pn*{(b \in x) \meet (b \in y)} &&\text{by definition} \\
                 &\iff \pn*{(b \in x) \join (b \in y)} \meet \pn*{(b \in x) \meet (b \in y)} &&\text{by definition of } x \union y \\
                 &\iff \pn*{\pn*{(b \in x) \join (b \in y)} \meet (b \in x)} \meet (b \in y) &&\text{by Associativity} \\
-                &\iff \pn*{\pn*{(b \in x) \meet (b \in x)} \meet \pn*{(b \in y) \meet (b \in x)}} \meet (b \in y)~~~~&&\text{by Distributivity} \\
-                &\iff \pn*{(b \in x) \meet \pn*{(b \in y) \meet (b \in x)}} \meet (b \in y) &&\text{by Idempotency} \\
-                &\iff \pn*{(b \in x) \meet \pn*{(b \in x) \meet (b \in y)}} \meet (b \in y) &&\text{by Commutativity} \\
-                &\iff \pn*{\pn*{(b \in x) \meet (b \in x)} \meet (b \in y)} \meet (b \in y) &&\text{by Associativity} \\
+                &\iff \pn*{\pn*{(b \in x) \meet (b \in x)} \join \pn*{(b \in y) \meet (b \in x)}} \meet (b \in y)~~~~&&\text{by Distributivity} \\
+                &\iff \pn*{(b \in x) \join \pn*{(b \in y) \meet (b \in x)}} \meet (b \in y) &&\text{by Idempotency} \\
+                &\iff \pn*{(b \in x) \join \pn*{(b \in x) \meet (b \in y)}} \meet (b \in y) &&\text{by Commutativity} \\
+                &\iff \pn*{\pn*{(b \in x) \join (b \in x)} \meet (b \in y)} \meet (b \in y) &&\text{by Associativity} \\
                 &\iff \pn*{(b \in x) \meet (b \in y)} \meet (b \in y) &&\text{by Idempotency} \\
                 &\iff (b \in x) \meet \pn*{(b \in y) \meet (b \in y)} &&\text{by Associativity} \\
                 &\iff (b \in x) \meet (b \in y) &&\text{by Idempotency} \\
