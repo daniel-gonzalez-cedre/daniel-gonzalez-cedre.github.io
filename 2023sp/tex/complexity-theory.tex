@@ -1,0 +1,146 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+
+\title{Discrete Mathematics}
+\author{Daniel Gonzalez Cedre}
+\date{University of Notre Dame \\ Spring of 2023}
+\maketitle
+
+% # \renewcommand\listoflistingscaption{List of Algorithms}
+% # \listoflistings
+
+\setcounter{chapter}{4}
+\chapter{Complexity Theory}
+
+\section{Recursion}
+\begin{idea}[Recurrence Relation]
+    A \emph{recurrence relation} is a sequence $\bracket{x_i}_{i \in \N}$
+    over some set of values (for our purposes, usually $\N$ or $\Z$)
+    that is useful for \emph{modeling} some physical phenomenon or process (such as an algorithm).
+    Even if the phenomena being modeled would not be immediately described as ``recursive'' in nature,
+    recurrence relations can often be used to give a recursive \emph{interpretation}
+    that is amenable to formal analysis using induction.
+\end{idea}
+
+\begin{definition}[Fibonacci Sequence]
+    We define the Fibonacci sequence $\bracket{\mathcal{F}_i}_{i \in \N}$ by the following recursive construction.
+    \begin{align*}
+        \mathcal{F}_0 &\defn 0\\
+        \mathcal{F}_1 &\defn 1\\
+        \mathcal{F}_n &\defn \mathcal{F}_{n - 1} + \mathcal{F}_{n - 2}
+            ~~~~\text{ if } n \in \N \setminus \set*{0, 1}
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Simple Search]
+    ~
+
+\begin{center}
+\begin{minipage}{.5\linewidth}
+\begin{figure}[H]
+\renewcommand\figurename{Algorithm}
+\begin{minted}[
+    linenos,
+    mathescape,
+    fontsize=\footnotesize,
+    % bgcolor=bg,
+]{python}
+# recursively searches through the list L for the element x
+def simple_search(L: list, x) -> bool:
+    if len(L) == 0:
+        return False
+    return (L[0] == x) or search(L[1:], x)
+\end{minted}
+\caption{Simple Search}\label{alg:simplesearch}
+\end{figure}
+\end{minipage}
+\end{center}
+
+\end{definition}
+
+\begin{definition}[Bubble Sort]
+    ~
+
+\begin{center}
+\begin{minipage}{.5\linewidth}
+\begin{figure}[H]
+\renewcommand\figurename{Algorithm}
+\begin{minted}[
+    linenos,
+    mathescape,
+    fontsize=\footnotesize,
+    % bgcolor=bg,
+]{python}
+# recursively propagate the largest element to the end of the list
+def bubble(L: list) -> list:
+    if L[0] > L[1]:
+        L = [L[1], L[0]] + L[2:]  # swap the first two elements of the list
+    if len(L) == 2:
+        return L
+    else:
+        return [L[0]] + bubble(L[1:])
+
+# recursively sorts the list L
+def bubble_sort(L: list) -> list:
+    if len(L) <= 1:
+        return L
+    else:
+        L = bubble(L)
+        return bubble_sort(L[:-1]) + [L[-1]]
+\end{minted}
+\caption{Bubble Sort}\label{alg:bubblesort}
+\end{figure}
+\end{minipage}
+\end{center}
+
+\end{definition}
+
+\begin{definition}[Merge Sort]
+    ~
+
+\begin{center}
+\begin{minipage}{.5\linewidth}
+\begin{figure}[H]
+\renewcommand\figurename{Algorithm}
+\begin{minted}[
+    linenos,
+    mathescape,
+    fontsize=\footnotesize,
+    % bgcolor=bg,
+]{python}
+# recursively merge the sorted lists L and R into one sorted list
+def merge_sort(L: list, R: list) -> list:
+    raise NotImplementedError
+
+# recursively sorts the list L
+def merge_sort(L: list) -> list:
+    n = len(L)
+    if n <= 1:
+        return L
+    else:
+        left = merge_sort(L[:n // 2])
+        right = merge_sort(L[n // 2:])
+        return merge(left, right)
+\end{minted}
+\caption{Merge Sort}\label{alg:mergesort}
+\end{figure}
+\end{minipage}
+\end{center}
+
+\end{definition}
+
+\begin{intuition}[Function]
+    We use the notation $f: X \to Y$ to denote that $f$ is a function
+    whose \emph{domain} is $X$ and whose \emph{codomain} is $Y$,
+    meaning that $f$ takes inputs from $X$ and produces values in $Y$.
+    When we take an element $x \in X$ and \emph{apply} $f$ to $x$,
+    we denote the produced result by the notation $f(x)$, which satisfies $f(x) \in Y$.
+    The defining characteristic of functions is, intuitively,
+    that they \emph{must} produce \emph{exactly one} output for any valid input.
+    We will formally define exactly what a function is in the next chapter.
+\end{intuition}
+
+\end{document}
