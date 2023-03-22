@@ -22,7 +22,7 @@
     that is useful for \emph{modeling} some physical phenomenon or process (such as an algorithm).
     Even if the phenomena being modeled would not be immediately described as ``recursive'' in nature,
     recurrence relations can often be used to give a recursive \emph{interpretation}
-    that is amenable to formal analysis using induction.
+    amenable to formal analysis using induction.
 \end{idea}
 
 \begin{definition}[Fibonacci Sequence]
@@ -173,7 +173,7 @@ def merge_sort(L: list) -> list:
 \end{intuition}
 
 \begin{definition}[Unique Existential Quantification]
-    If $\varphi$ is a {\wff}, we use the notation $\exists! x \varphi(x)$ to denote that
+    If $\varphi$ is a {\wff}, we use the notation $\exists! x \pn*{\varphi(x)}$ to denote that
     \emph{there exists a unique} $x$ that satisfies $\varphi$.
     Formally,
     \[
@@ -182,13 +182,17 @@ def merge_sort(L: list) -> list:
 \end{definition}
 
 \begin{definition}[Function]
-    We write $f: X \to Y$ to mean that $f$ is a function with domain $X$ and co-domain $Y$ \iffbydefn
+    We write $f: X \to Y$ to mean that $f$ is a function with domain $X$ and co-domain $Y$ {\ifandonlyif}
     \begin{enumerate}
         \item[I.]
             $f \subseteq X \times Y$
         \item[II.]
             $\pn*{\forall x \in X}\pn*{\exists ! y \in Y}\pn*{(x, y) \in f}$
     \end{enumerate}
+\end{definition}
+
+\begin{definition}[List]
+    A 
 \end{definition}
 
 \section{Asymptotic Analysis}
@@ -221,7 +225,12 @@ def merge_sort(L: list) -> list:
         g: \R \to \R~~\text{ defined by }~~g(x) &\defn 2x + 5\\
         h: \R \to \R~~\text{ defined by }~~h(x) &\defn x^2
     \end{align*}
-    Let's show that
+    \begin{proof}[Proof 1]
+    \end{proof}
+    \begin{proof}[Proof 2]
+    \end{proof}
+    \begin{proof}[Proof 3]
+    \end{proof}
 \end{example}
 
 \end{document}
