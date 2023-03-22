@@ -1,0 +1,70 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+
+\title{Discrete Mathematics}
+\author{Daniel Gonzalez Cedre}
+\date{University of Notre Dame \\ Spring of 2023}
+\maketitle
+
+\setcounter{chapter}{5}
+\chapter{Cardinality}
+
+\section{Functions}
+
+\begin{definition}[Injectivity]
+    We say that a function $f: X \to Y$ is an \emph{injection}
+    \iffbydefn either of the following two statements holds:
+    \begin{enumerate}
+        \item[\textsc{i.}]
+            $\pn*{\forall x_1 \in X}\pn*{\forall x_2 \in X}\pn*{x_1 \neq x_2 \implies f(x_1) \neq f(x_2)}$
+        \item[\textsc{ii.}]
+            $\pn*{\forall x_1 \in X}\pn*{\forall x_2 \in X}\pn*{f(x_1) = f(x_2) \implies x_1 = x_2}$
+    \end{enumerate}
+    Notice that these two statements are equivalent
+    since the leading quantifiers are identical
+    and the unquantified implications are contrapositives of each other,
+    and we know from the propositional logic that $\pn*{p \rightarrow q} \iff \pn*{\neg q \rightarrow \neg p}$.
+\end{definition}
+
+\begin{definition}[Surjectivity]
+    We say that a function $f: X \to Y$ is a \emph{surjection}
+    \iffbydefn $\pn*{\forall y \in Y}\pn*{\exists x \in X}\pn*{f(x) = y}$.
+\end{definition}
+
+\begin{definition}[Bijectivity]
+    We say that a function $f: X \to Y$ is a \emph{bijection}
+    \iffbydefn $f$ is both injective and surjective.
+\end{definition}
+
+\begin{example}
+    Consider the function $f: \Z \to \Z$ given by $f(z) = z - 1$.
+    This function is a bijection.
+    \begin{proof}[Proof (injectivity)]
+        Let $x_1, x_2 \in \Z$ and suppose $f(x_1) = f(x_2)$.
+        Then, we can observe
+        \begin{alignat*}{3}
+            f(x_1) = f(x_2) &\implies & x_1 - 1 &= x_2 - 1 &~~&\text{ by definition}\\
+                            &\implies & x_1 &= x_2 &&\text{ by basic algebra}
+        \end{alignat*}
+        Therefore, $f$ is an injection.
+    \end{proof}
+    \begin{proof}[Proof (surjectivity)]
+        Let $y \in \Z$ and note $y + 1 \in \Z$.
+        Since $f(y + 1) = (y + 1) - 1 = y$ by definition, $f$ is surjective.
+    \end{proof}
+\end{example}
+
+% ALGORITHM
+% \begin{algorithm}[caption={placeholder}, label={alg:placeholder}]
+%     input:  int list $\brackets*{x_1, \dots x_n}$ with $n \geq 2$
+%     output: int list
+%     begin
+%         for $x$ in $\brackets*{x_1, \dots x_n}$:
+%             do something
+%         return result
+%     end
+% \end{algorithm}
+\end{document}
