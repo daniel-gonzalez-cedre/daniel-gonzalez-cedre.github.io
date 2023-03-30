@@ -1,0 +1,64 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+\begin{center}
+    \textsc{\huge Problem Set 7}\\
+    \textsc{Discrete Mathematics}\\
+    \color{gruvred}{Due: $7$\textsuperscript{th} of April, $2023$}
+\end{center}
+
+\begin{enumerate}
+    % \item
+    %     For this problem, consider three functions $f, g, h: \R \to \R$.
+    %     \begin{enumerate}
+    %         \item
+    %             Show that $f \in \O{h} \implies k f \in \O{h}$ for any $k \in \R$.
+    %         \item
+    %             Show that $f \in \O{h} \implies f g \in \O{h g}$.
+    %     \end{enumerate}
+    \item
+        For this problem, let $A$, $B$, and $C$ be sets and consider two functions $f: A \to B$ and $g: B \to C$.
+        \begin{enumerate}
+            \item
+                Show that, if $f$ and $g$ are both injections, then $g \compose f$ is an injection.
+            \item
+                Show that, if $f$ and $g$ are both surjections, then $g \compose f$ is a surjection.
+            \item
+                Show that, if $f$ and $g$ are both bijections, then $g \compose f$ is a bijection.
+        \end{enumerate}
+    \item
+        Prove that every finite set is countable.
+    % \item
+    %     Let $A$ be countable and $F$ be finite.
+    %     \begin{enumerate}
+    %         \item
+    %             Show that $A \intersect F$ is finite.
+    %         \item
+    %             Show that $A \intersect F$ is countable.
+    %     \end{enumerate}
+    \item
+        Let $A$ and $B$ be countable sets.
+        \begin{enumerate}
+            \item
+                Show that $A \intersect B$ is countable.
+            \item
+                Show that $A \union B$ is countable.
+        \end{enumerate}
+    \item
+        Suppose $A_0, A_1, \dots A_i, \dots$ is a countably-infinite collection of countable sets.
+        Show that $\displaystyle\Union_{i = 0}^{\infty}A_i$ is countable.
+    \item
+        Let $X \defn \set*{x_0, \dots x_{k - 1}}$ be a set of size $k \in \N$.
+        How many strings of length $n \in \N$ over $X$ are there?
+        Prove it.
+    \item
+        Recall that $\cardinality{\N} = \aleph_0$.
+        Is the cardinality of its power set $\power{\N}$ lesser, greater, or equal?
+        Prove your answer.
+    \item
+        Prove the set of infinite strings over the Hawaiian alphabet
+        $\mathscr{H} \defn \set*{a, e, i, o, u, h, k, l, m, n, p, w}$ is uncountable.
+\end{enumerate}
+\end{document}
