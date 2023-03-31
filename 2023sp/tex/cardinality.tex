@@ -171,4 +171,28 @@
     then there exists a bijection $h: A \bijection B$.
 \end{theorem}
 
+\begin{definition}[Sequences]
+    A \emph{finite sequence} of length $n \in \N$ over a set $X$ is a function $f: n \to X$.
+    Here, the length of the sequence is given by its \emph{domain} $n = \set*{0, 1, \dots n - 1}$,
+    and the individual elements in the sequence are taken from $X$.
+
+    An \emph{infinite sequence} over a set $X$ is a function $f: \N \to X$.
+    Since the domain here is infinite, we have a place in the sequence for each natural number,
+    so our sequence has infinite length.
+
+    Here, the inputs to the function act as indices for the entries in the sequence,
+    and the entry itself is given by the output of the function at that index.
+    So, the first entry is given by $f(0)$, the second by $f(1)$, \etc
+
+    Sequences are sometimes referred to as \emph{strings},
+    evoking the similarity between list data structures in programming languages
+    (\eg arrays in \texttt{C}, lists in \texttt{Python})
+    and finite sequences.
+    When you access the third entry of a list in \texttt{Python},
+    you might use syntax like \texttt{L[2]}.
+    Similarly, the third entry in a mathematical sequence is given by $f(2)$.
+    Since \texttt{String} data types in many languages are modeled using lists (\eg of \texttt{char} types),
+    it is natural to associate strings with sequences.
+\end{definition}
+
 \end{document}
