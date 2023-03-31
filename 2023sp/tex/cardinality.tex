@@ -25,6 +25,12 @@
     \end{enumerate}
 \end{definition}
 
+\begin{definition}[Composition]
+    Given two functions $f: A \to B$ and $g: B \to C$,
+    the \emph{composition} of $g$ with $f$ is another function $g \compose f: A \to C$
+    given by $(g \compose f)(a) \defn g\pn*{f\pn*{a}}$ for all $a \in A$.
+\end{definition}
+
 \begin{definition}[Injectivity]
     We say that a function $f: X \to Y$ is an \emph{injection}
     \iffbydefn either of the following two statements holds:
@@ -65,8 +71,7 @@
         f(x_1) = f(x_2) &\implies & x_1 - 1 &= x_2 - 1 &~~&\text{ by definition}\\
                         &\implies & x_1 &= x_2 &&\text{ by basic algebra}
     \end{alignat*}
-    Therefore, $f$ is an injection.
-
+    Therefore, $f$ is an injection.\\
     Now, let $y \in \Z$ and note $y + 1 \in \Z$.
     Since $f(y + 1) = (y + 1) - 1 = y$ by definition, we have that $f$ is surjective.
 
