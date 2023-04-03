@@ -1,0 +1,149 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+
+\title{Discrete Mathematics}
+\author{Daniel Gonzalez Cedre}
+\date{University of Notre Dame \\ Spring of 2023}
+\maketitle
+
+\setcounter{chapter}{6}
+\chapter{Number Theory}
+
+\section{Ancient Greece}
+
+\begin{definition}[Divisibility]
+    Given two integers $a, b \in \Z$,
+    we say $a \div b$ \iffbydefn $\pn*{\exists k \in \Z}\pn*{ak = b}$.
+    We read $a \div b$ as \emph{$a$ divides $b$}, meaning $\sfrac{b}{a} \in \Z$.
+\end{definition}
+
+\begin{lemma}[Initial object]
+    If $x \in \Z$, then $1 \div x$.
+\end{lemma}
+\begin{proof}
+    Let $x \in \Z$ and observe that $1 \cdot x = x$.
+    Therefore, $1 \div x$ by definition.
+\end{proof}
+
+\begin{lemma}[Terminal object]
+    If $x \in \Z$, then $x \div 0$.
+\end{lemma}
+\begin{proof}
+    Let $x \in \Z$ and observe that $0 \cdot x = 0$.
+    Therefore, $x \div 0$ by definition.
+\end{proof}
+
+\begin{lemma}[Reflexivity]
+    $\pn*{\forall x \in \Z}\pn*{x \div x}$.
+\end{lemma}
+
+\begin{lemma}[Anti-Symmetry]
+    $\pn*{\forall x \in \Z}\pn*{x \div x}$.
+\end{lemma}
+\begin{proof}
+    Let $x \in \Z$ and observe that $1 \cdot x = x$.
+    Therefore, $x \div x$ by definition.
+\end{proof}
+
+\begin{lemma}[Divisibility is a Partial Order]\label{lem:divpartial}
+    The following statements hold for all $a, b, c \in \Z$:
+    \begin{enumerate}
+        \item[\textsc{i}.]
+            $a \div a$
+            \begin{proof}
+                Let $a \in \Z$ and observe that $1 \cdot a = a$.
+                Therefore, $a \div a$ by definition.
+            \end{proof}
+        \item[\textsc{ii}.]
+            $\pn*{a \div b} ~\meet~ \pn*{b \div a} \implies \abs{a} = \abs{b}$
+            \begin{proof}
+                Let $a, b \in Z$ and suppose $a \div b$ and $b \div a$.
+                Then, there exist $k_1, k_2 \in \Z$ such that $ak_1 = b$ and $bk_2 = a$ by definition.
+                But then $bk_2 = \pn*{ak_1}k_2 = a$, so $ak_1k_2 = a$, yielding $k_1k_2 = 1$.
+                Since the only integers with multiplicative inverses are $1$ and $-1$,
+                we have $\set*{k_1, k_2} \subseteq \set*{1, -1}$,
+                so $a = b$ or $a = -b$.
+                Thus, $\abs{a} = \abs{b}$.
+            \end{proof}
+        \item[\textsc{iii}.]
+            $\pn*{a \div b ~\meet~ b \div c} \implies a \div c$
+            \begin{proof}
+                Let $a, b, c \in Z$ and suppose $a \div b$ and $b \div c$.
+                Then, there exist $k_1, k_2 \in \Z$ such that $ak_1 = b$ and $bk_2 = c$.
+                This yields $ak_1k_2 = c$.
+                Since $k_1, k_2 \in \Z$,
+                we observe $k_1k_2 \in \Z$ and conclude $a \divides c$ by definition.
+            \end{proof}
+    \end{enumerate}
+\end{lemma}
+
+\newpage
+
+\begin{lemma}[Useful facts]\label{lem:divalgebra}
+    The following statements hold for all $a, b, c \in \Z$:
+    \begin{enumerate}
+        \item[\textsc{i}.]
+            $\pn*{a \div b ~\meet~ a \div c} \implies a \div b + c$
+        \item[\textsc{ii}.]
+            $a \div b \implies \pn*{\forall \ell \in \Z}\pn*{a \div b\ell}$
+        \item[\textsc{iii}.]
+            $a \div b \implies \abs{a} \leq \abs{b}$
+    \end{enumerate}
+    The proofs of the above lemmata are left as exercises to the reader.
+\end{lemma}
+
+\begin{corollary}
+    Given $a, b, c \in \Z$, if $a \div b$ and $a \div c$,
+    then $\pn*{\forall \ell_1, \ell_2 \in \Z}\pn*{a \div \ell_1b + \ell_2c}$.
+\end{corollary}
+\begin{proof}
+    Let $a, b, c \in \Z$ and suppose $a \div b$ and $a \div c$.
+    Let $\ell_1, \ell_2 \in \Z$.
+    From \autoref{lem:divalgebra}, we know $a \div b\ell_1$ and $a \div c\ell_2$,
+    implying $a \div b\ell_1 + c\ell_2$ by \autoref{lem:divalgebra}.
+\end{proof}
+
+\begin{definition}[Prime Numbers]
+    We say that a natural number $p \in \N$ is \emph{prime} \iffbydefn 
+    $(p > 1)$ and $\pn*{\forall n \in \N}\pn*{n \div p \implies n \in \set*{1, p}}$.\\
+    We say $n \in \N$ is \emph{composite} \iffbydefn $n$ is not prime.
+\end{definition}
+
+\begin{lemma}[Fundamental Lemma of Arithmetic]
+    If $n \in \N$ and $n > 1$, then $\pn*{\exists p \in \N}\pn*{p \text{ is prime} \meet p \div n}$.
+\end{lemma}
+
+\begin{theorem}[Fundamental Theorem of Arithmetic]
+    Every natural number greater than $1$ has a \emph{unique} prime factorization.
+    Formally, for every natural number $n \in \N_{\geq 2}$ greater than $1$,
+    there exist \emph{unique, distinct} primes $p_1, \dots p_\ell \in \N_+$
+    with \emph{unique} exponents $k_1, \dots k_\ell \in \N_+$ such that
+    % $\pn*{\forall n \in \N_{\geq 2}}$
+    % $\pn*{\exists! \ell \in \N_+}$
+    % $\pn*{\exists! p_1, \dots p_\ell \in \N_+}$
+    % $\pn*{\exists! k_1, \dots k_\ell \in \N_+}$
+    \begin{enumerate}
+        \item[\textsc{i.}]
+            $\pn*{\forall i, j \in \set*{1, \dots \ell}}\pn*{i \neq j \implies p_i \neq p_j}$
+        \item[\textsc{ii.}]
+            $\pn*{\forall i \in \set*{1, \dots \ell}}\pn*{p_i \text{ is prime}}$
+        \item[\textsc{iii.}]
+            $n = p_1^{k_1} p_2^{k_2} \dots p_\ell^{k_\ell}$.
+    \end{enumerate}
+    % \[
+    %     \pn*{%
+    %         \pn*{\forall i, j \in \set*{1, \dots \ell}}\pn*{i \neq j \implies p_i \neq p_j}
+    %         ~~\meet~~ \pn*{\forall i \in \set*{1, \dots \ell}}\pn*{p_i \text{ is prime}}
+    %         ~~\meet~~ n = \prod_{i = 1}^{\ell}p_i^{k_i}
+    %     }.
+    % \]
+\end{theorem}
+
+\begin{theorem}[Euclid's Theorem]
+    There are infinitely-many prime numbers.
+\end{theorem}
+
+\end{document}
