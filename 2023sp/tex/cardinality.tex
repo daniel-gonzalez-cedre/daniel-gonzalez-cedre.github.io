@@ -80,21 +80,26 @@
 
 \subsection{Invertibility}
 
+\begin{definition}[Identity]
+    For every set $A$, we define its \emph{identity function} $\id_A: A \to A$
+    by $\id_A(a) \defn (a)$ for all $a \in A$.
+\end{definition}
+
 \begin{definition}[Monomorphisms]
     We say that a function $f: A \to B$ is \emph{monic} \iffbydefn
-    $\pn*{\exists g: B \to A}\pn*{g \circ f = id_{A}}$.
+    $\pn*{\exists g: B \to A}\pn*{g \circ f = \id_{A}}$.
     Such $g$ are called \emph{left-inverses} for $f$.
 \end{definition}
 
 \begin{definition}[Epimorphisms]
     We say that a function $f: A \to B$ is \emph{epic} \iffbydefn
-    $\pn*{\exists g: B \to A}\pn*{f \circ g = id_{B}}$.
+    $\pn*{\exists g: B \to A}\pn*{f \circ g = \id_{B}}$.
     Such $g$ are called \emph{right-inverses} for $f$.
 \end{definition}
 
 \begin{definition}[Isomorphisms]
     We say that $f: A \to B$ is an \emph{isomorphism} \iffbydefn
-    $\pn*{\exists g: B \to A}\pn*{g \circ f = id_{A} \meet f \circ g = id_{B}}$.
+    $\pn*{\exists g: B \to A}\pn*{g \circ f = \id_{A} \meet f \circ g = \id_{B}}$.
     We can then say that $g$ is an \emph{inverse} (\aka \emph{two-sided inverse}) for $f$,
     and we then say that $f$ is \emph{invertible}.
 \end{definition}
@@ -103,8 +108,9 @@
     Every surjection has a right-inverse.
 \end{axiom}
 
-\begin{theorem}
-    Let $f: A \to B$ be a function. The following are true:
+\begin{theorem}\label{thm:inverse}
+    Let $A \neq \emptyset$ and $B \neq \emptyset$ and consider $f: A \to B$.
+    The following are true:
     \begin{enumerate}
         \item[\textsc{i.}]
             $f$ is an injection $\iff$ $f$ is a monomorphism.
@@ -141,11 +147,23 @@
 \end{definition}
 
 \begin{corollary}
-    For any sets $A$ and $B$, we have
+    For any nonempty sets $A \neq \emptyset$ and $B \neq \emptyset$, we have
     $\cardinality{A} \leq \cardinality{B} \iff \cardinality{B} \geq \cardinality{A}$.
 \end{corollary}
 \begin{proof}
-    If 
+    Suppose $\cardinality{A} \leq \cardinality{B}$ for nonempty $A$ and $B$.
+    This means we have an injection $\varphi: A \to B$ by definition.
+    Then, by \autoref{thm:inverse}, $\varphi$ is monic,
+    so we know that $\exists \psi: B \to A$ such that $\psi \compose \varphi = \id_A$.
+    Since $\psi$ has a right inverse, it must be epic by definition,
+    so $\psi$ is a surjection by \autoref{thm:inverse}.
+
+    Conversely, suppose $\cardinality{B} \geq \cardinality{A}$ for nonempty $A$ and $B$.
+    Then, there is a surjection $\psi: B \to A$.
+    Since $\psi$ is an epimorphism by \autoref{thm:inverse},
+    we have $\varphi: A \to B$ such that $\psi \compose \varphi = \id_A$.
+    Since $\varphi$ has a left inverse, it must be monic by definition,
+    so $\varphi$ is an injection by \autoref{thm:inverse}.
 \end{proof}
 
 \begin{definition}[Finite Set]
@@ -193,7 +211,7 @@
         $k - x_1$ must be an integer. \contradiction
 
         By the same argument, we also have that $x_2 \geq 0$.
-        Therefore, $2x_1 = f(x_1) = f(x_2) = 2_x2$, so $x_1 = x_2$.
+        Therefore, $2x_1 = f(x_1) = f(x_2) = 2x_2$, so $x_1 = x_2$.
     \end{case}
     \begin{case}[Case 2]
         This case is left as an exercise to the reader.
@@ -221,6 +239,7 @@
     Let's prove that $\cardinality{\N} = \cardinality{\Q}$.
 \end{example}
 \begin{proof}
+    \hl{TODO}
 \end{proof}
 
 \begin{theorem}[Cantor-Shr\"oder-Bernstein]
