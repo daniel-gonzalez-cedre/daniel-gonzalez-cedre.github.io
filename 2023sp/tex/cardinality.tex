@@ -78,6 +78,45 @@
     Since $f$ is both injective and surjective, $f$ is a bijection by definition.
 \end{proof}
 
+\subsection{Invertibility}
+
+\begin{definition}[Monomorphisms]
+    We say that a function $f: A \to B$ is \emph{monic} \iffbydefn
+    $\pn*{\exists g: B \to A}\pn*{g \circ f = id_{A}}$.
+    Such $g$ are called \emph{left-inverses} for $f$.
+\end{definition}
+
+\begin{definition}[Epimorphisms]
+    We say that a function $f: A \to B$ is \emph{epic} \iffbydefn
+    $\pn*{\exists g: B \to A}\pn*{f \circ g = id_{B}}$.
+    Such $g$ are called \emph{right-inverses} for $f$.
+\end{definition}
+
+\begin{definition}[Isomorphisms]
+    We say that $f: A \to B$ is an \emph{isomorphism} \iffbydefn
+    $\pn*{\exists g: B \to A}\pn*{g \circ f = id_{A} \meet f \circ g = id_{B}}$.
+    We can then say that $g$ is an \emph{inverse} (\aka \emph{two-sided inverse}) for $f$,
+    and we then say that $f$ is \emph{invertible}.
+\end{definition}
+
+\begin{axiom}[Axiom of Choice]
+    Every surjection has a right-inverse.
+\end{axiom}
+
+\begin{theorem}
+    Let $f: A \to B$ be a function. The following are true:
+    \begin{enumerate}
+        \item[\textsc{i.}]
+            $f$ is an injection $\iff$ $f$ is a monomorphism.
+        \item[\textsc{ii.}]
+            $f$ is a surjection $\iff$ $f$ is an epimorphism.
+        \item[\textsc{iii.}]
+            $f$ is a bijection $\iff$ $f$ is an isomorphism.
+    \end{enumerate}
+\end{theorem}
+
+\section{Cardinality}
+
 \begin{definition}[Cardinality]
     Let $A$ and $B$ be sets.
     The \emph{cardinality} of a set,
@@ -96,10 +135,18 @@
     \iffbydefn $\exists f: A \to B$ such that $f$ is an surjection.
     In this case, we say that $\cardinality{A} \geq \cardinality{B}$.
 
-    Naturally, we then say that $A$ and $B$ have the \emph{same cardinality}
+    Naturally, we say $A$ and $B$ have the \emph{same cardinality}
     \iffbydefn $\exists f: A \to B$ such that $f$ is a bijection,
-    which we denote by $\cardinality{A} = \cardinality{B}$.
+    denoted $\cardinality{A} = \cardinality{B}$.
 \end{definition}
+
+\begin{corollary}
+    For any sets $A$ and $B$, we have
+    $\cardinality{A} \leq \cardinality{B} \iff \cardinality{B} \geq \cardinality{A}$.
+\end{corollary}
+\begin{proof}
+    If 
+\end{proof}
 
 \begin{definition}[Finite Set]
     We say that a set $A$ is \emph{finite}
@@ -168,6 +215,12 @@
     Therefore, since we found a preimage for $y$ in both cases, $f$ is surjective.
 
     This means $f$ is a bijection, so we can conclude that $\cardinality{\N} = \cardinality{\Z}$.
+\end{proof}
+
+\begin{example}
+    Let's prove that $\cardinality{\N} = \cardinality{\Q}$.
+\end{example}
+\begin{proof}
 \end{proof}
 
 \begin{theorem}[Cantor-Shr\"oder-Bernstein]

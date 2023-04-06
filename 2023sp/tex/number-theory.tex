@@ -46,7 +46,7 @@
                 Therefore, $a \div a$ by definition.
             \end{proof}
         \item[\textsc{ii}.]
-            $\pn*{a \div b} ~\meet~ \pn*{b \div a} \implies \abs{a} = \abs{b}$
+            $\pn*{\pn*{a \div b} \meet \pn*{b \div a}} \implies \abs{a} = \abs{b}$
             \begin{proof}
                 Let $a, b \in Z$ and suppose $a \div b$ and $b \div a$.
                 Then, there exist $k_1, k_2 \in \Z$ such that $ak_1 = b$ and $bk_2 = a$ by definition.
@@ -57,7 +57,7 @@
                 Thus, $\abs{a} = \abs{b}$.
             \end{proof}
         \item[\textsc{iii}.]
-            $\pn*{a \div b ~\meet~ b \div c} \implies a \div c$
+            $\pn*{\pn*{a \div b} \meet \pn*{b \div c}} \implies a \div c$
             \begin{proof}
                 Let $a, b, c \in Z$ and suppose $a \div b$ and $b \div c$.
                 Then, there exist $k_1, k_2 \in \Z$ such that $ak_1 = b$ and $bk_2 = c$.
@@ -73,7 +73,7 @@
     The following statements hold for all $a, b, c \in \Z$:
     \begin{enumerate}
         \item[\textsc{i}.]
-            $\pn*{a \div b ~\meet~ a \div c} \implies a \div b + c$
+            $\pn*{\pn*{a \div b} \meet \pn*{a \div c}} \implies a \div b + c$
         \item[\textsc{ii}.]
             $a \div b \implies \pn*{\forall \ell \in \Z}\pn*{a \div b\ell}$
         \item[\textsc{iii}.]
@@ -93,7 +93,7 @@
 %     implying $a \div b\ell_1 + c\ell_2$ by \autoref{lem:divalgebra}.
 % \end{proof}
 
-\begin{definition}[Prime Numbers]
+\begin{definition}[Primality]
     We say that a natural number $p \in \N$ is \emph{prime} \iffbydefn 
     $(p > 1)$ and $\pn*{\forall n \in \N}\pn*{n \div p \implies n \in \set*{1, p}}$.\\
     We say $n \in \N$ is \emph{composite} \iffbydefn $n$ is not prime.
@@ -138,5 +138,38 @@
 \begin{proof}
     \hl{TODO}
 \end{proof}
+
+\begin{definition}[Greatest Common Divisor]
+    Given two integers $a, b \in \Z$,
+    we say that $g \in \Z$ is the \emph{greatest common divisor}
+    (\aka \emph{greatest common factor})
+    of $a$ and $b$ \iffbydefn
+    \[
+        \pn*{g \div a} \meet \pn*{g \div b} \meet
+        \pn*{\forall h \in \Z}\pn*{\pn*{\pn*{h \div a} \meet \pn*{h \div b}} \implies h \div g}.
+    \]
+    Notice that, since $\pn*{\forall x}\pn*{1 \div x}$,
+    every pair of integers shares a common factor.
+    Since common factors of $a$ and $b$ are bounded above by $\min\set*{a, b}$,
+    that means the set of all common factors of $a$ and $b$ is nonempty and bounded above,
+    so it has a maximal element.
+    Therefore, the greatest common divisor of any two integers always exists.
+\end{definition}
+
+\begin{definition}[Co-Primality]
+    We say that two integers $a, b \in \Z$ are \emph{co-prime} \iffbydefn 
+    their greatest common divisor is $1$.
+\end{definition}
+
+\begin{theorem}[Euclid's Division Theorem]
+    If $a, b \in \Z$, then there exist two \emph{unique} integers $q, r \in \Z$ such that
+    \[
+        a = bq + r
+        \text{ and } 0 \leq r < b.
+    \]
+    Here, $q$ is called the \emph{quotient} when $a$ is divided by $b$,
+    and $r$ is the \emph{remainder}, as illustrated by
+    $\sfrac{a}{b} = q + \sfrac{r}{b}$.
+\end{theorem}
 
 \end{document}
