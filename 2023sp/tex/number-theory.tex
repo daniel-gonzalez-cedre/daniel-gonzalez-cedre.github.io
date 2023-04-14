@@ -172,4 +172,95 @@
     $\sfrac{a}{b} = q + \sfrac{r}{b}$.
 \end{theorem}
 
+\begin{algorithm}[Euclid's Division Algorithm]\label{alg:division}
+    We can find the greatest common divisor of two integers by recursively computing
+    \begin{align*}
+        \gcd\pn*{a, 0} &\defn a \\
+        \gcd\pn*{a, b} &\defn \gcd\pn*{b, r}
+        \begin{aligned}[t]
+            \text{ where } &a = bq + r\\
+            \text{ and } &0 \leq r < b\\
+            \text{ and } &q, r \in \Z.
+        \end{aligned}
+    \end{align*}
+    This algorithm correctly computes the greatest common divisor of two arbitrary integers.
+\end{algorithm}
+
+\newpage
+
+\section{Modular Arithmetic}
+
+\begin{definition}[Modular Congruence]
+    Let $m \in \N_+$ and let $x, y \in \Z$.
+    We say that $\modulo{x}{y}{m} \iffdefn m \divides x - y$.
+    We read the sentence $\congruent{x}{y}{m}$ in English as
+    ``$x$ is congruent to $y$ modulo $m$.''
+    This expresses the idea that $x$ and $y$ have the \emph{same remainder}
+    after division by $m$, as we can see below.
+    \begin{align*}
+        \begin{rcases}
+            x = q_xm + r\\
+            y = q_ym + r
+        \end{rcases}
+            &\iff x - y = \pn*{q_xm + r} - \pn*{q_ym + r} \\
+            &\iff x - y = \pn*{q_x - q_y}m + (r - r) \\
+            &\iff x - y = \pn*{q_x - q_y}m \\
+            &\iff m \divides x - y
+    \end{align*}
+\end{definition}
+
+\begin{exercise}
+    Let $m \in \N_+$ and $w, x, y, z \in \Z$.
+    The following are some useful facts about modular congruence.
+    \begin{enumerate}
+        \item[\textsc{i.}]
+            $\modulo{x}{y}{m} \implies \modulo{x + z}{y + z}{m}$.
+        \item[\textsc{ii.}]
+            $\pn*{\pn*{\modulo{w}{z}{m}} \meet \pn*{\modulo{x}{y}{m}}}
+                \implies \modulo{wx}{yz}{m}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{theorem}[Modular Congruence is an Equivalence Relation]
+    Let $m \in \N_+$ and $x, y, z \in \Z$.
+    The following are true.
+    \begin{enumerate}
+        \item[\textsc{i.}]
+            $\modulo{x}{x}{m}$
+        \item[\textsc{ii.}]
+            $\modulo{x}{y}{m} \implies \modulo{y}{x}{m}$
+        \item[\textsc{iii.}]
+            $\pn*{\pn*{\modulo{x}{y}{m}} \meet \pn*{\modulo{y}{z}{m}}}
+                \implies \modulo{x}{z}{m}$
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Modular Residue Classes]
+    Let $m \in \N_+$ and let $a \in \Z$.
+    The set of solutions to the \emph{linear congruence} $\modulo{x}{a}{m}$ is denoted by
+    \[
+        [a]_m \defn \set*{x \in \Z \suchthat \modulo{x}{a}{m}}.
+    \]
+    Each of these is known as an \emph{equivalence class} of \emph{residues} modulo $m$,
+    indicating that all the integers in that class have remainder congruent to $a$
+    after division by $m$.
+\end{definition}
+
+\begin{definition}[Cyclic Groups]
+    Let $m \in \N_+$.
+    We define the \emph{modular group} (\aka the \emph{cyclic group}) of size $m$ by
+    \[
+        \faktor{\Z}{m\Z} \defn \set*{[x]_m \suchthat x \in \Z},
+    \]
+    and we define \emph{addition}
+    % $+: \pn*{\faktor{\Z}{m\Z} \times \faktor{\Z}{m\Z}} \to \faktor{\Z}{m\Z}$
+    and \emph{multiplication}
+    % $\cdot: \pn*{\faktor{\Z}{m\Z} \times \faktor{\Z}{m\Z}} \to \faktor{\Z}{m\Z}$
+    on it by
+    \begin{align*}
+        [x]_m + [y]_m &\defn [x + y]_m \\
+        [x]_m \cdot [y]_m &\defn [xy]_m.
+    \end{align*}
+\end{definition}
+
 \end{document}
