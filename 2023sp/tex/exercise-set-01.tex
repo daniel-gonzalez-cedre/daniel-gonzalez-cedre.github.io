@@ -1,0 +1,85 @@
+\input{preamble.tex}
+\input{environments.tex}
+\input{definitions.tex}
+
+\begin{document}
+\begin{center}
+    \textsc{\huge Exercise Set 1}\\
+    \textsc{Discrete Mathematics}
+\end{center}
+
+For the following list of problems,
+let $a, b, c, d \in \Z$ and $m \in \N_+$ be arbitrary,
+and let $\varphi$ be Euler's totient function.
+\begin{enumerate}
+    \item \textbf{Warm-up}
+        \begin{enumerate}
+            \item
+                Show that $\gcd\pn*{a, b} \divides a$.
+            \item
+                Show that $a \divides b$ implies either $a$ is odd or $b$ is even.
+            \item
+                Show that if $c \neq 0$ then $\pn*{ac \divides bc} \implies \pn*{a \divides b}$.
+        \end{enumerate}
+    \item \textbf{Easy}
+        \begin{enumerate}
+            \item
+                Show that, if $3 \ndivides a$, then $3 \divides (a + 1)(a + 2)$.
+            \item
+                Show that $4 \ndivides a^2 + 2$.
+            % \item
+            %     Show that $a^2 \ndivides 2b^2$
+            \item
+                Show that $\modulo{b}{c}{\varphi(m)} \nimplies \modulo{a^b}{a^c}{m}$.
+            \item
+                Is it the case that $\pn*{\pn*{a \divides bc} \meet a \neq 0} \implies \pn*{\pn*{a \divides b} \join \pn*{a \divides c}}$?
+        \end{enumerate}
+    \item \textbf{Medium}
+        \begin{enumerate}
+            \item
+                Show that $\modulo{b}{c}{m} \nimplies \modulo{a^b}{a^c}{m}$.
+            \item
+                Show that if $\gcd\pn*{a, b} > 2$
+                then $\pn*{\forall n \in \N}\pn*{n > 2 \implies n^2 \ndivides \gcd\pn*{a, b}}$.
+            \item
+                Show that if $\gcd\pn*{a, b} > 2$
+                then $\gcd\pn*{a, b}$ is a product of \emph{distinct} primes.
+            \item
+                Show that if $a \neq 0$ and $b \neq 0$
+                then $\modulo{a}{b}{m} \implies \gcd\pn*{a, m} = \gcd\pn*{b, m}$.
+        \end{enumerate}
+    \item \textbf{Hard}
+        \begin{enumerate}
+            \item
+                Let $p$ be prime. Show $\modulo{a^p}{p}{p}$.
+            \item
+                Let $\lcm\pn*{a, b}$ be the \emph{least common multiple} of $a$ and $b$.
+                Show that $ab = \gcd\pn*{a, b}\lcm\pn*{a, b}$.
+        \end{enumerate}
+\end{enumerate}
+
+~\\
+\hrule
+~\\
+
+\begin{enumerate}
+    \item \textbf{Algorithm practice}
+        \begin{enumerate}
+            \item
+                Verify \textbf{by hand} that $\gcd\pn*{69, 51} = 3$
+                by computing $\texttt{gcd}\pn*{69, 51}$.
+            \item
+                Verify \textbf{by hand} that $\gcd\pn*{234, 44} = 2$
+                by computing $\texttt{gcd}\pn*{234, 44}$.
+        \end{enumerate}
+    \item \textbf{Programming practice}
+        \begin{enumerate}
+            \item
+                Verify that $\gcd\pn*{69, 51} = 3$ and $3 = 2 \cdot 69 - 9 \cdot 15$
+                by computing $\texttt{egcd}\pn*{69, 51}$.
+            \item
+                Verify that $\gcd\pn*{234, 44} = 2$ and $2 = -3 \cdot 234 + 16 \cdot 44$
+                by computing $\texttt{egcd}\pn*{234, 44}$.
+        \end{enumerate}
+\end{enumerate}
+\end{document}
