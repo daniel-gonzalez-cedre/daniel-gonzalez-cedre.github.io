@@ -126,7 +126,7 @@
 \begin{definition}[Cardinality]
     Let $A$ and $B$ be sets.
     The \emph{cardinality} of a set,
-    which we denote by $\cardinality{A}$%
+    which we denote by $\cardinality*{A}$%
     \footnote{The \emph{cardinality} of a set is not always guaranteed to exist without the Axiom of Choice.},
     corresponds to our intuitive notion of its \emph{size} relative to other sets.
     If we want to compare two sets,
@@ -135,30 +135,30 @@
 
     We say that the \emph{cardinality} of $A$ is \emph{no greater than} the \emph{cardinality} of $B$
     \iffbydefn $\exists f: A \to B$ such that $f$ is an injection.
-    In this case, we say that $\cardinality{A} \leq \cardinality{B}$.
+    In this case, we say that $\cardinality*{A} \leq \cardinality*{B}$.
 
     We say that the \emph{cardinality} of $A$ is \emph{no lesser than} the \emph{cardinality} of $B$
     \iffbydefn $\exists f: A \to B$ such that $f$ is an surjection.
-    In this case, we say that $\cardinality{A} \geq \cardinality{B}$.
+    In this case, we say that $\cardinality*{A} \geq \cardinality*{B}$.
 
     Naturally, we say $A$ and $B$ have the \emph{same cardinality}
     \iffbydefn $\exists f: A \to B$ such that $f$ is a bijection,
-    denoted $\cardinality{A} = \cardinality{B}$.
+    denoted $\cardinality*{A} = \cardinality*{B}$.
 \end{definition}
 
 \begin{corollary}
     For any nonempty sets $A \neq \emptyset$ and $B \neq \emptyset$, we have
-    $\cardinality{A} \leq \cardinality{B} \iff \cardinality{B} \geq \cardinality{A}$.
+    $\cardinality*{A} \leq \cardinality*{B} \iff \cardinality*{B} \geq \cardinality*{A}$.
 \end{corollary}
 \begin{proof}
-    Suppose $\cardinality{A} \leq \cardinality{B}$ for nonempty $A$ and $B$.
+    Suppose $\cardinality*{A} \leq \cardinality*{B}$ for nonempty $A$ and $B$.
     This means we have an injection $\varphi: A \to B$ by definition.
     Then, by \autoref{thm:inverse}, $\varphi$ is monic,
     so we know that $\exists \psi: B \to A$ such that $\psi \compose \varphi = \id_A$.
     Since $\psi$ has a right inverse, it must be epic by definition,
     so $\psi$ is a surjection by \autoref{thm:inverse}.
 
-    Conversely, suppose $\cardinality{B} \geq \cardinality{A}$ for nonempty $A$ and $B$.
+    Conversely, suppose $\cardinality*{B} \geq \cardinality*{A}$ for nonempty $A$ and $B$.
     Then, there is a surjection $\psi: B \to A$.
     Since $\psi$ is an epimorphism by \autoref{thm:inverse},
     we have $\varphi: A \to B$ such that $\psi \compose \varphi = \id_A$.
@@ -169,17 +169,17 @@
 \begin{definition}[Finite Set]
     We say that a set $A$ is \emph{finite}
     \iffbydefn $\pn*{\exists n \in \N}\pn*{\exists f: A \to n}\pn*{f \text{ is a bijection}}$.
-    In this case, we will say that $\cardinality{A} = n$.
+    In this case, we will say that $\cardinality*{A} = n$.
 \end{definition}
 
 \begin{definition}[Countable Set]
     We say that a set $A$ is \emph{countable} \iffbydefn
     $\pn*{\exists f: A \to \N}\pn*{f \text{ is an injection}}$.
-    In this case, we say that $\cardinality{A} \leq \aleph_0$.
+    In this case, we say that $\cardinality*{A} \leq \aleph_0$.
 \end{definition}
 
 \begin{example}
-    Let's prove that $\cardinality{\N} = \cardinality{\Z}$.
+    Let's prove that $\cardinality*{\N} = \cardinality*{\Z}$.
 \end{example}
 \begin{proof}
     Consider the function $f: \Z \to \N$ given by
@@ -232,11 +232,11 @@
     \end{case}
     Therefore, since we found a preimage for $y$ in both cases, $f$ is surjective.
 
-    This means $f$ is a bijection, so we can conclude that $\cardinality{\N} = \cardinality{\Z}$.
+    This means $f$ is a bijection, so we can conclude that $\cardinality*{\N} = \cardinality*{\Z}$.
 \end{proof}
 
 \begin{example}
-    Let's prove that $\cardinality{\N} = \cardinality{\Q}$.
+    Let's prove that $\cardinality*{\N} = \cardinality*{\Q}$.
 \end{example}
 \begin{proof}
     \hl{TODO}
@@ -274,14 +274,14 @@
 
 \begin{theorem}[Cantor's Diagonal Argument]
     Let $I \defn \set*{f \suchthat f: \N \to \N}$.
-    Then $\cardinality{\N} \not \geq \cardinality{I}$.
+    Then $\cardinality*{\N} \not \geq \cardinality*{I}$.
 \end{theorem}
 \begin{proof}
     \hl{TODO}
 \end{proof}
 
 \begin{theorem}[Cantor's Theorem]
-    $\cardinality{X} < \cardinality{\power{X}}$ for every $X$.
+    $\cardinality*{X} < \cardinality*{\power{X}}$ for every $X$.
 \end{theorem}
 \begin{proof}
     Suppose, towards a contradiction, that $\varphi: X \surj \power{X}$ is a surjection.

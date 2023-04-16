@@ -174,14 +174,33 @@
 
 \begin{algorithm}[Euclid's Division Algorithm]\label{alg:division}
     We can find the greatest common divisor of two integers by recursively computing
+    % \begin{align*}
+    %     \gcd\pn*{a, 0} &\defn a \\
+    %     \gcd\pn*{a, b} &\defn \gcd\pn*{b, r}
+    %     \begin{aligned}[t]
+    %         \text{ where } &a = bq + r\\
+    %         \text{ and } &0 \leq r < b\\
+    %         \text{ and } &q, r \in \Z.
+    %     \end{aligned}
+    % \end{align*}
     \begin{align*}
-        \gcd\pn*{a, 0} &\defn a \\
-        \gcd\pn*{a, b} &\defn \gcd\pn*{b, r}
-        \begin{aligned}[t]
-            \text{ where } &a = bq + r\\
-            \text{ and } &0 \leq r < b\\
-            \text{ and } &q, r \in \Z.
-        \end{aligned}
+        \gcd\pn*{a, b} \defn 
+        \begin{cases}
+            a
+                &\text{ if } b = 0\\
+            \gcd\pn*{b, r}
+            \begin{cases}
+                    \text{ where } &a = bq + r\\
+                    \text{ and } &0 \leq r < b\\
+                    \text{ and } &q, r \in \Z.
+            \end{cases}
+                % \begin{aligned}[t]
+                %     \text{ where } &a = bq + r\\
+                %     \text{ and } &0 \leq r < b\\
+                %     \text{ and } &q, r \in \Z.
+                % \end{aligned}
+                &\text{ if } b \neq 0
+        \end{cases}
     \end{align*}
     This algorithm correctly computes the greatest common divisor of two arbitrary integers.
 \end{algorithm}
@@ -246,21 +265,157 @@
     after division by $m$.
 \end{definition}
 
-\begin{definition}[Cyclic Groups]
+\begin{definition}[Modular Rings]
     Let $m \in \N_+$.
-    We define the \emph{modular group} (\aka the \emph{cyclic group}) of size $m$ by
-    \[
-        \faktor{\Z}{m\Z} \defn \set*{[x]_m \suchthat x \in \Z},
-    \]
-    and we define \emph{addition}
+    We define the \emph{modular ring} of size $m$
+    (\aka the \emph{cyclic group}) of size $m$ by
+    % with \emph{modular addition and multiplication} by
+    \begin{equation*}
+        \faktor{\Z}{m\Z} \defn \set*{[x]_m \suchthat x \in \Z}
+    \end{equation*}
+    % \begin{align*}
+    %     \faktor{\Z}{m\Z} &\defn \set*{[x]_m \suchthat x \in \Z} \\[1ex]
+    %     [x]_m + [y]_m &\defn [x + y]_m \\
+    %     [x]_m \cdot [y]_m &\defn [xy]_m
+    % \end{align*}
+    and we define \emph{modular addition}
     % $+: \pn*{\faktor{\Z}{m\Z} \times \faktor{\Z}{m\Z}} \to \faktor{\Z}{m\Z}$
-    and \emph{multiplication}
+    and \emph{modular multiplication}
     % $\cdot: \pn*{\faktor{\Z}{m\Z} \times \faktor{\Z}{m\Z}} \to \faktor{\Z}{m\Z}$
-    on it by
+    on its elements by
     \begin{align*}
         [x]_m + [y]_m &\defn [x + y]_m \\
         [x]_m \cdot [y]_m &\defn [xy]_m.
     \end{align*}
 \end{definition}
+
+\begin{theorem}[B\'ezout's Identity]
+    Given $x, y \in \Z$, there exist $k_1, k_2 \in \Z$ such that
+    \begin{equation*}
+        xk_1 + yk_2 = \gcd\pn*{x, y}.
+    \end{equation*}
+\end{theorem}
+
+\begin{algorithm}[Extended Euclidean Division Algorithm]
+    We can find the greatest common divisor \emph{and} the B\'ezout coefficients
+    of two integers by recursively computing
+    \begin{equation*}
+        \gcd\pn*{a, b} \defn 
+        \begin{cases}
+            (a, 1, 0)
+                &\text{ if } b = 0\\
+            (d, t, s - qt)
+                \begin{cases}
+                    \text{ where } &(d, s, t) = \text{egcd}\pn*{b, r}\\
+                    \text{ and } &a = bq + r\\
+                    \text{ and } &0 \leq r < b\\
+                    \text{ and } &q, r \in \Z.
+                \end{cases}
+                % \begin{aligned}[t]
+                %     \text{ where } &a = bq + r\\
+                %     \text{ and } &0 \leq r < b\\
+                %     \text{ and } &q, r \in \Z.
+                % \end{aligned}
+                &\text{ if } b \neq 0
+        \end{cases}
+    \end{equation*}
+    This algorithm correctly computes the greatest common divisor of two arbitrary integers.
+\end{algorithm}
+
+\begin{definition}[Euler's Totient Function]
+    We define \emph{Euler's totient function} $\varphi: \N \to \N$ by the number of integers $1 \leq z < n$ relatively prime with $n \in \N$
+    \begin{equation*}
+        \varphi(n)
+        \defn \cardinality*{\set*{z \in \Z \suchthat (1 \leq z < n) \meet \pn*{\gcd\pn*{z, n} > 1}}}
+    \end{equation*}
+\end{definition}
+
+\begin{lemma}
+    If $p \in \N_+$ is prime, then $\varphi(p) = p - 1$.
+\end{lemma}
+
+\begin{theorem}
+    Let $x, y \in \Z$. If $\gcd\pn*{x, y} = 1$, then $\varphi(xy) = \varphi(x)\varphi(y)$.
+\end{theorem}
+
+\begin{theorem}[F\'ermat's Little Theorem]
+    Let $p \in \N_+$ be prime and $a \in \Z$.
+    Then, $\modulo{a^p}{p}{p}$.
+    Further, if $\gcd\pn*{a, p} = 1$, then $\modulo{a^{p - 1}}{1}{p}$.
+\end{theorem}
+
+\begin{theorem}[Euler's Theorem]
+    Let $n \in \N_+$  and $a \in \Z$.
+    If $\gcd\pn*{a, n} = 1$, then
+    \[
+        \modulo{a^{\varphi(n)}}{1}{n}.
+    \]
+\end{theorem}
+
+
+\appendix
+
+\chapter{The Algebra of Modular Arithmetic}
+
+\begin{definition}[Some Basic Algebra]
+    Suppose we have a set $G$ with a binary operation on $\Plus: G \times G \to G$ defined on it.
+    We say this is a \emph{monoid} if there exists an \emph{identity element} $e_0$
+    such that
+    \begin{enumerate}
+        \item[\textsc{i.}]
+            $\pn*{\forall g \in G}\pn*{e_0 \Plus g = g \Plus e_0 = g}$
+        \item[\textsc{ii.}]
+            $\pn*{\forall g, h, k \in G}\pn*{g \Plus \pn*{h \Plus k} = \pn*{g \Plus h} \Plus k}$
+    \end{enumerate}
+    We call $G$ under $\Plus$ a \emph{group} if we also have
+    \begin{enumerate}
+        \item[\textsc{iii.}]
+            $\pn*{\forall g \in G}\pn*{\exists h \in G}\pn*{g \Plus h = e_0}$
+    \end{enumerate}
+    We call $G$ a \emph{commutative} group\footnote{Usually referred to as an \emph{Abelian group}, after Niels Henrik Abel.} if we additionally have
+    \begin{enumerate}
+        \item[\textsc{iv.}]
+            $\pn*{\forall g, h \in G}\pn*{g \Plus h = h \Plus g}$
+    \end{enumerate}
+    If we then define another binary operation $\bullet: G \times G \to G$,
+    then we call $G$ with these two operations a \emph{ring}
+    if we can find another identity element $e_1 \in G$ such that
+    \begin{enumerate}
+        \item[\textsc{v.}]
+            $G$ is a monoid under $\bullet$ with identity $e_1$
+        \item[\textsc{vi.}]
+            $\pn*{\forall g, h, k \in G}\pn*{g \bullet \pn*{h \Plus k} = \pn*{g \bullet h} \Plus \pn*{g \bullet k}}$
+        \item[\textsc{vii.}]
+            $\pn*{\forall g, h, k \in G}\pn*{\pn*{g \Plus h} \bullet k = \pn*{g \bullet k} \Plus \pn*{h \bullet k}}$
+    \end{enumerate}
+    Finally, we say that $G$ is a \emph{field} if we also have
+    \begin{enumerate}
+        \item[\textsc{viii.}]
+            $\pn*{\forall g \in G}\pn*{g \neq e_0 \implies \pn*{\exists h \in G}\pn*{g \bullet h = e_1}}$
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    $G$ with $\Plus$ and $\bullet$ is a field \ifandonlyif
+    $G$ with $\Plus$ is a group and
+    $G \setminus \set*{e_0}$ with $\bullet$ is a group.
+\end{lemma}
+
+\begin{theorem}
+    If $n \in \N_+$, then $\faktor{\Z}{n\Z}$ forms a ring under modular arithmetic.\\
+    If $n \in \N_+$, then $\faktor{\Z}{n\Z}$ forms a field under modular arithmetic \ifandonlyif $n$ is prime.
+\end{theorem}
+
+\begin{definition}[Order]
+    The \emph{order $\order{G}$} of a group $G$ is its cardinality.
+    The \emph{order $\order{g}$} of $g \in G$
+    is the smallest $n \in \N$ such that $g^{n + 1} = e$.
+\end{definition}
+
+\begin{theorem}
+    For any group $G$ and any $g \in G$, we have that $\order{g}$ divides $\order{G}$.
+\end{theorem}
+
+% \lightning
 
 \end{document}
