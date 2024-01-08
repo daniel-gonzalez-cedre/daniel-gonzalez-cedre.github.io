@@ -264,7 +264,7 @@ div.author {
 div.author#me {
   display: inline;
   white-space: nowrap;
-  font-weight: bold;
+  /* font-weight: bold; */
   /* text-decoration: underline wavy 1px; */
   /* -webkit-text-decoration: underline wavy; */
 }
