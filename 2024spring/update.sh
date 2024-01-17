@@ -11,3 +11,6 @@ rm -v ./LaTeX/preambles/backup_*.tex
 zip -vr LaTeX.zip ./LaTeX -X
 
 rm -rf LaTeX
+
+cd ..
+python3 ./update.py
