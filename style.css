@@ -1,5 +1,7 @@
 :root {
-  --white: #f7f0e4;
+  /* --white: #f7f0e4; */
+  --white: #fbf7f1;
+
   --black: #17120f;  /* 27221f */
   --grey: #5e4a3d;  /* b9a193 */
 
@@ -80,7 +82,7 @@ a#gold:hover { color: var(--gold); }
 a#grey:hover { color: var(--grey); }
 
 a svg {
-  position: relative;
+  position: inline;
   height: 1em;
   margin: 4px;
   color: var(--link); 
@@ -121,7 +123,7 @@ body {
 }
 
 caption {
-  font-size: 22px;
+  font-size: 24px;
 }
 table {
   /* border: 1px solid var(--white); */
@@ -284,9 +286,10 @@ div.note {
 }
 
 h1 {
-  /* white-space: nowrap; */
-  display: inline;
+  white-space: nowrap;
+  /* display: inline; */
   margin: 0px;
+  margin-bottom: 4px;
   font-size: 24px;
   font-weight: normal;
 }
@@ -301,7 +304,7 @@ h3 {
   /* white-space: nowrap; */
   display: inline;
   margin: 0px;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: normal;
 }
 h4 {

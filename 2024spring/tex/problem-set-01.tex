@@ -1,0 +1,74 @@
+\input{config}
+\input{preambles/preamble}
+\input{preambles/definitions}
+\input{preambles/environments}
+
+\title{Problem Set 1}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{21\textsuperscript{st} of January, 2024}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Justify each of your answers with an argument.\footnotemark[1]}
+% \marginnote{\emph{An answer provided with bad or no justification is as good as a wrong answer.}}
+\makeatletter \@footnotetext[-2ex]{An answer provided with bad or no justification is as good as a wrong answer.
+Think carefully, and think deeply.} \makeatother
+
+\begin{enumerate}
+  \item[(50 pts)~~~~1.]
+    Determine the truth value of each sentence below.
+    \begin{enumerate}
+      \item
+        ``Madrid is the capital of Spain.''
+      \item
+        ``Santa Clause lives on the north pole.''
+      \item
+        ``This sentence is false.''
+      \item
+        ``The set of all sets that don't contain themselves contains itself.''%
+        \sidenote{A \defn{set} is a collection of objects.
+          When we talk about \emph{``the set of all $x$ with a property,''} we mean the collection of all those $x$ that have that property and \emph{only} those $x$.}
+      \item
+        ``Red is a beautiful color.''
+      \item
+        ``Every proposition is either \emph{true} or \emph{false} but not both.''
+      \item
+        ``If this sentence is false, then $7$ is a prime number.''%
+        \sidenote{Note that $7$ really is a prime number.}
+      \item
+        ``The set of all sets contains itself.''
+      \item
+        ``This sentence is \emph{true.}''
+      \item
+        ``If this sentence is \emph{true,} then $2$ is an odd number.''%
+        \sidenote{Note that $2$ is not really an odd number.}
+    \end{enumerate}
+
+  \item[(25 pts)~~~~2.]
+    Suppose we have an infinite sequence of sentences
+    \begin{equation*}
+      S_0, S_1, S_2, \dots S_i, \dots
+    \end{equation*}
+    where each sentence asserts that every sentence following it is \emph{false.}
+    \begin{equation*}
+      S_i \defeq \text{``}S_k \text{ is \emph{false} for all } k > i\text{.''}
+    \end{equation*}
+    Are%
+    \marginnote[-7ex]{In this definition, $i$ ranges over all of the natural numbers $0, 1, 2, \dots$}
+                      % and
+                      % $k$ ranges over the numbers $i, i+1, i+2, \dots$ .}
+    any of the sentences in this sequence propositions?
+    If so, which?
+
+  \item[(25 pts)~~~~3.]
+    In the sentence below, \emph{``you''} refers to \emph{you}\emph{,} the student reading these sentences and solving this problem set.
+    Determine the truth value of the following sentence.
+    \begin{equation*}
+      \text{``You have finitely many beliefs.''}
+    \end{equation*}
+\end{enumerate}
+
+\end{document}
