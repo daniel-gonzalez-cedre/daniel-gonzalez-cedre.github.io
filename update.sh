@@ -12,12 +12,12 @@ cd 2024spring
   cp -v ~/academia/pedagogy/2024-spring-discrete-math/problem-sets/problem-set-*/problem-set-*.tex ./tex/
 
   # LaTeX PREAMBLES
-  cp -vr ~/LaTeX/preambles ./LaTeX/
-  cp -v ~/LaTeX/templates/tufte_problem-set/config.tex ./LaTeX/
-  rm -v ./LaTeX/preambles/backup_*.tex
+  # cp -vr ~/LaTeX/preambles ./LaTeX/
+  # cp -v ~/LaTeX/templates/tufte_problem-set/config.tex ./LaTeX/
+  # rm -v ./LaTeX/preambles/backup_*.tex
 
-  zip -vr LaTeX.zip ./LaTeX -X
-  rm -rf LaTeX
+  # zip -vr LaTeX.zip ./LaTeX -X
+  # rm -rf LaTeX
 
 cd ..
 
