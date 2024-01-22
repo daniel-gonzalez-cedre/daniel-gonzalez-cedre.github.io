@@ -23,4 +23,6 @@ cd ..
 
 # GENERAL WEBSITE
 python3 ./update.py
+
+# git add ./spring2024/problem-sets
 # git commit -a
