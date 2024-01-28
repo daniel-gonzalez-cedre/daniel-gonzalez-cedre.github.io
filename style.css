@@ -234,6 +234,7 @@ div.lastupdate {
   margin: 8px;
   padding: 8px;
   text-align: center;
+  /* font-size: 12px; */
 }
 div.main {
   order: 2;
