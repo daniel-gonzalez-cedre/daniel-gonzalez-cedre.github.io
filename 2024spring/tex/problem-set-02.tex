@@ -1,0 +1,163 @@
+\input{config}
+\input{preambles/preamble}
+\input{preambles/definitions}
+\input{preambles/environments}
+
+\title{Problem Set 2}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{4\textsuperscript{th} of February, 2024}}
+
+\begin{document}
+
+\maketitle
+
+% \section*{In this problem set, the variables $p$, $q$, and $r$ refer to propositions.}
+% \section*{You may rely on the theorems listed in the margin.}
+\marginnote{%
+  You may rely on the following theorems throughout this problem set in addition to the axioms of classical logic.
+  \begin{itemize}
+    \item
+      \emph{Uniqueness of Negations}
+    \item
+      $\neg \top \equiv \bot$ and $\neg \bot \equiv \top$
+    \item
+      \emph{Double Negation}
+    \item
+      \emph{Idempotency}
+    \item
+      \emph{Domination}
+    \item
+      \emph{De Morgan's Laws}
+  \end{itemize}
+}
+
+We say that a propositional formula is a \defn{tautology} if it is logically equivalent to $\top$ under any assignment of truth values to its variables.
+
+\begin{enumerate}
+  % \item
+      % For the following problems, do not appeal to truth tables.
+      % \marginnote{These are called the Absorption Laws.}
+      % \begin{enumerate}
+          % \item
+              % Show
+              % $p \meet (p \join q) \equiv p$
+              % for any $p$ and $q$.
+          % \item
+              % Show
+              % $p \join (p \meet q) \equiv q$
+              % for any $p$ and $q$.
+      % \end{enumerate}
+  \item[(5 pts) \quad 1.]
+    Consider the following proof of $p \lif (q \lif r) \equiv (p \lif q) \lif r$.
+    \begin{mdframed}
+      \vspace{2ex}
+      \begin{proof}
+        Observe the following chain of reasoning.
+        \begin{align*}
+          p \lif (q \lif r)
+            &\equiv p \lor \neg(q \lif r)
+              &\quad
+              &\text{by \emph{conditional disintegration}} \\
+            &\equiv p \lor \neg(q \lor \neg r)
+              &\quad
+              &\text{by \emph{conditional disintegration}} \\
+            &\equiv p \lor \neg q \lor \neg r
+              &\quad
+              &\text{by \emph{associativity}} \\
+            % &\equiv (p \lor \neg q) \lor \neg r
+              % &\quad
+              % &\text{by \emph{associativity}} \\
+            &\equiv (p \lor \neg q) \lor \neg r
+              &\quad
+              &\text{by \emph{associativity}} \\
+            &\equiv (p \lif q) \lor \neg r
+              &\quad
+              &\text{by \emph{conditional disintegration}} \\
+            &\equiv (p \lif q) \lif r
+              &\quad
+              &\text{by \emph{conditional disintegration}}
+        \end{align*}
+        Therefore, $p \lif (q \lif r) \equiv (p \lif q) \lif r$.
+      \end{proof}
+    \end{mdframed}
+    Find all of the mistakes, if any, in this proof, and \emph{explain why.}
+  \item[(40 pts) \quad 2.]
+    Prove the claims below \emph{without truth tables} for all propositions $p, q, r$.
+    \begin{enumerate}
+      \item
+        $p \rightarrow q \equiv \neg q \rightarrow \neg p$.
+      % \item
+        % $(p \rightarrow q) \meet (\neg p \rightarrow q) \equiv q$.
+      % \item
+        % $(p \rightarrow r) \join (q \rightarrow r) \equiv (p \meet q) \rightarrow r$.
+      % \item
+        % $(p \rightarrow q) \meet (p \rightarrow r) \equiv p \rightarrow (q \meet r)$.
+      \item
+        $(p \meet (p \rightarrow q)) \rightarrow q$ is a tautology.
+      \item
+        $(\neg q \meet (p \rightarrow q)) \rightarrow \neg p$ is a tautology.
+      \item
+        $(p \rightarrow q) \rightarrow ((p \rightarrow \neg q) \rightarrow \neg p)$ is a tautology.
+    \end{enumerate}
+  \item[(40 pts) \quad 3.]
+    In this problem, we will progressively establish that the alternative axioms Hilbert proposed are all tautologies \emph{without truth tables.}.
+    Here, the variables $p$, $q$, and $r$ all represent arbitrary propositions.
+    \begin{enumerate}
+      \item
+        Show $p \lif p$ is a tautology.
+      \item
+        Show $(p \lif q) \lif \neg (q \lif \neg p)$ is a tautology.
+      \item
+        Show $p \lif (q \lif p)$ is a tautology.
+      \item
+        Show $(p \lif (q \lif r)) \lif ((p \lif q) \lif (p \lif r))$ is a tautology.
+    \end{enumerate}
+  % \item[(10 pts) \quad 4.]
+  % \item[(20 pts)~~~~3.]
+    % The variables $p$, $q$, $r$ refer to propositions
+    % in the following problems.%
+    % \marginnote{Make sure to read section 1.4 of the lecture notes on
+                % logical nonequivalence.}
+    % \begin{enumerate}
+      % \item
+        % Show that
+        % $(p \rightarrow q) \rightarrow r$
+        % is \emph{not} equivalent to
+        % $p \rightarrow (q \rightarrow r)$.
+      % \item
+        % Show that
+        % $\neg (p \rightarrow q)$
+        % is \emph{not} equivalent to
+        % $\neg p \rightarrow \neg q$.
+    % \end{enumerate}
+  % \item[(10 pts)~~~~3.]
+    % Given%
+    % \marginnote{Make sure to look at the \eorange{recursive} definition
+                % of a proposition in the lecture notes.
+                % Your proof should involve going through
+                % the cases in that definition.}
+    % an arbitrary proposition $p$,
+    % show that there exists a proposition $q$
+    % consisting only of $\neg$ and $\meet$
+    % such that $p \equiv q$.
+  \item[(10 pts)~~~~4.]
+    Show that $\neg$ and $\land$ are sufficient to express \emph{any} proposition.
+  \item[(5 pts)~~~~5.]
+    Is there a \emph{single connective} capable of expressing \emph{any} proposition?%
+    \sidenote{%
+      This does not necessarily have to be one of $\neg$, $\meet$, $\join$, $\rightarrow$, nor $\leftrightarrow$.
+      You can define new logical connectives using truth tables.
+    }
+    Justify your answer with a proof.
+    % Is there a \emph{single} logical connective such that any propositional formula $\varphi$ can be rewritten equivalently using \emph{only} this connective?
+    % %
+    % such that, for any proposition $p$,
+    % it is possible to find a proposition $q$ consisting of
+    % \emph{only that} logical connective
+    % with the property that $p \equiv q$?
+    % It must be the \emph{same} logical connective across all propositions.\\
+    % Justify your answer with a proof or argument.
+\end{enumerate}
+
+\end{document}
