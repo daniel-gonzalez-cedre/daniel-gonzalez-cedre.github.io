@@ -1,0 +1,93 @@
+\input{config}
+\input{preambles/preamble}
+\input{preambles/definitions}
+\input{preambles/environments}
+
+\title{Problem Set 3}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{11\textsuperscript{th} of February, 2024}}
+
+\begin{document}
+
+\maketitle
+
+In addition to the axioms and rules of inference, you may rely on: all proven theorems, \emph{Implication Elimination}, \emph{Hilbert's First \& Second Axioms}.
+
+\begin{enumerate}
+  \item[(10 pts)~~~~1.]
+    Prove each of the following statements for any propositions $\varphi$, $\psi$, $\xi$.
+    \begin{enumerate}
+      \item
+        $(\varphi \conditional \psi), (\psi \conditional \xi) \proves (\varphi \conditional \xi)$%
+        \marginnote{\emph{Hypothetical Syllogism}}
+      % \item
+        % $(\varphi \conditional \psi) \proves (\varphi \proves \psi)$%
+        % \marginnote{\emph{Implication Elimination}}
+      \item
+        $\varphi, \psi \proves \varphi \land \psi$%
+        \marginnote{\emph{Conjunction Introduction}}
+    \end{enumerate}
+  \item[(40 pts)~~~~2.]
+    Prove each of the following statements for any propositions $\varphi$, $\psi$, $\xi$.
+    \begin{enumerate}
+      \item
+        $\proves \varphi \lif \varphi$
+      \item
+        $\proves (\neg \varphi \lif \varphi) \lif \varphi$%
+        \marginnote{\emph{Consequentia Mirabilis}, {\scriptsize \aka}\high{Lex Clavia}}
+      \item
+        $\proves \neg \varphi \lif (\varphi \lif \neg \psi)$%
+        \marginnote{\emph{Ex Contradictione Quodlibet}}
+      \item
+        $\varphi \land \psi \proves \varphi$%
+        \marginnote{\emph{Conjunction Elimination}}
+      \item
+        $\proves \top$%
+        \marginnote{\emph{The Truth Theorem}}
+    \end{enumerate}
+  \item[(30 pts)~~~~3.]
+    Prove each of the following statements for any propositions $\varphi, \psi, \xi, \chi$.
+    \begin{enumerate}
+      \item
+        $\varphi \proves (\varphi \join \psi)$%
+        \marginnote{\emph{Disjunction Introduction}, {\scriptsize \aka}\high{Addition}}
+      \item
+        $(\varphi \conditional \xi), (\psi \conditional \xi), (\varphi \join \psi) \proves \xi$%
+        \marginnote{\emph{Disjunction Elimination}, {\scriptsize \aka}\high{Proof by Cases}}
+      \item
+        $\varphi, \neg \varphi \proves \psi$%
+        \marginnote{\emph{Ex Falso Quodlibet}, {\scriptsize \aka}\high{Explosion}}
+      \item
+        $(\varphi \join \psi), \neg \varphi \proves \psi$%
+        \marginnote{\emph{Disjunctive Syllogism}}
+      \item
+          $(\varphi \conditional \xi), (\psi \conditional \chi), (\varphi \join \psi) \proves \xi \join \chi$%
+          \marginnote{\emph{Constructive Dilemma}}
+    \end{enumerate}
+  \item[(10 pts)~~~~4.]
+    Let $\mathcal{L}$ be a binary predicate.
+    Prove the following statement.%
+    \sidenote{\emph{Hint: try a proof by contradiction.}}
+    \begin{equation*}
+      \neg \exists x \forall y (\mathcal{L}(x, y) \liff \neg \mathcal{L}(y, y))
+    \end{equation*}
+  \item[(10 pts)~~~~5.]
+    % Prove the following statements assuming they contain propositions.
+    Consider a universe of discourse consisting of every natural number.%
+    \marginnote{As a fun side note: 2 is a prime number.}
+    Recall that a positive integer is \defn{prime} when it has \emph{exactly two} positive divisors: one and itself.
+
+    Let $\omega(x) \defeq \emph{``}x\emph{ is an odd number.''}$ \\
+    Let $\pi(x) \defeq \emph{``}x\emph{ is a prime number.''}$
+
+    Further, suppose the following statements only contain propositions.
+    \begin{enumerate}
+      \item
+        Prove $\varphi$, where $\varphi$ is the statement $\varphi \proves \forall x \left(\omega(x) \lif \pi(x)\right)$.
+      \item
+        Prove $\forall x \left(\omega(x) \lif \pi(x)\right)$.
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
