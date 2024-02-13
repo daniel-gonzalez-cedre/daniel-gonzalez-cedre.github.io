@@ -15,6 +15,7 @@ cd 2024spring
   # cp -vr ~/LaTeX/preambles ./LaTeX/
   # cp -v ~/LaTeX/templates/tufte_problem-set/config.tex ./LaTeX/
   # rm -v ./LaTeX/preambles/backup_*.tex
+  # rm -v ./LaTeX/preambles/_*.tex
 
   # zip -vr LaTeX.zip ./LaTeX -X
   # rm -rf LaTeX
