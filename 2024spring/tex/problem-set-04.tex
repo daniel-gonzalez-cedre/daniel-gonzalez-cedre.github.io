@@ -1,0 +1,89 @@
+\input{config}
+\input{preambles/preamble}
+\input{preambles/definitions}
+\input{preambles/environments}
+
+\title{Problem Set 4}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{19\textsuperscript{th} of February, 2024}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  % \item
+    % \begin{enumerate}
+      % \item
+      % \item
+      % \item
+      % \item
+      % \item
+    % \end{enumerate}
+
+  \item[(20 pts) \quad 1.]
+    \begin{enumerate}
+      \item
+        Show $\forall x \term*{\emptyset \subseteq x}$.
+      \item
+        Show $\forall x \term*{x \subseteq x}$.
+      \item
+        Show $\forall x \term*{\emptyset \in \power{x}}$.
+      \item
+        Show $\forall x \term*{x \in \power{x}}$.
+      \item
+        Show $\forall x \forall y \forall z \term*{\term*{(x \subseteq y) \land (y \subseteq z)} \implies x \subseteq z}$.
+    \end{enumerate}
+  \item[(10 pts) \quad 2.]
+    We define the \defn{intersection} and \defn{difference} of any two sets $x$ and $y$ below.
+    \begin{align*}
+      x \intersect y &\defeq \set*{z \suchthat z \in x \land z \in y} \\
+      x \setminus y &\defeq \set*{z \suchthat z \in x \land z \not \in y}
+    \end{align*}
+    \begin{enumerate}
+      \item
+        Show $\forall x \forall y \exists z \term*{z = x \intersect y}$.
+      \item
+        Show $\forall x \forall y \exists z \term*{z = x \setminus y}$.
+    \end{enumerate}
+  \item[(20 pts) \quad 3.]
+    We define the \defn{union} of any two sets $x$ and $y$ below.
+    \begin{equation*}
+      x \union y \defeq \set*{z \suchthat z \in x \lor z \in y}
+    \end{equation*}
+    \begin{enumerate}
+      \item
+        Show $\forall x \forall y \term{x \intersect y \subseteq x}$.
+      \item
+        Show $\forall x \forall y \term{x \subseteq x \union y}$.
+      \item
+        Show $\forall x \forall y \term*{\power{x} \union \power{y} \subseteq \power{x \union y}}$.
+      \item
+        Show $\forall x \forall y \term*{x \intersect y = x \iff x \in \power{y}}$.
+    \end{enumerate}
+  \item[(50 pts) \quad 4.]
+    We define the \defn{union over $x$} and \defn{intersection over $x$} for any set $x$ below.
+    \begin{align*}
+      \union x &\defeq \set*{z \suchthat \exists y \term*{y \in x \land z \in y}} \\
+      \intersection x &\defeq \set*{z \suchthat \forall y \term*{y \in x \implies z \in y}}
+    \end{align*}
+    \begin{enumerate}
+      \item
+        Show that $\forall x \term*{\union \power{x} = x}$.
+      \item
+        What is $\union \emptyset$?
+        Justify your answer with a proof.
+      \item
+        What is $\intersection \emptyset$?
+        Justify your answer with a proof.
+      \item
+        Is $\emptyset = \set{z \suchthat z \in \emptyset}$?
+        Justify your answer with a proof.
+      \item
+        Is $\emptyset = \set{z \suchthat z \not \in \emptyset}$?
+        Justify your answer with a proof.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
