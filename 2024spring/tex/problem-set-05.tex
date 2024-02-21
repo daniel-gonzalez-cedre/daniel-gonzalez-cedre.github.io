@@ -1,0 +1,123 @@
+\input{config}
+\input{preambles/preamble}
+\input{preambles/definitions}
+\input{preambles/environments}
+
+\title{Problem Set 5}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{27\textsuperscript{th} of February, 2024}}
+
+\begin{document}
+
+\maketitle
+
+\marginnote{%
+  Recall that the natural numbers are defined recursively as follows.
+  \begin{align*}
+    0     &\defeq \emptyset \\
+    \s{n} &\defeq n \union \set{n}
+  \end{align*}
+  % We define the basic arithmetic arithmetic operations on $\naturals$ as follows.
+  Addition on $\naturals$ is defined below.
+  \begin{align*}
+    n + 0     &\defeq n \\
+    n + \s{m} &\defeq \s{n + m}
+  \end{align*}
+  Multiplication on $\naturals$ is defined below.
+  \begin{align*}
+    n \cdot 0     &\defeq 0 \\
+    n \cdot \s{m} &\defeq (n \cdot m) + n
+  \end{align*}
+  Exponentiation on $\naturals$ is defined below.
+  \begin{align*}
+    n^0       &\defeq 1 \\
+    n^{\s{m}} &\defeq n \cdot n^{m}
+  \end{align*}
+  We define the iterated sum of a sequence of terms $f(0), f(1), f(2), \dots$ as follows.
+  \begin{align*}
+    \sum_{i = 0}^{0} f(i)     &\defeq f(0) \\
+    \sum_{i = 0}^{\s{n}} f(i) &\defeq \term*{\sum_{i = 0}^{n} f(i)} + f\term*{\s{n}}
+  \end{align*}
+  % We define the linear partial order you are familiar with on $\naturals$ below.
+  % \begin{align*}
+    % n \leq m  &\iffbydefn (\exists x \in \naturals)(n + x = m) \\
+    % n < m     &\iffbydefn (n \leq m) \land (n \neq m)
+  % \end{align*}
+  You may rely on the following theorems:
+
+  $(\forall x \in \naturals)(\s{x} = x + 1)$.
+
+  $(\forall x \in \naturals)(\s{x} = 1 + x)$.
+
+  $(\forall x, y, z \in \naturals)(x + (y + z) = (x + y) + z)$.
+  % \begin{itemize}
+    % \item
+      % $(\forall x \in \naturals)(\s{x} = x + 1)$.
+    % \item
+      % $(\forall x \in \naturals)(\s{x} = 1 + x)$.
+    % \item
+      % % $(\forall x, y, z \in \naturals)
+      % % $x + (y + z) = (x + y) + z$ for all $x, y \in \naturals$.
+      % $(\forall x, y, z \in \naturals)(x + (y + z) = (x + y) + z)$.
+  % \end{itemize}
+}
+
+\begin{enumerate}
+  % \item[(15 pts) \quad 1.]
+    % Show that $\forall x \forall y \forall z (x \union (y \intersect z) = (x \union y) \intersect (x \union z))$.
+  % \item[(15 pts) \quad 1.]
+    % Show $(\forall x, y, z \in \naturals)\term*{\term*{x \leq y} \implies \term*{x + z \leq y + z}}$
+
+  \item[(20 pts) \quad 1.]
+    % Show that $\forall x \term{x \neq \s{x}}$.
+    Show that $\forall x \term{x \neq x \union \set{x}}$.
+
+  \item[(15 pts) \quad 2.]
+    We will work up to a proof of the commutativity of addition on $\naturals$.
+    \begin{enumerate}
+      \item
+        Show $(\forall x \in \naturals)(x + 0 = 0 + x)$.
+      \item
+        Show $(\forall x, y \in \naturals)(x + \s{y} = \s{y} + x)$.
+      \item
+        Show $(\forall x, y \in \naturals)(x + y = y + x)$.
+    \end{enumerate}
+
+  \item[(15 pts) \quad 3.]
+    Show $(\forall x, y, z \in \naturals)\term*{x \cdot (y + z) = (x \cdot y) + (x \cdot z)}$.
+
+  \item[(15 pts) \quad 4.]
+    Show $(\forall x, y, z \in \naturals)\term*{x \cdot (y \cdot z) = (x \cdot y) \cdot z}$.
+
+  % \item[(20 pts) \quad 3.]
+    % Show that $(\forall x \in \naturals)(\forall y \in \naturals)(x < y \implies x \in y)$.
+
+  \item[(15 pts) \quad 5.]
+    % The \defn{Fibonacci sequence} is the function $\mathfrak{F}: \naturals \to \naturals$ defined below.
+    % \begin{align*}
+      % \mathfrak{F}(0) &\defeq 0 \\
+      % \mathfrak{F}(1) &\defeq 1 \\
+      % \mathfrak{F}(n + 2) &\defeq \mathfrak{F}(n + 1) + \mathfrak{F}(n)
+    % \end{align*}
+
+    Prove the following statement for all $n \in \naturals$.
+    \begin{equation*}
+      \sum_{i = 0}^{n} 2^n = 2^{n + 1} - 1
+    \end{equation*}
+
+  \item[(20 pts) \quad 6.]
+    We say $x$ is \defn{$\in$-transitive} by definition when $(\forall y \in x)(\forall z \in y)(z \in x)$. \\
+    Show that every natural number is $\in$-transitive.
+    % Show that $(\forall x \in \naturals)(x \text{ is transitive})$.
+    % \begin{enumerate}
+      % \item
+        % Show that $\forall x \term{x \neq \s{x}}$.
+      % % \item
+        % % Show that $(\forall x, y \in \naturals)(x < y \implies x \in y)$.
+      % \item
+        % Show that $(\forall x \in \naturals)(x \text{ is transitive})$.
+    % \end{enumerate}
+\end{enumerate}
+
+\end{document}
