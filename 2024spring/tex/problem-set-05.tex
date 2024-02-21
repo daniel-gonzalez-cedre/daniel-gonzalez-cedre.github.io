@@ -69,11 +69,47 @@
   % \item[(15 pts) \quad 1.]
     % Show $(\forall x, y, z \in \naturals)\term*{\term*{x \leq y} \implies \term*{x + z \leq y + z}}$
 
-  \item[(20 pts) \quad 1.]
+  \item[(10 pts) \quad 1.]
+    Find and explain the flaw(s) in this argument.
+    \begin{mdframed}
+      We prove every nonempty set of people all have the same age.
+      \begin{proof}
+        % We induct on the number of people in the set.
+        We denote the age of a person $p$ by $\alpha(p)$.
+
+        \begin{case}[Basis Step]
+          Suppose $P = \set{p}$ is a set with one person in it.
+          Clearly, all the people in $P$ have the same age as each other.
+          % Then, $p \in P$ for some person $p$.
+          % This person has some age $\alpha(p)$, and since $\forall x (x \in P \iff x = p)$, we must have $\forall x (x \in P \iff \alpha(x) = \alpha(p))$.
+          % Clearly, $\forall x \forall y (x \in P \land y \in P \iff \alpha(x) = \alpha(y))$, so everyone in $P$ has the same age.
+        \end{case}
+        \begin{case}[Inductive Step]
+          Let $k \in \naturals_+$ and suppose any set of $k$-many people all have the same age.
+          Let $P = \set{p_1, p_2, \dots p_k, p_{k + 1}}$ be a set with $k + 1$ people in it.
+          Consider $L \defeq \set{p_1, \dots p_k}$ and $R \defeq \set{p_2, \dots p_{k + 1}}$.
+          Since $L$ and $R$ both have $k$ people, we know everyone in these sets has the same age by the \emph{inductive hypothesis.}
+          Everyone in $L \intersect R = \set{p_2, \dots p_k}$ has the same age for the same reason.
+
+          Let $\ell, r \in P$.
+          If $\ell \in L \land r \in L$, then $\alpha(\ell) = \alpha(r)$.
+          Similarly, if $\ell \in R \land r \in R$, then $\alpha(\ell) = \alpha(r)$.
+          Now, suppose $\ell \in L \land r \in R$.
+          % Then, $\alpha(\ell) = \alpha(p_1)$ and $\alpha(p_{k + 1}) = \alpha(r)$.
+          \begin{equation*}
+            \alpha(\ell) = \alpha(p_1) = \alpha(p_2) = \alpha(p_{k + 1}) = \alpha(r)
+          \end{equation*}
+          So, all people in $P$ have the same age.
+        \end{case}
+        Therefore, everyone on Earth has the same age.
+      \end{proof}
+    \end{mdframed}
+
+  \item[(20 pts) \quad 2.]
     % Show that $\forall x \term{x \neq \s{x}}$.
     Show that $\forall x \term{x \neq x \union \set{x}}$.
 
-  \item[(20 pts) \quad 2.]
+  \item[(15 pts) \quad 3.]
     We will work up to a proof of the commutativity of addition on $\naturals$.
     \begin{enumerate}
       \item
@@ -84,7 +120,7 @@
         Show $(\forall x, y \in \naturals)(x + y = y + x)$.
     \end{enumerate}
 
-  \item[(20 pts) \quad 3.]
+  \item[(15 pts) \quad 4.]
     Show $(\forall x, y, z \in \naturals)\term*{x \cdot (y + z) = (x \cdot y) + (x \cdot z)}$.
 
   % \item[(0 pts) \quad 4.]
@@ -93,7 +129,7 @@
   % \item[(20 pts) \quad 3.]
     % Show that $(\forall x \in \naturals)(\forall y \in \naturals)(x < y \implies x \in y)$.
 
-  \item[(20 pts) \quad 4.]
+  \item[(20 pts) \quad 5.]
     % The \defn{Fibonacci sequence} is the function $\mathfrak{F}: \naturals \to \naturals$ defined below.
     % \begin{align*}
       % \mathfrak{F}(0) &\defeq 0 \\
@@ -108,7 +144,7 @@
       1 + \sum_{i = 0}^{n} 2^n = 2^{n + 1}
     \end{equation*}
 
-  \item[(20 pts) \quad 5.]
+  \item[(20 pts) \quad 6.]
     We say $x$ is \defn{$\in$-transitive} by definition when $(\forall y \in x)(\forall z \in y)(z \in x)$. \\
     Show that every natural number is $\in$-transitive.
     % Show that $(\forall x \in \naturals)(x \text{ is transitive})$.
