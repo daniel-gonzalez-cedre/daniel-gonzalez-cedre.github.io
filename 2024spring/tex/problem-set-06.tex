@@ -1,0 +1,66 @@
+\input{config}
+\input{preambles/preamble}
+\input{preambles/definitions}
+\input{preambles/environments}
+
+\title{Problem Set 6}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{5\textsuperscript{th} of March, 2024}}
+
+\begin{document}
+
+\maketitle
+
+\emph{All basic arithmetic and algebraic facts about $\naturals$ and $\integers$ are now yours to use.}
+
+\begin{enumerate}
+  \item[(20 pts) \quad 1.]
+    \begin{enumerate}
+      \item
+        Show that $\term*{c \neq 0 \land ac \divides bc} \implies \term*{a \divides b}$ for all $a, b, c \in \integers$.
+      \item
+        Show that $\term*{n \divides x \land n \divides y} \implies \term*{n \divides ax + by}$ for all $n, x, y, a, b \in \integers$.
+    \end{enumerate}
+  % \item[(20 pts) \quad 2.]
+    % For all $z \in \integers$, show that $z$ is even implies $z$ is not odd.
+  \item[(20 pts) \quad 2.]
+    For all $z \in \integers$, show that $z$ is even implies $z$ is not odd.
+  \item[(20 pts) \quad 3.]
+    \begin{enumerate}
+      \item
+        For all $n \in \naturals$, show that $n$ is even implies $n + 1$ is odd.
+      \item
+        For all $n \in \naturals$, show that $n$ is odd implies $n + 1$ is even.
+    \end{enumerate}
+    % For all $n \in \naturals$, show that $n$ is odd implies $n + 1$ is even.
+  \item[(20 pts) \quad 4.]
+    Show that $3 \divides n^3 - n$ for all $n \in \naturals$.%
+    \sidenote{\emph{Hint: try a proof by induction.}}
+  \item[(20 pts) \quad 5.]
+    The \defn{Fibonacci sequence} is the recursive function $\mathcal{F}: \naturals \to \naturals$ below.
+    \begin{align*}
+        \mathcal{F}(0) &\defeq 0 \\
+        \mathcal{F}(1) &\defeq 1 \\
+        \mathcal{F}(n + 2) &\defeq \mathcal{F}(n + 1) + \mathcal{F}(n)
+    \end{align*}
+    Show that $1 + \displaystyle\sum_{i = 0}^{n}\mathcal{F}(i) = \mathcal{F}(n + 2)$ for all $n \in \naturals$.
+  % \item[(10 pts) \quad 4.]
+    % \defn{Strong induction} is a variant of mathematical induction with a \emph{stronger} inductive hypothesis.
+    % In the inductive step, instead of assuming just $\varphi(k)$, we assume that $\varphi(\ell)$ \emph{for all} $\ell \leq k$.
+    % The statement is given below.
+    % \begin{equation*}
+      % \left(\varphi(0) \land
+      % \left(\forall k \in \naturals\right)
+      % \left(\left(\forall \ell \in \naturals\right)
+      % \left(\ell \leq k \implies \varphi\left(\ell\right)\right)
+      % \implies \varphi(k + 1)\right)\right)
+      % \implies \left(\forall n \in \naturals\right)\left(\varphi(n)\right)
+    % \end{equation*}
+
+    % % Using strong induction with a base case of $2$,
+    % Prove the \emph{Fundamental Lemma of Arithmetic.} \\
+    % \emph{Hint: use strong induction with a base case of $n = 2$.}
+\end{enumerate}
+
+\end{document}
