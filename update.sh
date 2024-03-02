@@ -10,6 +10,7 @@ cd 2024spring
   # PROBLEM SET PDFs & TeX FILES
   cp -v ~/academia/pedagogy/2024-spring-discrete-math/problem-sets/problem-set-*/problem-set-*.pdf ./problem-sets/
   cp -v ~/academia/pedagogy/2024-spring-discrete-math/problem-sets/problem-set-*/problem-set-*.tex ./tex/
+  cp -v ~/academia/pedagogy/2024-spring-discrete-math/exams/exam-*.p.*/exam-*.p.*.pdf ./exams/
 
   # LaTeX PREAMBLES
   # mkdir ./LaTeX
