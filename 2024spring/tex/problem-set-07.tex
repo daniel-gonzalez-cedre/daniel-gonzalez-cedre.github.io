@@ -1,0 +1,97 @@
+\input{config}
+% \input{preambles/preamble}
+% \input{preambles/definitions}
+% \input{preambles/environments}
+
+\title{Problem Set 7}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{25\textsuperscript{th} of March, 2024}}
+
+\begin{document}
+    % \makeatletter
+    % % Paragraph indentation and separation for normal text
+    % \renewcommand{\@tufte@reset@par}{%
+      % \setlength{\RaggedRightParindent}{0.0pc}%
+      % \setlength{\JustifyingParindent}{0.0pc}%
+      % \setlength{\parindent}{0.0pc}%
+      % \setlength{\parskip}{0.25\baselineskip}%
+    % }
+    % \@tufte@reset@par
+
+    % % Paragraph indentation and separation for marginal text
+    % \renewcommand{\@tufte@margin@par}{%
+      % \setlength{\RaggedRightParindent}{0.0pc}%
+      % \setlength{\JustifyingParindent}{0.0pc}%
+      % \setlength{\parindent}{0.0pc}%
+      % \setlength{\parskip}{0.25\baselineskip}%
+    % }
+    % \makeatother
+
+\maketitle
+
+\begin{enumerate}
+  \item[(10 pts) \quad 1.]
+    Let $X$ be a set.
+    Show that $\left(\forall Y \in \power{X}\right)\left(\size*{Y} \leq \size*{X}\right)$.
+
+  \item[(15 pts) \quad 2.]
+    Show that $\forall X \forall Y \left(\size*{X} \leq  \size*{Y} \implies \exists Z \left(Z \subseteq Y \land \size*{X} = \size*{Z}\right)\right)$.
+
+  \item[(15 pts) \quad 3.]
+    Let $X, Y, Z$ be sets and consider
+    $f: X \to Y$ and $g: Y \to Z$.%
+    \marginnote{Since the codomain of $f$ and the domain of $g$ are the same, they are \defn{compatible}, and their composition is sensibly defined.}
+    We define the \ered{composition} of $f$ with $g$ to be the function
+    $g \circ f: X \to Z$ given by
+    $(g \circ f)(x) \defeq g(f(x))$
+    for all $x \in X$.
+    \begin{enumerate}
+      \item
+        Show that, if $f$ and $g$ are both injections,
+        then $g \circ f$ is injective.
+      \item
+        Show that, if $f$ and $g$ are both surjections,
+        then $g \circ f$ is surjective.
+      \item
+        Show that, if $f$ and $g$ are both bijections,
+        then $g \circ f$ is bijective.
+    \end{enumerate}
+
+  \item[(30 pts) \quad 4.]
+    For this problem, let $X$ and $Y$ be arbitrary sets and let $f: X \to Y$.
+    \begin{enumerate}
+      \item
+        % Suppose $f: X \inject Y$ is injective.
+        If $f$ is injective, show there exists $g: Y \to X$ such that $g \compose f = \id_X$.
+      \item
+        If $f$ is surjective, show there exists $g: Y \to X$ such that $f \compose g = \id_Y$.
+      \item
+        If $f$ is a bijection, then show that there exists a \emph{unique} function $g: Y \to X$ such that $g \compose f = \id_X$ and $f \compose g = \id_Y$.
+    \end{enumerate}
+
+  \item[(30 pts) \quad 5.]
+    \defn{Euler's totient function} is the function $\varphi_e: \naturals \to \naturals$ that counts how many positive integers are \emph{coprime} with each $n \in \naturals$, defined below.
+    \begin{equation*}
+      \varphi_e(n)
+      \defeq \cardinality*{\set*{z \in \naturals \suchthat 1 \leq z \leq n \land \gcd(z, n) = 1}}
+    \end{equation*}
+    % $\varphi_e(n)$ counts how many positive integers are \emph{coprime} with $n \in \naturals$.
+    \begin{enumerate}
+      \item
+        % If $p, k, m \in \naturals$ such that $p$ is prime and $m \leq p$, then prove that $\gcd(p^k, m) \in \set{p^\ell \suchthat (0 \leq \ell \leq k) \land \ell \in \naturals}$.
+        % If $p, k, m \in \naturals_+$ are \emph{positive} naturals such that $p$ is prime and $m \leq p$, then prove $\gcd(p^k, m) \neq 1 \iff m \in \set{\ell p \suchthat (1 \leq \ell \leq p^{k - 1}) \land \ell \in \naturals}$.
+        If $p, k, m \in \naturals_+$ are \emph{positive} naturals such that $p$ is prime and $m \leq p$, then prove $\gcd(p^k, m) \neq 1 \iff p \divides m$.
+      \item
+        If $p$ is prime, then prove that $\varphi_e(p) = p - 1$.
+      \item
+        % Show that, if $p \in \naturals$ is prime and $k \in \naturals_+$, then $\varphi_e(p^k) = p^k - p^{k - 1}$.
+        % If $p$ is prime and $k \in \naturals_+$, then prove that $\varphi_e(p^k) = p^{k - 1}(p - 1)$.
+        If $p$ is prime and $k \in \naturals_+$, then prove that $\varphi_e(p^k) = p^k - p^{k - 1}$.%
+        \marginnote{\emph{Hint: count the multiples of $p$.}}
+      % \item
+        % If $p \neq q$ are distinct primes, then prove that $\varphi_e(pq) = \varphi_e(p)\varphi_e(q)$.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
