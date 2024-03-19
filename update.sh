@@ -13,15 +13,13 @@ cd 2024spring
   cp -v ~/academia/pedagogy/2024-spring-discrete-math/exams/exam-*.p.*/exam-*.p.*.pdf ./exams/
 
   # LaTeX PREAMBLES
-  rm -v ./LaTeX.zip
   mkdir -v ./LaTeX
   mkdir -v ./LaTeX/preambles
   cp -vr ~/LaTeX/preambles ./LaTeX/
-  cp -v ~/LaTeX/config_ps.tex ./LaTeX/config.tex
-  # rm -v ./LaTeX/preambles/backup_*.tex
-  # rm -v ./LaTeX/preambles/_*.tex
+  cp -v ~/LaTeX/config_students.tex ./LaTeX/config.tex
   rm -vr ./LaTeX/preambles/backup
 
+  rm -v ./LaTeX.zip
   zip -vr LaTeX.zip ./LaTeX -X
   rm -rf LaTeX
 
