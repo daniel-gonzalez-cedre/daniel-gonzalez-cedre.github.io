@@ -33,10 +33,10 @@
 \begin{enumerate}
   \item[(10 pts) \quad 1.]
     Let $X$ be a set.
-    Show that $\left(\forall Y \in \power{X}\right)\left(\size*{Y} \leq \size*{X}\right)$.
+    Show that $\left(\forall Y \in \power{X}\right)\left(\card*{Y} \leq \card*{X}\right)$.
 
   \item[(15 pts) \quad 2.]
-    Show that $\forall X \forall Y \left(\size*{X} \leq  \size*{Y} \implies \exists Z \left(Z \subseteq Y \land \size*{X} = \size*{Z}\right)\right)$.
+    Show that $\forall X \forall Y \left(\card*{X} \leq  \card*{Y} \implies \exists Z \left(Z \subseteq Y \land \card*{X} = \card*{Z}\right)\right)$.
 
   \item[(15 pts) \quad 3.]
     Let $X, Y, Z$ be sets and consider
@@ -81,7 +81,7 @@
       \item
         % If $p, k, m \in \naturals$ such that $p$ is prime and $m \leq p$, then prove that $\gcd(p^k, m) \in \set{p^\ell \suchthat (0 \leq \ell \leq k) \land \ell \in \naturals}$.
         % If $p, k, m \in \naturals_+$ are \emph{positive} naturals such that $p$ is prime and $m \leq p$, then prove $\gcd(p^k, m) \neq 1 \iff m \in \set{\ell p \suchthat (1 \leq \ell \leq p^{k - 1}) \land \ell \in \naturals}$.
-        If $p, k, m \in \naturals_+$ are \emph{positive} naturals such that $p$ is prime and $m \leq p$, then prove $\gcd(p^k, m) \neq 1 \iff p \divides m$.
+        If $p, k, m \in \naturals_+$ are \emph{positive} naturals with $p$ prime and $m \leq p^k$, then prove that $\gcd(p^k, m) \neq 1 \iff p \divides m$.
       \item
         If $p$ is prime, then prove that $\varphi_e(p) = p - 1$.
       \item
