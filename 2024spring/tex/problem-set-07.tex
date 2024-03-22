@@ -43,18 +43,18 @@
     $f: X \to Y$ and $g: Y \to Z$.%
     \marginnote{Since the codomain of $f$ and the domain of $g$ are the same, they are \emph{compatible}, and their composition is sensibly defined.}
     We define the \ered{composition} of $f$ with $g$ to be the function
-    $g \circ f: X \to Z$ given by
-    $(g \circ f)(x) \defeq g(f(x))$
+    $g \comp f: X \to Z$ given by
+    $(g \comp f)(x) \defeq g(f(x))$
     for all $x \in X$.
     \begin{enumerate}
       \item
-        Show that, if $f$ and $g$ are both injections, then $g \circ f$ is injective.%
+        Show that, if $f$ and $g$ are both injections, then $g \comp f$ is injective.%
         \marginnote{These are called \defn{monomorphisms}\emph{.}}
       \item
-        Show that, if $f$ and $g$ are both surjections, then $g \circ f$ is surjective.%
+        Show that, if $f$ and $g$ are both surjections, then $g \comp f$ is surjective.%
         \marginnote{These are called \defn{epimorphisms}\emph{.}}
       \item
-        Show that, if $f$ and $g$ are both bijections, then $g \circ f$ is bijective.
+        Show that, if $f$ and $g$ are both bijections, then $g \comp f$ is bijective.
         \marginnote{These are called \defn{isomorphisms}\emph{.}}
     \end{enumerate}
 
@@ -63,11 +63,11 @@
     \begin{enumerate}
       \item
         % Suppose $f: X \inject Y$ is injective.
-        If $f$ is injective, show there exists $g: Y \to X$ where $g \compose f = \id_X$.
+        If $f$ is injective, show there exists $g: Y \to X$ where $g \comp f = \id_X$.
       \item
-        If $f$ is surjective, show there exists $g: Y \to X$ where $f \compose g = \id_Y$.
+        If $f$ is surjective, show there exists $g: Y \to X$ where $f \comp g = \id_Y$.
       \item
-        If $f$ is a bijection, then show that there exists a \sout{\emph{unique}} function $g: Y \to X$ such that $g \compose f = \id_X$ and $f \compose g = \id_Y$.
+        If $f$ is a bijection, then show that there exists a \sout{\emph{unique}} function $g: Y \to X$ such that $g \comp f = \id_X$ and $f \comp g = \id_Y$.
     \end{enumerate}
 
   \item[(30 pts) \quad 5.]
