@@ -1,0 +1,50 @@
+\input{config}
+
+\title{Problem Set 8}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{3\textsuperscript{rd} of April, 2024}}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+  \item[(10 pts) \quad 1.]
+    There are $31$ people registered for our class this semester.
+    Prove that two of those people were born on the same day of the month.
+
+  \item[(10 pts) \quad 2.]
+    As of the 28\textsuperscript{th} of March, 2024, there are over 8.1 billion people living on Earth.%
+    \sidenote{For simplicity, you may assume the human population will only monotonically increase over time from the point this problem set was assigned.}
+    A person's heart will beat no more than $7 \times 10^9$ times over their lifespan.
+    Show that there are two currently-living people on Earth whose hearts have beat the exact same number of times. 
+
+  \item[(20 pts) \quad 3.]
+    Let $n \in \naturals$ and consider $\mathcal{A} \subseteq \naturals$ such that $\cardinality{\mathcal{A}} = n + 1$.
+    Show that there exist $x, y \in \mathcal{A}$ such that $n \divides x - y$.
+
+  \item[(20 pts) \quad 4.]
+    Consider $\mathcal{S} \defeq \set{1, 5, 6, 9, 11, 14, 16, 19, 21, 24, 29}$ and let $\mathcal{X} \subseteq \mathcal{S}$ such that $\cardinality{\mathcal{X}} \geq 6$.
+    Show there exist three \emph{distinct} elements $x_1, x_2, x_3 \in \mathcal{X}$ such that $x_1 + x_2 + x_3 = 35$.
+
+  \item[(20 pts) \quad 5.]
+    Recall that $\binom{n}{0} = \binom{n}{n} = 1$ for all $n, k \in \naturals$ when $k \leq n$.
+    % Let $n, k \in \naturals$ with $k \leq n$ and recall that $\binom{n}{}$
+    \begin{enumerate}
+      \item
+        Show $\binom{n}{k} = \binom{n}{n - k}$ for all $n, k \in \naturals$ where $k \leq n$.
+        % Show $\displaystyle\binom{n}{k} = \binom{n}{n - k}$ for all $n, k \in \naturals$ where $k \leq n$.
+
+      \item
+        Show $\binom{n + 1}{k + 1} = \binom{n}{k + 1} + \binom{n}{k}$ for all $n, k \in \naturals$ where $k \leq n$.
+        % Show $\displaystyle\binom{n + 1}{k + 1} = \binom{n}{k + 1} + \binom{n}{k}$ for all $n, k \in \naturals$ where $k \leq n$.
+
+    \end{enumerate}
+
+  \item[(20 pts) \quad 6.]
+    Prove that $\cardinality{\power{X}} = 2^{\cardinality{X}}$ for any finite set $X$.
+
+\end{enumerate}
+
+\end{document}
