@@ -1,0 +1,143 @@
+\input{config}
+
+\title{Problem Set 9}
+\author[Daniel Gonzalez Cedre]{Discrete Mathematics}
+\publisher{University of Notre Dame}
+\date{Due on the \red{15\textsuperscript{th} of April, 2024}}
+
+\usepackage{xskak}
+
+\begin{document}
+
+\maketitle
+
+\section{As always, all answers must be justified with a proof.}
+
+\begin{enumerate}
+  \item[(10 pts) \quad 1.]
+    A \defn{palindrome} of length $k \in \naturals$ over an alphabet $X$ is a string $s: k \to X$ such that $(\forall i \in k)(s(i) = s(k - 1 - i))$.
+    % henlo
+    % \sidenote{\url{https://youtu.be/zR0jWzzfqPE?si=oXosDA0K4gxN_hHX&t=312}}
+    How many possible palindromic words of length $k \in \naturals$ are there in the English language?%
+    \sidenote{For simplicity, you may assume words are the same regardless of capitalization.}
+
+  \item[(20 pts) \quad 2.]
+     Given a natural number $k \in \naturals$, how many ordered pairs $(a, b)$ are there such that $a, b \in \naturals$ and $a + b = k$?
+
+  \item[(30 pts) \quad 3.]
+    Let $n \in \naturals_+$ and suppose you have an $n \times n$ chess board.
+    We say two pieces on the board \defn{threaten each other} if it is possible for one to capture the other by moving to occupy its square on the next move.
+    \begin{marginfigure}
+      \centering
+      \newchessgame[setwhite={rc4}, addblack={rd5}]
+      \chessboard[smallboard,
+                  showmover=false,
+                  color=gold,
+                  pgfstyle=border,
+                  markfield=c4,
+                  colorbackfields={c1,c2,c3,c5,c6,c7,c8,
+                                  a4,b4,d4,e4,f4,g4,h4}]
+      \caption{%
+        Two \chr{rooks} placed on an $8 \times 8$ chess board so that they do not threaten each other.
+        The \high{movement pattern} for the white \chr{rook} is highlighted above.
+      }\label{fig:rook}
+    \end{marginfigure}
+    \begin{marginfigure}
+      \centering
+      \newchessgame[setwhite={be4}, addblack={bc3}]
+      \chessboard[smallboard,
+                  showmover=false,
+                  color=gold,
+                  pgfstyle=border,
+                  markfield=e4,
+                  colorbackfields={b1,c2,d3,f5,g6,h7,
+                                  a8,b7,c6,d5,f3,g2,h1}]
+      \caption{%
+        Two \chr{bishops} placed on an $8 \times 8$ chess board so that they do not threaten each other.
+        The \high{movement pattern} for the white \chr{bishop} is highlighted above.
+      }\label{fig:bishop}
+    \end{marginfigure}
+    % \begin{marginfigure}
+      % \centering
+      % \newchessgame[setwhite={qc4}, addblack={qf6}]
+      % \chessboard[smallboard,
+                  % showmover=false,
+                  % color=gold,
+                  % pgfstyle=border,
+                  % markfield=c4,
+                  % colorbackfields={c1,c2,c3,c5,c6,c7,c8,
+                                  % a4,b4,d4,e4,f4,g4,h4},
+                  % colorbackfields={a2,b3,d5,e6,f7,g8,
+                                  % a6,b5,d3,e2,f1}]
+      % % \showboard
+      % \caption{}\label{fig:queen}
+    % \end{marginfigure}
+
+    \begin{enumerate}
+      \item
+        % The \texttt{rook} in chess is a piece that only moves along the \emph{ranks} and \emph{files} of the board as shown in \cref{fig:rook}.
+        How many ways can $n \in \naturals_+$ \chr{rooks} possibly be arranged on an $n \times n$ chess board so that no two \chr{rooks} threaten each other?
+      \item
+        % The \texttt{bishop} in chess is a piece that only moves along the \emph{diagonals} of the board as shown in \cref{fig:bishop}.
+        How many ways can $n \in \naturals_+$ \chr{bishops} possibly be arranged on an $n \times n$ chess board so that no two \chr{bishops} threaten each other?
+    \end{enumerate}
+
+  \item[(20 pts) \quad 4.]
+    We can write $4$ as a sum of positive integers in the following ways.
+    \begin{equation*}
+      \begin{tabular}{cccccccc}
+                      &\quad& 1 + 1 + 2 &\quad& 1 + 3           \\
+        1 + 1 + 1 + 1 &\quad& 1 + 2 + 1 &\quad& 2 + 2 &\quad& 4 \\
+                      &\quad& 2 + 1 + 1 &\quad& 3 + 1           \\
+      \end{tabular}
+    \end{equation*}
+    % \begin{equation*}
+      % 4 =
+      % \begin{cases}
+        % & 1 + 1 + 1 + 1 \\
+        % & 1 + 1 + 2 \\
+        % & 1 + 2 + 1 \\
+        % & 2 + 1 + 1 \\
+        % & 1 + 3 \\
+        % & 3 + 1 \\
+        % & 2 + 2 \\
+        % & 4
+      % \end{cases}
+    % \end{equation*}
+    % \begin{align*}
+      % 4 &= 1 + 1 + 1 + 1 \\
+        % &= 1 + 1 + 2 \\
+        % &= 1 + 2 + 1 \\
+        % &= 2 + 1 + 1 \\
+        % &= 1 + 3 \\
+        % &= 3 + 1 \\
+        % &= 2 + 2 \\
+        % &= 4
+      % % 4 &= 4 \\
+        % % &= 3 + 1 \\
+        % % &= 1 + 3 \\
+        % % &= 2 + 2 \\
+        % % &= 2 + 1 + 1 \\
+        % % &= 1 + 2 + 1 \\
+        % % &= 1 + 1 + 2 \\
+        % % &= 1 + 1 + 1 + 1 \\
+    % \end{align*}
+    Given a natural number $n \in \naturals$, how many distinct ways are there to write $n$ as a sum of positive integers?
+
+  \item[(20 pts) \quad 5.]
+    A hermetic monk in meditation is repeatedly ascending and descending a ladder with $k \in \naturals$ rungs.
+    The burdens of wisdom and devotion have left the monk's body frail, so he can only move by one or two rungs at-a-time.
+    % Suddenly, a terrifying Word reverberates through his soul.
+    One day, as the monk ascends the ladder, a sudden tempest blows through his soul, and out of the whirlwind a fathomless voice calls out to him.
+    \begin{quote}
+      ``In how many ways can you do this?''
+    \end{quote}
+    The monk ponders this question.
+    After many years, he finds the answer, is enlightened, and immediately dies.
+    What was the answer?
+    % The monk ponders this question for many years until the answer eventually comes to him.
+    % In this moment, the monk is enlightened and immediately dies.
+
+\end{enumerate}
+
+\end{document}
