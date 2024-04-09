@@ -24,7 +24,7 @@
   \item[(20 pts) \quad 2.]
      Given a natural number $k \in \naturals$, how many ordered pairs $(a, b)$ are there such that $a, b \in \naturals$ and $a + b = k$?
 
-  \item[(30 pts) \quad 3.]
+  \item[(20 pts) \quad 3.]
     Let $n \in \naturals_+$ and suppose you have an $n \times n$ chess board.
     We say two pieces on the board \defn{threaten each other} if it is possible for one to capture the other by moving to occupy its square on the next move.
     \begin{marginfigure}
@@ -42,21 +42,21 @@
         The \high{movement pattern} for the white \chr{rook} is highlighted above.
       }\label{fig:rook}
     \end{marginfigure}
-    \begin{marginfigure}
-      \centering
-      \newchessgame[setwhite={be4}, addblack={bc3}]
-      \chessboard[smallboard,
-                  showmover=false,
-                  color=gold,
-                  pgfstyle=border,
-                  markfield=e4,
-                  colorbackfields={b1,c2,d3,f5,g6,h7,
-                                  a8,b7,c6,d5,f3,g2,h1}]
-      \caption{%
-        Two \chr{bishops} placed on an $8 \times 8$ chess board so that they do not threaten each other.
-        The \high{movement pattern} for the white \chr{bishop} is highlighted above.
-      }\label{fig:bishop}
-    \end{marginfigure}
+    % \begin{marginfigure}
+      % \centering
+      % \newchessgame[setwhite={be4}, addblack={bc3}]
+      % \chessboard[smallboard,
+                  % showmover=false,
+                  % color=gold,
+                  % pgfstyle=border,
+                  % markfield=e4,
+                  % colorbackfields={b1,c2,d3,f5,g6,h7,
+                                  % a8,b7,c6,d5,f3,g2,h1}]
+      % \caption{%
+        % Two \chr{bishops} placed on an $8 \times 8$ chess board so that they do not threaten each other.
+        % The \high{movement pattern} for the white \chr{bishop} is highlighted above.
+      % }\label{fig:bishop}
+    % \end{marginfigure}
     % \begin{marginfigure}
       % \centering
       % \newchessgame[setwhite={qc4}, addblack={qf6}]
@@ -73,14 +73,16 @@
       % \caption{}\label{fig:queen}
     % \end{marginfigure}
 
-    \begin{enumerate}
-      \item
-        % The \texttt{rook} in chess is a piece that only moves along the \emph{ranks} and \emph{files} of the board as shown in \cref{fig:rook}.
-        How many ways can $n \in \naturals_+$ \chr{rooks} possibly be arranged on an $n \times n$ chess board so that no two \chr{rooks} threaten each other?
-      \item
-        % The \texttt{bishop} in chess is a piece that only moves along the \emph{diagonals} of the board as shown in \cref{fig:bishop}.
-        How many ways can $n \in \naturals_+$ \chr{bishops} possibly be arranged on an $n \times n$ chess board so that no two \chr{bishops} threaten each other?
-    \end{enumerate}
+    In how many ways can $n \in \naturals_+$ \chr{rooks} possibly be arranged on an $n \times n$ chess board so that no two \chr{rooks} threaten each other?
+
+    % \begin{enumerate}
+      % \item
+        % % The \texttt{rook} in chess is a piece that only moves along the \emph{ranks} and \emph{files} of the board as shown in \cref{fig:rook}.
+        % How many ways can $n \in \naturals_+$ \chr{rooks} possibly be arranged on an $n \times n$ chess board so that no two \chr{rooks} threaten each other?
+      % \item
+        % % The \texttt{bishop} in chess is a piece that only moves along the \emph{diagonals} of the board as shown in \cref{fig:bishop}.
+        % \sout{How many ways can $n \in \naturals_+$ \chr{bishops} possibly be arranged on an $n \times n$ chess board so that no two \chr{bishops} threaten each other?}
+    % \end{enumerate}
 
   \item[(20 pts) \quad 4.]
     We can write $4$ as a sum of positive integers in the following ways.
@@ -124,8 +126,8 @@
     % \end{align*}
     Given a natural number $n \in \naturals$, how many distinct ways are there to write $n$ as a sum of positive integers?
 
-  \item[(20 pts) \quad 5.]
-    A hermetic monk in meditation is repeatedly ascending and descending a ladder with $k \in \naturals$ rungs.
+  \item[(30 pts) \quad 5.]
+    A hermetic monk in meditation is repeatedly ascending and descending a ladder with $n \in \naturals$ rungs.
     The burdens of wisdom and devotion have left the monk's body frail, so he can only move by one or two rungs at-a-time.
     % Suddenly, a terrifying Word reverberates through his soul.
     One day, as the monk ascends the ladder, a sudden tempest blows through his soul, and out of the whirlwind a fathomless voice calls out to him.
@@ -137,6 +139,21 @@
     What was the answer?
     % The monk ponders this question for many years until the answer eventually comes to him.
     % In this moment, the monk is enlightened and immediately dies.
+
+    % \emph{Strong induction} is a variant of mathematical induction
+    % with a \emph{stronger} inductive hypothesis.
+    % Given a predicate $\varphi$ with the goal of proving $(\forall n \in \naturals)(\varphi(n))$, the base case remains the same.
+    % In the inductive step, however, instead of making the \emph{``weak''} assumption $\varphi(k)$ for an arbitrary $k \in \naturals$, we make the \emph{``strong''} assumption $\varphi(\ell)$ \emph{for all} natural numbers $\ell$ \emph{less than or equal to} $k$.
+    \emph{Hint:} It may be helpful to use \emph{strong induction} to prove your result; as a reminder, the scheme of strong induction is given below for an arbitrary predicate $\varphi$ of one free variable.
+    % The \emph{schema of strong induction} is stated below.
+      \begin{equation*}
+        \left(\varphi(0) \land
+          \left(\forall k \in \naturals\right)
+          \left(\left(\forall \ell \in \naturals\right)
+            \left(\ell \leq k \implies \varphi\left(\ell\right)\right)
+        \implies \varphi(k + 1)\right)\right)
+        \implies \left(\forall n \in \naturals\right)\left(\varphi(n)\right)
+      \end{equation*}
 
 \end{enumerate}
 
