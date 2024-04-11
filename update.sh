@@ -5,7 +5,7 @@ cd 2024spring
   cp -v ~/academia/pedagogy/2024-spring-discrete-math/syllabus/syllabus.pdf ./
 
   # LECTURE NOTE PDF
-  # cp -v ~/academia/pedagogy/book-discrete-math/discrete-math.pdf ./lecture-notes.pdf
+  cp -v ~/academia/pedagogy/book-discrete-math/discrete-math.pdf ./lecture-notes.pdf
 
   # PROBLEM SET PDFs & TeX FILES
   cp -v ~/academia/pedagogy/2024-spring-discrete-math/problem-sets/problem-set-*/problem-set-*.pdf ./problem-sets/
