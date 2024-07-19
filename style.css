@@ -12,14 +12,14 @@
   --red: #d81b60;
   --purple: #7c1d6f;
 
-  --gold: #d79921;
+  /* --gold: #d79921; */
+  --gold: #ea9c00;
   --ndblue: #0c2340;
   --ndgold: #ae9142;
   --nddarkgold: #8c7535;
 
   --link: var(--black);
   --hover: var(--gold);
-  /* --hover: var(--gold); */
 
   /* --red: #ea6962; */
   /* --green: #a9b665; */
@@ -83,7 +83,7 @@ a#grey:hover { color: var(--grey); }
 
 a svg {
   position: inline;
-  height: 1em;
+  height: 1.25em;
   margin: 4px;
   color: var(--link); 
   fill: currentColor;
@@ -113,7 +113,8 @@ a#grey svg:hover { color: var(--grey); }
 body { 
   background-color: var(--white);
   color: var(--black);
-  font-family: 'EB Garamond', serif;
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "EB Garamond", serif; */
   padding: 0px;
   margin: 0px;
 }
@@ -180,17 +181,13 @@ div.name {
   box-sizing: border-box;
   padding: 16px 32px;
   font-size: 48px;
-  white-space: nowrap;
   text-align: left;
   background-color: var(--white);
   /* color: var(--nddarkgold); */
+  white-space: nowrap;
 }
-div.name a{
-  color: var(--black);
-}
-div.name a:hover{
-  color: var(--hover);
-}
+div.name a { color: var(--black); }
+div.name a:hover { color: var(--hover); }
 div.subname {
   white-space: nowrap;
   text-align: center;
@@ -279,7 +276,7 @@ div.date {
   font-size: 18px;
   font-weight: normal;
 }
-div.note {
+li.entry div.note {
   position: relative;
   white-space: nowrap;
   display: inline;
@@ -352,7 +349,14 @@ li { margin: 0px; }
 li.entry {
   margin-top: 0px;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: normal;
+}
+li.entry h2 {
+  /* white-space: nowrap; */
+  display: inline;
+  margin: 0px;
+  font-size: 20px;
   font-weight: normal;
 }
 
