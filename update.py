@@ -42,10 +42,10 @@ def convert(string=date):
     return ''.join(map(braille, '#' + string))
 
 filenames = ['index.html',
-             'aboutme.html',
+             'about-me.html',
              'education.html',
              'research.html',
-             'teaching.html']
+             'teaching/discrete-math.html']
 
 if __name__ == '__main__':
     for filename in filenames:
