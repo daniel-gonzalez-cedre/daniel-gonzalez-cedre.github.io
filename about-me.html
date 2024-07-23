@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta property="og:title" content="About Me" />
-    <meta property="og:url" content="https://daniel-gonzalez-cedre.github.io/aboutme" />
+    <meta property="og:url" content="https://daniel-gonzalez-cedre.github.io/about-me" />
     <meta property="og:image" content="https://daniel-gonzalez-cedre.github.io/images/stjerome.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
       </div>
 
       <div class="sidebar">
-        <a id="blue" href="/aboutme" style="color: var(--blue);">
+        <a id="blue" href="/about-me" style="color: var(--blue);">
           About Me
         </a>
         <br><br>
@@ -43,14 +43,14 @@
           Research
         </a>
         <br><br>
-        <a id="red" href="/teaching">
-          Teaching
-        </a>
-        <!-- <input id="check01" type="checkbox" name="menu" /> -->
-        <!-- <label for="check01">Teaching</label> -->
-        <!-- <ul class="submenu"> -->
-          <!-- <li><a href="#">Item 1</a></li> -->
-        <!-- </ul> -->
+        <ul id="teaching">
+          <li><div style="float: right; cursor: pointer;">Teaching</div>
+            <ul>
+              <li><a id="red" href="/teaching/discrete-math">Discrete Mathematics</a></li>
+              <li><a id="red" href="/teaching">Principles of Computing</a></li>
+            </ul>
+          </li>
+        </ul>
         <br><br>
         <a id="yellow" href="cv/daniel-gonzalez-cedre-cv.pdf" target="_blank">
           Vitæ
