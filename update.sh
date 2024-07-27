@@ -1,16 +1,20 @@
-# 2024 SPRING DISCRETE MATH
-cd teaching/2024spring
+cd teaching
 
-  # SYLLABUS PDF
-    cp -v ~/academia/pedagogy/teaching/2024-spring-discrete-math/syllabus/syllabus.pdf ./
+  # PRINCIPLES OF COMPUTING
 
-  # LECTURE NOTE PDF
-    cp -v ~/academia/pedagogy/book-discrete-math/discrete-math.pdf ./lecture-notes.pdf
+  # DISCRETE MATH
+  cd 2024spring
+    # SYLLABUS PDF
+      cp -v ~/academia/pedagogy/2024_spring_discrete-math/syllabus/syllabus.pdf ./
 
-  # PROBLEM SET PDFs & TeX FILES
-    cp -v ~/academia/pedagogy/teaching/2024-spring-discrete-math/problem-sets/problem-set-*/problem-set-*.pdf ./problem-sets/
-    cp -v ~/academia/pedagogy/teaching/2024-spring-discrete-math/problem-sets/problem-set-*/problem-set-*.tex ./tex/
-    cp -v ~/academia/pedagogy/teaching/2024-spring-discrete-math/exams/exam-*.p.*/exam-*.p.*.pdf ./exams/
+    # LECTURE NOTE PDF
+      cp -v ~/academia/pedagogy/book_discrete-math/discrete-math.pdf ./lecture-notes.pdf
+
+    # PROBLEM SET PDFs & TeX FILES
+      cp -v ~/academia/pedagogy/2024_spring_discrete-math/problem-sets/problem-set-*/problem-set-*.pdf ./problem-sets/
+      cp -v ~/academia/pedagogy/2024_spring_discrete-math/problem-sets/problem-set-*/problem-set-*.tex ./tex/
+      cp -v ~/academia/pedagogy/2024_spring_discrete-math/exams/exam-*.p.*/exam-*.p.*.pdf ./exams/
+  cd ..
 
   # LaTeX PREAMBLES
     # mkdir -v ./LaTeX
@@ -24,7 +28,7 @@ cd teaching/2024spring
     # zip -vr LaTeX.zip ./LaTeX -X
     # rm -rf LaTeX
 
-cd ../..
+cd ..
 
 # GENERAL WEBSITE
 python3 ./update.py

@@ -83,7 +83,7 @@ a#grey:hover { color: var(--grey); }
 
 a svg {
   position: inline;
-  height: 1.25em;
+  height: 1em;
   margin: 4px;
   color: var(--link); 
   fill: currentColor;
@@ -133,7 +133,7 @@ table {
   margin: 0px;
   padding: 0px;
   font-size: 16px;
-  font-family: "Kode Mono", sans-serif;
+  /* font-family: "Kode Mono", sans-serif; */
 }
 table.single {
   width: 100%;
@@ -172,10 +172,11 @@ div.name {
   width: 100%;
   box-sizing: border-box;
   padding: 16px 32px;
+  /* font-size: 48px; */
   font-size: 48px;
+  font-family: "Jacquard 12", serif;
   text-align: left;
   background-color: var(--white);
-  /* color: var(--nddarkgold); */
   white-space: nowrap;
 }
 div.name a { color: var(--black); }
@@ -200,7 +201,8 @@ div.sidebar {
   top: 95px;
   position: -webkit-sticky;
   position: sticky;
-  padding: 32px;
+  /* padding: 32px; */
+  padding: 16px;
   margin: 0px;
   height: 256px;
   /* height: 512px; */
@@ -208,11 +210,14 @@ div.sidebar {
   /* min-width: 180px; */
   width: 150px;
   min-width: 160px;
+  text-align: right;
   font-size: 32px;
-  /* line-height: 32px; */
+  font-family: "Jacquard 12", serif;
   background-color: var(--white);
   /* border-right: 1px solid var(--white); */
-  text-align: right;
+}
+div.sidebar div.entry {
+  padding-bottom: 84px;
 }
 div.sidebar a {
   float: right;
@@ -222,15 +227,16 @@ div.lastupdate {
   position: fixed;
   left: 0px;
   bottom: 0px;
-  color: var(--black);
   margin: 8px;
   padding: 8px;
   text-align: center;
+  color: var(--black);
   /* font-size: 12px; */
 }
 div.main {
   order: 2;
   padding: 32px;
+  padding-top: 16px;
   width: 75%;
   min-width: 470px;
   max-width: 800px;
@@ -238,13 +244,15 @@ div.main {
   font-size: 22px;
 }
 div.main#teaching {
-  font-family: "Kode Mono", sans-serif;
+  /* font-family: "Jacquard 12", serif; */
 }
 div.heading {
   padding: 0px;
   margin: 0px;
-  margin-bottom: 6px;
+  /* margin-top: -9px; */
+  margin-bottom: 8px;
   font-size: 32px;
+  font-family: "Jacquard 12", serif;
 }
 .content { margin-bottom: 10px; }
 /* .content { */
@@ -252,34 +260,12 @@ div.heading {
   /* margin-bottom: 10px; */
 /* } */
 
-div.authors {
-  position: relative;
-  display: inline;
-}
-div.author {
-  display: inline;
-  white-space: nowrap;
-}
-div.author#me {
-  display: inline;
-  white-space: nowrap;
-  /* font-weight: bold; */
-  /* text-decoration: underline wavy 1px; */
-  /* -webkit-text-decoration: underline wavy; */
-}
 div.date {
   white-space: nowrap;
   display: inline-block;
   margin: 0px;
   padding: 2px 6px;
   font-size: 18px;
-  font-weight: normal;
-}
-li.entry div.note {
-  position: relative;
-  white-space: nowrap;
-  display: inline;
-  margin: 1px;
 }
 
 h1 {
@@ -325,17 +311,6 @@ p.desc {
 sup { font-size: 10px; }
 
 ul { }
-ul.education {
-  margin: 0px;
-  font-size: 14px;
-  list-style-type: none;
-}
-ul.teaching {
-  margin: 0px;
-  font-size: 18px;
-  list-style-type: none;
-  /* list-style-type: "⋅  "; */
-}
 ol {
   margin: 0px;
   padding-top: 0px;
@@ -343,20 +318,42 @@ ol {
   font-size: 16px;
   list-style-type: decimal;
 }
-ol.publications { }
-li { margin: 0px; }
-li.entry {
+ol.research { }
+ol.research li { margin: 0px; }
+ol.research li.entry {
   margin-top: 0px;
   margin-bottom: 20px;
-  font-size: 14px;
-  font-weight: normal;
 }
-li.entry h2 {
+ol.research li.entry h2 {
   display: inline;
   margin: 0px;
   font-size: 20px;
   font-weight: normal;
   /* white-space: nowrap; */
+}
+ol.research li.entry div {
+  font-size: 14px;
+}
+ol.research li.entry div.authors {
+  position: relative;
+  display: inline;
+}
+ol.research li.entry div.author {
+  display: inline;
+  white-space: nowrap;
+}
+ol.research li.entry div.author#me {
+  display: inline;
+  white-space: nowrap;
+  /* font-weight: bold; */
+  /* text-decoration: underline wavy 1px; */
+  /* -webkit-text-decoration: underline wavy; */
+}
+ol.research li.entry div.note {
+  position: relative;
+  white-space: nowrap;
+  display: inline;
+  margin: 1px;
 }
 
 img { }
