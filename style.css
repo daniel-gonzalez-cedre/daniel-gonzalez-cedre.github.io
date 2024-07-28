@@ -163,14 +163,15 @@ th {
 td { text-align: right; }
 
 div.name {
-  align-self: flex-start;
+  position: sticky;
   z-index: 999;
   top: 0;
   left: 0;
-  position: sticky;
+  box-sizing: border-box;
+  align-self: flex-start;
   /* height: 100px; */
   width: 100%;
-  box-sizing: border-box;
+  margin: 0px;
   /* padding: 16px 32px; */
   padding: 32px 32px 32px 32px;
   /* font-size: 48px; */
@@ -197,35 +198,62 @@ div.container {
   height: auto;
 }
 div.sidebar {
-  order: 1;
-  align-self: flex-start;
+  position: sticky;
+  position: -webkit-sticky;
   z-index: 998;
   top: 112px;
-  position: -webkit-sticky;
-  position: sticky;
-  /* padding: 32px; */
-  padding: 8px 16px 16px 48px;
-  /* padding: 16px; */
+  order: 1;
+  align-self: flex-start;
   margin: 0px;
-  height: 256px;
-  /* height: 512px; */
+  padding: 16px 16px 16px 48px;
+  /* padding: 32px; */
+  /* padding: 16px; */
   /* width: 180px; */
   /* min-width: 180px; */
-  width: 150px;
   min-width: 160px;
-  text-align: right;
+  width: 160px;
+  height: 512px;
   font-size: 48px;
   font-family: "Jacquard 12", serif;
+  text-align: right;
   background-color: var(--white);
-  /* border-right: 1px solid var(--white); */
+  /* background-color: var(--black); */
+  /* border-right: 1px solid var(--black); */
 }
-div.sidebar div.entry {
-  padding-bottom: 84px;
+div.sidebar div.entry { padding-bottom: 96px; }
+div.sidebar ul#teaching {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+div.sidebar ul#teaching li {
+  float: right;
+  cursor: pointer;
+}
+div.sidebar ul#teaching li ul {
+  display: block;
+  /* display: none; */
+  list-style: none;
+  font-size: 20px;
+  /* font-variant: small-caps; */
+  /* padding-bottom: -4px; */
+  transition: 0.2s;
+  opacity: 0;
+}
+div.sidebar ul#teaching li ul li {
+}
+div.sidebar ul#teaching li:hover {
+  color: var(--red);
+}
+div.sidebar ul#teaching li:hover ul {
+  transition: 0.2s;
+  opacity: 1;
 }
 div.sidebar a {
   float: right;
   color: var(--black);
 }
+
 div.lastupdate {
   position: fixed;
   left: 0px;
@@ -238,17 +266,28 @@ div.lastupdate {
 }
 div.main {
   order: 2;
-  padding: 32px;
+  padding: 64px;
   padding-top: 16px;
-  width: 75%;
-  min-width: 450px;
-  max-width: 800px;
+  width: 100%;
+  min-width: 384px;
+  /* max-width: 800px; */
   text-align: left;
   font-size: 22px;
+}
+div.main#index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 384px;
+  min-width: 384px;
+  max-width: 384px;
+  padding: 32px;
 }
 div.main#teaching {
   /* font-family: "Jacquard 12", serif; */
 }
+
 div.heading {
   padding: 0px;
   margin: 0px;
@@ -367,10 +406,22 @@ ol.research li.entry div.note {
   margin: 1px;
 }
 
+div.headshot {
+  position: absolute;
+  display: block;
+  top: 160px;
+  /* margin-top: 16px; */
+  width: 256px;
+  height: 256px;
+  /* min-width: 256px; */
+  /* max-width: 256px; */
+  border-radius: 0px;
+  background-image: url("images/gonzalez-2024-gravity-fest_thumbnail.jpg");
+}
 img { }
 img.headshot {
   /* margin: 0px auto; */
-  padding-top: 32px;
+  /* padding-top: 32px; */
   width: 256px;
   min-width: 256px;
   max-width: 256px;
@@ -420,32 +471,3 @@ hr {
 
 /* === === === === === === === === === === === === === === === === === */
 
-ul#teaching {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-}
-ul#teaching li {
-  cursor: default;
-}
-ul#teaching li ul {
-  transition: 0.1s;
-  font-size: 16px;
-  /* padding-bottom: -4px; */
-  list-style: none;
-  display: block;
-  opacity: 0;
-  /* display: none; */
-  /* font-variant: small-caps; */
-  /* background: var(--yellow); */
-}
-ul#teaching li ul li {
-}
-ul#teaching li:hover {
-  color: var(--red);
-  /* transition: 0.2s; */
-}
-ul#teaching li:hover ul {
-  transition: 0.2s;
-  opacity: 1;
-}

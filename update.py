@@ -44,7 +44,7 @@ def convert(string=date):
 filenames = ['index.html',
              'about-me.html',
              'research.html',
-             'teaching/discrete-math.html',
+             'teaching/discrete-mathematics.html',
              'teaching/principles-of-computing.html']
 
 if __name__ == '__main__':
