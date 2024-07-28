@@ -84,7 +84,7 @@ a#grey:hover { color: var(--grey); }
 a svg {
   position: inline;
   height: 1em;
-  margin: 4px;
+  margin: 12px 4px 0px 8px;
   color: var(--link); 
   fill: currentColor;
 }
@@ -168,15 +168,17 @@ div.name {
   top: 0;
   left: 0;
   position: sticky;
-  height: 95px;
+  /* height: 100px; */
   width: 100%;
   box-sizing: border-box;
-  padding: 16px 32px;
+  /* padding: 16px 32px; */
+  padding: 32px 32px 32px 32px;
   /* font-size: 48px; */
   font-size: 48px;
   font-family: "Jacquard 12", serif;
   text-align: left;
   background-color: var(--white);
+  /* background-color: var(--black); */
   white-space: nowrap;
 }
 div.name a { color: var(--black); }
@@ -198,11 +200,12 @@ div.sidebar {
   order: 1;
   align-self: flex-start;
   z-index: 998;
-  top: 95px;
+  top: 112px;
   position: -webkit-sticky;
   position: sticky;
   /* padding: 32px; */
-  padding: 16px;
+  padding: 8px 16px 16px 48px;
+  /* padding: 16px; */
   margin: 0px;
   height: 256px;
   /* height: 512px; */
@@ -211,7 +214,7 @@ div.sidebar {
   width: 150px;
   min-width: 160px;
   text-align: right;
-  font-size: 32px;
+  font-size: 48px;
   font-family: "Jacquard 12", serif;
   background-color: var(--white);
   /* border-right: 1px solid var(--white); */
@@ -238,7 +241,7 @@ div.main {
   padding: 32px;
   padding-top: 16px;
   width: 75%;
-  min-width: 470px;
+  min-width: 450px;
   max-width: 800px;
   text-align: left;
   font-size: 22px;
@@ -315,11 +318,19 @@ ol {
   margin: 0px;
   padding-top: 0px;
   padding-left: 0px;
-  font-size: 16px;
+  font-size: 20px;
+  /* line-height: 24px; */
   list-style-type: decimal;
 }
 ol.research { }
-ol.research li { margin: 0px; }
+ol.research div.link {
+  display: block;
+  font-size: 16px;
+  margin: 8px 4px;
+}
+ol.research li {
+  margin: 0px;
+}
 ol.research li.entry {
   margin-top: 0px;
   margin-bottom: 20px;
@@ -332,7 +343,7 @@ ol.research li.entry h2 {
   /* white-space: nowrap; */
 }
 ol.research li.entry div {
-  font-size: 14px;
+  font-size: 16px;
 }
 ol.research li.entry div.authors {
   position: relative;
@@ -358,13 +369,13 @@ ol.research li.entry div.note {
 
 img { }
 img.headshot {
-  display: block;
-  margin: 0px auto;
-  padding-top: 16px;
+  /* margin: 0px auto; */
+  padding-top: 32px;
   width: 256px;
   min-width: 256px;
   max-width: 256px;
   border-radius: 0px;
+  /* image-rendering: pixelated; */
 }
 img.icon {
   position: relative;
