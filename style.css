@@ -240,13 +240,10 @@ div.sidebar ul#teaching li ul {
   transition: 0.2s;
   opacity: 0;
 }
-div.sidebar ul#teaching li ul li {
-}
-div.sidebar ul#teaching li:hover {
-  color: var(--red);
-}
+div.sidebar ul#teaching li ul li { }
+div.sidebar ul#teaching li:hover { color: var(--red); }
 div.sidebar ul#teaching li:hover ul {
-  transition: 0.2s;
+  transition: 0.5s;
   opacity: 1;
 }
 div.sidebar a {
