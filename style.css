@@ -284,7 +284,9 @@ div.main#index {
   width: 384px;
   min-width: 384px;
   max-width: 384px;
-  padding: 32px;
+  padding: 64px;
+  padding-top: 136px;
+  padding-left: 288px;
 }
 div.main#teaching {
   /* font-family: "Jacquard 12", serif; */
