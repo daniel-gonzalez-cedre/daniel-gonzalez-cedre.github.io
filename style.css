@@ -1,7 +1,6 @@
 :root {
   /* --white: #f7f0e4; */
   --white: #fbf7f1;
-
   --black: #17120f;  /* 27221f */
   --grey: #5e4a3d;  /* b9a193 */
 
@@ -25,6 +24,9 @@
   --link: var(--black);
   --hover: var(--gold);
 
+  --code-white: #ebdbb2;  /* 27221f */
+  --code-black: #282828;  /* 27221f */
+
   /* --red: #ea6962; */
   /* --green: #a9b665; */
   /* --yellow: #d8a657; */
@@ -33,6 +35,17 @@
   /* --orange: #e78a4e; */
 
   /* --lain: #dda9a1; */
+}
+
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url(fonts/BerkeleyMono-Regular.woff2) format(woff2),
+       url(fonts/BerkeleyMono-Regular.woff)  format(woff);
+}
+@font-face {
+  font-family: 'Berkeley Mono Ligatures';
+  src: url(fonts/BerkeleyMonoLigatures-Regular.woff2) format(woff2),
+       url(fonts/BerkeleyMonoLigatures-Regular.woff)  format(woff);
 }
 
 /*  */
@@ -290,6 +303,27 @@ div.main#index {
 }
 div.main#teaching {
   /* font-family: "Jacquard 12", serif; */
+}
+div.main#teaching textarea {
+  padding: 8px;
+  border-radius: 4px;
+  color: var(--code-white);
+  background-color: var(--code-black);
+  font-family: "Berkeley Mono", monospace;
+}
+div.main#teaching textarea.input {
+  font-family: "Berkeley Mono", monospace;
+}
+div.main#teaching textarea.output {
+  font-family: "Berkeley Mono Ligatures", monospace;
+}
+
+div.main#teaching button#runCode {
+  border-radius: 4px;
+  text-align: center;
+  color: var(--code-white);
+  background-color: var(--code-black);
+  font-family: "Berkeley Mono", monospace;
 }
 
 div.heading {
