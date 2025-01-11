@@ -25,7 +25,7 @@ body div.container {
   width: auto;
   height: auto;
 
-  padding: 8px;
+  padding: 16px;
   margin: 32px;
 
   background-color: var(--beige);
@@ -70,6 +70,7 @@ body div.main {
   max-width: auto;
 
   padding: 0px;
+  margin: 0px;
 
   /* background-color: var(--beige); */
   /* box-shadow: var(--black) 8px 8px; */
