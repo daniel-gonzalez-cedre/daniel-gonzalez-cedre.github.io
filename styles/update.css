@@ -1,0 +1,18 @@
+div.lastupdate {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  margin: 8px;
+  padding: 8px;
+  text-align: center;
+  color: var(--black);
+  /* font-size: 12px; */
+}
+
+div.date {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 0px;
+  padding: 2px 6px;
+  font-size: 18px;
+}

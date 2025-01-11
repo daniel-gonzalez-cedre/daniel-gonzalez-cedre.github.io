@@ -6,76 +6,46 @@
     <meta property="og:url" content="https://daniel-gonzalez-cedre.github.io/" />
     <meta property="og:image" content="https://daniel-gonzalez-cedre.github.io/images/stjerome.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&family=Jacquard+12&family=Jacquard+24" rel="stylesheet">
-
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Cutive+Mono:400" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:300" rel="stylesheet"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 
     <link rel="icon" type="images/gif" href="favicon.ico">
 
+    <link rel="stylesheet" href="root.css">
+    <!-- <link rel="stylesheet" href="styles/a.css"> -->
+    <!-- <link rel="stylesheet" href="styles/name.css"> -->
+    <link rel="stylesheet" href="styles/body.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
+    <link rel="stylesheet" href="styles/content.css">
+    <link rel="stylesheet" href="styles/graphics.css">
+    <!-- <link rel="stylesheet" href="styles/lists.css"> -->
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/update.css">
+
     <title>Daniel Gonzalez Cedre</title>
 
-    <link rel="stylesheet" href="style.css">
     <style>
       span.displaynone { display: none; }
     </style>
   </head>
 
   <body>
-    <div class="name">
-      <a href="/">Daniel Gonzalez Cedre</a>
-      <!-- 高明俊 -->
-    </div>
     <div class="container">
-      <div class="lastupdate">
-        <!-- last update --><font color="#b9a193">&#10300;</font>&#10243;&#10266;&#10243;&#10265;<font color="#b9a193">&#10290;</font>&#10241;&#10266;<font color="#b9a193">&#10290;</font>&#10243;&#10267;
-        <!-- last update 二零二四<font color="#b9a193">年</font>一<font color="#b9a193">月</font>二十七<font color="#b9a193">日</font>-->
-      </div>
-
-      <div class="sidebar">
-        <div class="entry">
-          <a id="blue" href="/about-me">
-            About Me
-          </a>
-        </div>
-        <div class="entry">
-          <a id="orange" href="/research">
-            Research
-          </a>
-        </div>
-        <div class="entry">
-          <ul id="teaching">
-            <li>Teaching
-              <ul>
-                <li><a id="green" href="/teaching/discrete-mathematics">Discrete Mathematics</a></li>
-                <!-- <li><a id="green" href="/teaching/principles-of-computing">Principles of Computing</a></li> -->
-                <li><a id="green" href="https://github.com/daniel-gonzalez-cedre/2024_fall_principles-of-computing" target="_blank">Principles of Computing</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="entry">
-          <a id="yellow" href="/cv/daniel-gonzalez-cedre_cv.pdf" target="_blank">
-            Vitæ
-          </a>
-        </div>
-      </div>
-
-      <div id="index" class="main">
-        <div class="headshot">
-          <img class="headshot" src="images/gonzalez-2024-gravity-fest.jpg">
-        </div>
-        <div class="subname">
-          <!-- Mathematician ⋅ Computer Scientist -->
-          <!-- <br> -->
-          <!-- <a href="cv/daniel-gonzalez-cedre_cv.pdf" target="_blank" style="font-size: 22px;">Curriculum Vitæ</a> -->
-          <!-- &nbsp;⋅&nbsp; -->
-          <!-- <a href="https://orcid.org/0000-0002-2676-1452" target="_blank" style="font-size: 18px;">0000-0002-2676-1452</a> -->
-        </div>
+      <div class="name">&nbsp;DANIEL_GONZALEZ_CEDRE&nbsp;</div>
+      <div class="main">
+        <div class="file"><a href="/" id="autofocus" autofocus>HOME</a></div>
+        <!-- <div class="file" id="directory"><p>/</p></div> -->
+        <div class="file"><a href="/about">ABOUT</a></div>
+        <div class="file"><a href="/cv/daniel-gonzalez-cedre_cv.pdf" target="_blank">VITAE</a></div>
+        <div class="file" id="directory"><p>RESEARCH/</p></div>
+          <div class="file"><p id="directory">├─&nbsp;</p><a href="/papers">PAPERS</a></div>
+          <div class="file"><p id="directory">└─&nbsp;</p><a href="/talks">TALKS</a></div>
+        <div class="file" id="directory"><p>TEACHING/</p></div>
+          <div class="file"><p id="directory">├─&nbsp;</p><a href="/teaching/discrete-math">DISCRETE_MATHEMATICS</a></div>
+          <div class="file"><p id="directory">└─&nbsp;</p><a href="/teaching/principles-of-computing">PRINCIPLES_OF_COMPUTING</a></div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
+</html>

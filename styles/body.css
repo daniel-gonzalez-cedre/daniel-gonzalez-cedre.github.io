@@ -1,0 +1,101 @@
+body { 
+  padding: 0px;
+  margin: 0px;
+
+  font-family: "Berkeley Mono", monospace;
+  color: var(--black);
+  background-color: var(--teal);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100vw;
+  min-height: 100vh;
+}
+
+body div.container {
+  /* position: fixed; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: auto;
+  height: auto;
+
+  padding: 8px;
+  margin: 32px;
+
+  background-color: var(--beige);
+  box-shadow: var(--black) 8px 16px;
+  /* box-shadow: var(--black)   8px   8px, */
+              /* var(--beige)  8px  17px inset, */
+              /* var(--beige) -8px -17px inset, */
+              /* var(--black)  9px  18px inset, */
+              /* var(--black) -9px -18px inset; */
+}
+
+body div.name {
+  display: flex;
+  align-self: top;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px;
+  margin: 0px;
+
+  color: var(--beige);
+  background-color: var(--black);
+
+  width: 100%;
+
+  /* border-left: var(--grey) solid 1px; */
+  /* border-right: var(--grey) solid 1px; */
+}
+
+body div.main {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: left;
+  flex-direction: column;
+
+  /* text-align: left; */
+  /* font-size: 22px; */
+
+  width: auto;
+  min-width: auto;
+  max-width: auto;
+
+  padding: 0px;
+
+  /* background-color: var(--beige); */
+  /* box-shadow: var(--black) 8px 8px; */
+}
+
+/* div.main#teaching { */
+  /* [> font-family: "Jacquard 12", serif; <] */
+/* } */
+/* div.main#teaching textarea { */
+  /* padding: 8px; */
+  /* border-radius: 4px; */
+  /* color: var(--code-white); */
+  /* background-color: var(--code-black); */
+  /* font-family: "Berkeley Mono", monospace; */
+/* } */
+/* div.main#teaching textarea.input { */
+  /* font-family: "Berkeley Mono", monospace; */
+/* } */
+/* div.main#teaching textarea.output { */
+  /* font-family: "Berkeley Mono Ligatures", monospace; */
+/* } */
+
+/* div.main#teaching button#runCode { */
+  /* border-radius: 4px; */
+  /* text-align: center; */
+  /* color: var(--code-white); */
+  /* background-color: var(--code-black); */
+  /* font-family: "Berkeley Mono", monospace; */
+/* } */

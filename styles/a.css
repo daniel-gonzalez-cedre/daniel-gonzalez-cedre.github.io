@@ -1,0 +1,42 @@
+a {
+  transition: 0.3s;
+  color: var(--link);
+  /* color: var(--nddarkgold); */
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+a:hover { color: var(--hover); }
+a#blue:hover { color: var(--blue); }
+a#green:hover { color: var(--green); }
+a#yellow:hover { color: var(--yellow); }
+a#orange:hover { color: var(--orange); }
+a#red:hover { color: var(--red); }
+a#purple:hover { color: var(--purple); }
+a#gold:hover { color: var(--gold); }
+a#grey:hover { color: var(--grey); }
+
+a svg {
+  position: inline;
+  height: 20px;
+  margin: 8px 2px 0px 4px;
+  color: var(--link); 
+}
+a svg path {
+  transition: 0.3s;
+  fill: currentColor;
+}
+a:hover svg { }
+/* a svg path { color: var(--black); } */
+a svg path.arxiv#red { color: var(--white); }
+a svg path.arxiv#grey { color: var(--white); }
+a:hover svg path.arxiv#red { color: var(--arxiv-red); }
+a:hover svg path.arxiv#grey { color: var(--white); }
+a.arxiv:hover svg { color: var(--yellow); }
+a.publication:hover svg { color: var(--red); }
+a.supplementary:hover svg { color: var(--orange); }
+a.abstract:hover svg { color: var(--orange); }
+a.code:hover svg { color: var(--blue); }
+a.poster:hover svg { color: var(--green); }
+a.slides:hover svg { color: var(--green); }
+a.latex:hover svg { color: var(--yellow); }
