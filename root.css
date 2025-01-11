@@ -55,10 +55,12 @@
        url(fonts/BerkeleyMonoLigatures-Regular.woff)  format(woff);
 }
 
-html { scroll-behavior: smooth; }
-object { }
-embed { }
-iframe { }
+html {
+  scroll-behavior: smooth;
+
+  font-family: "Berkeley Mono", monospace;
+  font-size: 20px;
+}
 
 span.displaynone { display: none; }
 

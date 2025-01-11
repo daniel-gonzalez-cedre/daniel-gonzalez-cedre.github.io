@@ -165,7 +165,9 @@ p {
   padding: 0px 4px;
 }
 p.about {
-  max-width: 512px;
+  /* max-width: 1028px; */
+  /* max-width: 768px; */
+  max-width: 640px;
 }
 /* p.desc { */
   /* max-width: 600px; */
