@@ -61,18 +61,12 @@ body div.main {
   justify-content: left;
   flex-direction: column;
 
-  /* text-align: left; */
-  /* font-size: 22px; */
-
   width: auto;
   min-width: auto;
   max-width: auto;
 
   padding: 0px;
   margin: 0px;
-
-  /* background-color: var(--beige); */
-  /* box-shadow: var(--black) 8px 8px; */
 }
 
 /* div.main#teaching { */
