@@ -24,8 +24,8 @@ body div.container {
   width: auto;
   height: auto;
 
-  padding: 16px;
-  margin: 64px 32px;;
+  padding: 24px;
+  margin: 48px 32px;
 
   background-color: var(--beige);
   box-shadow: var(--black) 8px 16px;
