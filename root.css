@@ -57,9 +57,8 @@
 
 html {
   scroll-behavior: smooth;
-
   font-family: "Berkeley Mono", monospace;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 span.displaynone { display: none; }

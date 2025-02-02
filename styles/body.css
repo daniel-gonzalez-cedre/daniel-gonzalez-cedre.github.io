@@ -25,7 +25,7 @@ body div.container {
   height: auto;
 
   padding: 16px;
-  margin: 32px;
+  margin: 64px;
 
   background-color: var(--beige);
   box-shadow: var(--black) 8px 16px;
