@@ -36,7 +36,7 @@ body div.container {
               /* var(--black) -9px -18px inset; */
 }
 
-body div.name {
+body div.head {
   display: flex;
   align-self: top;
   align-items: center;

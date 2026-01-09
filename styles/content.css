@@ -1,8 +1,7 @@
 div.heading {
   padding: 0px;
-  margin: 0px;
+  margin: 0px 0px 8px 0px;
   /* margin-top: -9px; */
-  margin-bottom: 8px;
   font-size: 32px;
   /* font-family: "Jacquard 12", serif; */
 }
@@ -20,15 +19,27 @@ div.heading {
   align-self: center;
   align-items: center;
   justify-content: left;
+  padding: 0px 4px;
   margin: 0px;
-  padding: 0px;
-
   width: 100%;
 }
-.file a, .file label { padding: 0px 4px; }
+/* .file a, .file label { */
+  /* padding: 0px 4px; */
+/* } */
 .file a:hover {
   color: var(--beige);
   background: var(--red);
+}
+.file#blank {
+  /* -webkit-touch-callout: none; */
+  /* -webkit-user-select: none; */
+  /* -moz-user-select: none; */
+  /* -ms-user-select: none; */
+  /* user-select: none; */
+  /* padding: 1.2em 0px 0px 0px; */
+  padding: 0px;
+  margin: 0px;
+  /* margin: 0px; */
 }
 .file#directory {
   color: var(--grey);
@@ -39,6 +50,22 @@ div.heading {
   white-space: nowrap;
 }
 
+.disclaimer {
+  display: flex;
+  align-self: center;
+  align-items: top;
+  /* justify-content: left; */
+  flex-direction: row;
+
+  padding: 0px 4px;
+  margin: 0px;
+
+  color: var(--beige);
+  background-color: var(--dark);
+
+  /* width: 100%; */
+}
+
 .pub {
   display: flex;
   align-self: center;
@@ -46,14 +73,14 @@ div.heading {
   justify-content: left;
   flex-direction: row;
 
-  margin: 0px;
   padding: 0px;
+  margin: 0px;
 
   width: 100%;
 }
 .pub .car {
-  width: 100%;
   margin: 0px 1em 0px 0px;
+  width: 100%;
 }
 .pub .car .title {
   padding: 0px 8px 0px 4px;
@@ -118,8 +145,8 @@ a:hover, a:focus {
 
 /* HYPERLINK */
 a {
-  margin: 0px;
   padding: 0px;
+  margin: 0px;
   color: var(--black);
   white-space: nowrap;
   text-decoration: none;
@@ -127,8 +154,8 @@ a {
 
 /* PAR */
 p {
-  margin: 0px;
   padding: 0px 4px;
+  margin: 0px;
 }
 p.about {
   /* max-width: 1028px; */
