@@ -250,18 +250,20 @@
     width: 100%;
   }
   .pub .car {
-    margin: 0px 1em 0px 0px;
+    /* margin: 0px 12px 0px 0px; */
+    margin: 0px;
     width: 100%;
   }
   .pub .car .title {
-    padding: 0px 8px 0px 4px;
+    /* padding: 0px 10px 0px 10px; */
+    padding: 0px 4px;
     margin: 0px;
 
     color: var(--beige);
     background-color: var(--black);
   }
   .pub .car .authors {
-    padding: 0px;
+    padding: 0px 4px;
     margin: 0px;
   }
   .pub .cdr {
@@ -270,7 +272,7 @@
     align-items: right;
     justify-content: left;
     flex-direction: column;
-    margin: 0px 0px 0px 4px;
+    margin: 0px 0px 0px 12px;
   }
   .pub .cdr .year {
     padding: 0px 4px;
